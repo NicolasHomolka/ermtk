@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<loc version="0.01">
+
+    <title name="Kinokette"/>
+    <title name="Cinema Chain" lang="en"/>
+<!-- Entity-Types -->
+
+    <entlo entref="kino" name-lo="cinema" lang="en">
+        <attr name="adresse" name-lo="address"/>
+        <attr name="name" name-lo="name"/>
+    </entlo>
+
+    <entlo entref="saal" name-lo="hall" lang="en">
+        <attr name="saal_nr" name-lo="hall_nr"/>
+    </entlo>
+
+    <entlo entref="sitzplan" name-lo="seatingplan" lang="en">
+        <attr name="reihe" name-lo="rowes"/>
+        <attr name="sitz_nr" name-lo="seat_nr"/>
+        <attr name="begin" name-lo="begins"/>
+        <attr name="vergeben" name-lo="sold"/>
+    </entlo>
+
+    <entlo entref="ticket" name-lo="ticket" lang="en">
+        <attr name="begin" name-lo="begins"/>
+        <attr name="reihe" name-lo="rowes"/>
+    </entlo>
+
+    <entlo entref="zeitplan" name-lo="timetable" lang="en">
+        <attr name="begin" name-lo="begin"/>
+    </entlo>    
+
+    <entlo entref="film" name-lo="movie" lang="en">
+        <attr name="titel" name-lo="title"/>
+        <attr name="genre" name-lo="genre"/>
+        <attr name="herstellungsjahr" name-lo="year_of_production"/>
+        <attr name="land" name-lo="country"/>
+        <attr name="sprache" name-lo="language"/>
+        <attr name="dauer" name-lo="length"/>
+        <attr name="verleih" name-lo="rental"/>
+        <attr name="altersfreigabe" name-lo="age_rating"/>
+    </entlo>
+
+    <entlo entref="schauspieler" name-lo="actor" lang="en">
+        <attr name="svnr" name-lo="svnr"/>
+        <attr name="nachname" name-lo="lastname"/>
+        <attr name="vorname" name-lo="firstname"/>
+        <attr name="nationalitaet" name-lo="nationality"/>
+        <attr name="geburtsdatum" name-lo="birthday"/>
+        <attr name="todesdatum" name-lo="deathday"/>
+        <attr name="bemerkung" name-lo="comment"/>
+    </entlo>  
+
+    <!-- Relationship-Types -->
+
+    <rello relref="spielt_mit" name-lo="plays_in" lang="en">
+        <attr name="person" name-lo="person"/>
+        <attr name="film" name-lo="movie"/>
+    </rello>
+
+    <rello relref="wird_gezeigt_in" name-lo="is_played_in" lang="en">
+        <attr name="film" name-lo="movie"/>
+        <attr name="kino" name-lo="cinema"/>
+        <attr name="von" name-lo="froms"/>
+        <attr name="bis" name-lo="tos"/>
+    </rello>
+
+    <rello relref="ist_Teil_von" name-lo="is_part_of" lang="en">
+        <attr name="kino" name-lo="cinema"/>
+        <attr name="saal" name-lo="hall"/>
+    </rello>
+
+    <rello relref="ist_Sitzplan_für" name-lo="is_seatingplan_for" lang="en">
+        <attr name="saal" name-lo="hall"/>
+        <attr name="sitzplan" name-lo="seatingplan"/>
+    </rello>
+
+    <rello relref="ist_Zeiplan_für" name-lo="is_timetable_for" lang="en">
+        <attr name="saal" name-lo="hall"/>
+        <attr name="zeitplan" name-lo="timetable"/>
+    </rello>
+
+    <rello relref="wird...gespielt" name-lo="gets_plays" lang="en">
+        <attr name="film" name-lo="movie"/>
+        <attr name="zeitplan" name-lo="timetable"/>
+    </rello>
+
+    <rello relref="leitet" name-lo="directs" lang="en">
+        <attr name="film" name-lo="movie"/>
+        <attr name="person" name-lo="person"/>
+    </rello>
+
+    <rello relref="gilt_für" name-lo="is_valid_for" lang="en">
+        <attr name="sitzplan" name-lo="seatingplan"/>
+        <attr name="ticket" name-lo="ticket"/>
+    </rello>
+
+</loc>

@@ -1,0 +1,55 @@
+# vim: ts=2 sw=2 et
+
+default namespace = ""
+
+grammar {
+
+  MinCardType = xsd:integer { minInclusive = "0" }
+  MaxCardType = xsd:positiveInteger | "n"
+  
+  start = element erm {
+            attribute version { xsd:decimal { fractionDigits="3" } },
+            Title*,
+            EntityType+,
+            RelType*
+         }
+
+  Title = element title {
+            attribute name { xsd:string },
+            attribute lang { xsd:string }?
+          }
+
+  EntityType = element ent {
+                 attribute name { xsd:string },
+                 Attribute+
+               }
+
+  Attribute = element attr {
+                attribute name { xsd:string },
+                attribute prime { xsd:boolean }?
+              }
+
+  RelType = element rel {
+              attribute to { xsd:string },
+              attribute from { xsd:string }?,
+              ((PartEnt+ & Attribute*) | (Super & Sub+))
+            }
+
+  PartEnt = element part {
+              attribute ref { xsd:string },
+              attribute min { MinCardType },
+              attribute max { MaxCardType },
+              attribute weak { xsd:boolean }?
+            }
+
+  Super = element super {
+            attribute ref { xsd:string },
+            attribute total { xsd:boolean },
+            attribute disjoint { xsd:boolean }
+          }
+
+  Sub = element sub {
+          attribute ref { xsd:string }
+        }
+
+}

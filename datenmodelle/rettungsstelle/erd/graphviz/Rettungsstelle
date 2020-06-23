@@ -1,0 +1,142 @@
+graph Rettungsstelle {
+	label=Rettungsstelle
+	fontsize=20
+	node [peripheries=1 shape=box]
+	mission
+	node [label=beginTime shape=circle style=bold]
+	"mission.beginTime"
+	mission -- "mission.beginTime" [peripheries=1]
+	node [label=endTime shape=circle style=bold]
+	"mission.endTime"
+	mission -- "mission.endTime" [peripheries=1]
+	node [label=missionPlace shape=circle style=bold]
+	"mission.missionPlace"
+	mission -- "mission.missionPlace" [peripheries=1]
+	node [label=missionDesc shape=circle style=bold]
+	"mission.missionDesc"
+	mission -- "mission.missionDesc" [peripheries=1]
+	node [label=reportType shape=circle style=bold]
+	"mission.reportType"
+	mission -- "mission.reportType" [peripheries=1]
+	node [label=reportTime shape=circle style=bold]
+	"mission.reportTime"
+	mission -- "mission.reportTime" [peripheries=1]
+	node [peripheries=1 shape=box]
+	trip
+	node [label=licencePlate shape=circle]
+	"trip.licencePlate"
+	trip -- "trip.licencePlate" [peripheries=1]
+	node [label=missionNr shape=circle]
+	"trip.missionNr"
+	trip -- "trip.missionNr" [peripheries=1]
+	node [label=employeeNr shape=circle]
+	"trip.employeeNr"
+	trip -- "trip.employeeNr" [peripheries=1]
+	node [label=startAddress shape=circle]
+	"trip.startAddress"
+	trip -- "trip.startAddress" [peripheries=1]
+	node [label=targetAddress shape=circle]
+	"trip.targetAddress"
+	trip -- "trip.targetAddress" [peripheries=1]
+	node [label=distance shape=circle]
+	"trip.distance"
+	trip -- "trip.distance" [peripheries=1]
+	node [label=beginn shape=circle]
+	"trip.beginn"
+	trip -- "trip.beginn" [peripheries=1]
+	node [label=ends shape=circle]
+	"trip.ends"
+	trip -- "trip.ends" [peripheries=1]
+	node [label=missionNr1 shape=circle]
+	"trip.missionNr1"
+	trip -- "trip.missionNr1" [peripheries=1]
+	node [peripheries=1 shape=box]
+	person
+	node [label=name shape=circle]
+	"person.name"
+	person -- "person.name" [peripheries=1]
+	node [label=address shape=circle]
+	"person.address"
+	person -- "person.address" [peripheries=1]
+	node [label=birthday shape=circle]
+	"person.birthday"
+	person -- "person.birthday" [peripheries=1]
+	node [label=gender shape=circle]
+	"person.gender"
+	person -- "person.gender" [peripheries=1]
+	node [peripheries=1 shape=box]
+	employee
+	node [label=rank shape=circle style=bold]
+	"employee.rank"
+	employee -- "employee.rank" [peripheries=1]
+	node [label=schooling shape=circle style=bold]
+	"employee.schooling"
+	employee -- "employee.schooling" [peripheries=1]
+	node [label=licencePlate shape=circle style=bold]
+	"employee.licencePlate"
+	employee -- "employee.licencePlate" [peripheries=1]
+	node [label=missionNr1 shape=circle style=bold]
+	"employee.missionNr1"
+	employee -- "employee.missionNr1" [peripheries=1]
+	node [peripheries=1 shape=box]
+	patient
+	node [label=KVA shape=circle style=bold]
+	"patient.KVA"
+	patient -- "patient.KVA" [peripheries=1]
+	node [label=missionDesc shape=circle style=bold]
+	"patient.missionDesc"
+	patient -- "patient.missionDesc" [peripheries=1]
+	node [label=licencePlate shape=circle style=bold]
+	"patient.licencePlate"
+	patient -- "patient.licencePlate" [peripheries=1]
+	node [label=missionNr1 shape=circle style=bold]
+	"patient.missionNr1"
+	patient -- "patient.missionNr1" [peripheries=1]
+	node [peripheries=1 shape=box]
+	car
+	node [label=brand shape=circle style=bold]
+	"car.brand"
+	car -- "car.brand" [peripheries=1]
+	node [label=model shape=circle style=bold]
+	"car.model"
+	car -- "car.model" [peripheries=1]
+	node [label=equipment shape=circle style=bold]
+	"car.equipment"
+	car -- "car.equipment" [peripheries=1]
+	node [label=address shape=circle style=bold]
+	"car.address"
+	car -- "car.address" [peripheries=1]
+	node [peripheries=1 shape=box]
+	garage
+	node [label=licencePlate shape=circle style=bold]
+	"garage.licencePlate"
+	garage -- "garage.licencePlate" [peripheries=1]
+	node [label=carNr shape=circle style=bold]
+	"garage.carNr"
+	garage -- "garage.carNr" [peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"consists of"
+	"consists of" -- mission [label="(1, 1)" peripheries=1]
+	"consists of" -- trip [label="(0, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	joins
+	joins -- employee [label="(1, n)" peripheries=1]
+	joins -- trip [label="(0, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"is being rescued"
+	"is being rescued" -- patient [label="(1, n)" peripheries=1]
+	"is being rescued" -- trip [label="(1, 1)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"is being used"
+	"is being used" -- car [label="(1, 1)" peripheries=1]
+	"is being used" -- trip [label="(0, 1)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	has
+	has -- car [label="(1, n)" peripheries=1]
+	has -- garage [label="(1, 1)" peripheries=1]
+	node [color=black shape=triangle]
+	"is a" [style=filled]
+	"is a" -- person [peripheries=1]
+	"is a" -- patient [peripheries=1]
+	"is a" -- employee [peripheries=1]
+}

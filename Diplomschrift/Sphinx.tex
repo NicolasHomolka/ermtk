@@ -1,0 +1,155 @@
+\section{Sphinx}
+\pra
+\noindent
+Das Werkzeug \textit{Sphinx} wird verwendet, um eine Dokumentation zu erstellen. Diese wird dabei in gutem Layout automatisch generiert. Der Benutzer kann nach der Erstellung noch händische Änderungen vornehmen, falls er noch weitere Informationen zu der Dokumentation hinzufügen möchte oder der generierte Inhalt nicht korrekt ist. 
+\\
+
+\noindent
+Sphinx wurde ursprünglich für die \textit{Python Dokumentation} erstellt und bietet einige Möglichkeiten, eine Dokumentation für Softwareprojekte in verschiedenen Sprachen zu generieren \footfullcite{sphinx}. 
+\\
+
+\noindent
+Die erstellte Dokumentation kann als Dokumenttypen folgende Formate annehmen\footnotemark[31]: 
+\begin{itemize}
+	\item{HTML}
+	\item{LaTeX}
+	\item{ePub}
+	\item{Texinfo}
+	\item{Manual pages}
+	\item{plain text}
+\end{itemize}
+
+\subsection{Generierung der Dokumentation}\pra
+\noindent
+Um die Dokumentation automatisch generieren zu können, muss das Skript \verb|sphinx-quickstart| ausgeführt werden. Dieses Skript erstellt ein \textit{Source}-Verzeichnis und die Datei \textit{conf.py}, in der die sinnvollste Konfiguration angegeben wird. Diese Konfigurationsdatei wird anhand der Angaben erstellt, die in dem Befehl \verb|sphinx-quickstart| eingegeben wurden. Zum Beispiel stellt der Befehl die Frage, ob \textit{autodoc} verwendet werden soll. Diese Frage ist mit \textit{JA} zu beantworten, weil sonst die Dokumentation nicht automatisch generiert werden kann \footnotemark[31].
+\\
+
+\noindent
+Sobald dieser Befehl vollständig ausgeführt wurde, wird eine weitere Datei \textit{index.rst} erstellt. Der Zweck dieses Dokuments ist im Grunde, dass ein Deckblatt und ein Inhaltsverzeichnis generiert werden \footnotemark[31].
+\\
+
+\noindent
+Um Inhalte hinzuzufügen, können einige Features von \textit{reStructuredText} verwendet werden. Zum Beispiel kann als Richtlinie \textit{toctree} verwendet werden. \textit{toctree} kann verglichen werden mit \textit{Markup}, jedoch ist \textit{toctree} um einiges vielseitiger \footnotemark[31]. 
+\\
+
+\noindent
+Um Dokumente in die Dokumentation beziehungsweise Einträge in das Inhaltsverzeichnis hinzuzufügen müssen die jeweiligen Dateien in dem \textit{toctree} angegeben werden. Ein \textit{toctree} mit zwei Elementen sieht zum Beispiel wie folgt aus\footnotemark[31]:
+\pra
+\begin{verbatim}
+..toctree...
+  :maxdepth: 2
+  
+  usage/installation
+  usage/quickstart
+
+\end{verbatim}
+\noindent
+Um die ganze Dokumentation zu erstellen, muss der Befehl
+\begin{verbatim}
+     sphinx-build -b html sourcedir builddir
+\end{verbatim} 
+ausgeführt werden. Der Parameter \verb|-b| gibt an, in welchem Format die Dokumentation erstellt werden soll. In dem obigen Beispiel hat die Dokumentation den Dateitypen \textit{HTML}. Das Argument \verb|sourcedir| setzt den Ordner, wo die zu generierende Dokumentation enthalten ist und \verb|builddir| gibt an, wo die generierte Dokumentation gespeichert werden soll.\footfullcite{sphinx}
+\\
+
+\noindent
+Die Dokumentation kann jedoch auch mit Hilfe einer anderen Möglichkeit generiert werden. Das Skript \verb|sphinx-quickstart| erzeugt zusätzlich noch eine \textit{Makefile} und ein Dokument \textit{make.bat}. Um das \textit{Makefile} auszuführen wird folgende Anweisung benötigt\footnotemark[32]:
+\\
+
+\begin{verbatim}
+     make html
+\end{verbatim}
+\noindent
+Der Parameter \textit{html} gibt an, dass der Typ der Dokumentation eine \textit{HTML}-Datei ist. Falls jedoch nur der Befehl \verb|make| ohne weitere Parameter angegeben wird, wird eine Hilfe mit allen möglichen Zieldokumenten in dem gewünschten Ordner ausgegeben \footnotemark[32].
+\\
+\subsection{Aufbau der Dokumentation}
+\pra
+\noindent
+Das Grundgerüst der Dokumentation für das Projekt wurde mit Hilfe von Sphinx automatisch generiert. Weitere Informationen wie unter anderem Beispielaufrufe müssen per Hand geschrieben werden.
+\\
+
+\noindent
+Zu Beginn der Dokumentation befindet sich ein Deckblatt mit allen Autoren. Anschließend bietet ein Inhaltsverzeichnis eine kleine Übersicht an. Nach diesem beginnt Kapitel 1 mit einer kurzen Anleitung, wie das Projekt installiert werden kann. 
+\\
+
+\noindent
+In Kapitel 2 der Dokumentation werden alle Befehle aufgelistet, wobei jeder Befehl über eine eigene Sektion verfügt. In jeder dieser Sektionen werden ebenfalls alle gültigen Parameter sowie mindestens ein Beispielaufruf angegeben. 
+\\
+
+\noindent
+Das Projekt verfügt über zwei unterschiedliche Hauptfunktionalitäten. Diese teilen sich in das Generieren eines \textit{Entity Relationsip Diagrammes} und in das Erzeugen von \textit{Data Manipulation Language}-Kommandos auf. In der Dokumentation werden zuerst die Befehle aufgezählt, die für das Erstellen eines \textit{ERDs} verwendet werden können. Zu diesen Befehlen gehören:
+\\
+
+\noindent
+\begin{itemize}\pra
+	\item{\verb|erdgenerate|} 
+	
+	\item \verb|open|
+		
+	\item \verb|exit| 
+	
+	\item \verb|shell| 
+	
+	\item \verb|bye|
+	
+	\item \verb|list|
+	
+	\item \verb|erdfocus|
+	
+	\item \verb|blockdiagram|
+	\\
+\end{itemize}
+
+\noindent
+Nach den bereits aufgelisteten Befehlen für die Erstellung eines \textit{ERDs} werden alle Befehle zur Generierung von \textit{DML}-Kommandos aufgezählt:
+\\
+
+\noindent
+\begin{itemize} \pra
+	\item \verb|dmlgenerate|
+	
+	\item \verb|dmlform|
+	
+	\item \verb|config|
+
+	\item \verb|basex| 
+	
+	\item \verb|oracle| 
+	
+	\item \verb|postgresql|
+	
+	\item \verb|sqlite| 
+	
+	\item \verb|sqlserver|
+	
+	\item \verb|mysql|
+	\\
+\end{itemize}
+
+\noindent
+Die Sektion, die den Befehl \verb|erdgenerate| beschreibt, sieht wie folgt aus:
+
+\begin{verbatim}
+2.3.1 erdgenerate
+Generate an ERD from XERML Modell
+
+ermtk erdgenerate [-h] [-i INPUTFILE] [-n NOTATION] [-t TYP] [-a]
+                  [-c] [-g] [-p] [-d] [-v] [-l LOC] [-s] [--auto]
+Named Arguments
+    -i, --inputfile      Inputfile
+    -o, --output         Outputfile
+    -n, --notation       Takes a value to define the notation
+    -t, --typ            Attributes with types are displayed in the ERD
+    -a, --attr           The ERD displays Attributes
+    -c, --color          The ERD is colored
+    -g, --graphml        The Output-Type is a GraphML File
+    -p, --pic            The Output-Type is a PIC File
+    -d, --draw           The Output-Type is a Libre Office Draw File
+    -v, --viz            The Output-Type is a Graphviz File
+    -l, --loc            Define the output language
+    -s, --show           Shows generated Diagram in Programm
+    --auto               ERD generated with default options
+EXAMPLES
+
+    ermkt erdgenerate -i sis.xerml.xml -o sis.graphml -g
+    ermkt erdgenerate -o sis.xerml.xml -o sis.graphml -n crowfoot -g
+\end{verbatim}\pra

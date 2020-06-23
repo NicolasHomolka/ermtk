@@ -1,0 +1,214 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ger">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ERMTK &#8212; ermtk_doc  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="figure align-left">
+<img alt="_images/p185b01.png" src="_images/p185b01.png" />
+</div>
+<div class="section" id="ermtk">
+<h1>ERMTK<a class="headerlink" href="#ermtk" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The aim of our tool, is to generate an ERD from a XERML template in a few seconds.</p>
+<div class="section" id="cli">
+<h3>CLI<a class="headerlink" href="#cli" title="Permalink to this headline">¶</a></h3>
+<p>To realize our Command Line Interface (CLI) we decided to use cmd2. This Python-Package - which is a extension of the Python
+Standard Library - allows us to develop a powerful Command Line Interface.</p>
+</div>
+</div>
+<div class="section" id="structure">
+<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="help">
+<h3>1. Help<a class="headerlink" href="#help" title="Permalink to this headline">¶</a></h3>
+<p>You can also display the whole mock-up if you want to know which commands and parameters are available:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ermtk</span> <span class="o">--</span><span class="n">help</span>
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ermtk</span> <span class="o">-</span><span class="n">h</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="command">
+<h3>2. Command<a class="headerlink" href="#command" title="Permalink to this headline">¶</a></h3>
+<p>To execute the CLI use the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ermtk</span>
+</pre></div>
+</div>
+<p>This command activates the ERMTK-Repl Shell.</p>
+</div>
+<div class="section" id="inputfile-basic-execution">
+<h3>3. Inputfile/Basic Execution<a class="headerlink" href="#inputfile-basic-execution" title="Permalink to this headline">¶</a></h3>
+<p>After you have executed the command &quot;ermtk&quot; you have to type in the name of the input-file so the system knows from where
+it should take the data.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nb">open</span><span class="o">&gt;</span> <span class="s2">&quot;inputfile&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="command-list">
+<h3>4. Command &quot;list&quot;<a class="headerlink" href="#command-list" title="Permalink to this headline">¶</a></h3>
+<p>If you have used the command &quot;open&quot;, then you are able to write following commands to list
+the data of the file:</p>
+<p>Get an overview of all parameters and parameters combinations that you can use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span>
+</pre></div>
+</div>
+<p>Get all entity-types and relationship-types with all attributes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span> <span class="o">&lt;-</span><span class="nb">all</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span> <span class="o">&lt;-</span><span class="n">ent</span><span class="o">&gt;</span> <span class="o">&lt;-</span><span class="n">rel</span><span class="o">&gt;</span> <span class="o">&lt;-</span><span class="n">attr</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Get all entity-types and relationship-types:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span> <span class="o">&lt;-</span><span class="n">ent</span><span class="o">&gt;</span> <span class="o">&lt;-</span><span class="n">rel</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Get all entity-types of the file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span> <span class="o">&lt;-</span><span class="n">ent</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Get all entity-types with all their attributes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span> <span class="o">&lt;-</span><span class="n">ent</span><span class="o">&gt;</span> <span class="o">&lt;-</span><span class="n">attr</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Get all relationship-types of the file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span> <span class="o">&lt;-</span><span class="n">rel</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Get all relationship-types with their attributes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span> <span class="o">&lt;-</span><span class="n">rel</span><span class="o">&gt;</span> <span class="o">&lt;-</span><span class="n">attr</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Get a little information about the file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span> <span class="o">&lt;-</span><span class="n">inf</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="example-calls">
+<h2>Example calls<a class="headerlink" href="#example-calls" title="Permalink to this headline">¶</a></h2>
+<p>Get help:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ermtk</span> <span class="o">-</span><span class="n">h</span>
+</pre></div>
+</div>
+<p>Navigate into the file fussball.prinz.xerml.xml:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">open</span> <span class="n">fussball</span><span class="o">.</span><span class="n">prinz</span><span class="o">.</span><span class="n">xerml</span><span class="o">.</span><span class="n">xml</span>
+</pre></div>
+</div>
+<p>Get all entity-types of the file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span> <span class="o">--</span><span class="n">ent</span>
+</pre></div>
+</div>
+<p>Get all relationship-types of the file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span> <span class="o">--</span><span class="n">rel</span>
+</pre></div>
+</div>
+<p>Close the CLI:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quit</span>
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">exit</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">ermtk_doc</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Prinz Andreas.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

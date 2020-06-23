@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<desc version="0.2">
+
+    <title name="Tankstelle"/>
+    <title name="Fuel Station" lang="en"/>
+
+<typdsc entref="tankstelle">
+
+	    <attr name="plz" type="integer" class="number"/>
+    	    <attr name="flaeche" type="double" class="decimal"/>
+	    <attr name="adresse" type="string" class="address"/>
+    	
+	    <val attr="plz">98765</val>
+	    <val attr="flaeche">3700</val>
+	    <val attr="adresse">Rennstraße 77</val>
+	</typdsc>
+
+	<typdsc entref="ort">
+    	    <attr name="ortsname" type="string" class="address"/>
+	    <attr name="einwohner" type="integer" class="number"/>
+	    <attr name="bezirk" type="string" class="address"/>
+
+	    <val attr="ort">Kleinkennstenich</val>
+	    <val attr="einwohner">2000</val>
+	    <val attr="bezirk">Hirtemberg</val>
+
+	    <val attr="ort">Kleinkennstenich</val>
+	    <val attr="einwohner">2000</val>
+	    <val attr="bezirk">Hirtemberg</val>
+	</typdsc>
+
+    <typdsc entref="mitarbeiter">
+	    <attr name="pnr" type="integer" class="number"/>
+	    <attr name="name" type="string" class="name"/>
+   	 </typdsc>
+
+    <typdsc entref="tank">
+	    <attr name="nr" type="integer" class="number"/>
+	    <attr name="fassung" type="integer" class="number"/>
+	    <attr name="fuel" type="percent" class="string"/>
+
+	    <val attr="nr">3</val>
+	    <val attr="fassung">70000</val>
+	    <val attr="fuel">35%</val>
+
+	    <val attr="nr">8</val>
+	    <val attr="fassung">NULL</val>
+	    <val attr="fuel">NULL</val>
+   	</typdsc>
+
+    <typdsc entref="kraftstoff">
+	    <attr name="bezeichn" type="string" class="string"/>
+	    <attr name="oktanz" type="integer" class="number"/>
+	    <attr name="kosten" type="double" class="decimal"/>
+
+	    <val attr="bezeichn">Superbenzin bleifrei</val>
+	    <val attr="oktanz">95</val>
+	    <val attr="kosten">1.129</val>  
+    	</typdsc>
+
+	<typdsc entref="zapfsaeule">
+	    <attr name="nr" type="integer" class="number"/>
+    </typdsc>
+
+	<typdsc entref="großhaendler">
+   	    <attr name="fname" type="string" class="name"/>
+	    <attr name="anschrift" type="string" class="name"/>
+
+	    <val attr="fname">Peter Petrolius AG</val>
+	    <val attr="anschrift">NULL</val>
+    	</typdsc>
+
+	<reldsc relref = "hat tankstelle">
+		<attr name="ort" type="string" class="address"/>
+		<attr name="tankstelle" type="integer" class="number"/>
+	</reldsc>
+		
+	<reldsc relref = "hat tank">
+		<attr name="tankstelle" type="integer" class="number"/>
+		<attr name="tank" type="integer" class="number"/>
+	</reldsc>
+		
+	<reldsc relref = "hat zapf">
+		<attr name="tankstelle" type="integer" class="number"/>
+		<attr name="zapfsaeule" type="integer" class="number"/>
+	</reldsc>
+	
+    <reldsc relref="tankvorgang">
+	<attr name="menge" type="integer" class="number"/>
+	<attr name="preis" type="double" class="decimal"/>
+	<attr name="datum" type="date" class="date_time"/>
+	<attr name="uhrzeit" type="time" class="date_time"/>
+	<attr name="autoname" type="string" class="string"/>
+	<attr name="autofarbe" type="string" class="color"/>
+	<attr name="kennzeichen" type="string" class="string"/>
+
+	<val attr="menge">NULL</val>
+	<val attr="preis">NULL</val>
+	<val attr="datum">11.11.2002</val>
+	<val attr="uhrzeit">11:22</val>
+	<val attr="autoname">VW Golf</val>
+	<val attr="autofarbe">blau</val>
+	<val attr="plkennzeichen">GA UNER7</val>
+    </reldsc>
+</desc>

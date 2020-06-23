@@ -1,0 +1,62 @@
+ <loc version="0.2">
+
+       <entlo entref="mannschaft"      name-lo="team" lang="eng">
+            <attr name="name"           name-lo="name"/>
+            <attr name="gründungsjahr"  name-lo="date_establishment"/>
+            <attr name="addresse"       name-lo="adress"/>
+        </entlo>
+
+        <entlo entref="person"          name-lo="person" lang="eng">
+            <attr name="svnr"           name-lo="ssn"/>
+	        <attr name="name"           name-lo="name"/>
+	        <attr name="wohnadresse"    name-lo="adress"/>
+	        <attr name="geburtsdatum"   name-lo="birthday"/>
+        </entlo>
+
+        <entlo entref="spieler"         name-lo="player" lang="eng">
+	        <attr name="spielposition"  name-lo="position"/>
+        </entlo>
+
+        <entlo entref="spiel"           name-lo="match" lang="eng">
+            <attr name="svnr"           name-lo="ssn"/>
+	        <attr name="datum"          name-lo="dates"/>
+	        <attr name="mannschaft_heim" name-lo="home_team"/>
+	        <attr name="mannschaft_ausw" name-lo="guest_team"/>
+	        <attr name="schiedsrichter" name-lo="referee"/>
+            <attr name="tore"           name-lo="goals"/>
+            <attr name="ergebnis"       name-lo="result"/>
+        </entlo>
+
+        <entlo entref="turnier"          name-lo="tournament" lang="eng">
+	        <attr name="nummer"          name-lo="numbers"/>
+	        <attr name="name"            name-lo="name"/>
+	        <attr name="begindatum"      name-lo="start_date"/>
+	        <attr name="enddatum"        name-lo="end_date"/>
+            <attr name="mannschaften"    name-lo="teams"/>
+        </entlo>
+       
+        <entlo entref="schiedsrichter"       name-lo="referee" lang="eng">
+            <attr name="datum_prüfung"       name-lo="testing_date"/>
+            <attr name="berechtigungsklasse" name-lo="permission_class"/>
+        </entlo>
+
+        <entlo entref="tore"                 name-lo="goals" lang="eng">
+            <attr name="anzahl_tore"         name-lo="amount_goals"/>
+        </entlo>
+
+        <rello relref="spielt bei"              name-lo="plays-in" lang="eng"/>
+
+        <rello relref="spielt mit bei"          name-lo="participates in" lang="eng"/>
+
+        <rello relref="gehört zu"               name-lo="belongs-to" lang="eng"/>
+
+        <rello relref="pfeifft bei"             name-lo="whistles" lang="eng"/>
+
+        <rello relref="hat geschossen"          name-lo="shot" lang="eng"/>
+
+        <rello relref="wurden geschossen"       name-lo="were-shot" lang="eng"/>
+
+        <rello relref="ist ein"                 name-lo="is-a" lang="eng"/>
+
+
+</loc>

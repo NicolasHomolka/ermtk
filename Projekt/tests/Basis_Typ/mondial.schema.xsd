@@ -1,0 +1,1133 @@
+<?xml version="1.0" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="Mondial_Datenbank">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="Land">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Name" type="xs:string"/>
+                     <xs:element name="Code" type="xs:string"/>
+                     <xs:element name="Hauptstadt" type="xs:string"/>
+                     <xs:element name="Provinz" type="xs:string"/>
+                     <xs:element name="Gebietsgröße" type="xs:decimal"/>
+                     <xs:element name="Bevölkerung" type="xs:decimal"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Stadt">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Name" type="xs:string"/>
+                     <xs:element name="Land" type="xs:string"/>
+                     <xs:element name="Provinz" type="xs:string"/>
+                     <xs:element name="Bevölkerung" type="xs:decimal"/>
+                     <xs:element name="Breitengrad" type="xs:decimal"/>
+                     <xs:element name="Längengrad" type="xs:decimal"/>
+                     <xs:element name="Höhe" type="xs:decimal"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Provinz">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Name" type="xs:string"/>
+                     <xs:element name="Land" type="xs:string"/>
+                     <xs:element name="Bevölkerung" type="xs:decimal"/>
+                     <xs:element name="Gebietsgröße" type="xs:decimal"/>
+                     <xs:element name="Hauptstadt" type="xs:string"/>
+                     <xs:element name="HauptProvinz" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Wirtschaft">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Land" type="xs:string"/>
+                     <xs:element name="BIP" type="xs:decimal"/>
+                     <xs:element name="Landwirtschaft" type="xs:decimal"/>
+                     <xs:element name="Dienstleistungen" type="xs:decimal"/>
+                     <xs:element name="Industrie" type="xs:decimal"/>
+                     <xs:element name="Inflation" type="xs:decimal"/>
+                     <xs:element name="Arbeitslosigkeit" type="xs:decimal"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Bevölkerung">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Land" type="xs:string"/>
+                     <xs:element name="Bevölkerungswachstum" type="xs:decimal"/>
+                     <xs:element name="Kindersterblichkeitsrate" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Politik">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Land" type="xs:string"/>
+                     <xs:element name="Unabhängigkeit" type="xs:date"/>
+                     <xs:element name="WarAbhängig" type="xs:string"/>
+                     <xs:element name="Abhängig" type="xs:string"/>
+                     <xs:element name="Regierung" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Sprache">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Land" type="xs:string"/>
+                     <xs:element name="Name" type="xs:string"/>
+                     <xs:element name="Prozentsatz" type="xs:decimal"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Religion">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Land" type="xs:string"/>
+                     <xs:element name="Name" type="xs:string"/>
+                     <xs:element name="Prozentsatz" type="xs:decimal"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="EthnischeGruppe">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Land" type="xs:string"/>
+                     <xs:element name="Name" type="xs:string"/>
+                     <xs:element name="Prozentsatz" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="LandesBevölkerung">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Land" type="xs:string"/>
+                     <xs:element name="Jahr" type="xs:decimal"/>
+                     <xs:element name="Bevölkerung" type="xs:decimal"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="andererLändername">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Land" type="xs:string"/>
+                     <xs:element name="andererName" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="ProvinzBevölkerung">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Provinz" type="xs:string"/>
+                     <xs:element name="Land" type="xs:string"/>
+                     <xs:element name="Jahr" type="xs:decimal"/>
+                     <xs:element name="Bevölkerung" type="xs:decimal"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="andererProvinzname">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Provinz" type="xs:string"/>
+                     <xs:element name="Land" type="xs:string"/>
+                     <xs:element name="andererName" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="lokalerProvinzname">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Provinz" type="xs:string"/>
+                     <xs:element name="Land" type="xs:string"/>
+                     <xs:element name="lokalerName" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="StadtBevölkerung">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Stadt" type="xs:string"/>
+                     <xs:element name="Land" type="xs:string"/>
+                     <xs:element name="Provinz" type="xs:string"/>
+                     <xs:element name="Jahr" type="xs:decimal"/>
+                     <xs:element name="Bevölkerung" type="xs:decimal"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="andererStadtName">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Stadt" type="xs:string"/>
+                     <xs:element name="Land" type="xs:string"/>
+                     <xs:element name="Provinz" type="xs:string"/>
+                     <xs:element name="andererName" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="lokalerStadtName">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Stadt" type="xs:string"/>
+                     <xs:element name="Land" type="xs:string"/>
+                     <xs:element name="Provinz" type="xs:string"/>
+                     <xs:element name="lokalerName" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Kontinent">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Name" type="xs:string"/>
+                     <xs:element name="Gebietsgröße" type="xs:decimal"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Organisation">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Abkürzung" type="xs:string"/>
+                     <xs:element name="Name" type="xs:string"/>
+                     <xs:element name="Stadt" type="xs:string"/>
+                     <xs:element name="Land" type="xs:string"/>
+                     <xs:element name="Provinz" type="xs:string"/>
+                     <xs:element name="Etabliert" type="xs:date"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Berg">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Name" type="xs:string"/>
+                     <xs:element name="Berge" type="xs:string"/>
+                     <xs:element name="Höhe" type="xs:decimal"/>
+                     <xs:element name="Typ" type="xs:string"/>
+                     <xs:element name="Koordinaten" type="xs:decimal"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Wüste">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Name" type="xs:string"/>
+                     <xs:element name="Gebietsgröße" type="xs:decimal"/>
+                     <xs:element name="Koordinaten" type="xs:decimal"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Insel">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Name" type="xs:string"/>
+                     <xs:element name="Inseln" type="xs:string"/>
+                     <xs:element name="Gebietsgröße" type="xs:decimal"/>
+                     <xs:element name="Höhe" type="xs:decimal"/>
+                     <xs:element name="Typ" type="xs:string"/>
+                     <xs:element name="Koordinaten" type="xs:decimal"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="See">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Name" type="xs:string"/>
+                     <xs:element name="Fluss" type="xs:string"/>
+                     <xs:element name="Gebietsgröße" type="xs:decimal"/>
+                     <xs:element name="Höhe" type="xs:decimal"/>
+                     <xs:element name="Tiefe" type="xs:decimal"/>
+                     <xs:element name="Typ" type="xs:string"/>
+                     <xs:element name="Koordinaten" type="xs:decimal"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Meer">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Name" type="xs:string"/>
+                     <xs:element name="Gebietsgröße" type="xs:decimal"/>
+                     <xs:element name="Tiefe" type="xs:decimal"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Fluss">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Name" type="xs:string"/>
+                     <xs:element name="Fluss" type="xs:string"/>
+                     <xs:element name="See" type="xs:string"/>
+                     <xs:element name="Meer" type="xs:string"/>
+                     <xs:element name="Länge" type="xs:decimal"/>
+                     <xs:element name="Gebietsgröße" type="xs:decimal"/>
+                     <xs:element name="Quelle" type="xs:decimal"/>
+                     <xs:element name="Berge" type="xs:string"/>
+                     <xs:element name="QuellenHöhe" type="xs:decimal"/>
+                     <xs:element name="Mündung" type="xs:decimal"/>
+                     <xs:element name="Mündungshöhe" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Flughafen">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="IATACode" type="xs:string"/>
+                     <xs:element name="Name" type="xs:string"/>
+                     <xs:element name="Land" type="xs:string"/>
+                     <xs:element name="Stadt" type="xs:string"/>
+                     <xs:element name="Provinz" type="xs:string"/>
+                     <xs:element name="Insel" type="xs:string"/>
+                     <xs:element name="Breitengrad" type="xs:decimal"/>
+                     <xs:element name="Längengrad" type="xs:decimal"/>
+                     <xs:element name="Höhe" type="xs:decimal"/>
+                     <xs:element name="gmtZeitabweichung" type="xs:decimal"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="umfasst">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Land_Code" type="xs:string"/>
+                     <xs:element name="Kontinent_Name" type="xs:string"/>
+                     <xs:element name="Prozentsatz" type="xs:decimal"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="istMitglied">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Land_Code" type="xs:string"/>
+                     <xs:element name="Organisation_Abkürzung" type="xs:string"/>
+                     <xs:element name="Typ" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Gränze">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Land_Code" type="xs:string"/>
+                     <xs:element name="Land_Code2" type="xs:string"/>
+                     <xs:element name="Länge" type="xs:decimal"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="FlussDurch">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Fluss_Name" type="xs:string"/>
+                     <xs:element name="See_Name" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="geo_Berg">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Berg_Name" type="xs:string"/>
+                     <xs:element name="Provinz_Name" type="xs:string"/>
+                     <xs:element name="Provinz_Land" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="geo_Wüste">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Wüste_Name" type="xs:string"/>
+                     <xs:element name="Provinz_Name" type="xs:string"/>
+                     <xs:element name="Provinz_Land" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="geo_Insel">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Insel_Name" type="xs:string"/>
+                     <xs:element name="Provinz_Name" type="xs:string"/>
+                     <xs:element name="Provinz_Land" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="geo_Fluss">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Fluss_Name" type="xs:string"/>
+                     <xs:element name="Provinz_Name" type="xs:string"/>
+                     <xs:element name="Provinz_Land" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="geo_Meer">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Meer_Name" type="xs:string"/>
+                     <xs:element name="Provinz_Name" type="xs:string"/>
+                     <xs:element name="Provinz_Land" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="geo_See">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="See_Name" type="xs:string"/>
+                     <xs:element name="Provinz_Name" type="xs:string"/>
+                     <xs:element name="Provinz_Land" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="geo_Quelle">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Fluss_Name" type="xs:string"/>
+                     <xs:element name="Provinz_Name" type="xs:string"/>
+                     <xs:element name="Provinz_Land" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="geo_Mündung">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Fluss_Name" type="xs:string"/>
+                     <xs:element name="Provinz_Name" type="xs:string"/>
+                     <xs:element name="Provinz_Land" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="VerschmilztMit">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Meer_Name" type="xs:string"/>
+                     <xs:element name="Meer_Name2" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="InselIn">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Insel_Name" type="xs:string"/>
+                     <xs:element name="Meer_Name" type="xs:string"/>
+                     <xs:element name="See_Name" type="xs:string"/>
+                     <xs:element name="Fluss_Name" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="BergAufInsel">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Berg_Name" type="xs:string"/>
+                     <xs:element name="Insel_Name" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="SeeAufInsel">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="See_Name" type="xs:string"/>
+                     <xs:element name="Insel_Name" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="FlussAufInsel">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Fluss_Name" type="xs:string"/>
+                     <xs:element name="Insel_Name" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="gelegen">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Stadt_Name" type="xs:string"/>
+                     <xs:element name="Stadt_Land" type="xs:string"/>
+                     <xs:element name="Stadt_Provinz" type="xs:string"/>
+                     <xs:element name="Fluss_Name" type="xs:string"/>
+                     <xs:element name="See_Name" type="xs:string"/>
+                     <xs:element name="Meer_Name" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="gelegenIn">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Stadt_Name" type="xs:string"/>
+                     <xs:element name="Stadt_Land" type="xs:string"/>
+                     <xs:element name="Stadt_Provinz" type="xs:string"/>
+                     <xs:element name="Insel_Name" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="glauben">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Land_Code" type="xs:string"/>
+                     <xs:element name="Religion_Land" type="xs:string"/>
+                     <xs:element name="Religion_Name" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+         </xs:sequence>
+      </xs:complexType>
+      <xs:key name="PK_Code_Land">
+         <xs:selector xpath="Land/Code"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Name_Stadt">
+         <xs:selector xpath="Stadt/Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Land_Stadt">
+         <xs:selector xpath="Stadt/Land"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Provinz_Stadt">
+         <xs:selector xpath="Stadt/Provinz"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Name_Provinz">
+         <xs:selector xpath="Provinz/Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Land_Provinz">
+         <xs:selector xpath="Provinz/Land"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Land_Wirtschaft">
+         <xs:selector xpath="Wirtschaft/Land"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Land_Bevölkerung">
+         <xs:selector xpath="Bevölkerung/Land"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Land_Politik">
+         <xs:selector xpath="Politik/Land"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Land_Sprache">
+         <xs:selector xpath="Sprache/Land"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Name_Sprache">
+         <xs:selector xpath="Sprache/Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Land_Religion">
+         <xs:selector xpath="Religion/Land"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Name_Religion">
+         <xs:selector xpath="Religion/Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Land_EthnischeGruppe">
+         <xs:selector xpath="EthnischeGruppe/Land"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Name_EthnischeGruppe">
+         <xs:selector xpath="EthnischeGruppe/Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Land_LandesBevölkerung">
+         <xs:selector xpath="LandesBevölkerung/Land"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Jahr_LandesBevölkerung">
+         <xs:selector xpath="LandesBevölkerung/Jahr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Land_andererLändername">
+         <xs:selector xpath="andererLändername/Land"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Provinz_ProvinzBevölkerung">
+         <xs:selector xpath="ProvinzBevölkerung/Provinz"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Land_ProvinzBevölkerung">
+         <xs:selector xpath="ProvinzBevölkerung/Land"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Jahr_ProvinzBevölkerung">
+         <xs:selector xpath="ProvinzBevölkerung/Jahr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Provinz_andererProvinzname">
+         <xs:selector xpath="andererProvinzname/Provinz"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Land_andererProvinzname">
+         <xs:selector xpath="andererProvinzname/Land"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_andererName_andererProvinzname">
+         <xs:selector xpath="andererProvinzname/andererName"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Provinz_lokalerProvinzname">
+         <xs:selector xpath="lokalerProvinzname/Provinz"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Land_lokalerProvinzname">
+         <xs:selector xpath="lokalerProvinzname/Land"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Stadt_StadtBevölkerung">
+         <xs:selector xpath="StadtBevölkerung/Stadt"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Land_StadtBevölkerung">
+         <xs:selector xpath="StadtBevölkerung/Land"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Provinz_StadtBevölkerung">
+         <xs:selector xpath="StadtBevölkerung/Provinz"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Jahr_StadtBevölkerung">
+         <xs:selector xpath="StadtBevölkerung/Jahr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Stadt_andererStadtName">
+         <xs:selector xpath="andererStadtName/Stadt"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Land_andererStadtName">
+         <xs:selector xpath="andererStadtName/Land"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Provinz_andererStadtName">
+         <xs:selector xpath="andererStadtName/Provinz"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_andererName_andererStadtName">
+         <xs:selector xpath="andererStadtName/andererName"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Stadt_lokalerStadtName">
+         <xs:selector xpath="lokalerStadtName/Stadt"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Land_lokalerStadtName">
+         <xs:selector xpath="lokalerStadtName/Land"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Provinz_lokalerStadtName">
+         <xs:selector xpath="lokalerStadtName/Provinz"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Name_Kontinent">
+         <xs:selector xpath="Kontinent/Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Abkürzung_Organisation">
+         <xs:selector xpath="Organisation/Abkürzung"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Name_Berg">
+         <xs:selector xpath="Berg/Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Name_Wüste">
+         <xs:selector xpath="Wüste/Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Name_Insel">
+         <xs:selector xpath="Insel/Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Name_See">
+         <xs:selector xpath="See/Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Name_Meer">
+         <xs:selector xpath="Meer/Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Name_Fluss">
+         <xs:selector xpath="Fluss/Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_IATACode_Flughafen">
+         <xs:selector xpath="Flughafen/IATACode"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Land_Code_umfasst">
+         <xs:selector xpath="umfasst/Land_Code"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Kontinent_Name_umfasst">
+         <xs:selector xpath="umfasst/Kontinent_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Land_Code_istMitglied">
+         <xs:selector xpath="istMitglied/Land_Code"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Organisation_Abkürzung_istMitglied">
+         <xs:selector xpath="istMitglied/Organisation_Abkürzung"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Land_Code_Gränze">
+         <xs:selector xpath="Gränze/Land_Code"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Land_Code2_Gränze">
+         <xs:selector xpath="Gränze/Land_Code2"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Fluss_Name_FlussDurch">
+         <xs:selector xpath="FlussDurch/Fluss_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_See_Name_FlussDurch">
+         <xs:selector xpath="FlussDurch/See_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Berg_Name_geo_Berg">
+         <xs:selector xpath="geo_Berg/Berg_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Provinz_Name_geo_Berg">
+         <xs:selector xpath="geo_Berg/Provinz_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Provinz_Land_geo_Berg">
+         <xs:selector xpath="geo_Berg/Provinz_Land"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Wüste_Name_geo_Wüste">
+         <xs:selector xpath="geo_Wüste/Wüste_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Provinz_Name_geo_Wüste">
+         <xs:selector xpath="geo_Wüste/Provinz_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Provinz_Land_geo_Wüste">
+         <xs:selector xpath="geo_Wüste/Provinz_Land"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Insel_Name_geo_Insel">
+         <xs:selector xpath="geo_Insel/Insel_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Provinz_Name_geo_Insel">
+         <xs:selector xpath="geo_Insel/Provinz_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Provinz_Land_geo_Insel">
+         <xs:selector xpath="geo_Insel/Provinz_Land"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Fluss_Name_geo_Fluss">
+         <xs:selector xpath="geo_Fluss/Fluss_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Provinz_Name_geo_Fluss">
+         <xs:selector xpath="geo_Fluss/Provinz_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Provinz_Land_geo_Fluss">
+         <xs:selector xpath="geo_Fluss/Provinz_Land"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Meer_Name_geo_Meer">
+         <xs:selector xpath="geo_Meer/Meer_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Provinz_Name_geo_Meer">
+         <xs:selector xpath="geo_Meer/Provinz_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Provinz_Land_geo_Meer">
+         <xs:selector xpath="geo_Meer/Provinz_Land"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_See_Name_geo_See">
+         <xs:selector xpath="geo_See/See_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Provinz_Name_geo_See">
+         <xs:selector xpath="geo_See/Provinz_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Provinz_Land_geo_See">
+         <xs:selector xpath="geo_See/Provinz_Land"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Fluss_Name_geo_Quelle">
+         <xs:selector xpath="geo_Quelle/Fluss_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Provinz_Name_geo_Quelle">
+         <xs:selector xpath="geo_Quelle/Provinz_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Provinz_Land_geo_Quelle">
+         <xs:selector xpath="geo_Quelle/Provinz_Land"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Fluss_Name_geo_Mündung">
+         <xs:selector xpath="geo_Mündung/Fluss_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Provinz_Name_geo_Mündung">
+         <xs:selector xpath="geo_Mündung/Provinz_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Provinz_Land_geo_Mündung">
+         <xs:selector xpath="geo_Mündung/Provinz_Land"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Meer_Name_VerschmilztMit">
+         <xs:selector xpath="VerschmilztMit/Meer_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Meer_Name2_VerschmilztMit">
+         <xs:selector xpath="VerschmilztMit/Meer_Name2"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Insel_Name_InselIn">
+         <xs:selector xpath="InselIn/Insel_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Meer_Name_InselIn">
+         <xs:selector xpath="InselIn/Meer_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_See_Name_InselIn">
+         <xs:selector xpath="InselIn/See_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Fluss_Name_InselIn">
+         <xs:selector xpath="InselIn/Fluss_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Berg_Name_BergAufInsel">
+         <xs:selector xpath="BergAufInsel/Berg_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Insel_Name_BergAufInsel">
+         <xs:selector xpath="BergAufInsel/Insel_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_See_Name_SeeAufInsel">
+         <xs:selector xpath="SeeAufInsel/See_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Insel_Name_SeeAufInsel">
+         <xs:selector xpath="SeeAufInsel/Insel_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Fluss_Name_FlussAufInsel">
+         <xs:selector xpath="FlussAufInsel/Fluss_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Insel_Name_FlussAufInsel">
+         <xs:selector xpath="FlussAufInsel/Insel_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Stadt_Name_gelegen">
+         <xs:selector xpath="gelegen/Stadt_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Stadt_Land_gelegen">
+         <xs:selector xpath="gelegen/Stadt_Land"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Stadt_Provinz_gelegen">
+         <xs:selector xpath="gelegen/Stadt_Provinz"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Fluss_Name_gelegen">
+         <xs:selector xpath="gelegen/Fluss_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_See_Name_gelegen">
+         <xs:selector xpath="gelegen/See_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Meer_Name_gelegen">
+         <xs:selector xpath="gelegen/Meer_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Stadt_Name_gelegenIn">
+         <xs:selector xpath="gelegenIn/Stadt_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Stadt_Land_gelegenIn">
+         <xs:selector xpath="gelegenIn/Stadt_Land"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Stadt_Provinz_gelegenIn">
+         <xs:selector xpath="gelegenIn/Stadt_Provinz"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Insel_Name_gelegenIn">
+         <xs:selector xpath="gelegenIn/Insel_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Land_Code_glauben">
+         <xs:selector xpath="glauben/Land_Code"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Religion_Land_glauben">
+         <xs:selector xpath="glauben/Religion_Land"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Religion_Name_glauben">
+         <xs:selector xpath="glauben/Religion_Name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:keyref name="FK_Organisation_Name_to_Stadt" refer="PK_Name_Stadt">
+         <xs:selector xpath="Organisation/Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_Organisation_Land_to_Stadt" refer="PK_Land_Stadt">
+         <xs:selector xpath="Organisation/Land"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_Organisation_Provinz_to_Stadt" refer="PK_Provinz_Stadt">
+         <xs:selector xpath="Organisation/Provinz"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_Flughafen_Name_to_Stadt" refer="PK_Name_Stadt">
+         <xs:selector xpath="Flughafen/Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_Flughafen_Land_to_Stadt" refer="PK_Land_Stadt">
+         <xs:selector xpath="Flughafen/Land"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_Flughafen_Provinz_to_Stadt" refer="PK_Provinz_Stadt">
+         <xs:selector xpath="Flughafen/Provinz"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_umfasst_Land_Code_to_Land" refer="PK_Code_Land">
+         <xs:selector xpath="umfasst/Land_Code"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_umfasst_Kontinent_Name_to_Kontinent" refer="PK_Name_Kontinent">
+         <xs:selector xpath="umfasst/Kontinent_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_istMitglied_Land_Code_to_Land" refer="PK_Code_Land">
+         <xs:selector xpath="istMitglied/Land_Code"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_istMitglied_Organisation_Abkürzung_to_Organisation" refer="PK_Abkürzung_Organisation">
+         <xs:selector xpath="istMitglied/Organisation_Abkürzung"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_Gränze_Land_Code_to_Land" refer="PK_Code_Land">
+         <xs:selector xpath="Gränze/Land_Code"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_Gränze_Land_Code2_to_Land" refer="PK_Code_Land">
+         <xs:selector xpath="Gränze/Land_Code2"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_FlussDurch_Fluss_Name_to_Fluss" refer="PK_Name_Fluss">
+         <xs:selector xpath="FlussDurch/Fluss_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_FlussDurch_See_Name_to_See" refer="PK_Name_See">
+         <xs:selector xpath="FlussDurch/See_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_geo_Berg_Berg_Name_to_Berg" refer="PK_Name_Berg">
+         <xs:selector xpath="geo_Berg/Berg_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_geo_Berg_Provinz_Name_to_Provinz" refer="PK_Name_Provinz">
+         <xs:selector xpath="geo_Berg/Provinz_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_geo_Berg_Provinz_Land_to_Provinz" refer="PK_Land_Provinz">
+         <xs:selector xpath="geo_Berg/Provinz_Land"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_geo_Wüste_Wüste_Name_to_Wüste" refer="PK_Name_Wüste">
+         <xs:selector xpath="geo_Wüste/Wüste_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_geo_Wüste_Provinz_Name_to_Provinz" refer="PK_Name_Provinz">
+         <xs:selector xpath="geo_Wüste/Provinz_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_geo_Wüste_Provinz_Land_to_Provinz" refer="PK_Land_Provinz">
+         <xs:selector xpath="geo_Wüste/Provinz_Land"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_geo_Insel_Insel_Name_to_Insel" refer="PK_Name_Insel">
+         <xs:selector xpath="geo_Insel/Insel_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_geo_Insel_Provinz_Name_to_Provinz" refer="PK_Name_Provinz">
+         <xs:selector xpath="geo_Insel/Provinz_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_geo_Insel_Provinz_Land_to_Provinz" refer="PK_Land_Provinz">
+         <xs:selector xpath="geo_Insel/Provinz_Land"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_geo_Fluss_Fluss_Name_to_Fluss" refer="PK_Name_Fluss">
+         <xs:selector xpath="geo_Fluss/Fluss_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_geo_Fluss_Provinz_Name_to_Provinz" refer="PK_Name_Provinz">
+         <xs:selector xpath="geo_Fluss/Provinz_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_geo_Fluss_Provinz_Land_to_Provinz" refer="PK_Land_Provinz">
+         <xs:selector xpath="geo_Fluss/Provinz_Land"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_geo_Meer_Meer_Name_to_Meer" refer="PK_Name_Meer">
+         <xs:selector xpath="geo_Meer/Meer_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_geo_Meer_Provinz_Name_to_Provinz" refer="PK_Name_Provinz">
+         <xs:selector xpath="geo_Meer/Provinz_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_geo_Meer_Provinz_Land_to_Provinz" refer="PK_Land_Provinz">
+         <xs:selector xpath="geo_Meer/Provinz_Land"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_geo_See_See_Name_to_See" refer="PK_Name_See">
+         <xs:selector xpath="geo_See/See_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_geo_See_Provinz_Name_to_Provinz" refer="PK_Name_Provinz">
+         <xs:selector xpath="geo_See/Provinz_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_geo_See_Provinz_Land_to_Provinz" refer="PK_Land_Provinz">
+         <xs:selector xpath="geo_See/Provinz_Land"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_geo_Quelle_Fluss_Name_to_Fluss" refer="PK_Name_Fluss">
+         <xs:selector xpath="geo_Quelle/Fluss_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_geo_Quelle_Provinz_Name_to_Provinz" refer="PK_Name_Provinz">
+         <xs:selector xpath="geo_Quelle/Provinz_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_geo_Quelle_Provinz_Land_to_Provinz" refer="PK_Land_Provinz">
+         <xs:selector xpath="geo_Quelle/Provinz_Land"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_geo_Mündung_Fluss_Name_to_Fluss" refer="PK_Name_Fluss">
+         <xs:selector xpath="geo_Mündung/Fluss_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_geo_Mündung_Provinz_Name_to_Provinz" refer="PK_Name_Provinz">
+         <xs:selector xpath="geo_Mündung/Provinz_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_geo_Mündung_Provinz_Land_to_Provinz" refer="PK_Land_Provinz">
+         <xs:selector xpath="geo_Mündung/Provinz_Land"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_VerschmilztMit_Meer_Name_to_Meer" refer="PK_Name_Meer">
+         <xs:selector xpath="VerschmilztMit/Meer_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_VerschmilztMit_Meer_Name2_to_Meer" refer="PK_Name_Meer">
+         <xs:selector xpath="VerschmilztMit/Meer_Name2"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_InselIn_Insel_Name_to_Insel" refer="PK_Name_Insel">
+         <xs:selector xpath="InselIn/Insel_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_InselIn_Meer_Name_to_Meer" refer="PK_Name_Meer">
+         <xs:selector xpath="InselIn/Meer_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_InselIn_See_Name_to_See" refer="PK_Name_See">
+         <xs:selector xpath="InselIn/See_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_InselIn_Fluss_Name_to_Fluss" refer="PK_Name_Fluss">
+         <xs:selector xpath="InselIn/Fluss_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_BergAufInsel_Berg_Name_to_Berg" refer="PK_Name_Berg">
+         <xs:selector xpath="BergAufInsel/Berg_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_BergAufInsel_Insel_Name_to_Insel" refer="PK_Name_Insel">
+         <xs:selector xpath="BergAufInsel/Insel_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_SeeAufInsel_See_Name_to_See" refer="PK_Name_See">
+         <xs:selector xpath="SeeAufInsel/See_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_SeeAufInsel_Insel_Name_to_Insel" refer="PK_Name_Insel">
+         <xs:selector xpath="SeeAufInsel/Insel_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_FlussAufInsel_Fluss_Name_to_Fluss" refer="PK_Name_Fluss">
+         <xs:selector xpath="FlussAufInsel/Fluss_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_FlussAufInsel_Insel_Name_to_Insel" refer="PK_Name_Insel">
+         <xs:selector xpath="FlussAufInsel/Insel_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_gelegen_Stadt_Name_to_Stadt" refer="PK_Name_Stadt">
+         <xs:selector xpath="gelegen/Stadt_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_gelegen_Stadt_Land_to_Stadt" refer="PK_Land_Stadt">
+         <xs:selector xpath="gelegen/Stadt_Land"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_gelegen_Stadt_Provinz_to_Stadt" refer="PK_Provinz_Stadt">
+         <xs:selector xpath="gelegen/Stadt_Provinz"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_gelegen_Fluss_Name_to_Fluss" refer="PK_Name_Fluss">
+         <xs:selector xpath="gelegen/Fluss_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_gelegen_See_Name_to_See" refer="PK_Name_See">
+         <xs:selector xpath="gelegen/See_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_gelegen_Meer_Name_to_Meer" refer="PK_Name_Meer">
+         <xs:selector xpath="gelegen/Meer_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_gelegenIn_Stadt_Name_to_Stadt" refer="PK_Name_Stadt">
+         <xs:selector xpath="gelegenIn/Stadt_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_gelegenIn_Stadt_Land_to_Stadt" refer="PK_Land_Stadt">
+         <xs:selector xpath="gelegenIn/Stadt_Land"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_gelegenIn_Stadt_Provinz_to_Stadt" refer="PK_Provinz_Stadt">
+         <xs:selector xpath="gelegenIn/Stadt_Provinz"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_gelegenIn_Insel_Name_to_Insel" refer="PK_Name_Insel">
+         <xs:selector xpath="gelegenIn/Insel_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_glauben_Land_Code_to_Land" refer="PK_Code_Land">
+         <xs:selector xpath="glauben/Land_Code"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_glauben_Religion_Land_to_Religion" refer="PK_Land_Religion">
+         <xs:selector xpath="glauben/Religion_Land"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_glauben_Religion_Name_to_Religion" refer="PK_Name_Religion">
+         <xs:selector xpath="glauben/Religion_Name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+   </xs:element>
+</xs:schema>

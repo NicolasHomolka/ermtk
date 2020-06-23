@@ -1,0 +1,19 @@
+
+drop constraint fk_geeignet_referent_on_referent_pnr;
+drop constraint fk_geeignet_kurs_on_kurs_knr;
+drop constraint fk_besucht_kurs_on_kurs_knr;
+drop constraint fk_besucht_person_on_person_pnr;
+drop constraint fk_besucht_kveranst_on_kveranst_knrlfnd;
+drop constraint fk_besucht_kveranst_on_kveranst_knr;
+drop constraint fk_setzt_voraus_kurs_on_kurs_knr2;
+drop constraint fk_setzt_voraus_kurs_on_kurs_knr;
+drop constraint fk_referent_person_on_pnr;
+drop constraint fk_kveranst_kurs_on_knr;
+
+drop var geeignet;
+drop var besucht;
+drop var setzt_voraus;
+drop var referent;
+drop var person;
+drop var kveranst;
+drop var kurs;

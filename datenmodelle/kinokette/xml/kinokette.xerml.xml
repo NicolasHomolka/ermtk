@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<erm  version="0.2" >
+
+    <!-- Front Matter -->
+
+    <title name="Kinokette"/>
+    <title name="Cinema Chain" lang="en"/>
+
+    <!-- Entity-Types -->
+
+    <ent name="kino">
+        <attr name="adresse" prime="true"/>
+        <attr name="name"/>
+    </ent>
+
+    <ent name="saal">
+        <attr name="saal_nr" prime="true"/>
+    </ent>
+
+    <ent name="sitzplan">
+        <attr name="reihe" prime="true"/>
+        <attr name="sitz_nr" prime="true"/>
+        <attr name="begin" prime="true"/>
+        <attr name="vergeben"/>
+    </ent>
+
+    <ent name="ticket">
+        <attr name="begin"/>
+        <attr name="reihe"/>
+    </ent>
+
+    <ent name="zeitplan">
+        <attr name="begin" prime="true"/>
+    </ent>    
+
+    <ent name="film">
+        <attr name="titel" prime="true"/>
+        <attr name="genre"/>
+        <attr name="herstellungsjahr"/>
+        <attr name="land"/>
+        <attr name="sprache"/>
+        <attr name="dauer"/>
+        <attr name="verleih"/>
+        <attr name="altersfreigabe"/>
+    </ent>
+
+    <ent name="person">
+        <attr name="svnr" prime="true"/>
+        <attr name="nachname"/>
+        <attr name="vorname"/>
+        <attr name="nationalitaet"/>
+        <attr name="geburtsdatum"/>
+        <attr name="todesdatum"/>
+        <attr name="bemerkung"/>
+    </ent>  
+
+    <!-- Relationship-Types -->
+
+    <rel to="spielt mit">
+        <part ref="person" min="0" max="n"/>
+        <part ref="film" min="1" max="n"/>
+    </rel>
+
+    <rel to="wird gezeigt in">
+        <part ref="film" min="1" max="n"/>
+        <part ref="kino" min="0" max="n"/>
+        <attr name="von"/>
+        <attr name="bis"/>
+    </rel>
+
+    <rel to="ist Teil von">
+        <part ref="kino" min="1" max="n"/>
+        <part ref="saal" min="1" max="1" weak="true"/>
+    </rel>
+
+    <rel to="ist Sitzplan für">
+        <part ref="saal" min="1" max="n"/>
+        <part ref="sitzplan" min="1" max="n" weak="true"/>
+    </rel>
+
+    <rel to="ist Zeiplan für">
+        <part ref="saal" min="1" max="1"/>
+        <part ref="zeitplan" min="1" max="n" weak="true"/>
+    </rel>
+
+    <rel to="wird gespielt">
+        <part ref="film" min="1" max="1"/>
+        <part ref="zeitplan" min="1" max="n" weak="true"/>
+    </rel>
+
+    <rel to="leitet">
+        <part ref="film" min="1" max="n"/>
+        <part ref="person" min="1" max="1"/>
+    </rel>
+
+    <rel to="gilt für">
+        <part ref="sitzplan" min="1" max="1"/>
+        <part ref="ticket" min="1" max="n" weak="true"/>
+    </rel>
+</erm>

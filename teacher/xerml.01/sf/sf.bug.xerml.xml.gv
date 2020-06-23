@@ -1,0 +1,79 @@
+graph ER {
+  
+  // Entity types
+
+  kurs [shape=polygon, sides=4, 
+        label=<<table border="0" cellborder="0" cellspacing="0">
+                 <tr><td bgcolor="white" border="1"><b>kurs</b></td></tr>
+                 <tr><td><u>knr</u></td></tr>
+                 <tr><td>bezeichn</td></tr>
+                 <tr><td>tage</td></tr>
+                 <tr><td>preis</td></tr>
+               </table>>];
+
+  kveranst [shape=polygon, sides=4, peripheries=2, 
+            label=<<table border="0" cellborder="0" cellspacing="0">
+                     <tr><td bgcolor="white" border="1"><b>kveranst</b></td></tr>
+                     <tr><td><u>(knrlfnd)</u></td></tr>
+                     <tr><td>von</td></tr>
+                     <tr><td>bis</td></tr>
+                     <tr><td>ort</td></tr>
+                     <tr><td>plaetze</td></tr>
+                   </table>>];
+
+  person [shape=polygon, sides=4, 
+          label=<<table border="0" cellborder="0" cellspacing="0">
+                   <tr><td bgcolor="white" border="1"><b>person</b></td></tr>
+                   <tr><td><u>pnr</u></td></tr>
+                   <tr><td>fname</td></tr>
+                   <tr><td>vname</td></tr>
+                   <tr><td>ort</td></tr>
+                   <tr><td>land</td></tr>
+                 </table>>];
+
+  referent [shape=polygon, sides=4, 
+            label=<<table border="0" cellborder="0" cellspacing="0">
+                     <tr><td bgcolor="white" border="1"><b>referent</b></td></tr>
+                     <tr><td>gebdat</td></tr>
+                     <tr><td>seit</td></tr>
+                     <tr><td>titel</td></tr>
+                   </table>>];
+
+
+  // Relationship types
+
+  "setzt voraus" [shape=diamond, style=filled, fillcolor=lightgrey, fixedsize=true, width=1.00, height=0.5];
+  "setzt voraus" -- kurs [label="(0, n)", len=1.00];
+  "setzt voraus" -- kurs [label="(0, n)", len=1.00];
+
+  "abgehalten" [shape=diamond, peripheries=2, style=filled, fillcolor=lightgrey, fixedsize=true, width=1.00, height=0.5];
+  "abgehalten" -- kurs [label="(0, n)", len=1.00];
+  "abgehalten" -- kveranst [label="(1, 1)", len=1.00];
+
+  "ist ein" [shape=triangle, label="", fixedsize=true, width=0.5, height=0.35, style=filled, fillcolor=white];
+  "ist ein" -- person [dir=forward, arrowhead=vee, label="(0, 1)", len=1.00, color="black"];
+  "ist ein" -- referent [label = "(1, 1)", len=1.00];
+
+  "besucht" [shape=diamond, style=filled, fillcolor=lightgrey, fixedsize=true, width=1.00, height=0.5];
+  "besucht" -- kveranst [label="(0, n)", len=1.00];
+  "besucht" -- person [label="(0, n)", len=1.00];
+  "besucht_bezahlt" [shape=ellipse, label="bezahlt"];
+  "besucht" -- "besucht_bezahlt" [len=0.30];
+
+
+  "hält" [shape=diamond, style=filled, fillcolor=lightgrey, fixedsize=true, width=1.00, height=0.5];
+  "hält" -- kveranst [label="(0, 1)", len=1.00];
+  "hält" -- referent [label="(0, n)", len=1.00];
+
+  "geeignet" [shape=diamond, style=filled, fillcolor=lightgrey, fixedsize=true, width=1.00, height=0.5];
+  "geeignet" -- kurs [label="(0, n)", len=1.00];
+  "geeignet" -- referent [label="(1, n)", len=1.00];
+  overlap=false;
+}
+
+/* Attribute lists
+kurs(knr, bezeichn, tage, preis)
+kveranst(knrlfnd, von, bis, ort, plaetze)
+person(pnr, fname, vname, ort, land)
+referent(gebdat, seit, titel)
+*/

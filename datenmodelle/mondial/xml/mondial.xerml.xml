@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<erm version="3.0">
+
+
+	<!-- Front Matter -->
+
+	<title name="Mondial Datenbank"/>
+	<title name="Mondial Database" lang="en"/>
+
+    <ent name="Land">
+        <attr name="Land"/>
+    	<attr name="Code" prime="true"/>
+        <attr name="Hauptstadt"/>
+        <attr name="Gebietsgröße"/>
+        <attr name="Bevölkerung"/>
+        <attr name="Bevölkerungungswachstum"/>
+        <attr name="Kindersterblichkeitsrate"/>
+        <attr name="BIP"/>
+        <attr name="Landwirtschaft"/>
+        <attr name="Dienstleistungen"/>
+        <attr name="Industrie"/>
+        <attr name="Inflation"/>
+        <attr name="Arbeitslosigkeit"/>
+        <attr name="Unabhängigkeit"/>
+        <attr name="WarAbhängig"/>
+        <attr name="Abhängig"/>
+        <attr name="Regierung"/>
+    </ent>
+
+    <ent name="Provinz">
+    	<attr name="Provinz" prime="true"/>
+        <attr name="Bevölkerung"/>
+        <attr name="Gebietsgröße"/>
+        <attr name="lokaler Name"/>
+    </ent>
+
+    <ent name="Stadt">
+    	<attr name="Stadt" prime="true"/>
+        <attr name="lokaler name"/>
+        <attr name="Bevölkerung"/>
+        <attr name="Breitengrad"/>
+        <attr name="Längengrad"/>
+        <attr name="Höhe"/>
+    </ent>
+
+    <ent name="Organisation">
+		<attr name="Abkürzung" prime="true"/>
+		<attr name="Organisation"/>
+		<attr name="Etabliert"/>
+	</ent>
+
+	<ent name="Flughafen">
+		<attr name="IATACode" prime="true"/>
+		<attr name="Flughafen"/>
+		<attr name="Insel"/>
+		<attr name="Breitengrad"/>
+		<attr name="Längengrad"/>
+		<attr name="Höhe"/>
+	</ent>
+
+    <ent name="Sprache">
+        <attr name="Sprache" prime="true"/>
+    </ent>
+
+    <ent name="Ethnische Gruppe">
+        <attr name="Ethnische Gruppe" prime="true"/>
+    </ent>
+
+    <ent name="Religion">
+        <attr name="Religion" prime="true"/>
+    </ent>
+
+    <ent name="Kontinent">
+        <attr name="Kontinent" prime="true"/>
+        <attr name="Gebietsgröße"/>
+    </ent>
+
+	<ent name="Berg">
+		<attr name="Berg" prime="true"/>
+		<attr name="Berge"/>
+		<attr name="Höhe"/>
+		<attr name="Typ"/>
+		<attr name="Längengrad"/>
+        <attr name="Breitengrad"/>
+	</ent>
+
+	<ent name="Wüste">
+		<attr name="Wüste" prime="true"/>
+		<attr name="Gebietsgröße"/>
+		<attr name="Längengrad"/>
+        <attr name="Breitengrad"/>
+	</ent>
+
+	<ent name="Insel">
+		<attr name="Insel" prime="true"/>
+		<attr name="Inseln"/>
+		<attr name="Gebietsgröße"/>
+		<attr name="Höhe"/>
+		<attr name="Typ"/>
+		<attr name="Längengrad"/>
+        <attr name="Breitengrad"/>
+	</ent>
+
+	<ent name="See">
+		<attr name="See" prime="true"/>
+		<attr name="Gebietsgröße"/>
+		<attr name="Höhe"/>
+		<attr name="Tiefe"/>
+		<attr name="Typ"/>
+		<attr name="Koordinaten"/>
+	</ent>
+
+	<ent name="Meer">
+		<attr name="Meer" prime="true"/>
+		<attr name="Gebietsgröße"/>
+		<attr name="Tiefe"/>
+	</ent>
+
+	<ent name="Fluss">
+		<attr name="Fluss" prime="true"/>
+		<attr name="Länge"/>
+		<attr name="Gebietsgröße"/>
+	</ent>
+
+    <ent name="Quelle">
+		<attr name="Berg"/>
+		<attr name="Höhe"/>
+		<attr name="Längengrad"/>
+        <attr name="Breitengrad"/>
+	</ent>
+
+    <ent name="Mündung">
+		<attr name="Höhe"/>
+		<attr name="Längengrad"/>
+		<attr name="Breitengrad"/>
+	</ent>
+
+    <rel to="sprechen">
+		<part ref="Land" min="0" max="n"/>
+		<part ref="Sprache" min="0" max="1" weak="true"/>
+		<attr name="Prozentsatz"/>
+	</rel>
+
+    <rel to="gehört">
+        <part ref="Land" min="0" max="n"/>
+        <part ref="Ethnische Gruppe" min="0" max="1" weak="true"/>
+        <attr name="Prozentsatz"/>
+    </rel>
+
+    <rel to="glauben">
+        <part ref="Land" min="0" max="n"/>
+        <part ref="Religion" min="0" max="1" weak="true"/>
+        <attr name="Prozentsatz"/>
+    </rel>
+
+    <rel to="umfasst">
+        <part ref="Land" min="0" max="n"/>
+        <part ref="Kontinent" min="0" max="1" weak="true"/>
+        <attr name="Prozentsatz"/>
+    </rel>
+
+    <rel to="abhängig">
+        <part ref="Land" min="0" max="n"/>
+        <part ref="Land" min="0" max="1"/>
+    </rel>
+
+    <rel to="warabhängig">
+        <part ref="Land" min="0" max="n"/>
+        <part ref="Land" min="0" max="1"/>
+    </rel>
+
+    <rel to="istMitglied">
+		<part ref="Land" min="0" max="n"/>
+		<part ref="Organisation" min="0" max="n"/>
+		<attr name="Typ"/>
+	</rel>
+
+    <rel to="Grenze">
+		<part ref="Land" min="0" max="n"/>
+		<part ref="Land" min="0" max="n"/>
+		<attr name="Länge"/>
+	</rel>
+
+    <rel to="Provinz teil von Land">
+        <part ref="Land" min="0" max="n"/>
+        <part ref="Provinz" min="0" max="1" weak="true"/>
+    </rel>
+
+    <rel to="in Provinz">
+        <part ref="Stadt" min="0" max="1" weak="true"/>
+        <part ref="Provinz" min="0" max="n"/>
+    </rel>
+
+    <rel to="nahe">
+        <part ref="Stadt" min="0" max="n"/>
+        <part ref="Flughafen" min="0" max="n"/>
+    </rel>
+
+    <rel to="hat Quelle">
+        <part ref="Quelle" min="0" max="1" weak="true"/>
+        <part ref="Fluss" min="0" max="n"/>
+    </rel>
+
+    <rel to="hat Mündung">
+        <part ref="Mündung" min="0" max="1" weak="true"/>
+        <part ref="Fluss" min="0" max="n"/>
+    </rel>
+
+    <rel to="Wüste in Provinz">
+        <part ref="Provinz" min="0" max="n"/>
+        <part ref="Wüste" min="0" max="n"/>
+    </rel>
+
+    <rel to="Berg in Provinz">
+        <part ref="Provinz" min="0" max="n"/>
+        <part ref="Berg" min="0" max="n"/>
+    </rel>
+
+    <rel to="Insel in Provinz">
+        <part ref="Provinz" min="0" max="n"/>
+        <part ref="Insel" min="0" max="n"/>
+    </rel>
+
+    <rel to="Meer in Provinz">
+        <part ref="Provinz" min="0" max="n"/>
+        <part ref="Meer" min="0" max="n"/>
+    </rel>
+
+    <rel to="Fluss in Provinz">
+        <part ref="Provinz" min="0" max="n"/>
+        <part ref="Fluss" min="0" max="n"/>
+    </rel>
+
+    <rel to="See in Provinz">
+        <part ref="Provinz" min="0" max="n"/>
+        <part ref="See" min="0" max="n"/>
+    </rel>
+
+    <rel to="Berg auf Insel">
+        <part ref="Insel" min="0" max="n"/>
+        <part ref="Berg" min="0" max="n"/>
+    </rel>
+
+    <rel to="Insel in Meer">
+        <part ref="Insel" min="0" max="n"/>
+        <part ref="Meer" min="0" max="n"/>
+    </rel>
+
+    <rel to="Insel in Fluss">
+        <part ref="Insel" min="0" max="n"/>
+        <part ref="Fluss" min="0" max="n"/>
+    </rel>
+
+    <rel to="Insel in See">
+        <part ref="Insel" min="0" max="n"/>
+        <part ref="See" min="0" max="n"/>
+    </rel>
+
+    <rel to="Flughafen auf Insel">
+        <part ref="Insel" min="0" max="n"/>
+        <part ref="Flughafen" min="0" max="n"/>
+    </rel>
+
+    <rel to="Stadt bei Meer">
+        <part ref="Stadt" min="0" max="n"/>
+        <part ref="Meer" min="0" max="n"/>
+    </rel>
+
+    <rel to="Stadt bei Fluss">
+        <part ref="Stadt" min="0" max="n"/>
+        <part ref="Fluss" min="0" max="n"/>
+    </rel>
+
+    <rel to="Stadt bei See">
+        <part ref="Stadt" min="0" max="n"/>
+        <part ref="See" min="0" max="n"/>
+    </rel>
+
+    <rel to="mündet in See">
+        <part ref="Mündung" min="0" max="n"/>
+        <part ref="See" min="0" max="n"/>
+    </rel>
+
+    <rel to="mündet in Fluss">
+        <part ref="Mündung" min="0" max="n"/>
+        <part ref="Fluss" min="0" max="n"/>
+    </rel>
+
+    <rel to="mündet in Meer">
+        <part ref="Mündung" min="0" max="n"/>
+        <part ref="Meer" min="0" max="n"/>
+    </rel>
+
+    <rel to="Quelle in Provinz">
+        <part ref="Quelle" min="0" max="n"/>
+        <part ref="Provinz" min="0" max="n"/>
+    </rel>
+
+    <rel to="Mündung in Provinz">
+        <part ref="Quelle" min="0" max="n"/>
+        <part ref="Mündung" min="0" max="n"/>
+    </rel>
+
+    <rel to="Hauptsitz">
+		<part ref="Organisation" min="0" max="n"/>
+		<part ref="Stadt" min="0" max="n"/>
+	</rel>
+</erm>

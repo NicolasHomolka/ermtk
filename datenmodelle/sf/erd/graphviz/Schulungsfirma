@@ -1,0 +1,78 @@
+graph Schulungsfirma {
+	label=Schulungsfirma
+	fontsize=20
+	node [peripheries=1 shape=box]
+	kurs
+	node [label=bezeichn shape=circle style=bold]
+	"kurs.bezeichn"
+	kurs -- "kurs.bezeichn" [peripheries=1]
+	node [label=tage shape=circle style=bold]
+	"kurs.tage"
+	kurs -- "kurs.tage" [peripheries=1]
+	node [label=preis shape=circle style=bold]
+	"kurs.preis"
+	kurs -- "kurs.preis" [peripheries=1]
+	node [peripheries=2 shape=box]
+	kveranst
+	node [label=von shape=circle style=bold]
+	"kveranst.von"
+	kveranst -- "kveranst.von" [peripheries=1]
+	node [label=bis shape=circle style=bold]
+	"kveranst.bis"
+	kveranst -- "kveranst.bis" [peripheries=1]
+	node [label=ort shape=circle style=bold]
+	"kveranst.ort"
+	kveranst -- "kveranst.ort" [peripheries=1]
+	node [label=plaetze shape=circle style=bold]
+	"kveranst.plaetze"
+	kveranst -- "kveranst.plaetze" [peripheries=1]
+	node [peripheries=1 shape=box]
+	person
+	node [label=fname shape=circle style=bold]
+	"person.fname"
+	person -- "person.fname" [peripheries=1]
+	node [label=vname shape=circle style=bold]
+	"person.vname"
+	person -- "person.vname" [peripheries=1]
+	node [label=ort shape=circle style=bold]
+	"person.ort"
+	person -- "person.ort" [peripheries=1]
+	node [label=land shape=circle style=bold]
+	"person.land"
+	person -- "person.land" [peripheries=1]
+	node [peripheries=1 shape=box]
+	referent
+	node [label=gebdat shape=circle]
+	"referent.gebdat"
+	referent -- "referent.gebdat" [peripheries=1]
+	node [label=seit shape=circle]
+	"referent.seit"
+	referent -- "referent.seit" [peripheries=1]
+	node [label=titel shape=circle]
+	"referent.titel"
+	referent -- "referent.titel" [peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"setzt voraus"
+	"setzt voraus" -- kurs [label="(0, n)" peripheries=1]
+	"setzt voraus" -- kurs [label="(0, n)" peripheries=1]
+	node [peripheries=2 shape=diamond]
+	abgehalten
+	abgehalten -- kurs [label="(0, n)" peripheries=1]
+	abgehalten -- kveranst [label="(1, 1)" peripheries=1]
+	node [color=black shape=triangle]
+	"ist ein" [style=filled]
+	"ist ein" -- person [peripheries=1]
+	"ist ein" -- referent [peripheries=1]
+	node [peripheries=1 shape=diamond]
+	besucht
+	besucht -- kveranst [label="(0, n)" peripheries=1]
+	besucht -- person [label="(0, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"hält"
+	"hält" -- kveranst [label="(0, 1)" peripheries=1]
+	"hält" -- referent [label="(0, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	geeignet
+	geeignet -- kurs [label="(0, n)" peripheries=1]
+	geeignet -- referent [label="(1, n)" peripheries=1]
+}

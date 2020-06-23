@@ -1,0 +1,7 @@
+CLI
+===
+
+To realize our Command Line Interface (CLI) we decided to use **cmd2**. This Python-Package - which is a
+extension of the Python Standard Library - allows us to develop a powerful Command Line Interface. If you want
+to learn more about **cmd2**, click `here <https://cmd2.readthedocs.io/en/latest/>`_ to get to a detailed
+documentation.

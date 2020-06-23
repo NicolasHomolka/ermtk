@@ -1,0 +1,58 @@
+\section{Schulinformationssystem}
+\prc
+
+Das Testmodell ,,Schulinformationssystem'' soll das Datenmodell für eine HTL abbilden. Dabei waren folgenden Punkte aus dem Skriptum \cite{skriptum} zu berücksichtigen:
+
+\begin{enumerate}
+	\item Die abteilungsweise Gliederung einer HTL ist wiederzugegeben.
+	\item Jeder Lehrer ist einer Abteilung als Stammabteilung zugeordnet, kann aber auch in Klassen anderer Abteilungen unterrichten. Jede Abteilung wird von einem Lehrer als Abteilungsvorstand geleitet.
+	\item Für jede Ausbildungsform der Abteilungen ist im Lehrplan festgehalten, welche Gegenstände in welchen
+	Jahrgängen, in welchem Ausmaß (Theorie- und Übungsstunden) unterrichtet werden müssen.
+	\item Die Klassen eines Schuljahres werden von den Lehrern in den einzelnen Gegenständen in einem bestimmten
+	Stundenausmaß (Theorie- und Übungsstunden) unterrichtet.
+	\item Jeder Schüler wird mit einer Semester- und einer Jahresnote pro Klasse und Gegenstand beurteilt. In dem
+	System sollen diese Informationen für mehrere Schuljahre festgehalten werden können.
+	\item Die Klassenvorstände der verschiedenen Klassen sollen feststellbar sein, ebenso von welchem Schüler welche Funktionen (Klassensprecher, Kassier, etc.) ausgeübt werden oder wurden.
+	\item Die Entlohnung der Lehrer erfolgt nicht nach gehaltenen Stunden, sondern nach gehaltenen Werteinheiten:
+	jeder Gegenstand ist einer bestimmten Lehrverpflichtungsgruppe (LVG) (I bis VI) zugeordnet. Für jede LVG
+	ist ein Faktor (1,167 bis 0,75) festgelegt, der zur Umrechnung von Stunden in Werteinheiten herangezogen
+	wird.
+	\item Für jeden Schüler ist ein Erziehungsberechtigter verantwortlich (sofern der Schüler nicht eigenberechtigt
+	ist). Wenn Geschwister die Schule besuchen, soll dies ebenfalls ermittelt werden können.
+	\\
+\end{enumerate} 
+
+\noindent
+Diese Punkte ließen auf die folgenden Entitytypen schließen:
+
+\begin{multicols}{2}
+	\begin{itemize}
+		\item Person
+		\item Lehrer
+		\item Schüler
+		\item Abteilung
+		\item Gegenstand
+		\item Klasse
+		\item Lehrverpflichtungsgruppe
+		\item Lehrplan
+	\end{itemize}
+\end{multicols}
+
+\noindent
+Um das Datenmodell vollständig abzubilden sind auch Beziehungen zwischen den Entiytypen nötig. Um zum Beispiel den 2. Punkt der Aufgabe zu realisieren, wurden folgende Beziehungstypen definiert:
+
+\begin{lstlisting}[language=XML, caption={XERML-Definition von Punkt 2 der Angabe}]
+<!-- Punkt 2-->
+<rel to="gehört zu">
+   <part ref="Lehrer" min="1" max="1"/>
+   <part ref="Abteilung" min="1" max="n"/>
+</rel>
+
+<rel to="wird geleitet" from="leitet">
+   <part ref="Abteilung" min="1" max="1"/>
+   <part ref="Lehrer" min="0" max="1"/>
+</rel>
+\end{lstlisting}
+
+\noindent
+Die komplette Umsetzung des Datenmodells befindet sich im Anhang.

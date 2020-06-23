@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<loc version="0.2">
+
+    <title name="mission"/>
+    <title name="einsatz" lang="de"/>
+
+    <entlo entref="mission" name-lo="einsatz" lang="de">
+        <attr name="missionNr"       name-lo="EinsatzNr"/>
+        <attr name="beginTime"       name-lo="anfangsZeit"/>
+        <attr name="endTime"         name-lo="endZeit"/>
+        <attr name="missionPlace"    name-lo="einsatzOrt"/>
+        <attr name="missionDesc"     name-lo="einsatzBeschreibung"/>
+        <attr name="reportType"      name-lo="meldungsArt"/>
+        <attr name="reportTime"      name-lo="meldungsZeit"/>
+    </entlo>
+
+    <entlo entref="trip" name-lo="fahrt" lang="de">
+        <attr name="licencePlate"  name-lo="kenntzeichen"/>
+        <attr name="missionNr"     name-lo="einsatzNr"/>
+        <attr name="employeeNr"    name-lo="angestelltenNr"/>
+        <attr name="startAddress"  name-lo="startAdresse"/>
+        <attr name="targetAddress" name-lo="zielAdresse"/>
+        <attr name="distance"      name-lo="entfernung"/>
+        <attr name="beginn"         name-lo="starts"/>
+        <attr name="ends"           name-lo="ende"/>
+        <attr name="missionNr1"    name-lo="einsatzNr1"/>
+    </entlo>
+
+    <entlo entref="person" name-lo="person" lang="de">
+        <attr name="name"         name-lo="name"/>
+        <attr name="address"      name-lo="adresse"/>
+        <attr name="birthday"     name-lo="geburtstag"/>
+        <attr name="gender"       name-lo="geschlecht"/>
+    </entlo>
+
+    <entlo entref="employee" name-lo="angestellter" lang="de">
+        <attr name="employeeNr"   name-lo="mitarbeiterNr"/>
+        <attr name="rank"         name-lo="rang"/>
+        <attr name="schooling"    name-lo="schulung"/>
+        <attr name="licencePlate" name-lo="kenntzeichen"/>
+        <attr name="missionNr1"   name-lo="einsatzNr1"/>
+    </entlo>
+
+    <entlo entref="patient" name-lo="patient" lang="de">
+        <attr name="SSN"          name-lo="SVN"/>
+        <attr name="KVA"          name-lo="KVA"/>
+        <attr name="missionDesc"  name-lo="einsatzBeschreibung"/>
+        <attr name="licencePlate" name-lo="kenntzeichen"/>
+        <attr name="missionNr1"   name-lo="einsatzNr1"/>
+    </entlo>
+
+    <entlo entref="car" name-lo="auto" lang="de">
+        <attr name="licencePlate" name-lo="kenntzeichen"/>
+        <attr name="brand"        name-lo="marke"/>
+        <attr name="model"        name-lo="model"/>
+        <attr name="equipment"    name-lo="ausstattung"/>
+        <attr name="address"      name-lo="adresse"/>
+    </entlo>
+
+    <entlo entref="garage" name-lo="garage" lang="de">
+        <attr name="address"      name-lo="adresse"/>
+        <attr name="licencePlate" name-lo="kenntzeichen"/>
+        <attr name="carNr"        name-lo="autoNr"/>
+    </entlo>
+
+    <rello relref="consists of" name-lo="besteht aus" lang="de"/>
+
+    <rello relref="joins" name-lo="nimmt teil" lang="de"/>
+
+    <rello relref="is being rescued" name-lo="wird gerettet" lang="de"/>
+
+    <rello relref="is being used" name-lo="wird verwendet" lang="de"/>
+
+    <rello relref="has" name-lo="hat" lang="de"/>
+
+    <rello relref="is a" name-lo="ist ein" lang="de"/>
+</loc>

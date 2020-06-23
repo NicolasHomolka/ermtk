@@ -1,0 +1,35 @@
+job1:
+  script: 
+    - "#!/bin/bash"
+    - "rm -rf *.aux"
+    - "rm -rf *.lof"
+    - "rm -rf *.lot"
+    - "rm -rf *.out"
+    - "rm -rf *.toc"
+    - "rm -rf *.bbl"
+    - "rm -rf *.blg"
+    - "rm -rf *.brf"
+    - "rm -rf *.idx"
+    - "rm -rf *.glo"
+    - "rm -rf *.ist"
+    - "rm -rf *.glg"
+    - "rm -rf *.gls"
+    - if texliveonfly --compiler=pdflatex _Diplomarbeit.tex
+    - then echo Ignore Errors on first run
+    - fi
+    - if texfot pdflatex -shell-escape -file-line-error -interaction=nonstopmode _Diplomarbeit
+    - then echo Errors on second run
+    - fi
+    - if biber _Diplomarbeit
+    - then echo Errors creating the bibliography
+    - fi
+    - if makeglossaries _Diplomarbeit
+    - then echo Errors creating the glossary
+    - fi
+    - if texfot pdflatex -shell-escape -file-line-error -interaction=nonstopmode _Diplomarbeit
+    - then echo Errors on third run
+    - fi
+    - if texfot pdflatex -shell-escape -file-line-error -interaction=nonstopmode _Diplomarbeit
+    - then echo Errors on fourth run
+    - fi
+    - mv _Diplomarbeit.pdf /home/gitlab-runner/Diplomarbeiten-2018-19/$PROJEKT_NAME.pdf

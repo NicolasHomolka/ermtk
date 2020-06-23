@@ -1,0 +1,187 @@
+<?xml version="1.0" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="Fussball">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="mannschaft">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="name" type="xs:string"/>
+                     <xs:element name="gründungsjahr" type="xs:string"/>
+                     <xs:element name="adresse" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="person">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="svnr" type="xs:string"/>
+                     <xs:element name="name" type="xs:string"/>
+                     <xs:element name="wohnadresse" type="xs:string"/>
+                     <xs:element name="geburtsdatum" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="spieler">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="spielposition" type="xs:string"/>
+                     <xs:element name="svnr" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="spiel">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="spielort" type="xs:string"/>
+                     <xs:element name="datum" type="xs:string"/>
+                     <xs:element name="mannschaft_heim" type="xs:string"/>
+                     <xs:element name="mannschaft_ausw" type="xs:string"/>
+                     <xs:element name="schiedsrichter" type="xs:string"/>
+                     <xs:element name="ergebnis" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="turnier">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="nummer" type="xs:string"/>
+                     <xs:element name="name" type="xs:string"/>
+                     <xs:element name="begindatum" type="xs:string"/>
+                     <xs:element name="enddatum" type="xs:string"/>
+                     <xs:element name="mannschaften" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="schiedsrichter">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="datum_prüfung" type="xs:string"/>
+                     <xs:element name="berechtigungsklasse" type="xs:string"/>
+                     <xs:element name="svnr" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="tore">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="anzahl_tore" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="spielt_mit_bei">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="mannschaft_name" type="xs:string"/>
+                     <xs:element name="spiel_spielort" type="xs:string"/>
+                     <xs:element name="spiel_datum" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="hat_geschossen">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="spieler_svnr" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="wurden_geschossen">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="spiel_spielort" type="xs:string"/>
+                     <xs:element name="spiel_datum" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+         </xs:sequence>
+      </xs:complexType>
+      <xs:key name="PK_name_mannschaft">
+         <xs:selector xpath="mannschaft/name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_svnr_person">
+         <xs:selector xpath="person/svnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_svnr_spieler">
+         <xs:selector xpath="spieler/svnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_spielort_spiel">
+         <xs:selector xpath="spiel/spielort"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_datum_spiel">
+         <xs:selector xpath="spiel/datum"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_nummer_turnier">
+         <xs:selector xpath="turnier/nummer"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_name_turnier">
+         <xs:selector xpath="turnier/name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_svnr_schiedsrichter">
+         <xs:selector xpath="schiedsrichter/svnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_mannschaft_name_spielt_mit_bei">
+         <xs:selector xpath="spielt_mit_bei/mannschaft_name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_spiel_spielort_spielt_mit_bei">
+         <xs:selector xpath="spielt_mit_bei/spiel_spielort"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_spiel_datum_spielt_mit_bei">
+         <xs:selector xpath="spielt_mit_bei/spiel_datum"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_spieler_svnr_hat_geschossen">
+         <xs:selector xpath="hat_geschossen/spieler_svnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_spiel_spielort_wurden_geschossen">
+         <xs:selector xpath="wurden_geschossen/spiel_spielort"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_spiel_datum_wurden_geschossen">
+         <xs:selector xpath="wurden_geschossen/spiel_datum"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:keyref name="FK_spieler_svnr_to_person" refer="PK_svnr_person">
+         <xs:selector xpath="spieler/svnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_schiedsrichter_svnr_to_person" refer="PK_svnr_person">
+         <xs:selector xpath="schiedsrichter/svnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_spielt_mit_bei_mannschaft_name_to_mannschaft" refer="PK_name_mannschaft">
+         <xs:selector xpath="spielt_mit_bei/mannschaft_name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_spielt_mit_bei_spiel_spielort_to_spiel" refer="PK_spielort_spiel">
+         <xs:selector xpath="spielt_mit_bei/spiel_spielort"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_spielt_mit_bei_spiel_datum_to_spiel" refer="PK_datum_spiel">
+         <xs:selector xpath="spielt_mit_bei/spiel_datum"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_hat_geschossen_spieler_svnr_to_spieler" refer="PK_svnr_spieler">
+         <xs:selector xpath="hat_geschossen/spieler_svnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_wurden_geschossen_spiel_spielort_to_spiel" refer="PK_spielort_spiel">
+         <xs:selector xpath="wurden_geschossen/spiel_spielort"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_wurden_geschossen_spiel_datum_to_spiel" refer="PK_datum_spiel">
+         <xs:selector xpath="wurden_geschossen/spiel_datum"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+   </xs:element>
+</xs:schema>

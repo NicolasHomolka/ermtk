@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<loc version="0.2">
+
+    <title name="Tankstelle"/>
+    <title name="Fuel Station" lang="en"/>
+
+	<entlo entref="tankstelle" name-lo="fuel station" lang="en">
+	    <attr name="plz" name-lo="post code"/>
+	    <attr name="flaeche" name-lo="area"/>   
+	    <attr name="adresse" name-lo="adress"/>
+	</entlo>
+
+	<entlo entref="ort" name-lo="place" lang="en">
+    	    <attr name="ortsname" name-lo="pname"/>
+	    <attr name="einwohner" name-lo="inhabitants"/>
+	    <attr name="bezirk" name-lo="district" />
+   	 </entlo>
+
+    	<entlo entref="mitarbeiter" name-lo="employee" lang="en">
+	    <attr name="pnr" name-lo="enr"/>
+	    <attr name="name" name-lo="ename"/>
+    	</entlo>
+
+    	<entlo entref="tank" name-lo="tank" lang="en">
+		<attr name="nr" name-lo="enr"/>
+		<attr name="fassung" name-lo="capacity"/>
+		<attr name="fuel" name-lo="fuel"/>
+    	</entlo>
+
+    	<entlo entref="kraftstoff" name-lo="fuel" lang="en">
+	    <attr name="bezeichn" name-lo="descs"/>
+	    <attr name="oktanz" name-lo="otkamount"/>
+	    <attr name="kosten" name-lo="costs"/>
+   	 </entlo>
+
+    	<entlo entref="zapfsaeule" name-lo="gas pump" lang="en">
+	     <attr name="nr" name-lo="nr"/>
+    	</entlo>
+
+    	<entlo entref="großhaendler" name-lo="wholesaler" lang="en">
+   	    <attr name="fname" name-lo="fname"/>
+	    <attr name="anschrift" name-lo="address"/>
+    	</entlo>
+
+	<rello relref="hat tankstelle" name-lo="has fuel station" lang="en"/>
+	<rello relref="hat mitarbeiter" name-lo="has employee" lang="en"/>
+	<rello relref="tankkraft" name-lo="tankfuel" lang="en"/>
+	<rello relref="hat tank" name-lo="has tank" lang="en"/>
+	<rello relref="hat zapf" name-lo="has pump" lang="en"/>
+	<rello relref="vertrag vereinbaren" name-lo="settle contract" lang="en"/>
+
+	<rello relref="tankvorgang" name-lo="fuelprocess" lang="en">
+  	    <attr name="menge" name-lo="amount"/>
+	    <attr name="preis" name-lo="price"/>
+	    <attr name="datum" name-lo="dates"/>
+	    <attr name="uhrzeit" name-lo="time"/>
+	    <attr name="autoname" name-lo="carname"/>
+	    <attr name="autofarbe" name-lo="carcolor"/>
+	    <attr name="kennzeichen" name-lo="license plate"/>
+	</rello>
+</loc>

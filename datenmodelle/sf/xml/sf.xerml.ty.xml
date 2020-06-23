@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<desc version="0.2">
+
+	<title name="Schulungsfirma"/>
+    <title name="School of Music Course Database" lang="en"/>
+    
+	<typdsc entref="kurs">
+    	<attr name="knr"      type="integer"/>
+    	<attr name="bezeichn" type="char"/>
+   	 	<attr name="tage"     type="integer" min="1" max="10"/>
+        <attr name="preis"    type="rational"/>
+    
+    	<val attr="knr">9999</val>
+    	<val attr="bezeichn">Notenkunde</val>
+    	<val attr="tage">2</val>
+    	<val attr="preis">1400.00</val>
+	</typdsc>
+
+	<reldsc relref="besucht">
+    	<attr name="bezahlt" type="date"/>
+	</reldsc>
+</desc>

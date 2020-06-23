@@ -1,0 +1,45 @@
+<desc version="0.2">
+        <typdsc entref="mannschaft">
+            <attr name="name"           type="char" class="name"/>
+            <attr name="gründungsjahr"  type="integer" class="year"/>
+            <attr name="addresse"       type="char" class="address"/>
+        </typdsc>
+
+        <typdsc entref="person">
+            <attr name="svnr"           type="integer" class="number"/>
+            <attr name="name"           type="char" class="name"/>
+            <attr name="wohnadresse"    type="char" class="address"/>
+            <attr name="geburtsdatum"   type="date" class="date"/>
+        </typdsc>
+
+        <typdsc entref="spieler">
+            <attr name="spielposition"  type="char" class="name"/>
+        </typdsc>
+
+        <typdsc entref="spiel">
+            <attr name="spielort"       type="char" class="address"/>
+            <attr name="datum"          type="date" class="date"/>
+            <attr name="mannschaft_heim" type="char" class="name"/>
+            <attr name="mannschaft_ausw" type="char" class="name"/>
+            <attr name="schiedsrichter" type="char" class="name"/>
+            <attr name="tore"           type="integer" class="number"/>
+            <attr name="ergebnis"       type="char" class="name"/>
+        </typdsc>
+
+        <typdsc entref="turnier">
+            <attr name="nummer"      type="integer" class="number"/>
+            <attr name="name"        type="char" class="name"/>
+            <attr name="begindatum"  type="date" class="date"/>
+            <attr name="enddatum"    type="date" class="date"/>
+            <attr name="mannschaften" type="char" class="name"/>
+        </typdsc>
+
+         <typdsc entref="schiedsrichter">
+            <attr name="datum_prüfung"          type="date" class="date"/>
+            <attr name="berechtigungsklasse"    type="integer" class="number"/>
+        </typdsc>
+
+        <typdsc entref="tore">
+            <attr name="anzahl_tore"            type="integer" class="number"/>
+        </typdsc>
+</desc>

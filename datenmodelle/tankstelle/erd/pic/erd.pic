@@ -1,0 +1,63 @@
+.PS
+.defcolor medblue rgb #89D8D6
+boxwid=140; boxht=140;Tankvorgang: box invis "fuelprocess" at (1111, 1552);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=160;boxht= 80;Tankstelle: box shaded "medblue" at (909, 1239) "fuel station";
+boxwid=160;boxht= 80;Zapfsaeule: box shaded "medblue" at (1355, 1426) "gas pump";
+boxwid=140;boxht=60; box shaded "medblue" at (1355, 1426) "gas pump";
+boxwid=160;boxht= 80;Kraftstoff: box shaded "medblue" at (1174, 1980) "fuel";
+boxwid=140;boxht=60; box shaded "medblue" at (1174, 1980) "fuel";
+boxwid=140; boxht=140;Vertragvereinbaren: box invis "settle contract" at (605, 1220);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=160;boxht= 80;Grosshaendler: box shaded "medblue" at (341, 1199) "wholesaler";
+boxwid=140; boxht=140;Hatzapf: box invis "has pump" at (1135, 1252);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=115;boxht=115; box invis at (1135, 1252);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=140; boxht=140;Hattank: box invis "has tank" at (799, 1649);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=115;boxht=115; box invis at (799, 1649);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=160;boxht= 80;Tank: box shaded "medblue" at (745, 2072) "tank";
+boxwid=140;boxht=60; box shaded "medblue" at (745, 2072) "tank";
+boxwid=140; boxht=140;Tankkraft: box invis "tankfuel" at (976, 2231);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=115;boxht=115; box invis at (976, 2231);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=140; boxht=140;Hatmitarbeiter: box invis "has employee" at (1121, 914);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=160;boxht= 80;Mitarbeiter: box shaded "medblue" at (1324, 635) "employee";
+boxwid=140; boxht=140;Hattankstelle: box invis "has fuel station" at (805, 782);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=160;boxht= 80;Ort: box shaded "medblue" at (714, 382) "place";
+line from Hattankstelle .s to Ort .n;
+box invis at last line .center "(0,n)";
+line from Hattankstelle .n to Tankstelle .s;
+box invis at last line .center "(1,1)";
+line from Hatmitarbeiter .n to Tankstelle .s;
+box invis at last line .center "(0,n)";
+line from Hatmitarbeiter .s to Mitarbeiter .n;
+box invis at last line .center "(1,n)";
+line from Tankkraft .s to Tank .n;
+box invis at last line .center "(0,n)";
+line from Tankkraft .s to Kraftstoff .n;
+box invis at last line .center "(0,n)";
+line from Hattank .s to Tankstelle .n;
+box invis at last line .center "(0,n)";
+line from Hattank .n to Tank .s;
+box invis at last line .center "(1,1)";
+line from Hatzapf .w to Tankstelle .e;
+box invis at last line .center "(0,n)";
+line from Hatzapf .n to Zapfsaeule .s;
+box invis at last line .center "(1,1)";
+line from Vertragvereinbaren .e to Tankstelle .w;
+box invis at last line .center "(0,n)";
+line from Vertragvereinbaren .w to Grosshaendler .e;
+box invis at last line .center "(0,n)";
+line from Tankvorgang .s to Tankstelle .n;
+box invis at last line .center "( 1, 1)";
+line from Tankvorgang .s to Zapfsaeule .n;
+box invis at last line .center "( 1, 1)";
+line from Tankvorgang.n to Kraftstoff .w;
+box invis at last line .center "( 1, 2)";
+.PE

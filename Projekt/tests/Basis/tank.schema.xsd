@@ -1,0 +1,221 @@
+<?xml version="1.0" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="Tankstelle">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="tankstelle">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="plz" type="xs:string"/>
+                     <xs:element name="flaeche" type="xs:string"/>
+                     <xs:element name="adresse" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="ort">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="ortsname" type="xs:string"/>
+                     <xs:element name="einwohner" type="xs:string"/>
+                     <xs:element name="bezirk" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="mitarbeiter">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="pnr" type="xs:string"/>
+                     <xs:element name="name" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="tank">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="nr" type="xs:string"/>
+                     <xs:element name="fassung" type="xs:string"/>
+                     <xs:element name="fuel" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="kraftstoff">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="bezeichn" type="xs:string"/>
+                     <xs:element name="oktanz" type="xs:string"/>
+                     <xs:element name="kosten" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="zapfsaeule">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="nr" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="großhaendler">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="fname" type="xs:string"/>
+                     <xs:element name="anschrift" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="hat_mitarbeiter">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="tankstelle_plz" type="xs:string"/>
+                     <xs:element name="mitarbeiter_pnr" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="tankkraft">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="tank_nr" type="xs:string"/>
+                     <xs:element name="kraftstoff_bezeichn" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="vertrag_vereinbaren">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="tankstelle_plz" type="xs:string"/>
+                     <xs:element name="großhaendler_fname" type="xs:string"/>
+                     <xs:element name="großhaendler_anschrift" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="tankvorgang">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="tankstelle_plz" type="xs:string"/>
+                     <xs:element name="zapfsaeule_nr" type="xs:string"/>
+                     <xs:element name="kraftstoff_bezeichn" type="xs:string"/>
+                     <xs:element name="menge" type="xs:string"/>
+                     <xs:element name="preis" type="xs:string"/>
+                     <xs:element name="datum" type="xs:string"/>
+                     <xs:element name="uhrzeit" type="xs:string"/>
+                     <xs:element name="autoname" type="xs:string"/>
+                     <xs:element name="autofarbe" type="xs:string"/>
+                     <xs:element name="kennzeichen" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+         </xs:sequence>
+      </xs:complexType>
+      <xs:key name="PK_plz_tankstelle">
+         <xs:selector xpath="tankstelle/plz"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_ortsname_ort">
+         <xs:selector xpath="ort/ortsname"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_pnr_mitarbeiter">
+         <xs:selector xpath="mitarbeiter/pnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_nr_tank">
+         <xs:selector xpath="tank/nr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_bezeichn_kraftstoff">
+         <xs:selector xpath="kraftstoff/bezeichn"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_nr_zapfsaeule">
+         <xs:selector xpath="zapfsaeule/nr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_fname_großhaendler">
+         <xs:selector xpath="großhaendler/fname"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_anschrift_großhaendler">
+         <xs:selector xpath="großhaendler/anschrift"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_tankstelle_plz_hat_mitarbeiter">
+         <xs:selector xpath="hat_mitarbeiter/tankstelle_plz"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_mitarbeiter_pnr_hat_mitarbeiter">
+         <xs:selector xpath="hat_mitarbeiter/mitarbeiter_pnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_tank_nr_tankkraft">
+         <xs:selector xpath="tankkraft/tank_nr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_kraftstoff_bezeichn_tankkraft">
+         <xs:selector xpath="tankkraft/kraftstoff_bezeichn"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_tankstelle_plz_vertrag_vereinbaren">
+         <xs:selector xpath="vertrag_vereinbaren/tankstelle_plz"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_großhaendler_fname_vertrag_vereinbaren">
+         <xs:selector xpath="vertrag_vereinbaren/großhaendler_fname"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_großhaendler_anschrift_vertrag_vereinbaren">
+         <xs:selector xpath="vertrag_vereinbaren/großhaendler_anschrift"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_tankstelle_plz_tankvorgang">
+         <xs:selector xpath="tankvorgang/tankstelle_plz"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_zapfsaeule_nr_tankvorgang">
+         <xs:selector xpath="tankvorgang/zapfsaeule_nr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_kraftstoff_bezeichn_tankvorgang">
+         <xs:selector xpath="tankvorgang/kraftstoff_bezeichn"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:keyref name="FK_hat_mitarbeiter_tankstelle_plz_to_tankstelle" refer="PK_plz_tankstelle">
+         <xs:selector xpath="hat_mitarbeiter/tankstelle_plz"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_hat_mitarbeiter_mitarbeiter_pnr_to_mitarbeiter" refer="PK_pnr_mitarbeiter">
+         <xs:selector xpath="hat_mitarbeiter/mitarbeiter_pnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_tankkraft_tank_nr_to_tank" refer="PK_nr_tank">
+         <xs:selector xpath="tankkraft/tank_nr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_tankkraft_kraftstoff_bezeichn_to_kraftstoff" refer="PK_bezeichn_kraftstoff">
+         <xs:selector xpath="tankkraft/kraftstoff_bezeichn"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_vertrag_vereinbaren_tankstelle_plz_to_tankstelle" refer="PK_plz_tankstelle">
+         <xs:selector xpath="vertrag_vereinbaren/tankstelle_plz"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_vertrag_vereinbaren_großhaendler_fname_to_großhaendler" refer="PK_fname_großhaendler">
+         <xs:selector xpath="vertrag_vereinbaren/großhaendler_fname"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_vertrag_vereinbaren_großhaendler_anschrift_to_großhaendler" refer="PK_anschrift_großhaendler">
+         <xs:selector xpath="vertrag_vereinbaren/großhaendler_anschrift"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_tankvorgang_tankstelle_plz_to_tankstelle" refer="PK_plz_tankstelle">
+         <xs:selector xpath="tankvorgang/tankstelle_plz"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_tankvorgang_zapfsaeule_nr_to_zapfsaeule" refer="PK_nr_zapfsaeule">
+         <xs:selector xpath="tankvorgang/zapfsaeule_nr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_tankvorgang_kraftstoff_bezeichn_to_kraftstoff" refer="PK_bezeichn_kraftstoff">
+         <xs:selector xpath="tankvorgang/kraftstoff_bezeichn"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+   </xs:element>
+</xs:schema>

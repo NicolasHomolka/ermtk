@@ -1,0 +1,301 @@
+%!PS-Adobe-3.0
+%%Creator: groff version 1.22.3
+%%CreationDate: Wed Apr  3 17:54:37 2019
+%%DocumentNeededResources: font Times-Roman
+%%DocumentSuppliedResources: procset grops 1.22 3
+%%Pages: 2
+%%PageOrder: Ascend
+%%DocumentMedia: Default 595 842 0 () ()
+%%Orientation: Portrait
+%%EndComments
+%%BeginDefaults
+%%PageMedia: Default
+%%EndDefaults
+%%BeginProlog
+%%BeginResource: procset grops 1.22 3
+%!PS-Adobe-3.0 Resource-ProcSet
+/setpacking where{
+pop
+currentpacking
+true setpacking
+}if
+/grops 120 dict dup begin
+/SC 32 def
+/A/show load def
+/B{0 SC 3 -1 roll widthshow}bind def
+/C{0 exch ashow}bind def
+/D{0 exch 0 SC 5 2 roll awidthshow}bind def
+/E{0 rmoveto show}bind def
+/F{0 rmoveto 0 SC 3 -1 roll widthshow}bind def
+/G{0 rmoveto 0 exch ashow}bind def
+/H{0 rmoveto 0 exch 0 SC 5 2 roll awidthshow}bind def
+/I{0 exch rmoveto show}bind def
+/J{0 exch rmoveto 0 SC 3 -1 roll widthshow}bind def
+/K{0 exch rmoveto 0 exch ashow}bind def
+/L{0 exch rmoveto 0 exch 0 SC 5 2 roll awidthshow}bind def
+/M{rmoveto show}bind def
+/N{rmoveto 0 SC 3 -1 roll widthshow}bind def
+/O{rmoveto 0 exch ashow}bind def
+/P{rmoveto 0 exch 0 SC 5 2 roll awidthshow}bind def
+/Q{moveto show}bind def
+/R{moveto 0 SC 3 -1 roll widthshow}bind def
+/S{moveto 0 exch ashow}bind def
+/T{moveto 0 exch 0 SC 5 2 roll awidthshow}bind def
+/SF{
+findfont exch
+[exch dup 0 exch 0 exch neg 0 0]makefont
+dup setfont
+[exch/setfont cvx]cvx bind def
+}bind def
+/MF{
+findfont
+[5 2 roll
+0 3 1 roll
+neg 0 0]makefont
+dup setfont
+[exch/setfont cvx]cvx bind def
+}bind def
+/level0 0 def
+/RES 0 def
+/PL 0 def
+/LS 0 def
+/MANUAL{
+statusdict begin/manualfeed true store end
+}bind def
+/PLG{
+gsave newpath clippath pathbbox grestore
+exch pop add exch pop
+}bind def
+/BP{
+/level0 save def
+1 setlinecap
+1 setlinejoin
+DEFS/BPhook known{DEFS begin BPhook end}if
+72 RES div dup scale
+LS{
+90 rotate
+}{
+0 PL translate
+}ifelse
+1 -1 scale
+}bind def
+/EP{
+level0 restore
+showpage
+}def
+/DA{
+newpath arcn stroke
+}bind def
+/SN{
+transform
+.25 sub exch .25 sub exch
+round .25 add exch round .25 add exch
+itransform
+}bind def
+/DL{
+SN
+moveto
+SN
+lineto stroke
+}bind def
+/DC{
+newpath 0 360 arc closepath
+}bind def
+/TM matrix def
+/DE{
+TM currentmatrix pop
+translate scale newpath 0 0 .5 0 360 arc closepath
+TM setmatrix
+}bind def
+/RC/rcurveto load def
+/RL/rlineto load def
+/ST/stroke load def
+/MT/moveto load def
+/CL/closepath load def
+/Fr{
+setrgbcolor fill
+}bind def
+/setcmykcolor where{
+pop
+/Fk{
+setcmykcolor fill
+}bind def
+}if
+/Fg{
+setgray fill
+}bind def
+/FL/fill load def
+/LW/setlinewidth load def
+/Cr/setrgbcolor load def
+/setcmykcolor where{
+pop
+/Ck/setcmykcolor load def
+}if
+/Cg/setgray load def
+/RE{
+findfont
+dup maxlength 1 index/FontName known not{1 add}if dict begin
+{
+1 index/FID ne
+2 index/UniqueID ne
+and
+{def}{pop pop}ifelse
+}forall
+/Encoding exch def
+dup/FontName exch def
+currentdict end definefont pop
+}bind def
+/DEFS 0 def
+/EBEGIN{
+moveto
+DEFS begin
+}bind def
+/EEND/end load def
+/CNT 0 def
+/level1 0 def
+/PBEGIN{
+/level1 save def
+translate
+div 3 1 roll div exch scale
+neg exch neg exch translate
+0 setgray
+0 setlinecap
+1 setlinewidth
+0 setlinejoin
+10 setmiterlimit
+[]0 setdash
+/setstrokeadjust where{
+pop
+false setstrokeadjust
+}if
+/setoverprint where{
+pop
+false setoverprint
+}if
+newpath
+/CNT countdictstack def
+userdict begin
+/showpage{}def
+/setpagedevice{}def
+mark
+}bind def
+/PEND{
+cleartomark
+countdictstack CNT sub{end}repeat
+level1 restore
+}bind def
+end def
+/setpacking where{
+pop
+setpacking
+}if
+%%EndResource
+%%EndProlog
+%%BeginSetup
+%%BeginFeature: *PageSize Default
+<< /PageSize [ 595 842 ] /ImagingBBox null >> setpagedevice
+%%EndFeature
+%%IncludeResource: font Times-Roman
+grops begin/DEFS 1 dict def DEFS begin/u{.001 mul}bind def end/RES 72
+def/PL 841.89 def/LS false def/ENC0[/asciicircum/asciitilde/Scaron
+/Zcaron/scaron/zcaron/Ydieresis/trademark/quotesingle/Euro/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/space/exclam/quotedbl/numbersign/dollar/percent
+/ampersand/quoteright/parenleft/parenright/asterisk/plus/comma/hyphen
+/period/slash/zero/one/two/three/four/five/six/seven/eight/nine/colon
+/semicolon/less/equal/greater/question/at/A/B/C/D/E/F/G/H/I/J/K/L/M/N/O
+/P/Q/R/S/T/U/V/W/X/Y/Z/bracketleft/backslash/bracketright/circumflex
+/underscore/quoteleft/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y
+/z/braceleft/bar/braceright/tilde/.notdef/quotesinglbase/guillemotleft
+/guillemotright/bullet/florin/fraction/perthousand/dagger/daggerdbl
+/endash/emdash/ff/fi/fl/ffi/ffl/dotlessi/dotlessj/grave/hungarumlaut
+/dotaccent/breve/caron/ring/ogonek/quotedblleft/quotedblright/oe/lslash
+/quotedblbase/OE/Lslash/.notdef/exclamdown/cent/sterling/currency/yen
+/brokenbar/section/dieresis/copyright/ordfeminine/guilsinglleft
+/logicalnot/minus/registered/macron/degree/plusminus/twosuperior
+/threesuperior/acute/mu/paragraph/periodcentered/cedilla/onesuperior
+/ordmasculine/guilsinglright/onequarter/onehalf/threequarters
+/questiondown/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE
+/Ccedilla/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex
+/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis
+/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute/Thorn
+/germandbls/agrave/aacute/acircumflex/atilde/adieresis/aring/ae/ccedilla
+/egrave/eacute/ecircumflex/edieresis/igrave/iacute/icircumflex/idieresis
+/eth/ntilde/ograve/oacute/ocircumflex/otilde/odieresis/divide/oslash
+/ugrave/uacute/ucircumflex/udieresis/yacute/thorn/ydieresis]def
+/Times-Roman@0 ENC0/Times-Roman RE
+%%EndSetup
+%%Page: 1 1
+%%BeginPageSetup
+BP
+%%EndPageSetup
+/F0 10/Times-Roman@0 SF(Ist)271.624 721.096 Q .4 LW 305.784 718.896
+276.624 689.736 DL 276.696 748.056 305.856 718.896 DL 247.464 718.968
+276.624 748.128 DL 276.624 689.736 247.464 718.896 DL 415.152 792.264 MT
+0 -38.88 RL -77.832 0 RL 0 38.88 RL CL 0.537 0.847 0.839 Fr 415.152
+792.264 MT 0 -38.88 RL -77.832 0 RL 0 38.88 RL CL 0 Cg ST(Flugzeug)
+357.662 775.024 Q 215.784 694.056 MT 0 -38.88 RL -77.832 0 RL 0 38.88 RL
+CL 0.537 0.847 0.839 Fr 215.784 694.056 MT 0 -38.88 RL -77.832 0 RL 0
+38.88 RL CL 0 Cg ST(Flugzeugtyp)151.832 676.744 Q(Besitzts)429.053
+630.664 Q 474.048 628.464 444.888 599.304 DL 444.96 657.624 474.12
+628.464 DL 415.728 628.464 444.888 657.624 DL 444.888 599.304 415.728
+628.464 DL 559.296 512.904 MT 0 -38.88 RL -77.832 0 RL 0 38.88 RL CL
+0.537 0.847 0.839 Fr 559.296 512.904 MT 0 -38.88 RL -77.832 0 RL 0 38.88
+RL CL 0 Cg ST(Fluggesellschaft)487.641 495.664 Q(Flug)529.894 293.56 Q
+568.224 291.36 539.064 262.2 DL 539.064 320.52 568.224 291.36 DL 509.904
+291.36 539.064 320.52 DL 539.064 262.2 509.904 291.36 DL 510.696 136.128
+MT 0 -38.88 RL -77.832 0 RL 0 38.88 RL CL 0.537 0.847 0.839 Fr 510.696
+136.128 MT 0 -38.88 RL -77.832 0 RL 0 38.88 RL CL 0 Cg ST -.35(Ti)
+459.194 118.888 S(ck).35 E(et)-.1 E 509.184 134.688 MT 0 -36 RL -74.88 0
+RL 0 36 RL CL 0.537 0.847 0.839 Fr 509.184 134.688 MT 0 -36 RL -74.88 0
+RL 0 36 RL CL 0 Cg ST -.35(Ti)459.194 118.888 S(ck).35 E(et)-.1 E 684
+266.088 MT 0 -38.88 RL -77.832 0 RL 0 38.88 RL CL 0.537 0.847 0.839 Fr
+684 266.088 MT 0 -38.88 RL -77.832 0 RL 0 38.88 RL CL 0 Cg ST(Flughafen)
+624.845 248.776 Q(Hatein)351.854 88.288 Q 394.344 86.088 365.184 56.928
+DL 365.184 115.248 394.344 86.088 DL 336.024 86.16 365.184 115.32 DL
+365.112 56.928 335.952 86.088 DL 391.464 86.16 365.184 59.88 DL 365.112
+112.368 391.392 86.088 DL 338.904 86.088 365.184 112.368 DL 365.184
+59.808 338.904 86.088 DL 306.576 50.88 MT 0 -38.88 RL -77.832 0 RL 0
+38.88 RL CL 0.537 0.847 0.839 Fr 306.576 50.88 MT 0 -38.88 RL -77.832 0
+RL 0 38.88 RL CL 0 Cg ST -.15(Pa)248.886 33.64 S(ssagier).15 E 305.136
+49.44 MT 0 -36 RL -74.88 0 RL 0 36 RL CL 0.537 0.847 0.839 Fr 305.136
+49.44 MT 0 -36 RL -74.88 0 RL 0 36 RL CL 0 Cg ST -.15(Pa)248.886 33.64 S
+(ssagier).15 E(Besitzt)180.294 178.36 Q 223.344 176.16 194.184 147 DL
+194.184 205.32 223.344 176.16 DL 165.024 176.232 194.184 205.392 DL
+194.112 147 164.952 176.16 DL 220.464 176.232 194.184 149.952 DL 194.184
+202.44 220.464 176.16 DL 167.904 176.16 194.184 202.44 DL 194.184 149.88
+167.904 176.16 DL 149.832 317.64 MT 0 -38.88 RL -77.832 0 RL 0 38.88 RL
+CL 0.537 0.847 0.839 Fr 149.832 317.64 MT 0 -38.88 RL -77.832 0 RL 0
+38.88 RL CL 0 Cg ST(Boardkarte)88.665 300.328 Q(Sitzplatz)128.804 491.2
+Q 175.464 489 146.304 459.84 DL 146.304 518.16 175.464 489 DL 117.144
+489 146.304 518.16 DL 146.304 459.84 117.144 489 DL 110.88 317.64
+146.304 459.84 DL(\(0,n\))119.012 390.904 Q 176.832 655.104 146.304
+518.16 DL(\(1,n\))151.988 588.832 Q 110.88 317.64 146.304 459.84 DL
+(\(0,n\))119.012 390.904 Q 176.832 655.104 146.304 518.16 DL(\(1,n\))
+151.988 588.832 Q 110.952 278.76 194.184 205.392 DL(\(1,1\))142.988
+244.24 Q 267.696 50.88 194.184 147 DL(\(1,n\))221.324 101.176 Q 110.952
+278.76 194.184 205.392 DL(\(1,1\))142.988 244.24 Q 267.696 50.88 194.184
+147 DL(\(1,n\))221.324 101.176 Q 267.696 50.88 365.184 56.928 DL
+(\(1,1\))306.86 56.104 Q 471.816 97.248 365.184 115.32 DL(\(1,n\))
+408.884 108.448 Q 267.696 50.88 365.184 56.928 DL(\(1,1\))306.86 56.104
+Q 471.816 97.248 365.184 115.32 DL(\(1,n\))408.884 108.448 Q 471.744
+136.128 539.064 262.2 DL 2.5(\(1)493.36 201.328 S 2.5(,n)-2.5 G(\))-2.5
+E 520.416 474.024 539.064 320.52 DL 2.5(\(1)517.624 399.472 S 2.5(,n)
+-2.5 G(\))-2.5 E 606.168 246.648 539.064 262.2 DL 2.5(\(1)560.536
+256.552 S 2.5(,n)-2.5 G(\))-2.5 E 520.344 512.904 444.888 599.304 DL
+(\(0,1\))473.108 558.304 Q 376.2 753.312 444.888 657.624 DL(\(0,n\))
+401.036 707.704 Q 520.344 512.904 444.888 599.304 DL(\(0,1\))473.108
+558.304 Q 376.2 753.312 444.888 657.624 DL(\(0,n\))401.036 707.704 Q
+376.2 753.384 276.624 748.128 DL(\(1,n\))316.868 752.92 Q 176.832
+693.984 276.624 689.736 DL(\(1,1\))217.148 694.096 Q 376.2 753.384
+276.624 748.128 DL(\(1,n\))316.868 752.92 Q 176.832 693.984 276.624
+689.736 DL(\(1,1\))217.148 694.096 Q 0 Cg EP
+%%Page: 2 2
+%%BeginPageSetup
+BP
+%%EndPageSetup
+0 Cg EP
+%%Trailer
+end
+%%EOF

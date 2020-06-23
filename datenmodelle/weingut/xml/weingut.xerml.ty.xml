@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<desc version="0.2">
+
+    <title name="Weingut"/>
+
+
+    <typdsc entref="wein">
+        <attr name="name" type="char"/>
+        <attr name="farbe" type="char"/>
+        <attr name="jahrgang" type="integer"/>
+        <attr name="restsüße" type="float"/>
+        <attr name="erzeuger" type="char"/>
+    </typdsc>
+
+        <typdsc entref="erzeuger">
+        <attr name="name" type="char"/>
+        <attr name="adresse" type="char"/>
+        <attr name="lizenznummer" type="integer"/>
+        <attr name="anbaugebiet" type="char"/>
+    </typdsc>
+
+        <typdsc entref="anbaugebiet">
+        <attr name="name" type="char"/>
+        <attr name="region" type="char"/>
+        <attr name="land" type="char"/>
+    </typdsc>
+
+        <typdsc entref="rebsorte">
+        <attr name="name" type="char"/>
+        <attr name="farbe" type="char"/>
+    </typdsc>
+
+        <typdsc entref="lizenz">
+        <attr name="lizenznummer" type="integer"/>
+        <attr name="menge" type="float"/>
+    </typdsc>
+
+    <reldsc relref="beinhaltet">
+    	<attr name="anteil"   type="float"/>
+	</reldsc>
+
+</desc>

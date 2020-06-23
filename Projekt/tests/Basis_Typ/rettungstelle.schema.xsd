@@ -1,0 +1,128 @@
+<?xml version="1.0" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="emergency_room">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="mission">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="missionNr" type="xs:string"/>
+                     <xs:element name="beginTime" type="xs:dateTime"/>
+                     <xs:element name="endTime" type="xs:dateTime"/>
+                     <xs:element name="missionPlace" type="xs:string"/>
+                     <xs:element name="missionDesc" type="xs:string"/>
+                     <xs:element name="reportType" type="xs:string"/>
+                     <xs:element name="reportTime" type="xs:dateTime"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="trip">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="licencePlate" type="xs:string"/>
+                     <xs:element name="missionNr" type="xs:string"/>
+                     <xs:element name="employeeNr" type="xs:string"/>
+                     <xs:element name="startAddress" type="xs:string"/>
+                     <xs:element name="targetAddress" type="xs:string"/>
+                     <xs:element name="distance" type="xs:integer"/>
+                     <xs:element name="beginn" type="xs:string"/>
+                     <xs:element name="ends" type="xs:string"/>
+                     <xs:element name="missionNr1" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="person">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="name" type="xs:string"/>
+                     <xs:element name="address" type="xs:string"/>
+                     <xs:element name="birthday" type="xs:date"/>
+                     <xs:element name="gender" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="employee">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="employeeNr" type="xs:string"/>
+                     <xs:element name="rank" type="xs:integer"/>
+                     <xs:element name="schooling" type="xs:string"/>
+                     <xs:element name="licencePlate" type="xs:string"/>
+                     <xs:element name="missionNr1" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="patient">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="SSN" type="xs:string"/>
+                     <xs:element name="KVA" type="xs:string"/>
+                     <xs:element name="missionDesc" type="xs:string"/>
+                     <xs:element name="licencePlate" type="xs:string"/>
+                     <xs:element name="missionNr1" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="car">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="licencePlate" type="xs:string"/>
+                     <xs:element name="brand" type="xs:string"/>
+                     <xs:element name="model" type="xs:string"/>
+                     <xs:element name="equipment" type="xs:string"/>
+                     <xs:element name="address" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="garage">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="address" type="xs:string"/>
+                     <xs:element name="licencePlate" type="xs:string"/>
+                     <xs:element name="carNr" type="xs:integer"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="joins">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="employee_employeeNr" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+         </xs:sequence>
+      </xs:complexType>
+      <xs:key name="PK_missionNr_mission">
+         <xs:selector xpath="mission/missionNr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_employeeNr_employee">
+         <xs:selector xpath="employee/employeeNr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_SSN_patient">
+         <xs:selector xpath="patient/SSN"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_licencePlate_car">
+         <xs:selector xpath="car/licencePlate"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_address_garage">
+         <xs:selector xpath="garage/address"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_employee_employeeNr_joins">
+         <xs:selector xpath="joins/employee_employeeNr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:keyref name="FK_garage_licencePlate_to_car" refer="PK_licencePlate_car">
+         <xs:selector xpath="garage/licencePlate"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_joins_employee_employeeNr_to_employee" refer="PK_employeeNr_employee">
+         <xs:selector xpath="joins/employee_employeeNr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+   </xs:element>
+</xs:schema>

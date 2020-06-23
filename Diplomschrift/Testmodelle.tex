@@ -1,0 +1,182 @@
+\chapter{Testmodelle}
+\label{cha:Testmodelle}
+\fib{}
+\section{Überblick}
+
+\noindent
+Bei dem Projekt gab es 9 Testmodelle die wären:
+\begin{itemize}
+    \item Fußball
+    \item Kinokette
+    \item Mondial
+    \item Rettungsstelle
+    \item Schulungsfirma
+    \item Schulinformationssystem
+    \item Tankstellenkette
+    \item Weingut
+\end{itemize}
+\noindent
+
+\noindent
+Jedes dieser Testmodelle stellt eine Datenbank da. Alle 9 mussten in Form eine XERML-Datei erstellt werden um sie dann mit den vier verschiedenen Programmen zu verarbeiten. Darin sollten alle Variationen vorhanden sein z.B. Vererbungen, Abhängige-Typen usw..
+
+\noindent
+Diese XERML-Dateien können mit einem Tool eines anderen Projekts automatisch generiert werden.
+Sie bestehn in der Regel aus drei verschiedenen Dateien.
+\begin{itemize}
+    \item Grunddatei mit der Endung "xerml.xml", in dieser Datei steht der grobe Aufbau des Modells.
+    \item Sprachdatei wo verschiedene Übersetzungen enthalten sind mit der Endung "xerml.lo.xml".
+    \item Typdatei die die einzelnen Attribute einer Entity beschreibt mit der Endung "xerml.ty.xml".
+\end{itemize}
+
+
+\newpage
+\input{Schulinformationssystem.tex}
+
+\section{Rettungsstelle}
+\fib{}
+
+\noindent
+Die Rettungsstelle soll den Aufbau einer echten Rettungsstelle darstellen und dabei veranschaulichen welche Vorgänge bzw. Ressourcen miteinander in Beziehung stehen.
+Das Datenmodell der Rettungsstelle besteht aus sieben Entity-Typen:
+
+\begin{itemize}
+    \item Einsatz oder auch mission
+    \item Fahrt oder auch trip
+    \item Person oder auch person
+    \item Angestellter oder auch employee
+    \item Patient oder auch patient
+    \item Auto oder auch car
+    \item Gragage oder auch garage
+\end{itemize}
+
+\noindent
+Zwischen diesen Entity-Typen existieren sechs Relationen und jede dieser Relationen kann man mit je zwei Sätzen beschreiben.
+\begin{itemize}
+    \item Ein Einsatz besteht aus keiner oder mehreren Fahrten.\newline
+          Eine Fahrt ist Bestandteil genau eines Einsatzes.
+    \item Ein Mitarbeiter nimmt an keiner oder mehreren Fahrten teil. \newline
+          Bei einer Fahrt ist mindestens ein Mitarbeiter oder mehrere Mitarbeiter beteiligt. 
+    \item Ein Patient wird bei genau einem Einsatz gerettet. \newline
+          Bei einer Fahrt wird mindestens ein Patient oder mehrere Patienten gerettet. 
+    \item Ein Auto wird bei mindestens einer Fahrt oder mehreren Fahrten verwendet. \newline
+          Bei einer Fahrt wird genau ein Auto verwendet.
+    \item Ein Auto hat mindestens eine Garage oder mehrere Garagen. \newline
+          In einer Garage steht genau ein Auto.
+    \item Patient ist eine Person mit einer SVN, KVA, Einsatzbeschreibung, Kennzeichen, Einsatznummer. \newline
+          Angestellter ist eine Person mit einer Mittarbeiternummer, Rang, Schulung, Kennzeichen, Einsatznummer.
+\end{itemize}
+
+\noindent
+
+\newpage
+\input{Datenmodell_Fussball.tex}
+
+\section{Weingut}
+\hon{}
+\noindent
+Im Umfang der Diplomarbeit ist die Erstellung einer \textit{XERML}-Testmodells von jedem Diplomanden beinhaltet, um die zu entwickelnde Software mit den Modellen testen zu können.
+\\
+\noindent
+Gefordert ist das Modell eines Weinguts, in dem verschiedene Erzeuger diverse Weine anbieten. Jeder Erzeuger liegt in einem Anbaugebiet und hat eine Lizenz, die es dem Erzeuger ermöglicht eine bestimme Menge Wein zu erzeugen. Die Weine bestehen jeweils zu einem bestimmten Anteil aus verschiedenen Rebsorten.
+
+
+\subsection{Die Hauptdatei}
+\hon{}
+
+\noindent
+Bei der Modellierung der Hauptdatei \textit{weingut.xerml.xml} kommt es zu mehreren Varianten der \textit{Beziehungen} oder \textit{Attribute}. Um das \textit{XERML} so realistisch und einfach wie möglich zu halten, wurden folgende Annahmen getroffen:
+\begin{itemize}
+	\item Der Name des Weins ist der \textit{Primary-Key}, da es in der Realität nicht mehrere Weine mit dem selben Namen gibt. 
+	\item Der Name und die Adresse des Erzeugers bilden den \textit{Primary-Key}, da es keine Erzeuger mit demselben Namen und derselben Adresse geben kann.
+	\item Der Name und die Region des Anbaugebiets ist der \textit{Primary-Key}, da es nicht mehrere Anbaugebiete mit demselben Namen in derselben Region geben kann.
+	\item Der Name einer Rebsorte ist eindeutig und daher der alleinige \textit{Primary-Key}. 
+	\item Die Lizenznummer einer Lizenz ist eindeutig und daher der alleinige \textit{Primary-Key}.
+	
+	\item Ein bestimmter Erzeuger kann mehrere Weine erzeugen und ein bestimmter Wein kann von mehreren Erzeugern erzeugt werden. Ein Erzeuger muss allerdings mindestens einen Wein erzeugen um als Erzeuger zu gelten. Ein bestimmter Wein muss nicht zwingend hergestellt werden.
+	\item Ein bestimmter Wein muss mindestens eine Rebsorte enthalten. Eine Rebsorte muss nicht zwingend in einem Wein enthalten sein. Jede Rebsorte ist zu einem gewissen Anteil in \verb|%| in einem Wein enthalten. 
+	\item Ein bestimmter Erzeuger besitzt genau eine Lizenz. Eine Lizenz kann allerdings auch von mehreren Erzeugern besessen werden. Sie muss aber mindestens von einem besessen werden. 
+	\item Ein bestimmter Erzeuger muss in mindestens einem Anbaugebiet liegen. In einem bestimmten Anbaugebiet muss nicht zwingend ein Erzeuger anbauen. Es können allerdings mehrere darin anbauen.
+\end{itemize}
+\noindent
+\hon{}
+\\
+\noindent 
+Aufgrund dieser Annahmen ergibt sich folgendes \textit{XERML}:
+
+
+\begin{verbatim}
+<erm version="0.2">
+
+    <title name="Weingut"/>
+
+    <ent name="wein">
+        <attr name="name" prime="true"/>
+        <attr name="farbe"/>
+        <attr name="jahrgang"/>
+        <attr name="restsüße"/>
+        <attr name="erzeuger"/>
+    </ent>
+
+    <ent name="erzeuger">
+        <attr name="name" prime="true"/>
+        <attr name="adresse" prime="true"/>
+        <attr name="lizenz"/>
+        <attr name="menge"/>
+        <attr name="anbaugebiet"/>
+    </ent>
+
+    <ent name="anbaugebiet">
+        <attr name="name" prime="true"/>
+        <attr name="region" prime="true"/>
+        <attr name="land"/>
+    </ent>
+
+    <ent name="rebsorte">
+        <attr name="name" prime="true"/>
+        <attr name="farbe"/>
+    </ent>
+
+    <ent name="lizenz">
+        <attr name="lizenznummer" prime="true"/>
+        <attr name="menge"/>
+    </ent>
+
+    <rel to="erzeugt">
+        <part ref="erzeuger" min="1" max="n"/>
+        <part ref="wein" min="0" max="n"/>
+    </rel>
+
+    <rel to="beinhaltet">
+        <part ref="wein" min="1" max="n"/>
+        <part ref="rebsorte" min="0" max="n"/>
+        <attr name="anteil"/>
+    </rel>
+
+    <rel to="besitzt">
+        <part ref="erzeuger" min="1" max="1"/>
+        <part ref="lizenz" min="1" max="n"/>
+    </rel>
+
+    <rel to="liegt in einem">
+        <part ref="erzeuger" min="1" max="n"/>
+        <part ref="anbaugebiet" min="0" max="n"/>
+    </rel>
+
+</erm>
+\end{verbatim}
+
+
+
+\subsection{Die Sprachdatei}
+\hon{}
+
+\noindent
+Die Sprachdatei \textit{weingut.xerml.lo.xml} beinhaltet eine englische Übersetzung der in der deutschen Sprache geschriebenen Hauptdatei.
+
+\subsection{Die Typdatei}
+\hon{}
+
+\noindent
+Die Typdatei \textit{weingut.xerml.ty.xml} beinhaltet die Datentypen aller \textit{Attribute}. Die \textit{Attribute} Jahrgang, Lizenznummer und Lizenz haben den Datentyp \verb|Integer|. Die \textit{Attribute} Restsüße, Menge und Anteil haben den Datentypen \verb|float|. Die anderen \textit{Attribute} besitzt den Datentyp \verb|char|.
+

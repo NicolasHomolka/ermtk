@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<desc version="0.1">
+    <title name="Fluggesellschaften"/>
+    <title name="All Airways Association" lang="en"/>
+    
+	<typdsc entref="Ticket">
+    	<attr name="tnr"      type="integer" class="number"/>
+    	<attr name="ausgabedatum" type="date" class="date"/>
+   	 	<attr name="preis"     type="rational" class="number"/>
+    	<attr name="waehrung"    type="char" class="currency_code"/>
+        <attr name="vertriebsbuero"    type="string" class="company"/>
+	</typdsc>
+    
+    <typdsc entref="Passagier">
+        <attr name="pnr"      type="integer" class="number"/>
+        <attr name="name" type="string" class="name"/>
+        <attr name="anrede"     type="char" class="prefix"/>
+        <attr name="titel"    type="char" class="title"/>
+    </typdsc>
+    
+    <typdsc entref="BoardKarte">
+        <attr name="fnr"      type="integer" class="number"/>
+        <attr name="datum" type="date" class="date"/>
+        <attr name="abflughafen"     type="string" class="country"/>
+        <attr name="ankunftsflughafen"    type="string" class="country"/>
+        <attr name="name"    type="string" class="name"/>
+        <attr name="sitz"    type="string" class="number"/>
+    </typdsc>
+    
+    <typdsc entref="Flugzeugtyp">
+        <attr name="typidentifikation" type="string" class="longid"/>
+        <attr name="hersteller" type="string" class="company"/>
+        <attr name="reichweite"     type="integer" class="number"/>
+    </typdsc>
+    
+    <typdsc entref="Flugzeug">
+        <attr name="flugzeugnummer"      type="string" class="longid"/>
+        <attr name="interregnummer" type="string" class="longid"/>
+        <attr name="name"     type="string" class="name"/>
+        <attr name="startDatum"    type="date" class="date"/>
+    </typdsc>
+    
+    <typdsc entref="Fluggesellschaft">
+        <attr name="orgCode"      type="string" class="longid"/>
+        <attr name="name" type="string" class="name"/>
+        <attr name="hauptsitz"     type="string" class="city"/>
+    </typdsc>
+    
+    <typdsc entref="Flughafen">
+        <attr name="flughafennr"   type="string" class="longid"/>
+        <attr name="name" type="string" class="name"/>
+        <attr name="stadt"     type="string" class="city"/>
+        <attr name="land"    type="string" class="country"/>
+        <attr name="kapazitaet"    type="integer" class="number"/>
+    </typdsc>
+    
+
+	<reldsc relref="Sitzplatz">
+    	<attr name="klasse" type="char" class="number"/>
+        <attr name="ort"    type="string" class="longid"/>
+	</reldsc>
+</desc>

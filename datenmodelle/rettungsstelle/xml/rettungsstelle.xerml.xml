@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<erm version="0.2">
+
+    <!-- Front Matter -->
+
+    <title name="Rettungsstelle"/>
+    <title name="Hospital" lang="en"/>
+
+    <!-- Entity-Types -->
+
+    <ent name="mission">
+        <attr name="missionNr" prime="true"/>
+        <attr name="beginTime"/>
+        <attr name="endTime"/>
+        <attr name="missionPlace"/>
+        <attr name="missionDesc"/>
+        <attr name="reportType"/>
+        <attr name="reportTime"/>
+    </ent>
+
+    <ent name="trip">
+        <attr name="licencePlate"/>
+        <attr name="missionNr"/>
+        <attr name="employeeNr"/>
+        <attr name="startAddress"/>
+        <attr name="targetAddress"/>
+        <attr name="distance"/>
+        <attr name="beginn"/>
+        <attr name="ends"/>
+        <attr name="missionNr1"/>
+    </ent>
+
+    <ent name="person">
+        <attr name="name"/>
+        <attr name="address"/>
+        <attr name="birthday"/>
+        <attr name="gender"/>
+    </ent>
+
+    <ent name="employee">
+        <attr name="employeeNr" prime="true"/>
+        <attr name="rank"/>
+        <attr name="schooling"/>
+        <attr name="licencePlate"/>
+        <attr name="missionNr1"/>
+    </ent>
+
+    <ent name="patient">
+        <attr name="SSN" prime="true"/>
+        <attr name="KVA"/>
+        <attr name="missionDesc"/>
+        <attr name="licencePlate"/>
+        <attr name="missionNr1"/>
+    </ent>
+
+    <ent name="car">
+        <attr name="licencePlate" prime="true"/>
+        <attr name="brand"/>
+        <attr name="model"/>
+        <attr name="equipment"/>
+        <attr name="address"/>
+    </ent>
+
+    <ent name="garage">
+        <attr name="address" prime="true"/>
+        <attr name="licencePlate"/>
+        <attr name="carNr"/>
+    </ent>
+
+    <!-- Relationship-Types -->
+
+    <rel to="consists of">
+        <part ref="mission" min="1" max="1"/>
+        <part ref="trip"    min="0" max="n"/>
+    </rel>
+
+    <rel to="joins">
+        <part ref="employee" min="1" max="n"/>
+        <part ref="trip"     min="0" max="n"/>
+    </rel>
+
+    <rel to="is being rescued">
+        <part ref="patient" min="1" max="n"/>
+        <part ref="trip"    min="1" max="1"/>
+    </rel>
+
+    <rel to="is being used">
+        <part ref="car"  min="1" max="1"/>
+        <part ref="trip" min="0" max="1"/>
+    </rel>
+
+    <rel to="has">
+        <part ref="car"    min="1" max="n"/>
+        <part ref="garage" min="1" max="1"/>
+    </rel>
+
+    <rel to="is a">
+        <super ref="person" total="false" disjoint="true"/>
+        <sub ref="patient"/>
+        <sub ref="employee"/>
+    </rel>
+
+</erm>

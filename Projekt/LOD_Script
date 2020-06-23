@@ -1,0 +1,11 @@
+#!/bin/bash
+python3 ermtk erdgenerate -d -c -a -i weingut.homolka.xerml.xml
+python3 ermtk erdgenerate -d -c -a -i sis.passet.xerml.xml
+python3 ermtk erdgenerate -d -c -a -i fussball.prinz.xerml.xml
+python3 ermtk erdgenerate -d -c -a -i rettungsstelle.fischbacher.xerml.xml
+python3 ermtk erdgenerate -d -c -a -i sf.bug.xerml.xml
+python3 ermtk erdgenerate -d -c -a -i AAA.xerml.xml
+python3 ermtk erdgenerate -d -c -a -i kinokette.xerml.xml
+python3 ermtk erdgenerate -d -c -a -i mondial.xerml.xml
+python3 ermtk erdgenerate -d -c -a -i tank.ms.xerml.xml
+echo Skript erfolgreich ausgeführt!

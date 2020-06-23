@@ -1,0 +1,89 @@
+.PS
+.defcolor medblue rgb #89D8D6
+boxwid=140; boxht=140;Istelternteilvon: box invis "Istelternteilvon" at (350, 453);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=160;boxht= 80;Schueler: box shaded "medblue" at (347, 729) "Schueler";
+boxwid=160;boxht= 80;Person: box shaded "medblue" at (491, 264) "Person";
+boxwid=140; boxht=140;Istgeschwistervon: box invis "Istgeschwistervon" at (104, 707);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=140; boxht=140;Zugeordnet: box invis "Zugeordnet" at (474, 1581);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=160;boxht= 80;Lehrverpflichtungsgruppe: box shaded "medblue" at (373, 1823) "Lehrverpflichtungsgruppe";
+boxwid=160;boxht= 80;Gegenstand: box shaded "medblue" at (577, 1295) "Gegenstand";
+boxwid=140; boxht=140;Agiert: box invis "Agiert" at (198, 858);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=160;boxht= 80;Klasse: box shaded "medblue" at (312, 1051) "Klasse";
+boxwid=140; boxht=140;Istklassenvorstand: box invis "Istklassenvorstand" at (504, 851);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=160;boxht= 80;Lehrer: box shaded "medblue" at (684, 781) "Lehrer";
+boxwid=140; boxht=140;Note: box invis "Note" at (427, 1057);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=140; boxht=140;Unterrichtet: box invis "Unterrichtet" at (574, 1056);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=140; boxht=140;Gelistetin: box invis "Gelistetin" at (811, 1376);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=160;boxht= 80;Lehrplan: box shaded "medblue" at (1040, 1410) "Lehrplan";
+boxwid=140; boxht=140;Verwendet: box invis "Verwendet" at (1141, 1155);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=160;boxht= 80;Abteilung: box shaded "medblue" at (1107, 874) "Abteilung";
+boxwid=140; boxht=140;Wirdgeleitet: box invis "Wirdgeleitet" at (913, 746);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=140; boxht=140;Gehoertzu: box invis "Gehoertzu" at (893, 854);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+line from Gehoertzu .s to Lehrer .n;
+box invis at last line .center "(1,n)";
+line from Gehoertzu .e to Abteilung .w;
+box invis at last line .center "(1,1)";
+line from Wirdgeleitet .n to Abteilung .s;
+box invis at last line .center "(0,1)";
+line from Wirdgeleitet .w to Lehrer .e;
+box invis at last line .center "(1,1)";
+line from Verwendet .s to Abteilung .n;
+box invis at last line .center "(0,n)";
+line from Verwendet .n to Lehrplan .s;
+box invis at last line .center "(1,1)";
+line from Gelistetin .s to Gegenstand .n;
+box invis at last line .center "(0,n)";
+line from Gelistetin .e to Lehrplan .w;
+box invis at last line .center "(1,1)";
+line from Unterrichtet .s to Lehrer .n;
+box invis at last line .center "( 1, n)";
+line from Unterrichtet .w to Klasse .e;
+box invis at last line .center "( 1, n)";
+line from Unterrichtet.n to Gegenstand .w;
+box invis at last line .center "( 1, n)";
+line from Note .s to Schueler .n;
+box invis at last line .center "( 1, n)";
+line from Note .w to Klasse .e;
+box invis at last line .center "( 1, n)";
+line from Note.n to Gegenstand .w;
+box invis at last line .center "( 1, n)";
+line from Istklassenvorstand .s to Lehrer .n;
+box invis at last line .center "(1,1)";
+line from Istklassenvorstand .n to Klasse .s;
+box invis at last line .center "(1,1)";
+line from Agiert .s to Schueler .n;
+box invis at last line .center "(1,n)";
+line from Agiert .n to Klasse .s;
+box invis at last line .center "(0,n)";
+line from Zugeordnet .n to Lehrverpflichtungsgruppe .s;
+box invis at last line .center "(1,1)";
+line from Zugeordnet .s to Gegenstand .n;
+box invis at last line .center "(0,n)";
+line from Istgeschwistervon .e to Schueler .w;
+box invis at last line .center "(0,n)";
+line from Istgeschwistervon .e to Schueler .w;
+box invis at last line .center "(0,n)";
+line from Istelternteilvon .n to Schueler .s;
+box invis at last line .center "(0,n)";
+line from Istelternteilvon .s to Person .n;
+box invis at last line .center "(1,2)";
+boxht=140; boxwid=120;Istein: box invis at (533, 552);
+line from last box .n to last box .se then to last box .sw then to last box .n
+line from Istein .n to Person .s;
+box invis at last line .center "(0, 1)";
+line from Istein .se to Lehrer .s;
+box invis at last line .center "(1, 1)";
+line from Istein .sw to Schueler .s;
+box invis at last line .center "(1, 1)";
+.PE

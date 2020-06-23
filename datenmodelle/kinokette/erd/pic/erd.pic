@@ -1,0 +1,67 @@
+.PS
+.defcolor medblue rgb #89D8D6
+boxwid=140; boxht=140;Giltfuer: box invis "Giltfuer" at (517, 823);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=160;boxht= 80;Sitzplan: box shaded "medblue" at (648, 1255) "seatingplan";
+boxwid=140;boxht=60; box shaded "medblue" at (648, 1255) "seatingplan";
+boxwid=160;boxht= 80;Ticket: box shaded "medblue" at (417, 403) "ticket";
+boxwid=140;boxht=60; box shaded "medblue" at (417, 403) "ticket";
+boxwid=140; boxht=140;Leitet: box invis "directs" at (2109, 3604);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=160;boxht= 80;Film: box shaded "medblue" at (1668, 3513) "movie";
+boxwid=160;boxht= 80;Person: box shaded "medblue" at (2440, 3891) "person";
+boxwid=140; boxht=140;Wirdgespielt: box invis "Wirdgespielt" at (1665, 2982);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=115;boxht=115; box invis at (1665, 2982);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=160;boxht= 80;Zeitplan: box shaded "medblue" at (1643, 2506) "timetable";
+boxwid=140;boxht=60; box shaded "medblue" at (1643, 2506) "timetable";
+boxwid=140;boxht=60; box shaded "medblue" at (1643, 2506) "timetable";
+boxwid=140; boxht=140;Istzeiplanfuer: box invis "Istzeiplanfuer" at (1312, 2221);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=160;boxht= 80;Saal: box shaded "medblue" at (899, 2122) "hall";
+boxwid=140;boxht=60; box shaded "medblue" at (899, 2122) "hall";
+boxwid=140; boxht=140;Istsitzplanfuer: box invis "Istsitzplanfuer" at (804, 1679);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=140; boxht=140;Istteilvon: box invis "Istteilvon" at (840, 2575);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=115;boxht=115; box invis at (840, 2575);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=160;boxht= 80;Kino: box shaded "medblue" at (891, 3047) "cinema";
+boxwid=140; boxht=140;Wirdgezeigtin: box invis "Wirdgezeigtin" at (1273, 3245);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=140; boxht=140;Spieltmit: box invis "Spieltmit" at (2048, 3760);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+line from Spieltmit .n to Person .s;
+box invis at last line .center "(1,n)";
+line from Spieltmit .s to Film .n;
+box invis at last line .center "(0,n)";
+line from Wirdgezeigtin .n to Film .s;
+box invis at last line .center "(0,n)";
+line from Wirdgezeigtin .s to Kino .n;
+box invis at last line .center "(1,n)";
+line from Istteilvon .n to Kino .s;
+box invis at last line .center "(1,1)";
+line from Istteilvon .s to Saal .n;
+box invis at last line .center "(1,n)";
+line from Istsitzplanfuer .n to Saal .s;
+box invis at last line .center "(1,n)";
+line from Istsitzplanfuer .s to Sitzplan .n;
+box invis at last line .center "(1,n)";
+line from Istzeiplanfuer .s to Saal .n;
+box invis at last line .center "(1,n)";
+line from Istzeiplanfuer .n to Zeitplan .s;
+box invis at last line .center "(1,1)";
+line from Wirdgespielt .n to Film .s;
+box invis at last line .center "(1,n)";
+line from Wirdgespielt .s to Zeitplan .n;
+box invis at last line .center "(1,1)";
+line from Leitet .s to Film .n;
+box invis at last line .center "(1,1)";
+line from Leitet .n to Person .s;
+box invis at last line .center "(1,n)";
+line from Giltfuer .n to Sitzplan .s;
+box invis at last line .center "(1,n)";
+line from Giltfuer .s to Ticket .n;
+box invis at last line .center "(1,1)";
+.PE

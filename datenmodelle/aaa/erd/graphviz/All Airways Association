@@ -1,0 +1,45 @@
+graph "All Airways Association" {
+	label=Fluggesellschaften
+	fontsize=20
+	label="All Airways Association"
+	fontsize=20
+	node [shape=box]
+	Ticket
+	node [shape=box]
+	Passagier
+	node [shape=box]
+	BoardKarte
+	node [shape=box]
+	Flugzeugtyp
+	node [shape=box]
+	Flugzeug
+	node [shape=box]
+	Fluggesellschaft
+	node [shape=box]
+	Flughafen
+	node [shape=diamond]
+	Sitzplatz
+	Sitzplatz -- BoardKarte [label="1, n"]
+	Sitzplatz -- Flugzeugtyp [label="0, n"]
+	node [shape=diamond]
+	besitzt
+	besitzt -- BoardKarte [label="1, n"]
+	besitzt -- Passagier [label="1, 1"]
+	node [shape=diamond]
+	"hat ein"
+	"hat ein" -- Passagier [label="1, n"]
+	"hat ein" -- Ticket [label="1, 1"]
+	node [shape=diamond]
+	Flug
+	Flug -- Ticket [label="1, n"]
+	Flug -- Fluggesellschaft [label="1, n"]
+	Flug -- Flughafen [label="1, n"]
+	node [shape=diamond]
+	besitzt
+	besitzt -- Fluggesellschaft [label="0, n"]
+	besitzt -- Flugzeug [label="0, 1"]
+	node [shape=diamond]
+	ist
+	ist -- Flugzeug [label="1, 1"]
+	ist -- Flugzeugtyp [label="1, n"]
+}

@@ -1,0 +1,195 @@
+<?xml version="1.0" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="Schulungsfirma">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="kurs">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="knr" type="xs:string"/>
+                     <xs:element name="bezeichn" type="xs:string"/>
+                     <xs:element name="tage" type="xs:string"/>
+                     <xs:element name="preis" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="kveranst">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="knr" type="xs:string"/>
+                     <xs:element name="knrlfnd" type="xs:string"/>
+                     <xs:element name="von" type="xs:string"/>
+                     <xs:element name="bis" type="xs:string"/>
+                     <xs:element name="ort" type="xs:string"/>
+                     <xs:element name="plaetze" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="person">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="pnr" type="xs:string"/>
+                     <xs:element name="fname" type="xs:string"/>
+                     <xs:element name="vname" type="xs:string"/>
+                     <xs:element name="ort" type="xs:string"/>
+                     <xs:element name="land" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="referent">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="gebdat" type="xs:string"/>
+                     <xs:element name="seit" type="xs:string"/>
+                     <xs:element name="titel" type="xs:string"/>
+                     <xs:element name="pnr" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="setzt_voraus">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="kurs_knr" type="xs:string"/>
+                     <xs:element name="kurs_knr2" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="abgehalten">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="kurs_knr" type="xs:string"/>
+                     <xs:element name="kveranst_knr" type="xs:string"/>
+                     <xs:element name="kveranst_knrlfnd" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="besucht">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="kveranst_knr" type="xs:string"/>
+                     <xs:element name="kveranst_knrlfnd" type="xs:string"/>
+                     <xs:element name="person_pnr" type="xs:string"/>
+                     <xs:element name="bezahlt" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="geeignet">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="kurs_knr" type="xs:string"/>
+                     <xs:element name="referent_pnr" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+         </xs:sequence>
+      </xs:complexType>
+      <xs:key name="PK_knr_kurs">
+         <xs:selector xpath="kurs/knr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_knr_kveranst">
+         <xs:selector xpath="kveranst/knr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_knrlfnd_kveranst">
+         <xs:selector xpath="kveranst/knrlfnd"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_pnr_person">
+         <xs:selector xpath="person/pnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_pnr_referent">
+         <xs:selector xpath="referent/pnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_kurs_knr_setzt_voraus">
+         <xs:selector xpath="setzt_voraus/kurs_knr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_kurs_knr2_setzt_voraus">
+         <xs:selector xpath="setzt_voraus/kurs_knr2"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_kurs_knr_abgehalten">
+         <xs:selector xpath="abgehalten/kurs_knr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_kveranst_knr_abgehalten">
+         <xs:selector xpath="abgehalten/kveranst_knr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_kveranst_knrlfnd_abgehalten">
+         <xs:selector xpath="abgehalten/kveranst_knrlfnd"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_kveranst_knr_besucht">
+         <xs:selector xpath="besucht/kveranst_knr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_kveranst_knrlfnd_besucht">
+         <xs:selector xpath="besucht/kveranst_knrlfnd"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_person_pnr_besucht">
+         <xs:selector xpath="besucht/person_pnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_kurs_knr_geeignet">
+         <xs:selector xpath="geeignet/kurs_knr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_referent_pnr_geeignet">
+         <xs:selector xpath="geeignet/referent_pnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:keyref name="FK_kveranst_knr_to_kurs" refer="PK_knr_kurs">
+         <xs:selector xpath="kveranst/knr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_referent_pnr_to_person" refer="PK_pnr_person">
+         <xs:selector xpath="referent/pnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_setzt_voraus_kurs_knr_to_kurs" refer="PK_knr_kurs">
+         <xs:selector xpath="setzt_voraus/kurs_knr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_setzt_voraus_kurs_knr2_to_kurs" refer="PK_knr_kurs">
+         <xs:selector xpath="setzt_voraus/kurs_knr2"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_abgehalten_kurs_knr_to_kurs" refer="PK_knr_kurs">
+         <xs:selector xpath="abgehalten/kurs_knr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_abgehalten_kveranst_knr_to_kveranst" refer="PK_knr_kveranst">
+         <xs:selector xpath="abgehalten/kveranst_knr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_abgehalten_kveranst_knrlfnd_to_kveranst" refer="PK_knrlfnd_kveranst">
+         <xs:selector xpath="abgehalten/kveranst_knrlfnd"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_besucht_kveranst_knr_to_kveranst" refer="PK_knr_kveranst">
+         <xs:selector xpath="besucht/kveranst_knr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_besucht_kveranst_knrlfnd_to_kveranst" refer="PK_knrlfnd_kveranst">
+         <xs:selector xpath="besucht/kveranst_knrlfnd"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_besucht_person_pnr_to_person" refer="PK_pnr_person">
+         <xs:selector xpath="besucht/person_pnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_geeignet_kurs_knr_to_kurs" refer="PK_knr_kurs">
+         <xs:selector xpath="geeignet/kurs_knr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_geeignet_referent_pnr_to_referent" refer="PK_pnr_referent">
+         <xs:selector xpath="geeignet/referent_pnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+   </xs:element>
+</xs:schema>

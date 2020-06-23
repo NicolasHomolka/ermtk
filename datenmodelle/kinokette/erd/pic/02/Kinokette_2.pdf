@@ -1,0 +1,307 @@
+%!PS-Adobe-3.0
+%%Creator: groff version 1.22.3
+%%CreationDate: Thu Apr  4 20:43:59 2019
+%%DocumentNeededResources: font Times-Roman
+%%DocumentSuppliedResources: procset grops 1.22 3
+%%Pages: 2
+%%PageOrder: Ascend
+%%DocumentMedia: Default 595 842 0 () ()
+%%Orientation: Portrait
+%%EndComments
+%%BeginDefaults
+%%PageMedia: Default
+%%EndDefaults
+%%BeginProlog
+%%BeginResource: procset grops 1.22 3
+%!PS-Adobe-3.0 Resource-ProcSet
+/setpacking where{
+pop
+currentpacking
+true setpacking
+}if
+/grops 120 dict dup begin
+/SC 32 def
+/A/show load def
+/B{0 SC 3 -1 roll widthshow}bind def
+/C{0 exch ashow}bind def
+/D{0 exch 0 SC 5 2 roll awidthshow}bind def
+/E{0 rmoveto show}bind def
+/F{0 rmoveto 0 SC 3 -1 roll widthshow}bind def
+/G{0 rmoveto 0 exch ashow}bind def
+/H{0 rmoveto 0 exch 0 SC 5 2 roll awidthshow}bind def
+/I{0 exch rmoveto show}bind def
+/J{0 exch rmoveto 0 SC 3 -1 roll widthshow}bind def
+/K{0 exch rmoveto 0 exch ashow}bind def
+/L{0 exch rmoveto 0 exch 0 SC 5 2 roll awidthshow}bind def
+/M{rmoveto show}bind def
+/N{rmoveto 0 SC 3 -1 roll widthshow}bind def
+/O{rmoveto 0 exch ashow}bind def
+/P{rmoveto 0 exch 0 SC 5 2 roll awidthshow}bind def
+/Q{moveto show}bind def
+/R{moveto 0 SC 3 -1 roll widthshow}bind def
+/S{moveto 0 exch ashow}bind def
+/T{moveto 0 exch 0 SC 5 2 roll awidthshow}bind def
+/SF{
+findfont exch
+[exch dup 0 exch 0 exch neg 0 0]makefont
+dup setfont
+[exch/setfont cvx]cvx bind def
+}bind def
+/MF{
+findfont
+[5 2 roll
+0 3 1 roll
+neg 0 0]makefont
+dup setfont
+[exch/setfont cvx]cvx bind def
+}bind def
+/level0 0 def
+/RES 0 def
+/PL 0 def
+/LS 0 def
+/MANUAL{
+statusdict begin/manualfeed true store end
+}bind def
+/PLG{
+gsave newpath clippath pathbbox grestore
+exch pop add exch pop
+}bind def
+/BP{
+/level0 save def
+1 setlinecap
+1 setlinejoin
+DEFS/BPhook known{DEFS begin BPhook end}if
+72 RES div dup scale
+LS{
+90 rotate
+}{
+0 PL translate
+}ifelse
+1 -1 scale
+}bind def
+/EP{
+level0 restore
+showpage
+}def
+/DA{
+newpath arcn stroke
+}bind def
+/SN{
+transform
+.25 sub exch .25 sub exch
+round .25 add exch round .25 add exch
+itransform
+}bind def
+/DL{
+SN
+moveto
+SN
+lineto stroke
+}bind def
+/DC{
+newpath 0 360 arc closepath
+}bind def
+/TM matrix def
+/DE{
+TM currentmatrix pop
+translate scale newpath 0 0 .5 0 360 arc closepath
+TM setmatrix
+}bind def
+/RC/rcurveto load def
+/RL/rlineto load def
+/ST/stroke load def
+/MT/moveto load def
+/CL/closepath load def
+/Fr{
+setrgbcolor fill
+}bind def
+/setcmykcolor where{
+pop
+/Fk{
+setcmykcolor fill
+}bind def
+}if
+/Fg{
+setgray fill
+}bind def
+/FL/fill load def
+/LW/setlinewidth load def
+/Cr/setrgbcolor load def
+/setcmykcolor where{
+pop
+/Ck/setcmykcolor load def
+}if
+/Cg/setgray load def
+/RE{
+findfont
+dup maxlength 1 index/FontName known not{1 add}if dict begin
+{
+1 index/FID ne
+2 index/UniqueID ne
+and
+{def}{pop pop}ifelse
+}forall
+/Encoding exch def
+dup/FontName exch def
+currentdict end definefont pop
+}bind def
+/DEFS 0 def
+/EBEGIN{
+moveto
+DEFS begin
+}bind def
+/EEND/end load def
+/CNT 0 def
+/level1 0 def
+/PBEGIN{
+/level1 save def
+translate
+div 3 1 roll div exch scale
+neg exch neg exch translate
+0 setgray
+0 setlinecap
+1 setlinewidth
+0 setlinejoin
+10 setmiterlimit
+[]0 setdash
+/setstrokeadjust where{
+pop
+false setstrokeadjust
+}if
+/setoverprint where{
+pop
+false setoverprint
+}if
+newpath
+/CNT countdictstack def
+userdict begin
+/showpage{}def
+/setpagedevice{}def
+mark
+}bind def
+/PEND{
+cleartomark
+countdictstack CNT sub{end}repeat
+level1 restore
+}bind def
+end def
+/setpacking where{
+pop
+setpacking
+}if
+%%EndResource
+%%EndProlog
+%%BeginSetup
+%%BeginFeature: *PageSize Default
+<< /PageSize [ 595 842 ] /ImagingBBox null >> setpagedevice
+%%EndFeature
+%%IncludeResource: font Times-Roman
+grops begin/DEFS 1 dict def DEFS begin/u{.001 mul}bind def end/RES 72
+def/PL 841.89 def/LS false def/ENC0[/asciicircum/asciitilde/Scaron
+/Zcaron/scaron/zcaron/Ydieresis/trademark/quotesingle/Euro/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/space/exclam/quotedbl/numbersign/dollar/percent
+/ampersand/quoteright/parenleft/parenright/asterisk/plus/comma/hyphen
+/period/slash/zero/one/two/three/four/five/six/seven/eight/nine/colon
+/semicolon/less/equal/greater/question/at/A/B/C/D/E/F/G/H/I/J/K/L/M/N/O
+/P/Q/R/S/T/U/V/W/X/Y/Z/bracketleft/backslash/bracketright/circumflex
+/underscore/quoteleft/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y
+/z/braceleft/bar/braceright/tilde/.notdef/quotesinglbase/guillemotleft
+/guillemotright/bullet/florin/fraction/perthousand/dagger/daggerdbl
+/endash/emdash/ff/fi/fl/ffi/ffl/dotlessi/dotlessj/grave/hungarumlaut
+/dotaccent/breve/caron/ring/ogonek/quotedblleft/quotedblright/oe/lslash
+/quotedblbase/OE/Lslash/.notdef/exclamdown/cent/sterling/currency/yen
+/brokenbar/section/dieresis/copyright/ordfeminine/guilsinglleft
+/logicalnot/minus/registered/macron/degree/plusminus/twosuperior
+/threesuperior/acute/mu/paragraph/periodcentered/cedilla/onesuperior
+/ordmasculine/guilsinglright/onequarter/onehalf/threequarters
+/questiondown/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE
+/Ccedilla/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex
+/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis
+/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute/Thorn
+/germandbls/agrave/aacute/acircumflex/atilde/adieresis/aring/ae/ccedilla
+/egrave/eacute/ecircumflex/edieresis/igrave/iacute/icircumflex/idieresis
+/eth/ntilde/ograve/oacute/ocircumflex/otilde/odieresis/divide/oslash
+/ugrave/uacute/ucircumflex/udieresis/yacute/thorn/ydieresis]def
+/Times-Roman@0 ENC0/Times-Roman RE
+%%EndSetup
+%%Page: 1 1
+%%BeginPageSetup
+BP
+%%EndPageSetup
+/F0 10/Times-Roman@0 SF(Giltfuer)96.13 704.104 Q .4 LW 127.512 701.904
+111.96 686.352 DL 111.96 717.456 127.512 701.904 DL 96.408 701.904
+111.96 717.456 DL 111.96 686.352 96.408 701.904 DL 158.76 614.856 MT 0
+-17.784 RL -35.496 0 RL 0 17.784 RL CL 0.537 0.847 0.839 Fr 158.76
+614.856 MT 0 -17.784 RL -35.496 0 RL 0 17.784 RL CL 0 Cg ST(seatingplan)
+118.273 608.2 Q 156.6 612.624 MT 0 -13.32 RL -31.104 0 RL 0 13.32 RL CL
+0.537 0.847 0.839 Fr 156.6 612.624 MT 0 -13.32 RL -31.104 0 RL 0 13.32
+RL CL 0 Cg ST(seatingplan)118.273 608.2 Q 107.496 804 MT 0 -17.784 RL
+-35.496 0 RL 0 17.784 RL CL 0.537 0.847 0.839 Fr 107.496 804 MT 0
+-17.784 RL -35.496 0 RL 0 17.784 RL CL 0 Cg ST(tick)78.724 797.344 Q(et)
+-.1 E 105.264 801.768 MT 0 -13.32 RL -31.104 0 RL 0 13.32 RL CL 0.537
+0.847 0.839 Fr 105.264 801.768 MT 0 -13.32 RL -31.104 0 RL 0 13.32 RL CL
+0 Cg ST(tick)78.724 797.344 Q(et)-.1 E(directs)452.006 86.776 Q 480.888
+84.576 465.336 69.024 DL 465.336 100.128 480.888 84.576 DL 449.784
+84.576 465.336 100.128 DL 465.336 69.024 449.784 84.576 DL 385.2 113.664
+MT 0 -17.784 RL -35.496 0 RL 0 17.784 RL CL 0.537 0.847 0.839 Fr 385.2
+113.664 MT 0 -17.784 RL -35.496 0 RL 0 17.784 RL CL 0 Cg ST(mo)354.991
+107.008 Q(vie)-.15 E 556.56 29.784 MT 0 -17.784 RL -35.496 0 RL 0 17.784
+RL CL 0.537 0.847 0.839 Fr 556.56 29.784 MT 0 -17.784 RL -35.496 0 RL 0
+17.784 RL CL 0 Cg ST(person)525.446 23.056 Q -.4(Wi)341.138 224.872 S
+(rdgespielt).4 E 382.32 222.672 366.768 207.12 DL 366.768 238.224 382.32
+222.672 DL 351.216 222.672 366.768 238.224 DL 366.768 207.12 351.216
+222.672 DL 379.512 222.6 366.768 209.856 DL 366.768 235.416 379.512
+222.672 DL 354.024 222.672 366.768 235.416 DL 366.768 209.928 354.024
+222.672 DL 379.656 337.224 MT 0 -17.784 RL -35.496 0 RL 0 17.784 RL CL
+0.537 0.847 0.839 Fr 379.656 337.224 MT 0 -17.784 RL -35.496 0 RL 0
+17.784 RL CL 0 Cg ST(timetable)343.262 330.496 Q 377.424 334.992 MT 0
+-13.32 RL -31.104 0 RL 0 13.32 RL CL 0.537 0.847 0.839 Fr 377.424
+334.992 MT 0 -13.32 RL -31.104 0 RL 0 13.32 RL CL 0 Cg ST(timetable)
+343.262 330.496 Q 377.424 334.992 MT 0 -13.32 RL -31.104 0 RL 0 13.32 RL
+CL 0.537 0.847 0.839 Fr 377.424 334.992 MT 0 -13.32 RL -31.104 0 RL 0
+13.32 RL CL 0 Cg ST(timetable)343.262 330.496 Q(Istzeiplanfuer)260.942
+393.784 Q 303.984 391.584 288.432 376.032 DL 288.432 407.136 303.984
+391.584 DL 272.88 391.584 288.432 407.136 DL 288.432 376.032 272.88
+391.584 DL 214.488 422.4 MT 0 -17.784 RL -35.496 0 RL 0 17.784 RL CL
+0.537 0.847 0.839 Fr 214.488 422.4 MT 0 -17.784 RL -35.496 0 RL 0 17.784
+RL CL 0 Cg ST(hall)189.276 415.744 Q 212.256 420.24 MT 0 -13.32 RL
+-31.104 0 RL 0 13.32 RL CL 0.537 0.847 0.839 Fr 212.256 420.24 MT 0
+-13.32 RL -31.104 0 RL 0 13.32 RL CL 0 Cg ST(hall)189.276 415.744 Q
+(Istsitzplanfuer)147.075 514.096 Q 191.232 511.896 175.68 496.344 DL
+175.68 527.448 191.232 511.896 DL 160.128 511.896 175.68 527.448 DL
+175.68 496.344 160.128 511.896 DL(Istteilv)164.882 315.16 Q(on)-.2 E
+199.224 313.032 183.672 297.48 DL 183.672 328.512 199.224 312.96 DL
+168.12 312.96 183.672 328.512 DL 183.672 297.408 168.12 312.96 DL
+196.416 312.96 183.672 300.216 DL 183.672 325.704 196.416 312.96 DL
+170.928 313.032 183.672 325.776 DL 183.6 300.216 170.856 312.96 DL
+212.76 217.128 MT 0 -17.784 RL -35.496 0 RL 0 17.784 RL CL 0.537 0.847
+0.839 Fr 212.76 217.128 MT 0 -17.784 RL -35.496 0 RL 0 17.784 RL CL 0 Cg
+ST(cinema)180.536 210.4 Q -.4(Wi)251.387 166.48 S(rdgezeigtin).4 E
+295.344 164.28 279.792 148.728 DL 279.72 179.832 295.272 164.28 DL
+264.24 164.28 279.792 179.832 DL 279.792 148.728 264.24 164.28 DL
+(Spieltmit)433.46 52.144 Q 467.352 49.944 451.8 34.392 DL 451.8 65.496
+467.352 49.944 DL 436.248 49.944 451.8 65.496 DL 451.8 34.392 436.248
+49.944 DL 538.848 29.712 451.8 34.392 DL(\(1,n\))485.708 34.288 Q
+367.416 95.88 451.8 65.496 DL(\(0,n\))400.028 82.888 Q 367.488 113.664
+279.792 148.728 DL(\(0,n\))314.06 133.432 Q 194.976 199.344 279.792
+179.832 DL(\(1,n\))227.804 191.752 Q 194.976 217.128 183.672 297.48 DL
+(\(1,1\))179.708 259.504 Q 196.776 404.616 183.672 328.512 DL(\(1,n\))
+180.644 368.8 Q 196.776 422.4 175.68 496.344 DL(\(1,n\))176.612 461.608
+Q 141.048 597.144 175.68 527.448 DL(\(1,n\))148.748 564.496 Q 196.776
+404.688 288.432 407.136 DL(\(1,n\))232.988 408.112 Q 361.872 337.152
+288.432 376.032 DL(\(1,1\))315.572 358.792 Q 367.416 113.664 366.768
+207.12 DL(\(1,n\))357.548 162.592 Q 361.872 319.44 366.768 238.224 DL
+(\(1,1\))354.74 281.032 Q 367.416 95.88 465.336 100.128 DL(\(1,1\))
+406.796 100.24 Q 538.776 29.712 465.336 69.024 DL(\(1,n\))492.476 51.568
+Q 141.048 614.856 111.96 686.352 DL(\(1,n\))116.924 652.84 Q 89.784
+786.288 111.96 717.456 DL(\(1,1\))91.292 754.072 Q 0 Cg EP
+%%Page: 2 2
+%%BeginPageSetup
+BP
+%%EndPageSetup
+0 Cg EP
+%%Trailer
+end
+%%EOF

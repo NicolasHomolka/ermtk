@@ -1,0 +1,118 @@
+.PS
+boxwid=250; boxht=250;Tankvorgang: box invis "Tankvorgang" at (1111, 1552);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=300;boxht=150;Tankstelle: box at (909, 1239) "Tankstelle";
+boxwid=300;boxht=150;Zapfsaeule: box at (1355, 1426) "Zapfsaeule";
+boxwid=325;boxht=175; box at (1355, 1426);
+boxwid=300;boxht=150;Kraftstoff: box at (1174, 1980) "Kraftstoff";
+boxwid=325;boxht=175; box at (1174, 1980);
+boxwid=250; boxht=250;Vertragvereinbaren: box invis "Vertragvereinbaren" at (605, 1220);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=300;boxht=150;Grosshaendler: box at (341, 1199) "Grosshaendler";
+boxwid=250; boxht=250;Hatzapf: box invis "Hatzapf" at (1135, 1252);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=275;boxht=275; box invis at (1135, 1252);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=250; boxht=250;Hattank: box invis "Hattank" at (799, 1649);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=275;boxht=275; box invis at (799, 1649);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=300;boxht=150;Tank: box at (745, 2072) "Tank";
+boxwid=325;boxht=175; box at (745, 2072);
+boxwid=250; boxht=250;Tankkraft: box invis "Tankkraft" at (976, 2231);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=275;boxht=275; box invis at (976, 2231);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=250; boxht=250;Hatmitarbeiter: box invis "Hatmitarbeiter" at (1121, 914);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=300;boxht=150;Mitarbeiter: box at (1324, 635) "Mitarbeiter";
+boxwid=250; boxht=250;Hattankstelle: box invis "Hattankstelle" at (805, 782);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=300;boxht=150;Ort: box at (714, 382) "Ort";
+line from Hattankstelle .s to Ort .n;
+line from Hattankstelle.n to Tankstelle .w;
+box invis at last line .center "(0,n)";
+line from Hattankstelle .n to Tankstelle .s;
+box invis at last line .center "(1,1)";
+line from Hatmitarbeiter.n to Tankstelle .s;
+line from Hatmitarbeiter .s to Mitarbeiter .n;
+box invis at last line .center "(0,n)";
+line from Hatmitarbeiter .s to Mitarbeiter .n;
+box invis at last line .center "(1,n)";
+line from Tankkraft .s to Tank .n;
+line from Tankkraft .s to Kraftstoff .n;
+box invis at last line .center "(0,n)";
+line from Tankkraft .s to Kraftstoff .n;
+box invis at last line .center "(0,n)";
+line from Hattank .s to Tankstelle .n;
+line from Hattank.n to Tank .s;
+box invis at last line .center "(0,n)";
+line from Hattank .n to Tank .s;
+box invis at last line .center "(1,1)";
+line from Hatzapf .w to Tankstelle .e;
+line from Hatzapf.n to Zapfsaeule .w;
+box invis at last line .center "(0,n)";
+line from Hatzapf .n to Zapfsaeule .s;
+box invis at last line .center "(1,1)";
+line from Vertragvereinbaren.s to Tankstelle .e;
+line from Vertragvereinbaren .w to Grosshaendler .e;
+box invis at last line .center "(0,n)";
+line from Vertragvereinbaren .w to Grosshaendler .e;
+box invis at last line .center "(0,n)";
+line from Tankvorgang .s to Tankstelle .n;
+box invis at last line .center "(0,n)";
+line from Tankvorgang .s to Zapfsaeule .n;
+box invis at last line .center "(0,n)";
+line from Tankvorgang.n to Kraftstoff .w;
+box invis at last line .center "(0,n)";
+ellipseht=150;ellipsewid=300;TankstellePlz: ellipse at (959,973);
+line from last ellipse .w to last ellipse .e;
+box invis at last line .center +(0,0.60) "Plz";
+line from Tankstelle .n to TankstellePlz .s;
+ellipseht=150;ellipsewid=300;TankstelleFlaeche: ellipse at (758,1071) "Flaeche";
+line from Tankstelle .w to TankstelleFlaeche .n;
+ellipseht=150;ellipsewid=300;TankstelleAdresse: ellipse at (759,1375) "Adresse";
+line from Tankstelle .n to TankstelleAdresse .s;
+ellipseht=150;ellipsewid=300;OrtOrtsname: ellipse at (468,246);
+line from last ellipse .w to last ellipse .e;
+box invis at last line .center +(0,0.60) "Ortsname";
+line from Ort .w to OrtOrtsname .n;
+ellipseht=150;ellipsewid=300;OrtEinwohner: ellipse at (635,18) "Einwohner";
+line from Ort .w to OrtEinwohner .n;
+ellipseht=150;ellipsewid=300;OrtBezirk: ellipse at (853,27) "Bezirk";
+line from Ort .n to OrtBezirk .s;
+ellipseht=150;ellipsewid=300;MitarbeiterPnr: ellipse at (1394,250);
+line from last ellipse .w to last ellipse .e;
+box invis at last line .center +(0,0.60) "Pnr";
+line from Mitarbeiter .n to MitarbeiterPnr .s;
+ellipseht=150;ellipsewid=300;MitarbeiterName: ellipse at (1574,576) "Name";
+line from Mitarbeiter .n to MitarbeiterName .s;
+ellipseht=150;ellipsewid=300;TankNr: ellipse at (493,2149);
+line from last ellipse .w to last ellipse .e;
+box invis at last line .center +(0,0.60) "Nr";
+line from Tank .n to TankNr .s;
+ellipseht=150;ellipsewid=300;TankFassung: ellipse at (585,2382) "Fassung";
+line from Tank .n to TankFassung .s;
+ellipseht=150;ellipsewid=300;TankFuel: ellipse at (753,2488) "Fuel";
+line from Tank .s to TankFuel .e;
+ellipseht=150;ellipsewid=300;KraftstoffBezeichn: ellipse at (1211,2386);
+line from last ellipse .w to last ellipse .e;
+box invis at last line .center +(0,0.60) "Bezeichn";
+line from Kraftstoff .s to KraftstoffBezeichn .e;
+ellipseht=150;ellipsewid=300;KraftstoffOktanz: ellipse at (1359,2254) "Oktanz";
+line from Kraftstoff .n to KraftstoffOktanz .s;
+ellipseht=150;ellipsewid=300;KraftstoffKosten: ellipse at (1430,2019) "Kosten";
+line from Kraftstoff .s to KraftstoffKosten .n;
+ellipseht=150;ellipsewid=300;ZapfsaeuleNr: ellipse at (1611,1413);
+line from last ellipse .w to last ellipse .e;
+box invis at last line .center +(0,0.60) "Nr";
+line from Zapfsaeule .s to ZapfsaeuleNr .n;
+ellipseht=150;ellipsewid=300;GrosshaendlerFname: ellipse at (139,964);
+line from last ellipse .w to last ellipse .e;
+box invis at last line .center +(0,0.60) "Fname";
+line from Grosshaendler .w to GrosshaendlerFname .n;
+ellipseht=150;ellipsewid=300;GrosshaendlerAnschrift: ellipse at (122,1396);
+line from last ellipse .w to last ellipse .e;
+box invis at last line .center +(0,0.60) "Anschrift";
+line from Grosshaendler .n to GrosshaendlerAnschrift .s;
+.PE

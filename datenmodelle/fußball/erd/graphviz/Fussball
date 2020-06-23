@@ -1,0 +1,95 @@
+graph Fussball {
+	label=Fussball
+	fontsize=20
+	node [peripheries=1 shape=box]
+	mannschaft
+	node [label="gründungsjahr" shape=circle style=bold]
+	"mannschaft.gründungsjahr"
+	mannschaft -- "mannschaft.gründungsjahr" [peripheries=1]
+	node [label=adresse shape=circle style=bold]
+	"mannschaft.adresse"
+	mannschaft -- "mannschaft.adresse" [peripheries=1]
+	node [peripheries=1 shape=box]
+	person
+	node [label=name shape=circle style=bold]
+	"person.name"
+	person -- "person.name" [peripheries=1]
+	node [label=wohnadresse shape=circle style=bold]
+	"person.wohnadresse"
+	person -- "person.wohnadresse" [peripheries=1]
+	node [label=geburtsdatum shape=circle style=bold]
+	"person.geburtsdatum"
+	person -- "person.geburtsdatum" [peripheries=1]
+	node [peripheries=1 shape=box]
+	spieler
+	node [label=spielposition shape=circle]
+	"spieler.spielposition"
+	spieler -- "spieler.spielposition" [peripheries=1]
+	node [peripheries=1 shape=box]
+	spiel
+	node [label=mannschaft_heim shape=circle style=bold]
+	"spiel.mannschaft_heim"
+	spiel -- "spiel.mannschaft_heim" [peripheries=1]
+	node [label=mannschaft_ausw shape=circle style=bold]
+	"spiel.mannschaft_ausw"
+	spiel -- "spiel.mannschaft_ausw" [peripheries=1]
+	node [label=schiedsrichter shape=circle style=bold]
+	"spiel.schiedsrichter"
+	spiel -- "spiel.schiedsrichter" [peripheries=1]
+	node [label=ergebnis shape=circle style=bold]
+	"spiel.ergebnis"
+	spiel -- "spiel.ergebnis" [peripheries=1]
+	node [peripheries=1 shape=box]
+	turnier
+	node [label=begindatum shape=circle style=bold]
+	"turnier.begindatum"
+	turnier -- "turnier.begindatum" [peripheries=1]
+	node [label=enddatum shape=circle style=bold]
+	"turnier.enddatum"
+	turnier -- "turnier.enddatum" [peripheries=1]
+	node [label=mannschaften shape=circle style=bold]
+	"turnier.mannschaften"
+	turnier -- "turnier.mannschaften" [peripheries=1]
+	node [peripheries=1 shape=box]
+	schiedsrichter
+	node [label="datum_prüfung" shape=circle]
+	"schiedsrichter.datum_prüfung"
+	schiedsrichter -- "schiedsrichter.datum_prüfung" [peripheries=1]
+	node [label=berechtigungsklasse shape=circle]
+	"schiedsrichter.berechtigungsklasse"
+	schiedsrichter -- "schiedsrichter.berechtigungsklasse" [peripheries=1]
+	node [peripheries=1 shape=box]
+	tore
+	node [label=anzahl_tore shape=circle]
+	"tore.anzahl_tore"
+	tore -- "tore.anzahl_tore" [peripheries=1]
+	node [color=black shape=triangle]
+	"ist ein" [style=filled]
+	"ist ein" -- person [peripheries=1]
+	"ist ein" -- spieler [peripheries=1]
+	"ist ein" -- schiedsrichter [peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"spielt bei"
+	"spielt bei" -- spieler [label="(1, 1)" peripheries=1]
+	"spielt bei" -- mannschaft [label="(1, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"spielt mit bei"
+	"spielt mit bei" -- mannschaft [label="(1, n)" peripheries=1]
+	"spielt mit bei" -- spiel [label="(1, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"gehört zu"
+	"gehört zu" -- spiel [label="(0, 1)" peripheries=1]
+	"gehört zu" -- turnier [label="(1, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"pfeift bei"
+	"pfeift bei" -- schiedsrichter [label="(1, 1)" peripheries=1]
+	"pfeift bei" -- spiel [label="(1, 1)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"hat geschossen"
+	"hat geschossen" -- tore [label="(0, n)" peripheries=1]
+	"hat geschossen" -- spieler [label="(0, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"wurden geschossen"
+	"wurden geschossen" -- tore [label="(0, n)" peripheries=1]
+	"wurden geschossen" -- spiel [label="(0, n)" peripheries=1]
+}

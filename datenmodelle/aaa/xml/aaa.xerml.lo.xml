@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<loc version="0.1">
+    <title name="Fluggesellschaften"/>
+    <title name="All Airways Association" lang="en"/>
+    
+    <entlo entref="Passagier" name-lo="Passenger" lang="en">
+        <attr name="pnr"      name-lo="pnr"   />
+        <attr name="name"     name-lo="name" />
+        <attr name="anrede"   name-lo="salutation"  />
+        <attr name="titel"    name-lo="title"   />
+    </entlo>
+
+    <entlo entref="Ticket" name-lo="Ticket" lang="en">
+	    <attr name="tnr"             name-lo="tnr"   />
+	    <attr name="ausgabedatum"    name-lo="issueDate" />
+ 	    <attr name="preis"           name-lo="price"  />
+  	    <attr name="waehrung"        name-lo="currency"   />
+        <attr name="vertriebsbuero"  name-lo="salesOffice"   />
+        <attr name="pnr"             name-lo="pnr"   />
+	</entlo>
+    
+    <entlo entref="BoardKarte" name-lo="BoardingCard" lang="en">
+        <attr name="fnr"                name-lo="fnr"          />
+        <attr name="datums"              name-lo="date"         />
+        <attr name="abflughafen"        name-lo="startAirport" />
+        <attr name="ankunftsflughafen"  name-lo="endAirport"   />
+        <attr name="name"               name-lo="name"         />
+        <attr name="sitz"               name-lo="seat"         />
+    </entlo>
+    
+    <entlo entref="Flugzeugtyp" name-lo="Airplanetype" lang="en">
+        <attr name="typidentifikation"    name-lo="typeidentification"  />
+        <attr name="hersteller"           name-lo="producer"            />
+        <attr name="reichweite"           name-lo="range"               />
+    </entlo>
+    
+    <entlo entref="Flugzeug" name-lo="Airplane" lang="en">
+        <attr name="Flugzeugnummer"  name-lo="planeNummber"   />
+        <attr name="interregnummer"  name-lo="interRegNumber" />
+        <attr name="name"            name-lo="name"           />
+        <attr name="startDatum"      name-lo="startupDate"    />
+    </entlo>
+    
+    <entlo entref="Fluggesellschaft" name-lo="AirplaneOrganization" lang="en">
+        <attr name="orgCode"      name-lo="orgCode"       />
+        <attr name="name"         name-lo="name"          />
+        <attr name="hauptsitz"    name-lo="headquarters"  />
+    </entlo>
+    
+    <entlo entref="Flughafen" name-lo="Airport" lang="en">
+        <attr name="flughafennr"   name-lo="airportCode"  />
+        <attr name="name"          name-lo="name"         />
+        <attr name="stadt"         name-lo="town"         />
+        <attr name="land"          name-lo="country"      />
+        <attr name="kapazitaet"    name-lo="capacity"     />
+    </entlo>
+
+	
+	<rello relref="Sitzplatz" name-lo="Seat" lang="en">
+  	  <attr name="klasse" name-lo="class"    />
+      <attr name="ort"    name-lo="location" />
+	</rello>
+    
+    <rello relref="besitzt" name-lo="has" lang="en"/>
+    
+    <rello relref="hat ein" name-lo="has-a" lang="en"/>
+    
+    <rello relref="Flug" name-lo="Flight" lang="en"/>
+    
+    <rello relref="ist" name-lo="is-a" lang="en"/>
+        
+</loc>

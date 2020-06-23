@@ -1,0 +1,313 @@
+%!PS-Adobe-3.0
+%%Creator: groff version 1.22.3
+%%CreationDate: Thu Apr  4 20:38:26 2019
+%%DocumentNeededResources: font Times-Roman
+%%DocumentSuppliedResources: procset grops 1.22 3
+%%Pages: 2
+%%PageOrder: Ascend
+%%DocumentMedia: Default 595 842 0 () ()
+%%Orientation: Portrait
+%%EndComments
+%%BeginDefaults
+%%PageMedia: Default
+%%EndDefaults
+%%BeginProlog
+%%BeginResource: procset grops 1.22 3
+%!PS-Adobe-3.0 Resource-ProcSet
+/setpacking where{
+pop
+currentpacking
+true setpacking
+}if
+/grops 120 dict dup begin
+/SC 32 def
+/A/show load def
+/B{0 SC 3 -1 roll widthshow}bind def
+/C{0 exch ashow}bind def
+/D{0 exch 0 SC 5 2 roll awidthshow}bind def
+/E{0 rmoveto show}bind def
+/F{0 rmoveto 0 SC 3 -1 roll widthshow}bind def
+/G{0 rmoveto 0 exch ashow}bind def
+/H{0 rmoveto 0 exch 0 SC 5 2 roll awidthshow}bind def
+/I{0 exch rmoveto show}bind def
+/J{0 exch rmoveto 0 SC 3 -1 roll widthshow}bind def
+/K{0 exch rmoveto 0 exch ashow}bind def
+/L{0 exch rmoveto 0 exch 0 SC 5 2 roll awidthshow}bind def
+/M{rmoveto show}bind def
+/N{rmoveto 0 SC 3 -1 roll widthshow}bind def
+/O{rmoveto 0 exch ashow}bind def
+/P{rmoveto 0 exch 0 SC 5 2 roll awidthshow}bind def
+/Q{moveto show}bind def
+/R{moveto 0 SC 3 -1 roll widthshow}bind def
+/S{moveto 0 exch ashow}bind def
+/T{moveto 0 exch 0 SC 5 2 roll awidthshow}bind def
+/SF{
+findfont exch
+[exch dup 0 exch 0 exch neg 0 0]makefont
+dup setfont
+[exch/setfont cvx]cvx bind def
+}bind def
+/MF{
+findfont
+[5 2 roll
+0 3 1 roll
+neg 0 0]makefont
+dup setfont
+[exch/setfont cvx]cvx bind def
+}bind def
+/level0 0 def
+/RES 0 def
+/PL 0 def
+/LS 0 def
+/MANUAL{
+statusdict begin/manualfeed true store end
+}bind def
+/PLG{
+gsave newpath clippath pathbbox grestore
+exch pop add exch pop
+}bind def
+/BP{
+/level0 save def
+1 setlinecap
+1 setlinejoin
+DEFS/BPhook known{DEFS begin BPhook end}if
+72 RES div dup scale
+LS{
+90 rotate
+}{
+0 PL translate
+}ifelse
+1 -1 scale
+}bind def
+/EP{
+level0 restore
+showpage
+}def
+/DA{
+newpath arcn stroke
+}bind def
+/SN{
+transform
+.25 sub exch .25 sub exch
+round .25 add exch round .25 add exch
+itransform
+}bind def
+/DL{
+SN
+moveto
+SN
+lineto stroke
+}bind def
+/DC{
+newpath 0 360 arc closepath
+}bind def
+/TM matrix def
+/DE{
+TM currentmatrix pop
+translate scale newpath 0 0 .5 0 360 arc closepath
+TM setmatrix
+}bind def
+/RC/rcurveto load def
+/RL/rlineto load def
+/ST/stroke load def
+/MT/moveto load def
+/CL/closepath load def
+/Fr{
+setrgbcolor fill
+}bind def
+/setcmykcolor where{
+pop
+/Fk{
+setcmykcolor fill
+}bind def
+}if
+/Fg{
+setgray fill
+}bind def
+/FL/fill load def
+/LW/setlinewidth load def
+/Cr/setrgbcolor load def
+/setcmykcolor where{
+pop
+/Ck/setcmykcolor load def
+}if
+/Cg/setgray load def
+/RE{
+findfont
+dup maxlength 1 index/FontName known not{1 add}if dict begin
+{
+1 index/FID ne
+2 index/UniqueID ne
+and
+{def}{pop pop}ifelse
+}forall
+/Encoding exch def
+dup/FontName exch def
+currentdict end definefont pop
+}bind def
+/DEFS 0 def
+/EBEGIN{
+moveto
+DEFS begin
+}bind def
+/EEND/end load def
+/CNT 0 def
+/level1 0 def
+/PBEGIN{
+/level1 save def
+translate
+div 3 1 roll div exch scale
+neg exch neg exch translate
+0 setgray
+0 setlinecap
+1 setlinewidth
+0 setlinejoin
+10 setmiterlimit
+[]0 setdash
+/setstrokeadjust where{
+pop
+false setstrokeadjust
+}if
+/setoverprint where{
+pop
+false setoverprint
+}if
+newpath
+/CNT countdictstack def
+userdict begin
+/showpage{}def
+/setpagedevice{}def
+mark
+}bind def
+/PEND{
+cleartomark
+countdictstack CNT sub{end}repeat
+level1 restore
+}bind def
+end def
+/setpacking where{
+pop
+setpacking
+}if
+%%EndResource
+%%EndProlog
+%%BeginSetup
+%%BeginFeature: *PageSize Default
+<< /PageSize [ 595 842 ] /ImagingBBox null >> setpagedevice
+%%EndFeature
+%%IncludeResource: font Times-Roman
+grops begin/DEFS 1 dict def DEFS begin/u{.001 mul}bind def end/RES 72
+def/PL 841.89 def/LS false def/ENC0[/asciicircum/asciitilde/Scaron
+/Zcaron/scaron/zcaron/Ydieresis/trademark/quotesingle/Euro/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/space/exclam/quotedbl/numbersign/dollar/percent
+/ampersand/quoteright/parenleft/parenright/asterisk/plus/comma/hyphen
+/period/slash/zero/one/two/three/four/five/six/seven/eight/nine/colon
+/semicolon/less/equal/greater/question/at/A/B/C/D/E/F/G/H/I/J/K/L/M/N/O
+/P/Q/R/S/T/U/V/W/X/Y/Z/bracketleft/backslash/bracketright/circumflex
+/underscore/quoteleft/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y
+/z/braceleft/bar/braceright/tilde/.notdef/quotesinglbase/guillemotleft
+/guillemotright/bullet/florin/fraction/perthousand/dagger/daggerdbl
+/endash/emdash/ff/fi/fl/ffi/ffl/dotlessi/dotlessj/grave/hungarumlaut
+/dotaccent/breve/caron/ring/ogonek/quotedblleft/quotedblright/oe/lslash
+/quotedblbase/OE/Lslash/.notdef/exclamdown/cent/sterling/currency/yen
+/brokenbar/section/dieresis/copyright/ordfeminine/guilsinglleft
+/logicalnot/minus/registered/macron/degree/plusminus/twosuperior
+/threesuperior/acute/mu/paragraph/periodcentered/cedilla/onesuperior
+/ordmasculine/guilsinglright/onequarter/onehalf/threequarters
+/questiondown/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE
+/Ccedilla/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex
+/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis
+/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute/Thorn
+/germandbls/agrave/aacute/acircumflex/atilde/adieresis/aring/ae/ccedilla
+/egrave/eacute/ecircumflex/edieresis/igrave/iacute/icircumflex/idieresis
+/eth/ntilde/ograve/oacute/ocircumflex/otilde/odieresis/divide/oslash
+/ugrave/uacute/ucircumflex/udieresis/yacute/thorn/ydieresis]def
+/Times-Roman@0 ENC0/Times-Roman RE
+%%EndSetup
+%%Page: 1 1
+%%BeginPageSetup
+BP
+%%EndPageSetup
+/F0 10/Times-Roman@0 SF(is parent of)202.217 695.536 Q .4 LW 258.552
+693.336 224.712 659.496 DL 224.712 727.176 258.552 693.336 DL 190.872
+693.336 224.712 727.176 DL 224.712 659.496 190.872 693.336 DL 261.936
+579.288 MT 0 -38.664 RL -77.328 0 RL 0 38.664 RL CL 0.537 0.847 0.839 Fr
+261.936 579.288 MT 0 -38.664 RL -77.328 0 RL 0 38.664 RL CL 0 Cg ST
+(student)208.827 562.192 Q 331.488 804 MT 0 -38.664 RL -77.328 0 RL 0
+38.664 RL CL 0.537 0.847 0.839 Fr 331.488 804 MT 0 -38.664 RL -77.328 0
+RL 0 38.664 RL CL 0 Cg ST(person)279.494 786.904 Q(is sibling of)82.225
+572.776 Q 139.68 570.648 105.84 536.808 DL 105.84 604.416 139.68 570.576
+DL 72 570.576 105.84 604.416 DL 105.84 536.736 72 570.576 DL
+(is assigned)262.811 150.496 Q 318.456 148.296 284.616 114.456 DL
+284.616 182.136 318.456 148.296 DL 250.776 148.224 284.616 182.064 DL
+284.616 114.456 250.776 148.296 DL 274.464 50.664 MT 0 -38.664 RL
+-77.328 0 RL 0 38.664 RL CL 0.537 0.847 0.839 Fr 274.464 50.664 MT 0
+-38.664 RL -77.328 0 RL 0 38.664 RL CL 0 Cg ST(EDG)225.525 33.496 Q
+373.032 305.832 MT 0 -38.664 RL -77.328 0 RL 0 38.664 RL CL 0.537 0.847
+0.839 Fr 373.032 305.832 MT 0 -38.664 RL -77.328 0 RL 0 38.664 RL CL 0
+Cg ST(subject)320.203 288.664 Q(act)145.442 499.84 Q 185.112 497.64
+151.272 463.8 DL 151.2 531.48 185.04 497.64 DL 117.432 497.64 151.272
+531.48 DL 151.272 463.8 117.432 497.64 DL 245.016 423.696 MT 0 -38.664
+RL -77.328 0 RL 0 38.664 RL CL 0.537 0.847 0.839 Fr 245.016 423.696 MT 0
+-38.664 RL -77.328 0 RL 0 38.664 RL CL 0 Cg ST(class)196.632 406.6 Q
+(is class teacher)269.098 503.224 Q 332.928 501.024 299.088 467.184 DL
+299.088 534.864 332.928 501.024 DL 265.248 501.024 299.088 534.864 DL
+299.16 467.184 265.32 501.024 DL 424.728 554.16 MT 0 -38.664 RL -77.328
+0 RL 0 38.664 RL CL 0.537 0.847 0.839 Fr 424.728 554.16 MT 0 -38.664 RL
+-77.328 0 RL 0 38.664 RL CL 0 Cg ST(teacher)371.629 537.064 Q(Mark)
+251.106 403.648 Q 295.776 401.52 261.936 367.68 DL 261.864 435.288
+295.704 401.448 DL 228.096 401.448 261.936 435.288 DL 261.936 367.608
+228.096 401.448 DL(teaches)318.213 404.152 Q 366.768 401.952 332.928
+368.112 DL 332.928 435.792 366.768 401.952 DL 299.088 401.952 332.928
+435.792 DL 332.928 368.112 299.088 401.952 DL(lists)439.42 249.496 Q
+481.32 247.368 447.48 213.528 DL 447.48 281.136 481.32 247.296 DL 413.64
+247.296 447.48 281.136 DL 447.48 213.456 413.64 247.296 DL 596.808
+250.248 MT 0 -38.664 RL -77.328 0 RL 0 38.664 RL CL 0.537 0.847 0.839 Fr
+596.808 250.248 MT 0 -38.664 RL -77.328 0 RL 0 38.664 RL CL 0 Cg ST
+(Curriculum)535.089 233.08 Q(uses)598.35 356.344 Q 640.8 354.144 606.96
+320.304 DL 606.888 387.984 640.728 354.144 DL 573.12 354.072 606.96
+387.912 DL 606.96 320.304 573.12 354.144 DL 629.136 509.232 MT 0 -38.664
+RL -77.328 0 RL 0 38.664 RL CL 0.537 0.847 0.839 Fr 629.136 509.232 MT 0
+-38.664 RL -77.328 0 RL 0 38.664 RL CL 0 Cg ST(department)567.977
+492.136 Q(is managed)474.093 553.984 Q 530.568 551.784 496.728 517.944
+DL 496.728 585.624 530.568 551.784 DL 462.888 551.712 496.728 585.552 DL
+496.8 517.944 462.96 551.784 DL(is part of)469.305 501.784 Q 520.92
+499.584 487.08 465.744 DL 487.08 533.424 520.92 499.584 DL 453.24
+499.584 487.08 533.424 DL 487.08 465.744 453.24 499.584 DL 386.064
+515.568 487.08 533.424 DL(\(1,n\))427.028 526.624 Q 551.88 489.936
+520.92 499.584 DL(\(1,1\))526.82 496.96 Q 590.472 509.232 496.728
+517.944 DL(\(0,1\))534.02 515.752 Q 424.8 534.864 462.96 551.784 DL
+(\(1,1\))434.228 545.488 Q 590.544 470.568 606.96 387.912 DL(\(0,n\))
+589.1 431.44 Q 558.144 250.248 606.96 320.304 DL(\(1,1\))572.972 287.44
+Q 334.44 267.096 447.48 281.136 DL(\(0,n\))381.38 276.352 Q 519.48
+230.88 481.32 247.296 DL(\(1,1\))490.82 241.288 Q 386.064 515.496
+332.928 435.792 DL 2.5(\(1)347.416 477.88 S 2.5(,n)-2.5 G(\))-2.5 E
+244.944 404.4 299.088 401.952 DL 2.5(\(1)260.008 405.376 S 2.5(,n)-2.5 G
+(\))-2.5 E 295.704 286.464 332.928 368.112 DL 2.5(\(1)302.272 329.488 S
+2.5(,n)-2.5 G(\))-2.5 E 223.272 540.624 261.936 435.288 DL 2.5(\(1)
+230.488 490.192 S 2.5(,n)-2.5 G(\))-2.5 E 245.016 404.328 228.096
+401.448 DL 2.5(\(1)224.44 405.16 S 2.5(,n)-2.5 G(\))-2.5 E 295.776
+286.464 261.936 367.68 DL 2.5(\(1)266.704 329.272 S 2.5(,n)-2.5 G(\))
+-2.5 E 386.064 515.568 299.088 534.864 DL(\(1,1\))332.996 527.416 Q
+206.28 423.696 299.088 467.184 DL(\(1,1\))243.14 447.64 Q 223.272
+540.696 151.272 531.48 DL(\(1,n\))177.692 538.288 Q 206.352 423.696
+151.272 463.8 DL(\(0,n\))169.196 445.984 Q 235.8 50.664 284.616 114.456
+DL(\(1,1\))250.628 84.76 Q 334.368 267.096 284.616 182.064 DL(\(0,n\))
+299.948 226.816 Q 184.608 559.92 139.68 570.576 DL(\(0,n\))152.564
+567.52 Q 184.608 559.92 139.68 570.576 DL(\(0,n\))152.564 567.52 Q
+223.272 579.288 224.712 659.496 DL(\(0,n\))214.412 621.592 Q 292.824
+765.336 224.712 727.176 DL(\(1,2\))249.188 748.456 Q 342.144 679.368
+313.128 611.688 DL 284.184 679.296 342.144 679.296 DL 313.128 611.616
+284.112 679.296 DL 292.824 804 313.128 611.688 DL(\(0, 1\))292.146
+710.008 Q 386.136 554.16 342.144 679.296 DL(\(1, 1\))353.274 618.928 Q
+223.2 579.288 284.112 679.296 DL(\(1, 1\))242.826 631.528 Q 0 Cg EP
+%%Page: 2 2
+%%BeginPageSetup
+BP
+%%EndPageSetup
+0 Cg EP
+%%Trailer
+end
+%%EOF

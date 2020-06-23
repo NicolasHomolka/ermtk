@@ -1,0 +1,32 @@
+.PS
+.defcolor medblue rgb #89D8D6
+boxwid=140; boxht=140;Liegtineinem: box invis "is in a" at (1183, 921);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=160;boxht= 80;Erzeuger: box shaded "medblue" at (1237, 1472) "producer";
+boxwid=160;boxht= 80;Anbaugebiet: box shaded "medblue" at (1135, 449) "growing area";
+boxwid=140; boxht=140;Besitzt: box invis "owns" at (1541, 1650);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=160;boxht= 80;Lizenz: box shaded "medblue" at (1813, 1732) "licence";
+boxwid=140; boxht=140;Beinhaltet: box invis "contains" at (582, 2504);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=160;boxht= 80;Wein: box shaded "medblue" at (847, 2266) "wine";
+boxwid=160;boxht= 80;Rebsorte: box shaded "medblue" at (336, 2694) "type of grape";
+boxwid=140; boxht=140;Erzeugt: box invis "produces" at (1040, 1885);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+line from Erzeugt .s to Erzeuger .n;
+box invis at last line .center "(0,n)";
+line from Erzeugt .n to Wein .s;
+box invis at last line .center "(1,n)";
+line from Beinhaltet .s to Wein .n;
+box invis at last line .center "(0,n)";
+line from Beinhaltet .n to Rebsorte .s;
+box invis at last line .center "(1,n)";
+line from Besitzt .s to Erzeuger .n;
+box invis at last line .center "(1,n)";
+line from Besitzt .n to Lizenz .s;
+box invis at last line .center "(1,1)";
+line from Liegtineinem .n to Erzeuger .s;
+box invis at last line .center "(0,n)";
+line from Liegtineinem .s to Anbaugebiet .n;
+box invis at last line .center "(1,n)";
+.PE

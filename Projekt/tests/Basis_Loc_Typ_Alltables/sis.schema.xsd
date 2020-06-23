@@ -1,0 +1,367 @@
+<?xml version="1.0" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="Schoolinformationsystem">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="person">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="ssnr" type="xs:string"/>
+                     <xs:element name="lastname" type="xs:string"/>
+                     <xs:element name="firstname" type="xs:string"/>
+                     <xs:element name="gebDat" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="teacher">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="tnr" type="xs:integer"/>
+                     <xs:element name="ssnr" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="student">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="MatrNr" type="xs:string"/>
+                     <xs:element name="ssnr" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="department">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="shortcut" type="xs:string"/>
+                     <xs:element name="name" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Gegenstand">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="abkuerzung" type="xs:string"/>
+                     <xs:element name="bezeichnung" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="corriculum">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="year" type="xs:string"/>
+                     <xs:element name="pStunden" type="xs:string"/>
+                     <xs:element name="tStunden" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="class">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="description" type="xs:string"/>
+                     <xs:element name="year" type="xs:string"/>
+                     <xs:element name="class_speaker" type="xs:string"/>
+                     <xs:element name="cashier" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="EDG">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="edgNr" type="xs:integer"/>
+                     <xs:element name="factor" type="xs:decimal"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="is_sibling_of">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="student_ssnr" type="xs:string"/>
+                     <xs:element name="student_ssnr2" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="is_parent_of">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="student_ssnr" type="xs:string"/>
+                     <xs:element name="person_ssnr" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="teach_in">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="teacher_ssnr" type="xs:string"/>
+                     <xs:element name="department_shortcut" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="define_factor_for">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="EDG_edgNr" type="xs:integer"/>
+                     <xs:element name="Gegenstand_abkuerzung" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="wird_geleitet">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="department_shortcut" type="xs:string"/>
+                     <xs:element name="teacher_ssnr" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="is_class_teacher">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="teacher_ssnr" type="xs:string"/>
+                     <xs:element name="class_description" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="takes_role">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="student_ssnr" type="xs:string"/>
+                     <xs:element name="class_description" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="is_defined_for">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="corriculum_year" type="xs:string"/>
+                     <xs:element name="department_shortcut" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="ist_teil_von">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="class_description" type="xs:string"/>
+                     <xs:element name="department_shortcut" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="have_marks_for">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="student_ssnr" type="xs:string"/>
+                     <xs:element name="Gegenstand_abkuerzung" type="xs:string"/>
+                     <xs:element name="term_mark" type="xs:integer"/>
+                     <xs:element name="year_mark" type="xs:integer"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="register">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Gegenstand_abkuerzung" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+         </xs:sequence>
+      </xs:complexType>
+      <xs:key name="PK_ssnr_person">
+         <xs:selector xpath="person/ssnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_ssnr_teacher">
+         <xs:selector xpath="teacher/ssnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_ssnr_student">
+         <xs:selector xpath="student/ssnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_shortcut_department">
+         <xs:selector xpath="department/shortcut"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_abkuerzung_Gegenstand">
+         <xs:selector xpath="Gegenstand/abkuerzung"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_year_corriculum">
+         <xs:selector xpath="corriculum/year"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_description_class">
+         <xs:selector xpath="class/description"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_edgNr_EDG">
+         <xs:selector xpath="EDG/edgNr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_student_ssnr_is_sibling_of">
+         <xs:selector xpath="is_sibling_of/student_ssnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_student_ssnr2_is_sibling_of">
+         <xs:selector xpath="is_sibling_of/student_ssnr2"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_student_ssnr_is_parent_of">
+         <xs:selector xpath="is_parent_of/student_ssnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_person_ssnr_is_parent_of">
+         <xs:selector xpath="is_parent_of/person_ssnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_teacher_ssnr_teach_in">
+         <xs:selector xpath="teach_in/teacher_ssnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_department_shortcut_teach_in">
+         <xs:selector xpath="teach_in/department_shortcut"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_EDG_edgNr_define_factor_for">
+         <xs:selector xpath="define_factor_for/EDG_edgNr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Gegenstand_abkuerzung_define_factor_for">
+         <xs:selector xpath="define_factor_for/Gegenstand_abkuerzung"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_department_shortcut_wird_geleitet">
+         <xs:selector xpath="wird_geleitet/department_shortcut"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_teacher_ssnr_wird_geleitet">
+         <xs:selector xpath="wird_geleitet/teacher_ssnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_teacher_ssnr_is_class_teacher">
+         <xs:selector xpath="is_class_teacher/teacher_ssnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_class_description_is_class_teacher">
+         <xs:selector xpath="is_class_teacher/class_description"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_student_ssnr_takes_role">
+         <xs:selector xpath="takes_role/student_ssnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_class_description_takes_role">
+         <xs:selector xpath="takes_role/class_description"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_corriculum_year_is_defined_for">
+         <xs:selector xpath="is_defined_for/corriculum_year"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_department_shortcut_is_defined_for">
+         <xs:selector xpath="is_defined_for/department_shortcut"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_class_description_ist_teil_von">
+         <xs:selector xpath="ist_teil_von/class_description"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_department_shortcut_ist_teil_von">
+         <xs:selector xpath="ist_teil_von/department_shortcut"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_student_ssnr_have_marks_for">
+         <xs:selector xpath="have_marks_for/student_ssnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Gegenstand_abkuerzung_have_marks_for">
+         <xs:selector xpath="have_marks_for/Gegenstand_abkuerzung"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Gegenstand_abkuerzung_register">
+         <xs:selector xpath="register/Gegenstand_abkuerzung"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:keyref name="FK_ist_Geschwister_von_student_ssnr_to_student" refer="PK_ssnr_student">
+         <xs:selector xpath="is_sibling_of/student_ssnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_ist_Geschwister_von_student_ssnr2_to_student" refer="PK_ssnr_student">
+         <xs:selector xpath="is_sibling_of/student_ssnr2"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_ist_Elternteil_von_student_ssnr_to_student" refer="PK_ssnr_student">
+         <xs:selector xpath="is_parent_of/student_ssnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_ist_Elternteil_von_person_ssnr_to_person" refer="PK_ssnr_person">
+         <xs:selector xpath="is_parent_of/person_ssnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_unterrichtet_in_teacher_ssnr_to_teacher" refer="PK_ssnr_teacher">
+         <xs:selector xpath="teach_in/teacher_ssnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_unterrichtet_in_department_shortcut_to_department" refer="PK_shortcut_department">
+         <xs:selector xpath="teach_in/department_shortcut"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_bestimmt_Faktor_fuer_EDG_edgNr_to_EDG" refer="PK_edgNr_EDG">
+         <xs:selector xpath="define_factor_for/EDG_edgNr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_bestimmt_Faktor_fuer_Gegenstand_abkuerzung_to_Gegenstand" refer="PK_abkuerzung_Gegenstand">
+         <xs:selector xpath="define_factor_for/Gegenstand_abkuerzung"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_wird_geleitet_department_shortcut_to_department" refer="PK_shortcut_department">
+         <xs:selector xpath="wird_geleitet/department_shortcut"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_wird_geleitet_teacher_ssnr_to_teacher" refer="PK_ssnr_teacher">
+         <xs:selector xpath="wird_geleitet/teacher_ssnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_ist_Klassenvorstand_teacher_ssnr_to_teacher" refer="PK_ssnr_teacher">
+         <xs:selector xpath="is_class_teacher/teacher_ssnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_ist_Klassenvorstand_class_description_to_class" refer="PK_description_class">
+         <xs:selector xpath="is_class_teacher/class_description"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_uebernimmt_Rolle_student_ssnr_to_student" refer="PK_ssnr_student">
+         <xs:selector xpath="takes_role/student_ssnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_uebernimmt_Rolle_class_description_to_class" refer="PK_description_class">
+         <xs:selector xpath="takes_role/class_description"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_ist_bestimmt_fuer_corriculum_year_to_corriculum" refer="PK_year_corriculum">
+         <xs:selector xpath="is_defined_for/corriculum_year"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_ist_bestimmt_fuer_department_shortcut_to_department" refer="PK_shortcut_department">
+         <xs:selector xpath="is_defined_for/department_shortcut"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_ist_teil_von_class_description_to_class" refer="PK_description_class">
+         <xs:selector xpath="ist_teil_von/class_description"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_ist_teil_von_department_shortcut_to_department" refer="PK_shortcut_department">
+         <xs:selector xpath="ist_teil_von/department_shortcut"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_besitzt_Noten_fuer_student_ssnr_to_student" refer="PK_ssnr_student">
+         <xs:selector xpath="have_marks_for/student_ssnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_besitzt_Noten_fuer_Gegenstand_abkuerzung_to_Gegenstand" refer="PK_abkuerzung_Gegenstand">
+         <xs:selector xpath="have_marks_for/Gegenstand_abkuerzung"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_vermerkt_Gegenstand_abkuerzung_to_Gegenstand" refer="PK_abkuerzung_Gegenstand">
+         <xs:selector xpath="register/Gegenstand_abkuerzung"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+   </xs:element>
+</xs:schema>

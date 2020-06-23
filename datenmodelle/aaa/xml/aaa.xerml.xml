@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<erm version="0.1" >
+
+    <!-- Front Matter -->
+
+    <title name="Fluggesellschaften"/>
+    <title name="All Airways Association" lang="en"/>
+
+
+
+    <!-- Entity-Types -->
+    <ent name="BoardKarte">
+        <attr name="fnr" prime="true"/>
+        <attr name="datum"/>
+        <attr name="abflughafen"/>
+        <attr name="ankunftsflughafen"/>
+        <attr name="name"/>
+        <attr name="sitz"/>
+    </ent>
+
+    <ent name="Passagier">
+        <attr name="pnr" prime="true"/>
+        <attr name="name"/>
+        <attr name="anrede"/>
+        <attr name="titel"/>
+    </ent>
+
+    <ent name="Ticket">
+        <attr name="tnr" prime="true"/>
+        <attr name="ausgabedatum"/>
+        <attr name="preis"/>
+        <attr name="waehrung"/>
+        <attr name="vertriebsbuero"/>
+    </ent>
+
+    <ent name="Flugzeugtyp">
+        <attr name="typidentifikation" prime="true"/>
+        <attr name="hersteller"/>
+        <attr name="reichweite"/>
+    </ent>
+    
+    <ent name="Flugzeug">
+        <attr name="flugzeugnummer" prime="true"/>
+        <attr name="interregnummer" prime="true"/>
+        <attr name="name"/>
+        <attr name="startDatum"/>
+    </ent>
+    
+    <ent name="Fluggesellschaft">
+        <attr name="orgCode" prime="true"/>
+        <attr name="name"/>
+        <attr name="hauptsitz"/>
+    </ent>
+    
+    <ent name="Flughafen">
+        <attr name="flughafennr" prime="true"/>
+        <attr name="name"/>
+        <attr name="stadt"/>
+        <attr name="land"/>
+        <attr name="kapazitaet"/>
+    </ent>
+
+    <!-- Relationship-Types -->
+
+    <rel to="Sitzplatz">
+        <part ref="BoardKarte" min="1" max="n"/>
+        <part ref="Flugzeugtyp" min="0" max="n"/>
+        <attr name="klasse" prime="true"/>
+        <attr name="ort" prime="true"/>
+    </rel>
+
+    <rel to="besitzt">
+        <part ref="BoardKarte" min="1" max="n"/>
+        <part ref="Passagier" min="1" max="1" weak="true"/>
+    </rel>
+
+    <rel to="hat ein">
+        <part ref="Passagier" min="1" max="n"/>
+        <part ref="Ticket" min="1" max="1" weak="true"/>
+    </rel>
+
+    <rel to="Flug">
+        <part ref="Ticket" min="1" max="n"/>
+        <part ref="Fluggesellschaft" min="1" max="n"/>
+        <part ref="Flughafen" min="1" max="n"/>
+    </rel>
+
+    <rel to="besitzts">
+        <part ref="Fluggesellschaft" min="0" max="n"/>
+        <part ref="Flugzeug" min="0" max="1"/>
+    </rel>
+
+    <rel to="ist">
+        <part ref="Flugzeug" min="1" max="1" />
+        <part ref="Flugzeugtyp" min="1" max="n"/>
+    </rel>
+
+</erm>

@@ -1,0 +1,78 @@
+graph Weingut {
+	label=Weingut
+	fontsize=20
+	node [peripheries=1 shape=box]
+	wein
+	node [label=farbe shape=circle style=bold]
+	"wein.farbe"
+	wein -- "wein.farbe" [peripheries=1]
+	node [label=jahrgang shape=circle style=bold]
+	"wein.jahrgang"
+	wein -- "wein.jahrgang" [peripheries=1]
+	node [label="restsüße" shape=circle style=bold]
+	"wein.restsüße"
+	wein -- "wein.restsüße" [peripheries=1]
+	node [label=erzeuger shape=circle style=bold]
+	"wein.erzeuger"
+	wein -- "wein.erzeuger" [peripheries=1]
+	node [peripheries=1 shape=box]
+	erzeuger
+	node [label=adresse shape=circle style=bold]
+	"erzeuger.adresse"
+	erzeuger -- "erzeuger.adresse" [peripheries=1]
+	node [label=lizenznummer shape=circle style=bold]
+	"erzeuger.lizenznummer"
+	erzeuger -- "erzeuger.lizenznummer" [peripheries=1]
+	node [label=mengewein shape=circle style=bold]
+	"erzeuger.mengewein"
+	erzeuger -- "erzeuger.mengewein" [peripheries=1]
+	node [label=anbaugebiet shape=circle style=bold]
+	"erzeuger.anbaugebiet"
+	erzeuger -- "erzeuger.anbaugebiet" [peripheries=1]
+	node [peripheries=1 shape=box]
+	anbaugebiet
+	node [label=name shape=circle]
+	"anbaugebiet.name"
+	anbaugebiet -- "anbaugebiet.name" [peripheries=1]
+	node [label=region shape=circle]
+	"anbaugebiet.region"
+	anbaugebiet -- "anbaugebiet.region" [peripheries=1]
+	node [label=land shape=circle]
+	"anbaugebiet.land"
+	anbaugebiet -- "anbaugebiet.land" [peripheries=1]
+	node [peripheries=1 shape=box]
+	rebsorte
+	node [label=name shape=circle]
+	"rebsorte.name"
+	rebsorte -- "rebsorte.name" [peripheries=1]
+	node [label=farbe shape=circle]
+	"rebsorte.farbe"
+	rebsorte -- "rebsorte.farbe" [peripheries=1]
+	node [label=anteil shape=circle]
+	"rebsorte.anteil"
+	rebsorte -- "rebsorte.anteil" [peripheries=1]
+	node [peripheries=1 shape=box]
+	lizenz
+	node [label=lizenznummer shape=circle]
+	"lizenz.lizenznummer"
+	lizenz -- "lizenz.lizenznummer" [peripheries=1]
+	node [label=menge shape=circle]
+	"lizenz.menge"
+	lizenz -- "lizenz.menge" [peripheries=1]
+	node [peripheries=1 shape=diamond]
+	erzeugt
+	erzeugt -- erzeuger [label="(1, n)" peripheries=1]
+	erzeugt -- wein [label="(1, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	beinhaltet
+	beinhaltet -- wein [label="(1, n)" peripheries=1]
+	beinhaltet -- rebsorte [label="(1, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	besitzt
+	besitzt -- erzeuger [label="(1, 1)" peripheries=1]
+	besitzt -- lizenz [label="(1, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"liegt in einem"
+	"liegt in einem" -- erzeuger [label="(1, 1)" peripheries=1]
+	"liegt in einem" -- anbaugebiet [label="(1, n)" peripheries=1]
+}

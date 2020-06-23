@@ -1,0 +1,46 @@
+.PS
+.defcolor medblue rgb #89D8D6
+boxwid=140; boxht=140;Geeignet: box invis "Geeignet" at (757, 577);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=160;boxht= 80;Kurs: box shaded "medblue" at (407, 463) "course";
+boxwid=160;boxht= 80;Referent: box shaded "medblue" at (1008, 919) "Referent";
+boxwid=140; boxht=140;Haelt: box invis "Haelt" at (730, 1162);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=160;boxht= 80;Kveranst: box shaded "medblue" at (458, 1399) "Kveranst";
+boxwid=140;boxht=60; box shaded "medblue" at (458, 1399) "Kveranst";
+boxwid=140; boxht=140;Besucht: box invis "attends" at (769, 1683);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=160;boxht= 80;Person: box shaded "medblue" at (1118, 1805) "Person";
+boxwid=140; boxht=140;Abgehalten: box invis "Abgehalten" at (366, 926);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=115;boxht=115; box invis at (366, 926);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=140; boxht=140;Setztvoraus: box invis "Setztvoraus" at (619, 92);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+line from Setztvoraus .n to Kurs .s;
+box invis at last line .center "(0,n)";
+line from Setztvoraus .n to Kurs .s;
+box invis at last line .center "(0,n)";
+line from Abgehalten .s to Kurs .n;
+box invis at last line .center "(1,1)";
+line from Abgehalten .n to Kveranst .s;
+box invis at last line .center "(0,n)";
+line from Besucht .s to Kveranst .n;
+box invis at last line .center "(0,n)";
+line from Besucht .n to Person .s;
+box invis at last line .center "(0,n)";
+line from Haelt .n to Kveranst .s;
+box invis at last line .center "(0,n)";
+line from Haelt .s to Referent .n;
+box invis at last line .center "(0,1)";
+line from Geeignet .s to Kurs .n;
+box invis at last line .center "(1,n)";
+line from Geeignet .n to Referent .s;
+box invis at last line .center "(0,n)";
+boxht=140; boxwid=120;Istein: box invis at (1164, 1344);
+line from last box .n to last box .se then to last box .sw then to last box .n
+line from Istein .n to Person .s;
+box invis at last line .center "(0, 1)";
+line from Istein .sw to Referent .n;
+box invis at last line .center "(1, 1)";
+.PE

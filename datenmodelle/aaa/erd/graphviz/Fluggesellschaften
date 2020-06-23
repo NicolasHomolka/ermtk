@@ -1,0 +1,109 @@
+graph Fluggesellschaften {
+	label=Fluggesellschaften
+	fontsize=20
+	node [peripheries=1 shape=box]
+	BoardKarte
+	node [label=datum shape=circle style=bold]
+	"BoardKarte.datum"
+	BoardKarte -- "BoardKarte.datum" [peripheries=1]
+	node [label=abflughafen shape=circle style=bold]
+	"BoardKarte.abflughafen"
+	BoardKarte -- "BoardKarte.abflughafen" [peripheries=1]
+	node [label=ankunftsflughafen shape=circle style=bold]
+	"BoardKarte.ankunftsflughafen"
+	BoardKarte -- "BoardKarte.ankunftsflughafen" [peripheries=1]
+	node [label=name shape=circle style=bold]
+	"BoardKarte.name"
+	BoardKarte -- "BoardKarte.name" [peripheries=1]
+	node [label=sitz shape=circle style=bold]
+	"BoardKarte.sitz"
+	BoardKarte -- "BoardKarte.sitz" [peripheries=1]
+	node [peripheries=2 shape=box]
+	Passagier
+	node [label=name shape=circle style=bold]
+	"Passagier.name"
+	Passagier -- "Passagier.name" [peripheries=1]
+	node [label=anrede shape=circle style=bold]
+	"Passagier.anrede"
+	Passagier -- "Passagier.anrede" [peripheries=1]
+	node [label=titel shape=circle style=bold]
+	"Passagier.titel"
+	Passagier -- "Passagier.titel" [peripheries=1]
+	node [peripheries=2 shape=box]
+	Ticket
+	node [label=ausgabedatum shape=circle style=bold]
+	"Ticket.ausgabedatum"
+	Ticket -- "Ticket.ausgabedatum" [peripheries=1]
+	node [label=preis shape=circle style=bold]
+	"Ticket.preis"
+	Ticket -- "Ticket.preis" [peripheries=1]
+	node [label=waehrung shape=circle style=bold]
+	"Ticket.waehrung"
+	Ticket -- "Ticket.waehrung" [peripheries=1]
+	node [label=vertriebsbuero shape=circle style=bold]
+	"Ticket.vertriebsbuero"
+	Ticket -- "Ticket.vertriebsbuero" [peripheries=1]
+	node [peripheries=1 shape=box]
+	Flugzeugtyp
+	node [label=hersteller shape=circle style=bold]
+	"Flugzeugtyp.hersteller"
+	Flugzeugtyp -- "Flugzeugtyp.hersteller" [peripheries=1]
+	node [label=reichweite shape=circle style=bold]
+	"Flugzeugtyp.reichweite"
+	Flugzeugtyp -- "Flugzeugtyp.reichweite" [peripheries=1]
+	node [peripheries=1 shape=box]
+	Flugzeug
+	node [label=name shape=circle style=bold]
+	"Flugzeug.name"
+	Flugzeug -- "Flugzeug.name" [peripheries=1]
+	node [label=startDatum shape=circle style=bold]
+	"Flugzeug.startDatum"
+	Flugzeug -- "Flugzeug.startDatum" [peripheries=1]
+	node [peripheries=1 shape=box]
+	Fluggesellschaft
+	node [label=name shape=circle style=bold]
+	"Fluggesellschaft.name"
+	Fluggesellschaft -- "Fluggesellschaft.name" [peripheries=1]
+	node [label=hauptsitz shape=circle style=bold]
+	"Fluggesellschaft.hauptsitz"
+	Fluggesellschaft -- "Fluggesellschaft.hauptsitz" [peripheries=1]
+	node [peripheries=1 shape=box]
+	Flughafen
+	node [label=name shape=circle style=bold]
+	"Flughafen.name"
+	Flughafen -- "Flughafen.name" [peripheries=1]
+	node [label=stadt shape=circle style=bold]
+	"Flughafen.stadt"
+	Flughafen -- "Flughafen.stadt" [peripheries=1]
+	node [label=land shape=circle style=bold]
+	"Flughafen.land"
+	Flughafen -- "Flughafen.land" [peripheries=1]
+	node [label=kapazitaet shape=circle style=bold]
+	"Flughafen.kapazitaet"
+	Flughafen -- "Flughafen.kapazitaet" [peripheries=1]
+	node [peripheries=1 shape=diamond]
+	Sitzplatz
+	Sitzplatz -- BoardKarte [label="(1, n)" peripheries=1]
+	Sitzplatz -- Flugzeugtyp [label="(0, n)" peripheries=1]
+	node [peripheries=2 shape=diamond]
+	besitzt
+	besitzt -- BoardKarte [label="(1, n)" peripheries=1]
+	besitzt -- Passagier [label="(1, 1)" peripheries=1]
+	node [peripheries=2 shape=diamond]
+	"hat ein"
+	"hat ein" -- Passagier [label="(1, n)" peripheries=1]
+	"hat ein" -- Ticket [label="(1, 1)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	Flug
+	Flug -- Ticket [label="(1, n)" peripheries=1]
+	Flug -- Fluggesellschaft [label="(1, n)" peripheries=1]
+	Flug -- Flughafen [label="(1, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	besitzts
+	besitzts -- Fluggesellschaft [label="(0, n)" peripheries=1]
+	besitzts -- Flugzeug [label="(0, 1)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	ist
+	ist -- Flugzeug [label="(1, 1)" peripheries=1]
+	ist -- Flugzeugtyp [label="(1, n)" peripheries=1]
+}

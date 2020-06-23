@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<desc version="0.01">
+
+    <title name="Kinokette"/>
+    <title name="Cinema Chain" lang="en"/>
+
+	<typdsc entref="kino">
+        <attr name="adresse" type="char"/>
+        <attr name="name" type="char"/>
+    </typdsc>
+
+    <typdsc entref="saal">
+        <attr name="saal_nr" type="integer"/>
+    </typdsc>
+
+    <typdsc entref="sitzplan">
+        <attr name="reihe" type="integer"/>
+        <attr name="sitz_nr" type="integer"/>
+        <attr name="begin" type="date"/>
+        <attr name="vergeben" type="boolean"/>
+    </typdsc>
+
+    <typdsc entref="ticket">
+        <attr name="begin" type="date"/>
+        <attr name="reihe" type="integer"/>
+    </typdsc>
+
+    <typdsc entref="zeitplan">
+        <attr name="begin" type="date"/>
+    </typdsc>    
+
+    <typdsc entref="film">
+        <attr name="titel" type="char"/>
+        <attr name="genre" type="char"/>
+        <attr name="herstellungsjahr" type="char"/>
+        <attr name="land" type="char"/>
+        <attr name="sprache" type="char"/>
+        <attr name="dauer" type="float"/>
+        <attr name="verleih" type="boolean"/>
+        <attr name="altersfreigabe" type="integer"/>
+    </typdsc>
+
+    <typdsc entref="person">
+        <attr name="svnr" type="integer"/>
+        <attr name="nachname" type="char"/>
+        <attr name="vorname" type="char"/>
+        <attr name="nationalitaet" type="char"/>
+        <attr name="geburtsdatum" type="date"/>
+        <attr name="todesdatum" type="date"/>
+        <attr name="bemerkung" type="char"/>
+    </typdsc>  
+
+	<reldsc relref="wird gezeigt in">
+		<attr name="von" type="date"/>
+		<attr name="bis" type="date"/>
+	</reldsc>
+</desc>

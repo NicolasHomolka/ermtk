@@ -1,0 +1,19 @@
+
+drop constraint fk_wurden_geschossen_spiel_on_spiel_datum;
+drop constraint fk_wurden_geschossen_spiel_on_spiel_spielort;
+drop constraint fk_spielt_mit_bei_spiel_on_spiel_datum;
+drop constraint fk_spielt_mit_bei_spiel_on_spiel_spielort;
+drop constraint fk_spielt_mit_bei_mannschaft_on_mannschaft_name;
+drop constraint fk_schiedsrichter_person_on_svnr;
+drop constraint fk_spieler_person_on_svnr;
+
+drop var wurden_geschossen;
+drop var hat_geschossen;
+drop var spielt_mit_bei;
+drop var tore;
+drop var schiedsrichter;
+drop var turnier;
+drop var spiel;
+drop var spieler;
+drop var person;
+drop var mannschaft;

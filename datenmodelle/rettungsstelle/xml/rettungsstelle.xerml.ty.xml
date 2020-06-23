@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<desc version="0.2">
+
+    <typdsc entref="mission">
+        <attr name="missionNr"       type="varchar" class="name"/>
+        <attr name="beginTime"       type="Datetime" class="date_time"/>
+        <attr name="endTime"         type="Datetime" class="date_time"/>
+        <attr name="missionPlace"    type="varchar" class="city"/>
+        <attr name="missionDesc"     type="varchar" class="name"/>
+        <attr name="reportType"      type="varchar" class="name"/>
+        <attr name="reportTime"      type="Datetime" class="date_time"/>
+    </typdsc>
+
+    <typdsc entref="trip">
+        <attr name="licencePlate"  type="varchar" class="name"/>
+        <attr name="missionNr"     type="varchar" class="name"/>
+        <attr name="employeeNr"    type="varchar" class="name"/>
+        <attr name="startAddress"  type="varchar" class="name"/>
+        <attr name="targetAddress" type="varchar" class="name"/>
+        <attr name="distance"      type="integer" class="number"/>
+        <attr name="begin"         type="Time" class="time"/>
+        <attr name="end"           type="Time" class="time"/>
+        <attr name="missionNr1"    type="varchar" class="name"/>
+    </typdsc>
+
+    <typdsc entref="person">
+        <attr name="name"         type="varchar" class="name"/>
+        <attr name="address"      type="varchar" class="name"/>
+        <attr name="birthday"     type="date" class="date"/>
+        <attr name="gender"       type="varchar" class="name"/>
+    </typdsc>
+
+    <typdsc entref="employee">
+        <attr name="employeeNr"   type="varchar" class="name"/>
+        <attr name="rank"         type="integer" class="number"/>
+        <attr name="schooling"    type="varchar" class="name"/>
+        <attr name="licencePlate" type="varchar" class="name"/>
+        <attr name="missionNr1"   type="varchar" class="name"/>
+    </typdsc>
+
+    <typdsc entref="patient">
+        <attr name="SSN"          type="varchar" class="name"/>
+        <attr name="KVA"          type="varchar" class="name"/>
+        <attr name="missionDesc"  type="varchar" class="name"/>
+        <attr name="licencePlate" type="varchar" class="name"/>
+        <attr name="missionNr1"   type="varchar" class="name"/>
+    </typdsc>
+
+    <typdsc entref="car">
+        <attr name="licencePlate" type="varchar" class="name"/>
+        <attr name="brand"        type="varchar" class="name"/>
+        <attr name="model"        type="varchar" class="name"/>
+        <attr name="equipment"    type="varchar" class="name"/>
+        <attr name="address"      type="varchar" class="name"/>
+    </typdsc>
+
+    <typdsc entref="garage">
+        <attr name="address"      type="varchar" class="name"/>
+        <attr name="licencePlate" type="varchar" class="name"/>
+        <attr name="carNr"        type="integer" class="number"/>
+    </typdsc>
+
+</desc>

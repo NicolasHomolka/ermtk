@@ -1,0 +1,193 @@
+<?xml version="1.0" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="Rettungsstelle">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="einsatz">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="EinsatzNr" type="xs:string"/>
+                     <xs:element name="anfangsZeit" type="xs:dateTime"/>
+                     <xs:element name="endZeit" type="xs:dateTime"/>
+                     <xs:element name="einsatzOrt" type="xs:string"/>
+                     <xs:element name="einsatzBeschreibung" type="xs:string"/>
+                     <xs:element name="meldungsArt" type="xs:string"/>
+                     <xs:element name="meldungsZeit" type="xs:dateTime"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="fahrt">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="kenntzeichen" type="xs:string"/>
+                     <xs:element name="einsatzNr" type="xs:string"/>
+                     <xs:element name="angestelltenNr" type="xs:string"/>
+                     <xs:element name="startAdresse" type="xs:string"/>
+                     <xs:element name="zielAdresse" type="xs:string"/>
+                     <xs:element name="entfernung" type="xs:integer"/>
+                     <xs:element name="starts" type="xs:string"/>
+                     <xs:element name="ende" type="xs:string"/>
+                     <xs:element name="einsatzNr1" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="person">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="name" type="xs:string"/>
+                     <xs:element name="adresse" type="xs:string"/>
+                     <xs:element name="geburtstag" type="xs:date"/>
+                     <xs:element name="geschlecht" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="angestellter">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="mitarbeiterNr" type="xs:string"/>
+                     <xs:element name="rang" type="xs:integer"/>
+                     <xs:element name="schulung" type="xs:string"/>
+                     <xs:element name="kenntzeichen" type="xs:string"/>
+                     <xs:element name="einsatzNr1" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="patient">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="SVN" type="xs:string"/>
+                     <xs:element name="KVA" type="xs:string"/>
+                     <xs:element name="einsatzBeschreibung" type="xs:string"/>
+                     <xs:element name="kenntzeichen" type="xs:string"/>
+                     <xs:element name="einsatzNr1" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="auto">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="kenntzeichen" type="xs:string"/>
+                     <xs:element name="marke" type="xs:string"/>
+                     <xs:element name="model" type="xs:string"/>
+                     <xs:element name="ausstattung" type="xs:string"/>
+                     <xs:element name="adresse" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="garage">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="adresse" type="xs:string"/>
+                     <xs:element name="kenntzeichen" type="xs:string"/>
+                     <xs:element name="autoNr" type="xs:integer"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="besteht_aus">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="einsatz_EinsatzNr" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="nimmt_teil">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="angestellter_mitarbeiterNr" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="wird_gerettet">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="patient_SVN" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="wird_verwendet">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="auto_kenntzeichen" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="hat">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="auto_kenntzeichen" type="xs:string"/>
+                     <xs:element name="garage_adresse" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+         </xs:sequence>
+      </xs:complexType>
+      <xs:key name="PK_EinsatzNr_einsatz">
+         <xs:selector xpath="einsatz/EinsatzNr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_mitarbeiterNr_angestellter">
+         <xs:selector xpath="angestellter/mitarbeiterNr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_SVN_patient">
+         <xs:selector xpath="patient/SVN"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_kenntzeichen_auto">
+         <xs:selector xpath="auto/kenntzeichen"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_adresse_garage">
+         <xs:selector xpath="garage/adresse"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_einsatz_EinsatzNr_besteht_aus">
+         <xs:selector xpath="besteht_aus/einsatz_EinsatzNr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_angestellter_mitarbeiterNr_nimmt_teil">
+         <xs:selector xpath="nimmt_teil/angestellter_mitarbeiterNr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_patient_SVN_wird_gerettet">
+         <xs:selector xpath="wird_gerettet/patient_SVN"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_auto_kenntzeichen_wird_verwendet">
+         <xs:selector xpath="wird_verwendet/auto_kenntzeichen"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_auto_kenntzeichen_hat">
+         <xs:selector xpath="hat/auto_kenntzeichen"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_garage_adresse_hat">
+         <xs:selector xpath="hat/garage_adresse"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:keyref name="FK_consists_of_einsatz_EinsatzNr_to_einsatz" refer="PK_EinsatzNr_einsatz">
+         <xs:selector xpath="besteht_aus/einsatz_EinsatzNr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_joins_angestellter_mitarbeiterNr_to_angestellter" refer="PK_mitarbeiterNr_angestellter">
+         <xs:selector xpath="nimmt_teil/angestellter_mitarbeiterNr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_is_being_rescued_patient_SVN_to_patient" refer="PK_SVN_patient">
+         <xs:selector xpath="wird_gerettet/patient_SVN"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_is_being_used_auto_kenntzeichen_to_auto" refer="PK_kenntzeichen_auto">
+         <xs:selector xpath="wird_verwendet/auto_kenntzeichen"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_has_auto_kenntzeichen_to_auto" refer="PK_kenntzeichen_auto">
+         <xs:selector xpath="hat/auto_kenntzeichen"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_has_garage_adresse_to_garage" refer="PK_adresse_garage">
+         <xs:selector xpath="hat/garage_adresse"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+   </xs:element>
+</xs:schema>

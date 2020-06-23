@@ -1,0 +1,366 @@
+<?xml version="1.0" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="All_Airways_Association">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="BoardingCard">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="fnr" type="xs:string"/>
+                     <xs:element name="datum" type="xs:string"/>
+                     <xs:element name="startAirport" type="xs:string"/>
+                     <xs:element name="endAirport" type="xs:string"/>
+                     <xs:element name="name" type="xs:string"/>
+                     <xs:element name="seat" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Passenger">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="fnr" type="xs:string"/>
+                     <xs:element name="pnr" type="xs:string"/>
+                     <xs:element name="name" type="xs:string"/>
+                     <xs:element name="salutation" type="xs:string"/>
+                     <xs:element name="title" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Ticket">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="pnr" type="xs:string"/>
+                     <xs:element name="fnr" type="xs:string"/>
+                     <xs:element name="tnr" type="xs:string"/>
+                     <xs:element name="issueDate" type="xs:string"/>
+                     <xs:element name="price" type="xs:string"/>
+                     <xs:element name="currency" type="xs:string"/>
+                     <xs:element name="salesOffice" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Airplanetype">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="typeidentification" type="xs:string"/>
+                     <xs:element name="producer" type="xs:string"/>
+                     <xs:element name="range" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Airplane">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="flugzeugnummer" type="xs:string"/>
+                     <xs:element name="interRegNumber" type="xs:string"/>
+                     <xs:element name="name" type="xs:string"/>
+                     <xs:element name="startupDate" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="AirplaneOrganization">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="orgCode" type="xs:string"/>
+                     <xs:element name="name" type="xs:string"/>
+                     <xs:element name="headquarters" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Airport">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="airportCode" type="xs:string"/>
+                     <xs:element name="name" type="xs:string"/>
+                     <xs:element name="town" type="xs:string"/>
+                     <xs:element name="country" type="xs:string"/>
+                     <xs:element name="capacity" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Seat">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Airplanetype_typeidentification" type="xs:string"/>
+                     <xs:element name="class" type="xs:string"/>
+                     <xs:element name="location" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="has">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="BoardingCard_fnr" type="xs:string"/>
+                     <xs:element name="Passenger_fnr" type="xs:string"/>
+                     <xs:element name="Passenger_pnr" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="hasa">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Passenger_fnr" type="xs:string"/>
+                     <xs:element name="Passenger_pnr" type="xs:string"/>
+                     <xs:element name="Ticket_pnr" type="xs:string"/>
+                     <xs:element name="Ticket_fnr" type="xs:string"/>
+                     <xs:element name="Ticket_tnr" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Flight">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Ticket_pnr" type="xs:string"/>
+                     <xs:element name="Ticket_fnr" type="xs:string"/>
+                     <xs:element name="Ticket_tnr" type="xs:string"/>
+                     <xs:element name="AirplaneOrganization_orgCode" type="xs:string"/>
+                     <xs:element name="Airport_airportCode" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="hass">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="AirplaneOrganization_orgCode" type="xs:string"/>
+                     <xs:element name="Airplane_flugzeugnummer" type="xs:string"/>
+                     <xs:element name="Airplane_interRegNumber" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="isa">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Airplane_flugzeugnummer" type="xs:string"/>
+                     <xs:element name="Airplane_interRegNumber" type="xs:string"/>
+                     <xs:element name="Airplanetype_typeidentification" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+         </xs:sequence>
+      </xs:complexType>
+      <xs:key name="PK_fnr_BoardingCard">
+         <xs:selector xpath="BoardingCard/fnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_fnr_Passenger">
+         <xs:selector xpath="Passenger/fnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_pnr_Passenger">
+         <xs:selector xpath="Passenger/pnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_pnr_Ticket">
+         <xs:selector xpath="Ticket/pnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_fnr_Ticket">
+         <xs:selector xpath="Ticket/fnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_tnr_Ticket">
+         <xs:selector xpath="Ticket/tnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_typeidentification_Airplanetype">
+         <xs:selector xpath="Airplanetype/typeidentification"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_flugzeugnummer_Airplane">
+         <xs:selector xpath="Airplane/flugzeugnummer"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_interRegNumber_Airplane">
+         <xs:selector xpath="Airplane/interRegNumber"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_orgCode_AirplaneOrganization">
+         <xs:selector xpath="AirplaneOrganization/orgCode"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_airportCode_Airport">
+         <xs:selector xpath="Airport/airportCode"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Airplanetype_typeidentification_Seat">
+         <xs:selector xpath="Seat/Airplanetype_typeidentification"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_class_Seat">
+         <xs:selector xpath="Seat/class"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_location_Seat">
+         <xs:selector xpath="Seat/location"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_BoardingCard_fnr_has">
+         <xs:selector xpath="has/BoardingCard_fnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Passenger_fnr_has">
+         <xs:selector xpath="has/Passenger_fnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Passenger_pnr_has">
+         <xs:selector xpath="has/Passenger_pnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Passenger_fnr_hasa">
+         <xs:selector xpath="hasa/Passenger_fnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Passenger_pnr_hasa">
+         <xs:selector xpath="hasa/Passenger_pnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Ticket_pnr_hasa">
+         <xs:selector xpath="hasa/Ticket_pnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Ticket_fnr_hasa">
+         <xs:selector xpath="hasa/Ticket_fnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Ticket_tnr_hasa">
+         <xs:selector xpath="hasa/Ticket_tnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Ticket_pnr_Flight">
+         <xs:selector xpath="Flight/Ticket_pnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Ticket_fnr_Flight">
+         <xs:selector xpath="Flight/Ticket_fnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Ticket_tnr_Flight">
+         <xs:selector xpath="Flight/Ticket_tnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_AirplaneOrganization_orgCode_Flight">
+         <xs:selector xpath="Flight/AirplaneOrganization_orgCode"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Airport_airportCode_Flight">
+         <xs:selector xpath="Flight/Airport_airportCode"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_AirplaneOrganization_orgCode_hass">
+         <xs:selector xpath="hass/AirplaneOrganization_orgCode"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Airplane_flugzeugnummer_hass">
+         <xs:selector xpath="hass/Airplane_flugzeugnummer"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Airplane_interRegNumber_hass">
+         <xs:selector xpath="hass/Airplane_interRegNumber"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Airplane_flugzeugnummer_isa">
+         <xs:selector xpath="isa/Airplane_flugzeugnummer"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Airplane_interRegNumber_isa">
+         <xs:selector xpath="isa/Airplane_interRegNumber"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Airplanetype_typeidentification_isa">
+         <xs:selector xpath="isa/Airplanetype_typeidentification"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:keyref name="FK_Passenger_fnr_to_BoardingCard" refer="PK_fnr_BoardingCard">
+         <xs:selector xpath="Passenger/fnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_Ticket_pnr_to_Passenger" refer="PK_pnr_Passenger">
+         <xs:selector xpath="Ticket/pnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_Ticket_fnr_to_Passenger" refer="PK_fnr_Passenger">
+         <xs:selector xpath="Ticket/fnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_Sitzplatz_Airplanetype_typeidentification_to_Airplanetype" refer="PK_typeidentification_Airplanetype">
+         <xs:selector xpath="Seat/Airplanetype_typeidentification"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_besitzt_BoardingCard_fnr_to_BoardingCard" refer="PK_fnr_BoardingCard">
+         <xs:selector xpath="has/BoardingCard_fnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_besitzt_Passenger_fnr_to_Passenger" refer="PK_fnr_Passenger">
+         <xs:selector xpath="has/Passenger_fnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_besitzt_Passenger_pnr_to_Passenger" refer="PK_pnr_Passenger">
+         <xs:selector xpath="has/Passenger_pnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_hat_ein_Passenger_fnr_to_Passenger" refer="PK_fnr_Passenger">
+         <xs:selector xpath="hasa/Passenger_fnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_hat_ein_Passenger_pnr_to_Passenger" refer="PK_pnr_Passenger">
+         <xs:selector xpath="hasa/Passenger_pnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_hat_ein_Ticket_pnr_to_Ticket" refer="PK_pnr_Ticket">
+         <xs:selector xpath="hasa/Ticket_pnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_hat_ein_Ticket_fnr_to_Ticket" refer="PK_fnr_Ticket">
+         <xs:selector xpath="hasa/Ticket_fnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_hat_ein_Ticket_tnr_to_Ticket" refer="PK_tnr_Ticket">
+         <xs:selector xpath="hasa/Ticket_tnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_Flug_Ticket_pnr_to_Ticket" refer="PK_pnr_Ticket">
+         <xs:selector xpath="Flight/Ticket_pnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_Flug_Ticket_fnr_to_Ticket" refer="PK_fnr_Ticket">
+         <xs:selector xpath="Flight/Ticket_fnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_Flug_Ticket_tnr_to_Ticket" refer="PK_tnr_Ticket">
+         <xs:selector xpath="Flight/Ticket_tnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_Flug_AirplaneOrganization_orgCode_to_AirplaneOrganization" refer="PK_orgCode_AirplaneOrganization">
+         <xs:selector xpath="Flight/AirplaneOrganization_orgCode"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_Flug_Airport_airportCode_to_Airport" refer="PK_airportCode_Airport">
+         <xs:selector xpath="Flight/Airport_airportCode"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_besitzts_AirplaneOrganization_orgCode_to_AirplaneOrganization" refer="PK_orgCode_AirplaneOrganization">
+         <xs:selector xpath="hass/AirplaneOrganization_orgCode"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_besitzts_Airplane_flugzeugnummer_to_Airplane" refer="PK_flugzeugnummer_Airplane">
+         <xs:selector xpath="hass/Airplane_flugzeugnummer"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_besitzts_Airplane_interRegNumber_to_Airplane" refer="PK_interRegNumber_Airplane">
+         <xs:selector xpath="hass/Airplane_interRegNumber"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_ist_Airplane_flugzeugnummer_to_Airplane" refer="PK_flugzeugnummer_Airplane">
+         <xs:selector xpath="isa/Airplane_flugzeugnummer"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_ist_Airplane_interRegNumber_to_Airplane" refer="PK_interRegNumber_Airplane">
+         <xs:selector xpath="isa/Airplane_interRegNumber"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_ist_Airplanetype_typeidentification_to_Airplanetype" refer="PK_typeidentification_Airplanetype">
+         <xs:selector xpath="isa/Airplanetype_typeidentification"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+   </xs:element>
+</xs:schema>

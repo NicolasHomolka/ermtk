@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<desc version="0.2">
+
+    <typdsc entref="Person">
+        <attr name="PersonID"  type="integer" class="number"/>
+        <attr name="FirstName" type="varchar" class="name"/>
+        <attr name="LastName"  type="varchar" class="name"/>
+        <attr name="Phone"     type="varchar" class="phone"/>
+    </typdsc>
+
+    <typdsc entref="Customer">
+        <attr name="Discount"       type="rational" class="number"/>
+        <attr name="TermsOfPayment" type="string"   class="name"/>
+    </typdsc>
+
+    <typdsc entref="Employee">
+        <attr name="HiringDate" type="date"     class="date"/>
+        <attr name="Salary"     type="rational" class="number"/>
+    </typdsc>
+
+    <typdsc entref="Manager">
+        <attr name="NumberAssistants" type="integer" class="number"/>
+    </typdsc>
+
+    <typdsc entref="CourseInstructor">
+        <attr name="FeePerHour" type="rational" class="number"/>
+    </typdsc>
+
+    <typdsc entref="Course">
+        <attr name="CourseID"  type="integer" class="number"/>
+        <attr name="Title"     type="varchar" class="name"/>
+        <attr name="StartDate" type="date"    class="date"/>
+    </typdsc>
+
+</desc>

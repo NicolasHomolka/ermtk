@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<loc version="0.2">
+
+	<title name="Schulungsfirma"/>
+    <title name="School of Music Course Database" lang="en"/>
+    
+    
+	<entlo entref="kurs" name-lo="course" lang="en">
+	    <attr name="knr"      name-lo="cno"   />
+	    <attr name="bezeichn" name-lo="cname" />
+ 	   <attr name="tage"     name-lo="days"  />
+  	  <attr name="preis"    name-lo="fee"   />
+	</entlo>
+
+	<rello relref="ist ein" name-lo="is-a" lang="en"/>
+
+	<rello relref="besucht" name-lo="attends" lang="en">
+  	  <attr name="bezahlt" name-lo="paid"/>
+	</rello>
+</loc>

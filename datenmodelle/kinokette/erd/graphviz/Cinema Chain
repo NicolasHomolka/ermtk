@@ -1,0 +1,52 @@
+graph "Cinema Chain" {
+	label=Kinokette
+	fontsize=20
+	label="Cinema Chain"
+	fontsize=20
+	node [shape=box]
+	kino
+	node [shape=box]
+	saal
+	node [shape=box]
+	sitzplan
+	node [shape=box]
+	ticket
+	node [shape=box]
+	zeitplan
+	node [shape=box]
+	film
+	node [shape=box]
+	person
+	node [shape=diamond]
+	"spielt mit"
+	"spielt mit" -- person [label="0, n"]
+	"spielt mit" -- film [label="1, n"]
+	node [shape=diamond]
+	"wird gezeigt in"
+	"wird gezeigt in" -- film [label="1, n"]
+	"wird gezeigt in" -- kino [label="0, n"]
+	node [shape=diamond]
+	"ist Teil von"
+	"ist Teil von" -- kino [label="1, n"]
+	"ist Teil von" -- saal [label="1, 1"]
+	node [shape=diamond]
+	"ist Sitzplan für"
+	"ist Sitzplan für" -- saal [label="1, n"]
+	"ist Sitzplan für" -- sitzplan [label="1, n"]
+	node [shape=diamond]
+	"ist Zeiplan für"
+	"ist Zeiplan für" -- saal [label="1, 1"]
+	"ist Zeiplan für" -- zeitplan [label="1, n"]
+	node [shape=diamond]
+	"wird ... gespielt"
+	"wird ... gespielt" -- film [label="1, 1"]
+	"wird ... gespielt" -- zeitplan [label="1, n"]
+	node [shape=diamond]
+	leitet
+	leitet -- film [label="1, n"]
+	leitet -- person [label="1, 1"]
+	node [shape=diamond]
+	"gilt für"
+	"gilt für" -- sitzplan [label="1, 1"]
+	"gilt für" -- ticket [label="1, n"]
+}

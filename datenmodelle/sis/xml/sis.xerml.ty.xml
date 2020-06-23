@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<desc version="0.2">
+
+    <title name="Schulinformationssystem"/>
+
+    <typdsc entref="Person">
+        <attr name="svnr"       type="char" class="number"/>
+        <attr name="nName"      type="char" class="last_name"/>
+        <attr name="vName"      type="char" class="first_name"/>
+        <attr name="gebDate"    type="date" class="date"/>
+    </typdsc>
+
+    <typdsc entref="Lehrer">
+        <attr name="lnr"        type="integer" class="number"/>
+    </typdsc>
+
+    <typdsc entref="Schueler">
+        <attr name="matnr"  type="integer" class="number"/>
+    </typdsc>
+
+    <typdsc entref="Abteilung">
+        <attr name="abkuerzung"  type="char" class="name"/>
+        <attr name="name"        type="char" class="name"/>
+    </typdsc>
+
+    <typdsc entref="Gegenstand">
+        <attr name="abkuerzung"      type="char" class="name"/>
+        <attr name="bezeichnung"    type="char"  class="name"/>
+    </typdsc>
+
+    <typdsc entref="Klasse">
+        <attr name="bezeichnung"        type="char" class="name"/>
+        <attr name="jahrgang"           type="char" class="year"/>
+    </typdsc>
+
+    <typdsc entref="Lehrverpflichtungsgruppe">
+        <attr name="lvgNr"      type="integer"  class="number"/>
+        <attr name="faktor"     type="rational" class="number"/>
+    </typdsc>
+
+    <typdsc relref="Lehrplan">
+        <attr name="jahrgang"   type="char"    class="year"/>
+        <attr name="pStunden"   type="integer" class="number"/>
+        <attr name="tStunden"   type="integer" class="number"/>
+    </typdsc>
+
+    <reldsc relref="Note">
+        <attr name="jahrgang"       type="char" class="year"/>
+    	<attr name="semesternote"   type="integer" class="number"/>
+        <attr name="jahresnote"     type="integer" class="number"/>
+	</reldsc>
+
+    <reldsc relref="agiert">
+        <attr name="rolle"    type="char"  class="name"/>
+    </reldsc>
+
+</desc>

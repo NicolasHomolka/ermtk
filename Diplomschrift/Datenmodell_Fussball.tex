@@ -1,0 +1,122 @@
+ 
+\section{Fußball}
+\pra
+
+\noindent
+Für die Erstellung des Datenmodells \textit{Fußball} wurden folgende Annahmen getroffen:
+
+\begin{itemize}
+	\item Jede Mannschaft hat einen eindeutigen Namen, ein bestimmtes Gründungsjahr und ist an einer bestimmten Adresse beheimatet.
+	\item Zu jeder Mannschaft gehören Fußballspieler.
+	\item Ein Spieler kann durch die SVNr identifiziert werden. Weiters hat ein Spieler einen Namen, eine Wohnadresse, ein Geburtsdatum und eine Position, an der er spielt.
+	\item Die Mannschaften beteiligen sich an Spielen. 
+	\item Die Spiele können durch die Adresse des Stadions, dem Tag und der Uhrzeit eindeutig festgelegt werden.
+	\item Pro Spiel werden die beteiligten Mannschaften sowie der Schiedsrichter und das Ergebnis gespeichert.
+	\item Falls das Spiel zu einem Turnier gehört, soll diese Information ebenfalls gespeichert werden.
+	\item Die Anzahl der Tore, die in einem Spiel geschossen wurden, sollen gespeichert werden.
+	\item Ein Schiedsrichter verfügt über die gleichen Daten wie ein Spieler ausser dass er keine Spielposition hat. Dafür wird bei dem Schiedsrichter das Datum der Schiedsrichterprüfung und die Berechtigungsklasse gespeichert.
+	\item Jedes Turnier hat eine eindeutige Nummer, einen Namen, ein Beginn- und Enddatum und die beteiligten Mannschaften gespeichert.
+\end{itemize}
+
+\noindent
+Anhand all dieser Annahmen entsteht folgendes Datenmodell:\pra
+\begin{verbatim}
+<erm version="0.2">
+
+<!-- Front Matter -->
+
+<title name="Fussball"/>
+<title name="soccer" lang="en"/>
+
+<!-- Entity-Types -->
+
+<ent name="mannschaft">
+    <attr name="name" prime="true"/>
+    <attr name="gründungsjahr"/>
+    <attr name="adresse"/>
+</ent>
+
+<ent name="person">
+    <attr name="svnr" prime="true"/>
+    <attr name="name"/>
+    <attr name="wohnadresse"/>
+    <attr name="geburtsdatum"/>
+</ent>
+
+<ent name="spieler">
+    <attr name="spielposition"/>
+</ent>
+
+<ent name="spiel">
+   <attr name="spielort" prime="true"/>
+   <attr name="datum"    prime="true"/>
+   <attr name="mannschaft_heim"/>
+   <attr name="mannschaft_ausw"/>
+   <attr name="schiedsrichter"/>
+   <attr name="ergebnis"/>
+</ent>
+
+<ent name="turnier">
+   <attr name="nummer" prime="true"/>
+   <attr name="name"   prime="true"/>
+   <attr name="beginndatum"/>
+   <attr name="enddatum"/>
+   <attr name="mannschaften"/>
+</ent>
+ 
+<ent name="schiedsrichter">
+   <attr name="datum_prüfung"/>
+   <attr name="berechtigungsklasse"/>
+</ent>
+
+<ent name="tore">
+   <attr name="anzahl_tore"/>
+</ent>
+
+\end{verbatim}
+
+\noindent
+Die \textit{Entities} stehen wie folgt in Beziehung miteinander:
+\pra
+\\
+
+\begin{verbatim}
+<rel to="ist ein">
+    <super ref="person" total="false" disjoint="true"/>
+        <sub ref="spieler"/>
+        <sub ref="schiedsrichter"/>
+</rel>
+
+<rel to="spielt bei">
+    <part ref="spieler" min="1" max="1"/>
+    <part ref="mannschaft" min="1" max="n"/>
+</rel>
+
+<rel to="spielt mit bei">
+    <part ref="mannschaft" min="1" max="n"/>
+    <part ref="spiel" min="1" max="n"/>
+</rel>
+
+<rel to="gehört zu">
+    <part ref="spiel" min="0" max="1"/>
+    <part ref="turnier" min="1" max="n"/>
+</rel>
+
+<rel to="pfeift bei">
+    <part ref="schiedsrichter" min="1" max="1"/>
+    <part ref="spiel" min="1" max="1"/>
+</rel>
+
+<rel to="hat geschossen">
+    <part ref="tore" min="0" max="n"/>
+    <part ref="spieler" min="0" max="n"/>
+</rel>
+
+<rel to="wurden geschossen">
+    <part ref="tore" min="0" max="n"/>
+    <part ref="spiel" min="0" max="n"/>
+</rel>
+</erm>
+
+\end{verbatim}
+\pra

@@ -1,0 +1,74 @@
+.PS
+.defcolor medblue rgb #89D8D6
+boxwid=300; boxht=300;Ist: box invis "Ist" at (1460, 1271);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=400;boxht= 200;Flugzeug: box shaded "medblue" at (1972, 994) "Flugzeug";
+boxwid=400;boxht= 200;Flugzeugtyp: box shaded "medblue" at (947, 1499) "Flugzeugtyp";
+boxwid=300; boxht=300;Besitzts: box invis "Besitzts" at (2325, 1736);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=400;boxht= 200;Fluggesellschaft: box shaded "medblue" at (2713, 2430) "Fluggesellschaft";
+boxwid=300; boxht=300;Flug: box invis "Flug" at (2809, 3469);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=400;boxht= 200;Ticket: box shaded "medblue" at (2463, 4367) "Ticket";
+boxwid=385;boxht=185; box shaded "medblue" at (2463, 4367) "Ticket";
+boxwid=400;boxht= 200;Flughafen: box shaded "medblue" at (3354, 3699) "Flughafen";
+boxwid=300; boxht=300;Hatein: box invis "Hatein" at (1915, 4524);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=270;boxht=270; box invis at (1915, 4524);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=400;boxht= 200;Passagier: box shaded "medblue" at (1414, 4805) "Passagier";
+boxwid=385;boxht=185; box shaded "medblue" at (1414, 4805) "Passagier";
+boxwid=300; boxht=300;Besitzt: box invis "Besitzt" at (1036, 4061);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=270;boxht=270; box invis at (1036, 4061);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=400;boxht= 200;Boardkarte: box shaded "medblue" at (608, 3434) "Boardkarte";
+boxwid=300; boxht=300;Sitzplatz: box invis "Sitzplatz" at (790, 2453);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+line from Sitzplatz .n to Boardkarte .s;
+box invis at last line .center "(0,n)";
+line from Sitzplatz .s to Flugzeugtyp .n;
+box invis at last line .center "(1,n)";
+line from Sitzplatz .n to Boardkarte .s;
+box invis at last line .center "(0,n)";
+line from Sitzplatz .s to Flugzeugtyp .n;
+box invis at last line .center "(1,n)";
+line from Besitzt .s to Boardkarte .n;
+box invis at last line .center "(1,1)";
+line from Besitzt .n to Passagier .s;
+box invis at last line .center "(1,n)";
+line from Besitzt .s to Boardkarte .n;
+box invis at last line .center "(1,1)";
+line from Besitzt .n to Passagier .s;
+box invis at last line .center "(1,n)";
+line from Hatein .n to Passagier .s;
+box invis at last line .center "(1,1)";
+line from Hatein .s to Ticket .n;
+box invis at last line .center "(1,n)";
+line from Hatein .n to Passagier .s;
+box invis at last line .center "(1,1)";
+line from Hatein .s to Ticket .n;
+box invis at last line .center "(1,n)";
+line from Flug.n to Ticket .s;
+box invis at last line .center "( 1, n)";
+line from Flug .s to Fluggesellschaft .n;
+box invis at last line .center "( 1, n)";
+line from Flug.n to Flughafen .w;
+box invis at last line .center "( 1, n)";
+line from Besitzts .n to Fluggesellschaft .s;
+box invis at last line .center "(0,1)";
+line from Besitzts .s to Flugzeug .n;
+box invis at last line .center "(0,n)";
+line from Besitzts .n to Fluggesellschaft .s;
+box invis at last line .center "(0,1)";
+line from Besitzts .s to Flugzeug .n;
+box invis at last line .center "(0,n)";
+line from Ist .s to Flugzeug .n;
+box invis at last line .center "(1,n)";
+line from Ist .n to Flugzeugtyp .s;
+box invis at last line .center "(1,1)";
+line from Ist .s to Flugzeug .n;
+box invis at last line .center "(1,n)";
+line from Ist .n to Flugzeugtyp .s;
+box invis at last line .center "(1,1)";
+.PE

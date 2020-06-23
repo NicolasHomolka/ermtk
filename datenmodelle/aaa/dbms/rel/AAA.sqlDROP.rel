@@ -1,0 +1,21 @@
+
+drop constraint fk_Flug_Flughafen_on_Flughafen_flughafennr;
+drop constraint fk_Flug_Fluggesellschaft_on_Fluggesellschaft_orgCode;
+drop constraint fk_Flug_Ticket_on_Ticket_tnr;
+drop constraint fk_Flug_Ticket_on_Ticket_pnr;
+drop constraint fk_Flug_Ticket_on_Ticket_fnr;
+drop constraint fk_Sitzplatz_Flugzeugtyp_on_Flugzeugtyp_typidentifikation;
+drop constraint fk_Sitzplatz_BoardKarte_on_BoardKarte_fnr;
+drop constraint fk_Ticket_Passagier_on_pnr;
+drop constraint fk_Ticket_Passagier_on_fnr;
+drop constraint fk_Passagier_BoardKarte_on_fnr;
+
+drop var Flug;
+drop var Sitzplatz;
+drop var Flughafen;
+drop var Fluggesellschaft;
+drop var Flugzeug;
+drop var Flugzeugtyp;
+drop var Ticket;
+drop var Passagier;
+drop var BoardKarte;

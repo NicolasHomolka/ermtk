@@ -1,0 +1,18 @@
+\section{Datenmodell Fußball}
+\pra
+
+\noindent
+Für die Erstellung des Datenmodells \textit{Fußball} wurden folgende Annahmen getroffen:
+
+\begin{itemize}
+	\item Jede Mannschaft hat einen eindeutigen Namen, ein bestimmtes Gründungsjahr und an einer bestimmten Adresse beheimatet.
+	\item Zu jeder Mannschaft gehören Fußballspieler
+	\item Ein Spieler kann durch die SVNr identifiziert werden. Weiters hat ein Spieler einen Namen, eine Wohnadresse, ein Geburtsdatum und eine Position, an der er spielt.
+	\item Die Mannschaften beteiligen sich an Spielen. 
+	\item Die Spiele können durch die Adresse des Stadions, dem Tag und der Uhrzeit eindeutig festgelegt werden.
+	\item Pro Spiel werden die beteiligten Mannschaften sowie Schiedsrichter und das Ergebnis gespeichert werden.
+	\item Falls das Spiel zu einem Turnier gehört, soll diese Information ebenfalls gespeichert werden.
+	\item Falls in einem Spiel Tore geschossen wurden, soll die Anzahl der Tore gespeichert werden.
+	\item Ein Schiedsrichter verfügt über die gleichen Daten wie ein Spieler ausser dass er keine Spielposition hat. Dafür wird bei dem Schiedsrichter das Datum der Schiesrichterprüfung und die Berechtigungsklasse gespeichert.
+	\item Jedes Turnier hat eine eindeutige Nummer, einen Namen, ein Beginn- und Enddatum und die beteiligten Mannschaften gespeichert.
+\end{itemize}

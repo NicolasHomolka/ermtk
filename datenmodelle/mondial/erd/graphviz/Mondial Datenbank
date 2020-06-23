@@ -1,0 +1,356 @@
+graph "Mondial Datenbank" {
+	label="Mondial Datenbank"
+	fontsize=20
+	node [peripheries=1 shape=box]
+	Land
+	node [label=Land shape=circle]
+	"Land.Land"
+	Land -- "Land.Land" [peripheries=1]
+	node [label=Hauptstadt shape=circle style=bold]
+	"Land.Hauptstadt"
+	Land -- "Land.Hauptstadt" [peripheries=1]
+	node [label="Gebietsgröße" shape=circle style=bold]
+	"Land.Gebietsgröße"
+	Land -- "Land.Gebietsgröße" [peripheries=1]
+	node [label="Bevölkerung" shape=circle style=bold]
+	"Land.Bevölkerung"
+	Land -- "Land.Bevölkerung" [peripheries=1]
+	node [label="Bevölkerungungswachstum" shape=circle style=bold]
+	"Land.Bevölkerungungswachstum"
+	Land -- "Land.Bevölkerungungswachstum" [peripheries=1]
+	node [label=Kindersterblichkeitsrate shape=circle style=bold]
+	"Land.Kindersterblichkeitsrate"
+	Land -- "Land.Kindersterblichkeitsrate" [peripheries=1]
+	node [label=BIP shape=circle style=bold]
+	"Land.BIP"
+	Land -- "Land.BIP" [peripheries=1]
+	node [label=Landwirtschaft shape=circle style=bold]
+	"Land.Landwirtschaft"
+	Land -- "Land.Landwirtschaft" [peripheries=1]
+	node [label=Dienstleistungen shape=circle style=bold]
+	"Land.Dienstleistungen"
+	Land -- "Land.Dienstleistungen" [peripheries=1]
+	node [label=Industrie shape=circle style=bold]
+	"Land.Industrie"
+	Land -- "Land.Industrie" [peripheries=1]
+	node [label=Inflation shape=circle style=bold]
+	"Land.Inflation"
+	Land -- "Land.Inflation" [peripheries=1]
+	node [label=Arbeitslosigkeit shape=circle style=bold]
+	"Land.Arbeitslosigkeit"
+	Land -- "Land.Arbeitslosigkeit" [peripheries=1]
+	node [label="Unabhängigkeit" shape=circle style=bold]
+	"Land.Unabhängigkeit"
+	Land -- "Land.Unabhängigkeit" [peripheries=1]
+	node [label="WarAbhängig" shape=circle style=bold]
+	"Land.WarAbhängig"
+	Land -- "Land.WarAbhängig" [peripheries=1]
+	node [label="Abhängig" shape=circle style=bold]
+	"Land.Abhängig"
+	Land -- "Land.Abhängig" [peripheries=1]
+	node [label=Regierung shape=circle style=bold]
+	"Land.Regierung"
+	Land -- "Land.Regierung" [peripheries=1]
+	node [peripheries=2 shape=box]
+	Provinz
+	node [label="Bevölkerung" shape=circle style=bold]
+	"Provinz.Bevölkerung"
+	Provinz -- "Provinz.Bevölkerung" [peripheries=1]
+	node [label="Gebietsgröße" shape=circle style=bold]
+	"Provinz.Gebietsgröße"
+	Provinz -- "Provinz.Gebietsgröße" [peripheries=1]
+	node [label="lokaler Name" shape=circle style=bold]
+	"Provinz.lokaler Name"
+	Provinz -- "Provinz.lokaler Name" [peripheries=1]
+	node [peripheries=2 shape=box]
+	Stadt
+	node [label="lokaler name" shape=circle style=bold]
+	"Stadt.lokaler name"
+	Stadt -- "Stadt.lokaler name" [peripheries=1]
+	node [label="Bevölkerung" shape=circle style=bold]
+	"Stadt.Bevölkerung"
+	Stadt -- "Stadt.Bevölkerung" [peripheries=1]
+	node [label=Breitengrad shape=circle style=bold]
+	"Stadt.Breitengrad"
+	Stadt -- "Stadt.Breitengrad" [peripheries=1]
+	node [label="Längengrad" shape=circle style=bold]
+	"Stadt.Längengrad"
+	Stadt -- "Stadt.Längengrad" [peripheries=1]
+	node [label="Höhe" shape=circle style=bold]
+	"Stadt.Höhe"
+	Stadt -- "Stadt.Höhe" [peripheries=1]
+	node [peripheries=1 shape=box]
+	Organisation
+	node [label=Organisation shape=circle style=bold]
+	"Organisation.Organisation"
+	Organisation -- "Organisation.Organisation" [peripheries=1]
+	node [label=Etabliert shape=circle style=bold]
+	"Organisation.Etabliert"
+	Organisation -- "Organisation.Etabliert" [peripheries=1]
+	node [peripheries=1 shape=box]
+	Flughafen
+	node [label=Flughafen shape=circle style=bold]
+	"Flughafen.Flughafen"
+	Flughafen -- "Flughafen.Flughafen" [peripheries=1]
+	node [label=Insel shape=circle style=bold]
+	"Flughafen.Insel"
+	Flughafen -- "Flughafen.Insel" [peripheries=1]
+	node [label=Breitengrad shape=circle style=bold]
+	"Flughafen.Breitengrad"
+	Flughafen -- "Flughafen.Breitengrad" [peripheries=1]
+	node [label="Längengrad" shape=circle style=bold]
+	"Flughafen.Längengrad"
+	Flughafen -- "Flughafen.Längengrad" [peripheries=1]
+	node [label="Höhe" shape=circle style=bold]
+	"Flughafen.Höhe"
+	Flughafen -- "Flughafen.Höhe" [peripheries=1]
+	node [peripheries=2 shape=box]
+	Sprache
+	node [peripheries=2 shape=box]
+	"Ethnische Gruppe"
+	node [peripheries=2 shape=box]
+	Religion
+	node [peripheries=2 shape=box]
+	Kontinent
+	node [label="Gebietsgröße" shape=circle style=bold]
+	"Kontinent.Gebietsgröße"
+	Kontinent -- "Kontinent.Gebietsgröße" [peripheries=1]
+	node [peripheries=1 shape=box]
+	Berg
+	node [label=Berge shape=circle style=bold]
+	"Berg.Berge"
+	Berg -- "Berg.Berge" [peripheries=1]
+	node [label="Höhe" shape=circle style=bold]
+	"Berg.Höhe"
+	Berg -- "Berg.Höhe" [peripheries=1]
+	node [label=Typ shape=circle style=bold]
+	"Berg.Typ"
+	Berg -- "Berg.Typ" [peripheries=1]
+	node [label="Längengrad" shape=circle style=bold]
+	"Berg.Längengrad"
+	Berg -- "Berg.Längengrad" [peripheries=1]
+	node [label=Breitengrad shape=circle style=bold]
+	"Berg.Breitengrad"
+	Berg -- "Berg.Breitengrad" [peripheries=1]
+	node [peripheries=1 shape=box]
+	"Wüste"
+	node [label="Gebietsgröße" shape=circle style=bold]
+	"Wüste.Gebietsgröße"
+	"Wüste" -- "Wüste.Gebietsgröße" [peripheries=1]
+	node [label="Längengrad" shape=circle style=bold]
+	"Wüste.Längengrad"
+	"Wüste" -- "Wüste.Längengrad" [peripheries=1]
+	node [label=Breitengrad shape=circle style=bold]
+	"Wüste.Breitengrad"
+	"Wüste" -- "Wüste.Breitengrad" [peripheries=1]
+	node [peripheries=1 shape=box]
+	Insel
+	node [label=Inseln shape=circle style=bold]
+	"Insel.Inseln"
+	Insel -- "Insel.Inseln" [peripheries=1]
+	node [label="Gebietsgröße" shape=circle style=bold]
+	"Insel.Gebietsgröße"
+	Insel -- "Insel.Gebietsgröße" [peripheries=1]
+	node [label="Höhe" shape=circle style=bold]
+	"Insel.Höhe"
+	Insel -- "Insel.Höhe" [peripheries=1]
+	node [label=Typ shape=circle style=bold]
+	"Insel.Typ"
+	Insel -- "Insel.Typ" [peripheries=1]
+	node [label="Längengrad" shape=circle style=bold]
+	"Insel.Längengrad"
+	Insel -- "Insel.Längengrad" [peripheries=1]
+	node [label=Breitengrad shape=circle style=bold]
+	"Insel.Breitengrad"
+	Insel -- "Insel.Breitengrad" [peripheries=1]
+	node [peripheries=1 shape=box]
+	See
+	node [label="Gebietsgröße" shape=circle style=bold]
+	"See.Gebietsgröße"
+	See -- "See.Gebietsgröße" [peripheries=1]
+	node [label="Höhe" shape=circle style=bold]
+	"See.Höhe"
+	See -- "See.Höhe" [peripheries=1]
+	node [label=Tiefe shape=circle style=bold]
+	"See.Tiefe"
+	See -- "See.Tiefe" [peripheries=1]
+	node [label=Typ shape=circle style=bold]
+	"See.Typ"
+	See -- "See.Typ" [peripheries=1]
+	node [label=Koordinaten shape=circle style=bold]
+	"See.Koordinaten"
+	See -- "See.Koordinaten" [peripheries=1]
+	node [peripheries=1 shape=box]
+	Meer
+	node [label="Gebietsgröße" shape=circle style=bold]
+	"Meer.Gebietsgröße"
+	Meer -- "Meer.Gebietsgröße" [peripheries=1]
+	node [label=Tiefe shape=circle style=bold]
+	"Meer.Tiefe"
+	Meer -- "Meer.Tiefe" [peripheries=1]
+	node [peripheries=1 shape=box]
+	Fluss
+	node [label="Länge" shape=circle style=bold]
+	"Fluss.Länge"
+	Fluss -- "Fluss.Länge" [peripheries=1]
+	node [label="Gebietsgröße" shape=circle style=bold]
+	"Fluss.Gebietsgröße"
+	Fluss -- "Fluss.Gebietsgröße" [peripheries=1]
+	node [peripheries=2 shape=box]
+	Quelle
+	node [label=Berg shape=circle]
+	"Quelle.Berg"
+	Quelle -- "Quelle.Berg" [peripheries=1]
+	node [label="Höhe" shape=circle]
+	"Quelle.Höhe"
+	Quelle -- "Quelle.Höhe" [peripheries=1]
+	node [label="Längengrad" shape=circle]
+	"Quelle.Längengrad"
+	Quelle -- "Quelle.Längengrad" [peripheries=1]
+	node [label=Breitengrad shape=circle]
+	"Quelle.Breitengrad"
+	Quelle -- "Quelle.Breitengrad" [peripheries=1]
+	node [peripheries=2 shape=box]
+	"Mündung"
+	node [label="Höhe" shape=circle]
+	"Mündung.Höhe"
+	"Mündung" -- "Mündung.Höhe" [peripheries=1]
+	node [label="Längengrad" shape=circle]
+	"Mündung.Längengrad"
+	"Mündung" -- "Mündung.Längengrad" [peripheries=1]
+	node [label=Breitengrad shape=circle]
+	"Mündung.Breitengrad"
+	"Mündung" -- "Mündung.Breitengrad" [peripheries=1]
+	node [peripheries=2 shape=diamond]
+	sprechen
+	sprechen -- Land [label="(0, n)" peripheries=1]
+	sprechen -- Sprache [label="(0, 1)" peripheries=1]
+	node [peripheries=2 shape=diamond]
+	"gehört"
+	"gehört" -- Land [label="(0, n)" peripheries=1]
+	"gehört" -- "Ethnische Gruppe" [label="(0, 1)" peripheries=1]
+	node [peripheries=2 shape=diamond]
+	glauben
+	glauben -- Land [label="(0, n)" peripheries=1]
+	glauben -- Religion [label="(0, 1)" peripheries=1]
+	node [peripheries=2 shape=diamond]
+	umfasst
+	umfasst -- Land [label="(0, n)" peripheries=1]
+	umfasst -- Kontinent [label="(0, 1)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"abhängig"
+	"abhängig" -- Land [label="(0, n)" peripheries=1]
+	"abhängig" -- Land [label="(0, 1)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"warabhängig"
+	"warabhängig" -- Land [label="(0, n)" peripheries=1]
+	"warabhängig" -- Land [label="(0, 1)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	istMitglied
+	istMitglied -- Land [label="(0, n)" peripheries=1]
+	istMitglied -- Organisation [label="(0, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	Grenze
+	Grenze -- Land [label="(0, n)" peripheries=1]
+	Grenze -- Land [label="(0, n)" peripheries=1]
+	node [peripheries=2 shape=diamond]
+	"Provinz teil von Land"
+	"Provinz teil von Land" -- Land [label="(0, n)" peripheries=1]
+	"Provinz teil von Land" -- Provinz [label="(0, 1)" peripheries=1]
+	node [peripheries=2 shape=diamond]
+	"in Provinz"
+	"in Provinz" -- Stadt [label="(0, 1)" peripheries=1]
+	"in Provinz" -- Provinz [label="(0, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	nahe
+	nahe -- Stadt [label="(0, n)" peripheries=1]
+	nahe -- Flughafen [label="(0, n)" peripheries=1]
+	node [peripheries=2 shape=diamond]
+	"hat Quelle"
+	"hat Quelle" -- Quelle [label="(0, 1)" peripheries=1]
+	"hat Quelle" -- Fluss [label="(0, n)" peripheries=1]
+	node [peripheries=2 shape=diamond]
+	"hat Mündung"
+	"hat Mündung" -- "Mündung" [label="(0, 1)" peripheries=1]
+	"hat Mündung" -- Fluss [label="(0, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"Wüste in Provinz"
+	"Wüste in Provinz" -- Provinz [label="(0, n)" peripheries=1]
+	"Wüste in Provinz" -- "Wüste" [label="(0, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"Berg in Provinz"
+	"Berg in Provinz" -- Provinz [label="(0, n)" peripheries=1]
+	"Berg in Provinz" -- Berg [label="(0, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"Insel in Provinz"
+	"Insel in Provinz" -- Provinz [label="(0, n)" peripheries=1]
+	"Insel in Provinz" -- Insel [label="(0, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"Meer in Provinz"
+	"Meer in Provinz" -- Provinz [label="(0, n)" peripheries=1]
+	"Meer in Provinz" -- Meer [label="(0, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"Fluss in Provinz"
+	"Fluss in Provinz" -- Provinz [label="(0, n)" peripheries=1]
+	"Fluss in Provinz" -- Fluss [label="(0, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"See in Provinz"
+	"See in Provinz" -- Provinz [label="(0, n)" peripheries=1]
+	"See in Provinz" -- See [label="(0, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"Berg auf Insel"
+	"Berg auf Insel" -- Insel [label="(0, n)" peripheries=1]
+	"Berg auf Insel" -- Berg [label="(0, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"Insel in Meer"
+	"Insel in Meer" -- Insel [label="(0, n)" peripheries=1]
+	"Insel in Meer" -- Meer [label="(0, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"Insel in Fluss"
+	"Insel in Fluss" -- Insel [label="(0, n)" peripheries=1]
+	"Insel in Fluss" -- Fluss [label="(0, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"Insel in See"
+	"Insel in See" -- Insel [label="(0, n)" peripheries=1]
+	"Insel in See" -- See [label="(0, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"Flughafen auf Insel"
+	"Flughafen auf Insel" -- Insel [label="(0, n)" peripheries=1]
+	"Flughafen auf Insel" -- Flughafen [label="(0, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"Stadt bei Meer"
+	"Stadt bei Meer" -- Stadt [label="(0, n)" peripheries=1]
+	"Stadt bei Meer" -- Meer [label="(0, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"Stadt bei Fluss"
+	"Stadt bei Fluss" -- Stadt [label="(0, n)" peripheries=1]
+	"Stadt bei Fluss" -- Fluss [label="(0, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"Stadt bei See"
+	"Stadt bei See" -- Stadt [label="(0, n)" peripheries=1]
+	"Stadt bei See" -- See [label="(0, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"mündet in See"
+	"mündet in See" -- "Mündung" [label="(0, n)" peripheries=1]
+	"mündet in See" -- See [label="(0, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"mündet in Fluss"
+	"mündet in Fluss" -- "Mündung" [label="(0, n)" peripheries=1]
+	"mündet in Fluss" -- Fluss [label="(0, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"mündet in Meer"
+	"mündet in Meer" -- "Mündung" [label="(0, n)" peripheries=1]
+	"mündet in Meer" -- Meer [label="(0, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"Quelle in Provinz"
+	"Quelle in Provinz" -- Quelle [label="(0, n)" peripheries=1]
+	"Quelle in Provinz" -- Provinz [label="(0, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"Mündung in Provinz"
+	"Mündung in Provinz" -- Quelle [label="(0, n)" peripheries=1]
+	"Mündung in Provinz" -- "Mündung" [label="(0, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	Hauptsitz
+	Hauptsitz -- Organisation [label="(0, n)" peripheries=1]
+	Hauptsitz -- Stadt [label="(0, n)" peripheries=1]
+}

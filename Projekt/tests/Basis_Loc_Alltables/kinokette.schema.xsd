@@ -1,0 +1,365 @@
+<?xml version="1.0" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="Cinema_Chain">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="cinema">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="address" type="xs:string"/>
+                     <xs:element name="name" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="hall">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="address" type="xs:string"/>
+                     <xs:element name="hall_nr" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="seatingplan">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="rowes" type="xs:string"/>
+                     <xs:element name="seat_nr" type="xs:string"/>
+                     <xs:element name="begins" type="xs:string"/>
+                     <xs:element name="sold" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="ticket">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="beginn" type="xs:string"/>
+                     <xs:element name="rowes" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="timetable">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="begins" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="movie">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="title" type="xs:string"/>
+                     <xs:element name="genre" type="xs:string"/>
+                     <xs:element name="year_of_production" type="xs:string"/>
+                     <xs:element name="country" type="xs:string"/>
+                     <xs:element name="language" type="xs:string"/>
+                     <xs:element name="length" type="xs:string"/>
+                     <xs:element name="rental" type="xs:string"/>
+                     <xs:element name="age_rating" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="person">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="svnr" type="xs:string"/>
+                     <xs:element name="nachname" type="xs:string"/>
+                     <xs:element name="vorname" type="xs:string"/>
+                     <xs:element name="nationalitaet" type="xs:string"/>
+                     <xs:element name="geburtsdatum" type="xs:string"/>
+                     <xs:element name="todesdatum" type="xs:string"/>
+                     <xs:element name="bemerkung" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="spielt_mit">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="person_svnr" type="xs:string"/>
+                     <xs:element name="movie_title" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="wird_gezeigt_in">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="movie_title" type="xs:string"/>
+                     <xs:element name="cinema_address" type="xs:string"/>
+                     <xs:element name="froms" type="xs:string"/>
+                     <xs:element name="tos" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="ist_Teil_von">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="cinema_address" type="xs:string"/>
+                     <xs:element name="hall_address" type="xs:string"/>
+                     <xs:element name="hall_hall_nr" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="ist_Sitzplan_für">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="hall_address" type="xs:string"/>
+                     <xs:element name="hall_hall_nr" type="xs:string"/>
+                     <xs:element name="seatingplan_rowes" type="xs:string"/>
+                     <xs:element name="seatingplan_seat_nr" type="xs:string"/>
+                     <xs:element name="seatingplan_begins" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="ist_Zeiplan_für">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="hall_address" type="xs:string"/>
+                     <xs:element name="hall_hall_nr" type="xs:string"/>
+                     <xs:element name="timetable_begins" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="wird_gespielt">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="movie_title" type="xs:string"/>
+                     <xs:element name="timetable_begins" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="directs">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="movie_title" type="xs:string"/>
+                     <xs:element name="person_svnr" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="gilt_für">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="seatingplan_rowes" type="xs:string"/>
+                     <xs:element name="seatingplan_seat_nr" type="xs:string"/>
+                     <xs:element name="seatingplan_begins" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+         </xs:sequence>
+      </xs:complexType>
+      <xs:key name="PK_address_cinema">
+         <xs:selector xpath="cinema/address"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_address_hall">
+         <xs:selector xpath="hall/address"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_hall_nr_hall">
+         <xs:selector xpath="hall/hall_nr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_rowes_seatingplan">
+         <xs:selector xpath="seatingplan/rowes"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_seat_nr_seatingplan">
+         <xs:selector xpath="seatingplan/seat_nr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_begins_seatingplan">
+         <xs:selector xpath="seatingplan/begins"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_begins_timetable">
+         <xs:selector xpath="timetable/begins"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_title_movie">
+         <xs:selector xpath="movie/title"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_svnr_person">
+         <xs:selector xpath="person/svnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_person_svnr_spielt_mit">
+         <xs:selector xpath="spielt_mit/person_svnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_movie_title_spielt_mit">
+         <xs:selector xpath="spielt_mit/movie_title"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_movie_title_wird_gezeigt_in">
+         <xs:selector xpath="wird_gezeigt_in/movie_title"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_cinema_address_wird_gezeigt_in">
+         <xs:selector xpath="wird_gezeigt_in/cinema_address"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_cinema_address_ist_Teil_von">
+         <xs:selector xpath="ist_Teil_von/cinema_address"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_hall_address_ist_Teil_von">
+         <xs:selector xpath="ist_Teil_von/hall_address"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_hall_hall_nr_ist_Teil_von">
+         <xs:selector xpath="ist_Teil_von/hall_hall_nr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_hall_address_ist_Sitzplan_für">
+         <xs:selector xpath="ist_Sitzplan_für/hall_address"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_hall_hall_nr_ist_Sitzplan_für">
+         <xs:selector xpath="ist_Sitzplan_für/hall_hall_nr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_seatingplan_rowes_ist_Sitzplan_für">
+         <xs:selector xpath="ist_Sitzplan_für/seatingplan_rowes"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_seatingplan_seat_nr_ist_Sitzplan_für">
+         <xs:selector xpath="ist_Sitzplan_für/seatingplan_seat_nr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_seatingplan_begins_ist_Sitzplan_für">
+         <xs:selector xpath="ist_Sitzplan_für/seatingplan_begins"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_hall_address_ist_Zeiplan_für">
+         <xs:selector xpath="ist_Zeiplan_für/hall_address"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_hall_hall_nr_ist_Zeiplan_für">
+         <xs:selector xpath="ist_Zeiplan_für/hall_hall_nr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_timetable_begins_ist_Zeiplan_für">
+         <xs:selector xpath="ist_Zeiplan_für/timetable_begins"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_movie_title_wird_gespielt">
+         <xs:selector xpath="wird_gespielt/movie_title"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_timetable_begins_wird_gespielt">
+         <xs:selector xpath="wird_gespielt/timetable_begins"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_movie_title_directs">
+         <xs:selector xpath="directs/movie_title"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_person_svnr_directs">
+         <xs:selector xpath="directs/person_svnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_seatingplan_rowes_gilt_für">
+         <xs:selector xpath="gilt_für/seatingplan_rowes"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_seatingplan_seat_nr_gilt_für">
+         <xs:selector xpath="gilt_für/seatingplan_seat_nr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_seatingplan_begins_gilt_für">
+         <xs:selector xpath="gilt_für/seatingplan_begins"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:keyref name="FK_hall_address_to_cinema" refer="PK_address_cinema">
+         <xs:selector xpath="hall/address"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_spielt_mit_person_svnr_to_person" refer="PK_svnr_person">
+         <xs:selector xpath="spielt_mit/person_svnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_spielt_mit_movie_title_to_movie" refer="PK_title_movie">
+         <xs:selector xpath="spielt_mit/movie_title"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_wird_gezeigt_in_movie_title_to_movie" refer="PK_title_movie">
+         <xs:selector xpath="wird_gezeigt_in/movie_title"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_wird_gezeigt_in_cinema_address_to_cinema" refer="PK_address_cinema">
+         <xs:selector xpath="wird_gezeigt_in/cinema_address"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_ist_Teil_von_cinema_address_to_cinema" refer="PK_address_cinema">
+         <xs:selector xpath="ist_Teil_von/cinema_address"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_ist_Teil_von_hall_address_to_hall" refer="PK_address_hall">
+         <xs:selector xpath="ist_Teil_von/hall_address"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_ist_Teil_von_hall_hall_nr_to_hall" refer="PK_hall_nr_hall">
+         <xs:selector xpath="ist_Teil_von/hall_hall_nr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_ist_Sitzplan_für_hall_address_to_hall" refer="PK_address_hall">
+         <xs:selector xpath="ist_Sitzplan_für/hall_address"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_ist_Sitzplan_für_hall_hall_nr_to_hall" refer="PK_hall_nr_hall">
+         <xs:selector xpath="ist_Sitzplan_für/hall_hall_nr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_ist_Sitzplan_für_seatingplan_rowes_to_seatingplan" refer="PK_rowes_seatingplan">
+         <xs:selector xpath="ist_Sitzplan_für/seatingplan_rowes"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_ist_Sitzplan_für_seatingplan_seat_nr_to_seatingplan" refer="PK_seat_nr_seatingplan">
+         <xs:selector xpath="ist_Sitzplan_für/seatingplan_seat_nr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_ist_Sitzplan_für_seatingplan_begins_to_seatingplan" refer="PK_begins_seatingplan">
+         <xs:selector xpath="ist_Sitzplan_für/seatingplan_begins"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_ist_Zeiplan_für_hall_address_to_hall" refer="PK_address_hall">
+         <xs:selector xpath="ist_Zeiplan_für/hall_address"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_ist_Zeiplan_für_hall_hall_nr_to_hall" refer="PK_hall_nr_hall">
+         <xs:selector xpath="ist_Zeiplan_für/hall_hall_nr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_ist_Zeiplan_für_timetable_begins_to_timetable" refer="PK_begins_timetable">
+         <xs:selector xpath="ist_Zeiplan_für/timetable_begins"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_wird_gespielt_movie_title_to_movie" refer="PK_title_movie">
+         <xs:selector xpath="wird_gespielt/movie_title"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_wird_gespielt_timetable_begins_to_timetable" refer="PK_begins_timetable">
+         <xs:selector xpath="wird_gespielt/timetable_begins"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_leitet_movie_title_to_movie" refer="PK_title_movie">
+         <xs:selector xpath="directs/movie_title"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_leitet_person_svnr_to_person" refer="PK_svnr_person">
+         <xs:selector xpath="directs/person_svnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_gilt_für_seatingplan_rowes_to_seatingplan" refer="PK_rowes_seatingplan">
+         <xs:selector xpath="gilt_für/seatingplan_rowes"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_gilt_für_seatingplan_seat_nr_to_seatingplan" refer="PK_seat_nr_seatingplan">
+         <xs:selector xpath="gilt_für/seatingplan_seat_nr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_gilt_für_seatingplan_begins_to_seatingplan" refer="PK_begins_seatingplan">
+         <xs:selector xpath="gilt_für/seatingplan_begins"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+   </xs:element>
+</xs:schema>

@@ -1,0 +1,36 @@
+graph "School of Music Course Database" {
+	label=Schulungsfirma
+	fontsize=20
+	label="School of Music Course Database"
+	fontsize=20
+	node [shape=box]
+	kurs
+	node [shape=box]
+	kveranst
+	node [shape=box]
+	person
+	node [shape=box]
+	referent
+	node [shape=diamond]
+	"setzt voraus"
+	"setzt voraus" -- kurs [label="0, n"]
+	"setzt voraus" -- kurs [label="0, n"]
+	node [shape=diamond]
+	abgehalten
+	abgehalten -- kurs [label="0, n"]
+	abgehalten -- kveranst [label="1, 1"]
+	node [shape=diamond]
+	"ist ein"
+	node [shape=diamond]
+	besucht
+	besucht -- kveranst [label="0, n"]
+	besucht -- person [label="0, n"]
+	node [shape=diamond]
+	"hält"
+	"hält" -- kveranst [label="0, 1"]
+	"hält" -- referent [label="0, n"]
+	node [shape=diamond]
+	geeignet
+	geeignet -- kurs [label="0, n"]
+	geeignet -- referent [label="1, n"]
+}

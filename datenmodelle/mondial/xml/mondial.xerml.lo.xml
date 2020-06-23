@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<loc version="3.0">
+	<entlo entref="Land" name-lo="Country" lang="en">
+    	<attr name="Name" name-lo="Name"/>
+    	<attr name="Code" name-lo="Code"/>
+        <attr name="Hauptstadt" name-lo="Capital"/>
+        <attr name="Provinz" name-lo="Province"/>
+        <attr name="Gebietsgröße" name-lo="Area"/>
+        <attr name="Bevölkerung" name-lo="Population"/>
+    </entlo>
+
+	<entlo entref="Stadt" name-lo="City" lang="en">
+    	<attr name="Name" name-lo="Name"/>
+    	<attr name="Land" name-lo="Country"/>
+        <attr name="Provinz" name-lo="Province"/>
+        <attr name="Bevölkerung" name-lo="Population"/>
+        <attr name="Breitengrad" name-lo="Latitude"/>
+        <attr name="Längengrad" name-lo="Longtitude"/>
+        <attr name="Höhe" name-lo="Elevation"/>
+    </entlo>
+
+	<entlo entref="Provinz" name-lo="Province" lang="en">
+    	<attr name="Name" name-lo="Name"/>
+    	<attr name="Land" name-lo="Country"/>
+        <attr name="Bevölkerung" name-lo="Population"/>
+        <attr name="Gebietsgröße" name-lo="Area"/>
+        <attr name="Hauptstadt" name-lo="Capital"/>
+        <attr name="HauptProvinz" name-lo="CapProv"/>
+    </entlo>
+
+    <entlo entref="Wirtschaft" name-lo="Economy" lang="en">
+    	<attr name="Land" name-lo="Country"/>
+    	<attr name="BIP" name-lo="GDP"/>
+        <attr name="Landwirtschaft" name-lo="Agriculture"/>
+        <attr name="Dienstleistungen" name-lo="Service"/>
+        <attr name="Industrie" name-lo="Industry"/>
+        <attr name="Inflation" name-lo="Inflation"/>
+        <attr name="Arbeitslosigkeit" name-lo="Unenmployment"/>
+    </entlo>
+
+    <entlo entref="Bevölkerung" name-lo="Population" lang="en">
+    	<attr name="Land" name-lo="Country"/>
+    	<attr name="Bevolkerüngswachstum" name-lo="Population_Growth"/>
+        <attr name="Kindersterblichkeitsrate" name-lo="Infant_Mortality"/>
+    </entlo>
+
+    <entlo entref="Politik" name-lo="Politics" lang="en">
+    	<attr name="Land" name-lo="Country"/>
+    	<attr name="Unabhängigkeit" name-lo="Independence"/>
+        <attr name="WarAbhängig" name-lo="WasDependent"/>
+        <attr name="Abhängig" name-lo="Dependent"/>
+        <attr name="Regierung" name-lo="Government"/>
+    </entlo>
+
+    <entlo entref="Sprache" name-lo="Language" lang="en">
+    	<attr name="Land" name-lo="Country"/>
+    	<attr name="Name" name-lo="Name"/>
+        <attr name="Prozentsatz" name-lo="Percentage"/>
+    </entlo>
+
+    <entlo entref="Religion" name-lo="Religion" lang="en">
+    	<attr name="Land" name-lo="Country"/>
+    	<attr name="Name" name-lo="Name"/>
+        <attr name="Prozentsatz" name-lo="Percentage"/>
+    </entlo>
+
+    <entlo entref="EthnischeGruppe" name-lo="EthnicGroup" lang="en">
+    	<attr name="Land" name-lo="Country"/>
+    	<attr name="Name" name-lo="Name"/>
+        <attr name="Prozentsatz" name-lo="Percentage"/>
+    </entlo>
+
+	<entlo entref="LandesBevölkerung" name-lo="CountryPop" lang="en">
+		<attr name="Land" name-lo="Country"/>
+		<attr name="Jahr" name-lo="Year"/>
+		<attr name="Bevölkerung" name-lo="Populatiion"/>
+	</entlo>
+
+	<entlo entref="andererLändername" name-lo="CountryOthername" lang="en">
+		<attr name="Land" name-lo="Country"/>
+		<attr name="andererName" name-lo="otherName"/>
+	</entlo>
+
+	<entlo entref="lokalerLändername" name-lo="CountryOthername" lang="en">
+		<attr name="Land" name-lo="Country"/>
+		<attr name="lokalerName" name-lo="localName"/>
+	</entlo>
+
+	<entlo entref="ProvinzBevölkerung" name-lo="ProvPops" lang="en">
+		<attr name="Provinz" name-lo="Province"/>
+		<attr name="Land" name-lo="Country"/>
+		<attr name="Jahr" name-lo="Year"/>
+		<attr name="Bevölkerung" name-lo="Population"/>
+	</entlo>
+
+	<entlo entref="andererProvinzname" name-lo="ProvincOtherName" lang="en">
+		<attr name="Provinz" name-lo="Province"/>
+		<attr name="Land" name-lo="Country"/>
+		<attr name="andererName" name-lo="otherName"/>
+	</entlo>
+
+	<entlo entref="lokalerProvinzname" name-lo="Provincelocalname" lang="en">
+		<attr name="Provinz" name-lo="Province"/>
+		<attr name="Land" name-lo="Country"/>
+		<attr name="lokalerName" name-lo="localName"/>
+	</entlo>
+
+	<entlo entref="StadtBevölkerung" name-lo="CityPops" lang="en">
+		<attr name="Stadt" name-lo="City"/>
+		<attr name="Land" name-lo="Country"/>
+		<attr name="Provinz" name-lo="Province"/>
+		<attr name="Jahr" name-lo="Year"/>
+		<attr name="Bevölkerung" name-lo="Population"/>
+	</entlo>
+
+	<entlo entref="andererStadtname" name-lo="CityOtherName" lang="en">
+		<attr name="Stadt" name-lo="City"/>
+		<attr name="Land" name-lo="Country"/>
+		<attr name="Provinz" name-lo="Province"/>
+		<attr name="andererName" name-lo="otherName"/>
+	</entlo>
+
+	<entlo entref="lokalerStadtName" name-lo="Çitylocalname" lang="en">
+		<attr name="Stadt" name-lo="City"/>
+		<attr name="Land" name-lo="Country"/>
+		<attr name="Provinz" name-lo="Province"/>
+		<attr name="lokalerName" name-lo="localName"/>
+	</entlo>
+
+	<entlo entref="Kontinent" name-lo="Continent" lang="en">
+		<attr name="Name" name-lo="Name"/>
+		<attr name="Gebietsgröße" name-lo="Area"/>
+	</entlo>
+
+	<entlo entref="Organisation" name-lo="Organization" lang="en">
+		<attr name="Abkürzung" name-lo="Abbreviation"/>
+		<attr name="Name" name-lo="Name"/>
+		<attr name="Stadt" name-lo="City"/>
+		<attr name="Land" name-lo="Country"/> 
+		<attr name="Provinz" name-lo="Province"/>
+		<attr name="Etabliert" name-lo="Established"/>
+	</entlo>
+
+	<entlo entref="Berg" name-lo="Mountain" lang="en">
+		<attr name="Name" name-lo="Name"/>
+		<attr name="Berge" name-lo="Mountains"/>
+		<attr name="Höhe" name-lo="Elevation"/>
+		<attr name="Typ" name-lo="Type"/>
+		<attr name="Koordinaten" name-lo="Coordinates"/>
+	</entlo>
+
+	<entlo entref="Wüste" name-lo="Desert" lang="en">
+		<attr name="Name" name-lo="Name"/>
+		<attr name="Gebietsgröße" name-lo="Area"/>
+		<attr name="Koordinaten" name-lo="Coordinates"/>
+	</entlo>
+
+	<entlo entref="Insel" name-lo="Island" lang="en">
+		<attr name="Name" name-lo="Name"/>
+		<attr name="Islands" name-lo="Inseln"/>
+		<attr name="Gebietsgröße" name-lo="Area"/>
+		<attr name="Höhe" name-lo="Elevation"/>
+		<attr name="Typ" name-lo="Type"/>
+		<attr name="Koordinaten" name-lo="Coordinates"/>
+	</entlo>
+
+	<entlo entref="See" name-lo="Lake" lang="en">
+		<attr name="Name" name-lo="Name"/>
+		<attr name="Fluss" name-lo="River"/>
+		<attr name="Gebietsgröße" name-lo="Area"/>
+		<attr name="Tiefe" name-lo="Depth"/>
+		<attr name="Höhe" name-lo="Height"/>
+		<attr name="Typ" name-lo="Type"/>
+		<attr name="Koordinaten" name-lo="Coordinates"/>
+	</entlo>
+
+	<entlo entref="Meer" name-lo="Sea" lang="en">
+		<attr name="Name" name-lo="Name"/>
+		<attr name="Gebietsgröße" name-lo="Area"/>
+		<attr name="Tiefe" name-lo="Depth"/>
+	</entlo>
+
+	<entlo entref="Fluss" name-lo="River" lang="en">
+		<attr name="Name" name-lo="Name"/>
+		<attr name="Fluss" name-lo="River"/>
+		<attr name="See" name-lo="Lake"/>
+		<attr name="Meer" name-lo="Sea"/>
+		<attr name="Länge" name-lo="Length"/>
+		<attr name="Gebietsgröße" name-lo="Area"/>
+		<attr name="Quelle" name-lo="Source"/>
+		<attr name="Berge" name-lo="Mountains"/>
+		<attr name="QuellenHöhe" name-lo="SourceElevation"/>
+		<attr name="Mündung" name-lo="Estuary"/>
+		<attr name="Mündungshöhe" name-lo="EstuaryElevation"/>
+	</entlo>
+
+	<entlo entref="Flughafen" name-lo="Airport" lang="en">
+		<attr name="IATACode" name-lo="IATACode"/>
+		<attr name="Name" name-lo="Name"/>
+		<attr name="Land" name-lo="Country"/>
+		<attr name="Stadt" name-lo="City"/>
+		<attr name="Provinz" name-lo="Province"/>
+		<attr name="Insel" name-lo="Island"/>
+		<attr name="Breitengrad" name-lo="Latitude"/>
+		<attr name="Längengrad" name-lo="Longtitude"/>
+		<attr name="Höhe" name-lo="Elevation"/>
+		<attr name="gmtZeitabweichung" name-lo="gmtOffset"/> 
+	</entlo>
+
+	<rello relref="umfassen" name-lo="encompasses" lang="en">
+	</rello>
+
+	<rello relref="istMitglied" name-lo="isMember" lang="en">
+	</rello>
+
+	<rello relref="Gränze" name-lo="borders" lang="en">
+	</rello>
+
+	<rello relref="FlussDurch" name-lo="RiverThrough" lang="en">
+	</rello>
+
+	<rello relref="geo_Berg" name-lo="geo_Mountain" lang="en">
+	</rello>
+
+	<rello relref="geo_Wüste" name-lo="geo_Desert" lang="en">
+	</rello>
+
+	<rello relref="geo_Insel" name-lo="geo_Island" lang="en">
+	</rello>
+
+	<rello relref="geo_Fluss" name-lo="geo_River" lang="en">
+	</rello>
+
+	<rello relref="geo_Meer" name-lo="geo_Sea" lang="en">
+	</rello>
+
+	<rello relref="geo_See" name-lo="geo_Lake" lang="en">
+	</rello>
+
+	<rello relref="geo_Quelle" name-lo="geo_Source" lang="en">
+	</rello>
+
+	<rello relref="geo_Mündung" name-lo="geo_Estuary" lang="en">
+	</rello>
+
+	<rello relref="VerschmilztMit" name-lo="MergesWith" lang="en">
+	</rello>
+
+	<rello relref="InselIn" name-lo="IslandIn" lang="en">
+	</rello>
+
+	<rello relref="BergAufInsel" name-lo="MountainOnIsland" lang="en">
+	</rello>
+
+	<rello relref="SeeAufInsel" name-lo="LakeOnIsland" lang="en">
+	</rello>
+
+	<rello relref="FLussAufInsel" name-lo="RiverOnIsland" lang="en">
+	</rello>
+	
+	<rello relref="gelegen" name-lo="located" lang="en">
+	</rello>
+
+	<rello relref="gelegenIn" name-lo="locatedOn" lang="en">
+	</rello>
+
+	<rello relref="gehören" name-lo="belong" lang="en">
+	</rello>
+
+	<rello relref="glauben" name-lo="believe" lang="en">
+	</rello>
+
+	<rello relref="teil_von" name-lo="part_orf" lang="en">
+	</rello>
+
+	<rello relref="Hauptsitz" name-lo="mainseat" lang="en">
+	</rello>
+
+	<rello relref="nah" name-lo="nearby" lang="en">
+	</rello>
+
+</loc>

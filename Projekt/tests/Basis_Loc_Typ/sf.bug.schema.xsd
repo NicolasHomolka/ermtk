@@ -1,0 +1,162 @@
+<?xml version="1.0" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="School_of_Music_Course_Database">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="course">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="cno" type="xs:integer"/>
+                     <xs:element name="cname" type="xs:string"/>
+                     <xs:element name="days" type="xs:integer"/>
+                     <xs:element name="fee" type="xs:decimal"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="kveranst">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="cno" type="xs:integer"/>
+                     <xs:element name="knrlfnd" type="xs:string"/>
+                     <xs:element name="von" type="xs:string"/>
+                     <xs:element name="bis" type="xs:string"/>
+                     <xs:element name="ort" type="xs:string"/>
+                     <xs:element name="plaetze" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="person">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="pnr" type="xs:string"/>
+                     <xs:element name="fname" type="xs:string"/>
+                     <xs:element name="vname" type="xs:string"/>
+                     <xs:element name="ort" type="xs:string"/>
+                     <xs:element name="land" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="referent">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="gebdat" type="xs:string"/>
+                     <xs:element name="seit" type="xs:string"/>
+                     <xs:element name="titel" type="xs:string"/>
+                     <xs:element name="pnr" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="setzt_voraus">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="course_cno" type="xs:integer"/>
+                     <xs:element name="course_cno2" type="xs:integer"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="attends">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="kveranst_cno" type="xs:integer"/>
+                     <xs:element name="kveranst_knrlfnd" type="xs:string"/>
+                     <xs:element name="person_pnr" type="xs:string"/>
+                     <xs:element name="paid" type="xs:date"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="geeignet">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="course_cno" type="xs:integer"/>
+                     <xs:element name="referent_pnr" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+         </xs:sequence>
+      </xs:complexType>
+      <xs:key name="PK_cno_course">
+         <xs:selector xpath="course/cno"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_cno_kveranst">
+         <xs:selector xpath="kveranst/cno"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_knrlfnd_kveranst">
+         <xs:selector xpath="kveranst/knrlfnd"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_pnr_person">
+         <xs:selector xpath="person/pnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_pnr_referent">
+         <xs:selector xpath="referent/pnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_course_cno_setzt_voraus">
+         <xs:selector xpath="setzt_voraus/course_cno"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_course_cno2_setzt_voraus">
+         <xs:selector xpath="setzt_voraus/course_cno2"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_kveranst_cno_attends">
+         <xs:selector xpath="attends/kveranst_cno"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_kveranst_knrlfnd_attends">
+         <xs:selector xpath="attends/kveranst_knrlfnd"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_person_pnr_attends">
+         <xs:selector xpath="attends/person_pnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_course_cno_geeignet">
+         <xs:selector xpath="geeignet/course_cno"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_referent_pnr_geeignet">
+         <xs:selector xpath="geeignet/referent_pnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:keyref name="FK_kveranst_cno_to_course" refer="PK_cno_course">
+         <xs:selector xpath="kveranst/cno"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_referent_pnr_to_person" refer="PK_pnr_person">
+         <xs:selector xpath="referent/pnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_setzt_voraus_course_cno_to_course" refer="PK_cno_course">
+         <xs:selector xpath="setzt_voraus/course_cno"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_setzt_voraus_course_cno2_to_course" refer="PK_cno_course">
+         <xs:selector xpath="setzt_voraus/course_cno2"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_besucht_kveranst_cno_to_kveranst" refer="PK_cno_kveranst">
+         <xs:selector xpath="attends/kveranst_cno"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_besucht_kveranst_knrlfnd_to_kveranst" refer="PK_knrlfnd_kveranst">
+         <xs:selector xpath="attends/kveranst_knrlfnd"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_besucht_person_pnr_to_person" refer="PK_pnr_person">
+         <xs:selector xpath="attends/person_pnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_geeignet_course_cno_to_course" refer="PK_cno_course">
+         <xs:selector xpath="geeignet/course_cno"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_geeignet_referent_pnr_to_referent" refer="PK_pnr_referent">
+         <xs:selector xpath="geeignet/referent_pnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+   </xs:element>
+</xs:schema>

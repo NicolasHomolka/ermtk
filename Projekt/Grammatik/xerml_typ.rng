@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- vim: ts=2 sw=2 et -->
+<grammar ns="" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <define name="MinCardType">
+    <data type="integer">
+      <param name="minInclusive">0</param>
+    </data>
+  </define>
+  <define name="MaxCardType">
+    <choice>
+      <data type="positiveInteger"/>
+      <value>n</value>
+    </choice>
+  </define>
+  <start>
+    <element name="desc">
+      <attribute name="version">
+        <data type="decimal">
+          <param name="fractionDigits">3</param>
+        </data>
+      </attribute>
+      <zeroOrMore>
+        <ref name="Title"/>
+      </zeroOrMore>
+      <zeroOrMore>
+        <ref name="TypDescription"/>
+      </zeroOrMore>
+      <zeroOrMore>
+        <ref name="RelDescription"/>
+      </zeroOrMore>
+    </element>
+  </start>
+  <define name="Title">
+    <element name="title">
+      <attribute name="name">
+        <data type="string"/>
+      </attribute>
+      <optional>
+        <attribute name="lang">
+          <data type="string"/>
+        </attribute>
+      </optional>
+    </element>
+  </define>
+  <define name="TypDescription">
+    <element name="typdsc">
+      <attribute name="entref">
+        <data type="string"/>
+      </attribute>
+      <zeroOrMore>
+        <ref name="Attributetype"/>
+      </zeroOrMore>
+      <zeroOrMore>
+        <ref name="Value"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="RelDescription">
+    <element name="reldsc">
+      <attribute name="relref">
+        <data type="string"/>
+      </attribute>
+      <zeroOrMore>
+        <ref name="Attributetype"/>
+      </zeroOrMore>
+      <zeroOrMore>
+        <ref name="Value"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="Attributetype">
+    <element name="attr">
+      <attribute name="name">
+        <data type="string"/>
+      </attribute>
+      <attribute name="type">
+        <data type="string"/>
+      </attribute>
+      <optional>
+        <attribute name="min">
+          <data type="int"/>
+        </attribute>
+      </optional>
+      <optional>
+        <attribute name="max">
+          <data type="int"/>
+        </attribute>
+      </optional>
+    </element>
+  </define>
+  <define name="Value">
+    <element name="val">
+      <attribute name="attr">
+        <data type="string"/>
+      </attribute>
+      <text/>
+    </element>
+  </define>
+</grammar>

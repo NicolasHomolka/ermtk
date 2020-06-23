@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<erm version="0.2">
+    <!-- Front Matter -->
+
+    <title name="PEMCCC"/>
+
+    <!-- Entity-Types -->
+
+    <ent name="Person">
+        <attr name="PersonID" prime="true"/>
+        <attr name="FirstName"/>
+        <attr name="LastName"/>
+        <attr name="Phone"/>
+    </ent>
+
+    <ent name="Customer">
+        <attr name="Discount"/>
+        <attr name="TermsOfPayment"/>
+    </ent>
+
+    <ent name="Employee">
+        <attr name="HiringDate"/>
+        <attr name="Salary"/>
+    </ent>
+
+    <ent name="Manager">
+        <attr name="NumberAssistants"/>
+    </ent>
+
+    <ent name="CourseInstructor">
+        <attr name="FeePerHour"/>
+    </ent>
+
+    <ent name="Course">
+        <attr name="CourseID" prime="true"/>
+        <attr name="Title"/>
+        <attr name="StartDate"/>
+    </ent>
+
+    <!-- Relationship-Types -->
+
+    <rel to="teaches">
+        <part ref="CourseInstructor" min="1" max="n"/>
+        <part ref="Course" min="1" max="1"/>
+    </rel>
+
+    <rel to="is person">
+        <super ref="Person" total="false" disjoint="true"/>
+        <sub ref="Customer"/>
+        <sub ref="Employee"/>
+    </rel> 
+
+    <rel to="is employee">
+        <super ref="Employee" total="false" disjoint="false"/>
+        <sub ref="Manager"/>
+        <sub ref="CourseInstructor"/>
+    </rel> 
+
+</erm>

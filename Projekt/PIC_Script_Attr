@@ -1,0 +1,21 @@
+ 
+#!/bin/bash
+python3 ermtk erdgenerate -i "XERML Testmodele/Weingut/weingut.homolka.xerml.xml" -p -a
+groff -p erd.pic > weingut.png
+python3 ermtk erdgenerate -i "XERML Testmodele/Sis/sis.passet.xerml.xml" -p -a
+groff -p erd.pic > sis.png
+python3 ermtk erdgenerate -i "XERML Testmodele/Fußball/fussball.prinz.xerml.xml" -p -a
+groff -p erd.pic > fussball.png
+python3 ermtk erdgenerate -i "XERML Testmodele/Rettungsstelle/rettungsstelle.fischbacher.xerml.xml" -p -a
+groff -p erd.pic > rettungsstelle.png
+python3 ermtk erdgenerate -i "XERML Testmodele/Schulungsfirma/sf.bug.xerml.xml" -p -a
+groff -p erd.pic > sf.png
+python3 ermtk erdgenerate -i "XERML Testmodele/AAA/AAA.xerml.xml" -p -a
+groff -p erd.pic > AAA.png
+python3 ermtk erdgenerate -i "XERML Testmodele/Kinokette/kinokette.xerml.xml" -p -a
+groff -p erd.pic > kinokette.png
+python3 ermtk erdgenerate -i "XERML Testmodele/Mondial/mondial.xerml.xml" -p -a
+groff -p erd.pic > mondial.png
+python3 ermtk erdgenerate -i "XERML Testmodele/Tankstelle/tank.ms.xerml.xml" -p -a
+groff -p erd.pic > tankstelle.png
+echo Skript erfolgreich ausgeführt!

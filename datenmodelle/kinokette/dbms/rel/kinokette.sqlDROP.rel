@@ -1,0 +1,22 @@
+
+drop constraint fk_ist_Sitzplan_fuer_sitzplan_on_sitzplan_begin;
+drop constraint fk_ist_Sitzplan_fuer_sitzplan_on_sitzplan_sitz_nr;
+drop constraint fk_ist_Sitzplan_fuer_sitzplan_on_sitzplan_reihe;
+drop constraint fk_ist_Sitzplan_fuer_saal_on_saal_saal_nr;
+drop constraint fk_ist_Sitzplan_fuer_saal_on_saal_adresse;
+drop constraint fk_wird_gezeigt_in_kino_on_kino_adresse;
+drop constraint fk_wird_gezeigt_in_film_on_film_titel;
+drop constraint fk_spielt_mit_film_on_film_titel;
+drop constraint fk_spielt_mit_person_on_person_svnr;
+drop constraint fk_saal_kino_on_adresse;
+
+drop var ist_Sitzplan_fuer;
+drop var wird_gezeigt_in;
+drop var spielt_mit;
+drop var person;
+drop var film;
+drop var zeitplan;
+drop var ticket;
+drop var sitzplan;
+drop var saal;
+drop var kino;

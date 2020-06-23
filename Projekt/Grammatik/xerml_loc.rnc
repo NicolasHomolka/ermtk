@@ -1,0 +1,41 @@
+# vim: ts=2 sw=2 et
+
+default namespace = ""
+
+grammar {
+
+  MinCardType = xsd:integer { minInclusive = "0" }
+  MaxCardType = xsd:positiveInteger | "n"
+  
+  start = element loc {
+                	attribute version { xsd:decimal { fractionDigits="3" } },
+            		Title*,
+                    EntityLocalisation*,
+                    RelLocalisation*
+                  }
+                  
+  Title = element title {
+            attribute name { xsd:string },
+            attribute lang { xsd:string }?
+          }
+          
+  EntityLocalisation = element entlo {
+                         attribute entref { xsd:string },
+                         attribute name-lo { xsd:string },
+                         attribute lang { xsd:string },
+                         Attributeloc*
+                      }
+
+
+  RelLocalisation = element rello {
+                      attribute relref { xsd:string },
+                      attribute name-lo { xsd:string },
+                      attribute lang { xsd:string },
+                      Attributeloc*
+                    }
+
+Attributeloc = element attr {
+                 attribute name { xsd:string },
+                 attribute name-lo { xsd:string }
+               }
+}

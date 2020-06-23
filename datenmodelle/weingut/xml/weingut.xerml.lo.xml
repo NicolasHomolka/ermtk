@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<loc version="0.2">
+
+    <title name="Weingut"/>
+    <title name="winery" lang="en"/>
+
+
+
+    <entlo entref="wein" name-lo="wine" lang="en">
+        <attr name="name" name-lo="name"/>
+        <attr name="farbe" name-lo="color"/>
+        <attr name="jahrgang" name-lo="vintage year"/>
+        <attr name="restsüße" name-lo="residual sugar"/>
+        <attr name="erzeuger" name-lo="producer"/>
+    </entlo>
+
+    <entlo entref="erzeuger" name-lo="producer" lang="en">
+        <attr name="name" name-lo="name"/>
+        <attr name="adresse" name-lo="address"/>
+        <attr name="lizenznummer" name-lo="licencenumber"/>
+        <attr name="anbaugebiet" name-lo="growing area"/>
+    </entlo>
+
+
+    <entlo entref="anbaugebiet" name-lo="growing area" lang="en">
+        <attr name="name" name-lo="name"/>
+        <attr name="region" name-lo="region"/>
+        <attr name="land" name-lo="country"/>
+    </entlo>
+
+
+    <entlo entref="rebsorte" name-lo="type of grape" lang="en">
+        <attr name="name" name-lo="name"/>
+        <attr name="farbe" name-lo="color"/>
+    </entlo>
+
+
+
+    <entlo entref="lizenz" name-lo="licence" lang="en">
+        <attr name="lizenznummer" name-lo="licence number"/>
+        <attr name="menge" name-lo="amount"/>
+    </entlo>
+
+
+
+    <rello relref="erzeugt" name-lo="produces" lang="en"/>
+
+    <rello relref="beinhaltet" name-lo="contains" lang="en">
+        <attr name="anteil" name-lo="part in percent"/>
+    </rello>
+
+
+    <rello relref="besitzt" name-lo="owns" lang="en"/>
+
+    <rello relref="liegt in einem" name-lo="is in a" lang="en"/>
+
+</loc>
+
+
+
+
+
+

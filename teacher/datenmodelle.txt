@@ -1,0 +1,32 @@
+datenmodelle/
+├── rettungsstelle
+│   ├── dbms
+│   ├── erd
+│   └── xml
+└── sf
+    ├── dbms
+    │   ├── mssql
+    │   ├── mysql
+    │   ├── oracle
+    │   │   ├── sf.ddl.sql
+    │   │   └── sf.dml.sql
+    │   ├── psql
+    │   └── rel
+    ├── erd
+    │   ├── draw
+    │   │   ├── sf.odg
+    │   │   └── sf.pdf
+    │   ├── graphviz
+    │   ├── pic
+    │   │   ├── 01
+    │   │   │   ├── sf.pdf
+    │   │   │   └── sf.pic
+    │   │   ├── 02
+    │   │   ├── 03
+    │   │   ├── sf.pdf
+    │   │   └── sf.pic
+    │   └── yed
+    └── xml
+        ├── sf.xerml.lo.xml
+        ├── sf.xerml.ty.xml
+        └── sf.xerml.xml

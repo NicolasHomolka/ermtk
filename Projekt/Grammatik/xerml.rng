@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- vim: ts=2 sw=2 et -->
+<grammar ns="" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <define name="MinCardType">
+    <data type="integer">
+      <param name="minInclusive">0</param>
+    </data>
+  </define>
+  <define name="MaxCardType">
+    <choice>
+      <data type="positiveInteger"/>
+      <value>n</value>
+    </choice>
+  </define>
+  <start>
+    <element name="erm">
+      <attribute name="version">
+        <data type="decimal">
+          <param name="fractionDigits">3</param>
+        </data>
+      </attribute>
+      <zeroOrMore>
+        <ref name="Title"/>
+      </zeroOrMore>
+      <oneOrMore>
+        <ref name="EntityType"/>
+      </oneOrMore>
+      <zeroOrMore>
+        <ref name="RelType"/>
+      </zeroOrMore>
+    </element>
+  </start>
+  <define name="Title">
+    <element name="title">
+      <attribute name="name">
+        <data type="string"/>
+      </attribute>
+      <optional>
+        <attribute name="lang">
+          <data type="string"/>
+        </attribute>
+      </optional>
+    </element>
+  </define>
+  <define name="EntityType">
+    <element name="ent">
+      <attribute name="name">
+        <data type="string"/>
+      </attribute>
+      <optional>
+      <attribute name="qoute">
+          <data type="boolean"/>
+      </attribute>
+      </optional>
+      <oneOrMore>
+        <ref name="Attribute"/>
+      </oneOrMore>
+    </element>
+  </define>
+  <define name="Attribute">
+    <element name="attr">
+      <attribute name="name">
+        <data type="string"/>
+      </attribute>
+      <optional>
+        <attribute name="prime">
+          <data type="boolean"/>
+        </attribute>
+      </optional>
+      <optional>
+      <attribute name="qoute">
+          <data type="boolean"/>
+      </attribute>
+      </optional>
+    </element>
+  </define>
+  <define name="RelType">
+    <element name="rel">
+      <attribute name="to">
+        <data type="string"/>
+      </attribute>
+      <optional>
+        <attribute name="from">
+          <data type="string"/>
+        </attribute>
+      </optional>
+      <optional>
+      <attribute name="qoute">
+          <data type="boolean"/>
+      </attribute>
+      </optional>
+      <choice>
+        <interleave>
+          <oneOrMore>
+            <ref name="PartEnt"/>
+          </oneOrMore>
+          <zeroOrMore>
+            <ref name="Attribute"/>
+          </zeroOrMore>
+        </interleave>
+        <interleave>
+          <ref name="Super"/>
+          <oneOrMore>
+            <ref name="Sub"/>
+          </oneOrMore>
+        </interleave>
+      </choice>
+    </element>
+  </define>
+  <define name="PartEnt">
+    <element name="part">
+      <attribute name="ref">
+        <data type="string"/>
+      </attribute>
+      <attribute name="min">
+        <ref name="MinCardType"/>
+      </attribute>
+      <attribute name="max">
+        <ref name="MaxCardType"/>
+      </attribute>
+      <optional>
+        <attribute name="weak">
+          <data type="boolean"/>
+        </attribute>
+      </optional>
+    </element>
+  </define>
+  <define name="Super">
+    <element name="super">
+      <attribute name="ref">
+        <data type="string"/>
+      </attribute>
+      <attribute name="total">
+        <data type="boolean"/>
+      </attribute>
+      <attribute name="disjoint">
+        <data type="boolean"/>
+      </attribute>
+    </element>
+  </define>
+  <define name="Sub">
+    <element name="sub">
+      <attribute name="ref">
+        <data type="string"/>
+      </attribute>
+    </element>
+  </define>
+</grammar>

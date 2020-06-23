@@ -1,0 +1,23 @@
+Git auf beliebigen Pfad clonen.
+
+Im Repository nach Projekt/venv/bin/python3 navigieren und Pfad kopieren.
+
+Anschließend im ~ Verzeichniss die .bashrc öffnen.
+
+Am Ende der Datei folgende Zeile einfügen:
+
+alias ermtk='[Pfad zu python3] [Pfad zu ermtk-Datei]'
+
+	Hinweis: Die ermtk-Datei liegt im Projekt Ordner des Repository
+
+Anschließend .bashrc speichern und in der Konsole ". ~/.bashrc" ausführen.
+
+Viel spaß bei der Verwendung von ermtk!
+
+
+
+Kleine Hilfestellung:
+
+Der Befehl "ermtk" zeigt die Hilfe an.
+
+Mit "ermkt shell" kommt man in die REPL-Shell.

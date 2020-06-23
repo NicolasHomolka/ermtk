@@ -1,0 +1,12 @@
+
+drop constraint fk_beinhaltet_wein_on_wein_name;
+drop constraint fk_erzeugt_wein_on_wein_name;
+drop constraint fk_erzeugt_erzeuger_on_erzeuger_name;
+
+drop var beinhaltet;
+drop var erzeugt;
+drop var lizenz;
+drop var rebsorte;
+drop var anbaugebiet;
+drop var erzeuger;
+drop var wein;

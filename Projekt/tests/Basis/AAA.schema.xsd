@@ -1,0 +1,216 @@
+<?xml version="1.0" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="Fluggesellschaften">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="BoardKarte">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="fnr" type="xs:string"/>
+                     <xs:element name="datum" type="xs:string"/>
+                     <xs:element name="abflughafen" type="xs:string"/>
+                     <xs:element name="ankunftsflughafen" type="xs:string"/>
+                     <xs:element name="name" type="xs:string"/>
+                     <xs:element name="sitz" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Passagier">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="fnr" type="xs:string"/>
+                     <xs:element name="pnr" type="xs:string"/>
+                     <xs:element name="name" type="xs:string"/>
+                     <xs:element name="anrede" type="xs:string"/>
+                     <xs:element name="titel" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Ticket">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="fnr" type="xs:string"/>
+                     <xs:element name="pnr" type="xs:string"/>
+                     <xs:element name="tnr" type="xs:string"/>
+                     <xs:element name="ausgabedatum" type="xs:string"/>
+                     <xs:element name="preis" type="xs:string"/>
+                     <xs:element name="waehrung" type="xs:string"/>
+                     <xs:element name="vertriebsbuero" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Flugzeugtyp">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="typidentifikation" type="xs:string"/>
+                     <xs:element name="hersteller" type="xs:string"/>
+                     <xs:element name="reichweite" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Flugzeug">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="flugzeugnummer" type="xs:string"/>
+                     <xs:element name="interregnummer" type="xs:string"/>
+                     <xs:element name="name" type="xs:string"/>
+                     <xs:element name="startDatum" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Fluggesellschaft">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="orgCode" type="xs:string"/>
+                     <xs:element name="name" type="xs:string"/>
+                     <xs:element name="hauptsitz" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Flughafen">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="flughafennr" type="xs:string"/>
+                     <xs:element name="name" type="xs:string"/>
+                     <xs:element name="stadt" type="xs:string"/>
+                     <xs:element name="land" type="xs:string"/>
+                     <xs:element name="kapazitaet" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Sitzplatz">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Flugzeugtyp_typidentifikation" type="xs:string"/>
+                     <xs:element name="klasse" type="xs:string"/>
+                     <xs:element name="ort" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Flug">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Ticket_fnr" type="xs:string"/>
+                     <xs:element name="Ticket_pnr" type="xs:string"/>
+                     <xs:element name="Ticket_tnr" type="xs:string"/>
+                     <xs:element name="Fluggesellschaft_orgCode" type="xs:string"/>
+                     <xs:element name="Flughafen_flughafennr" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+         </xs:sequence>
+      </xs:complexType>
+      <xs:key name="PK_fnr_BoardKarte">
+         <xs:selector xpath="BoardKarte/fnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_fnr_Passagier">
+         <xs:selector xpath="Passagier/fnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_pnr_Passagier">
+         <xs:selector xpath="Passagier/pnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_fnr_Ticket">
+         <xs:selector xpath="Ticket/fnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_pnr_Ticket">
+         <xs:selector xpath="Ticket/pnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_tnr_Ticket">
+         <xs:selector xpath="Ticket/tnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_typidentifikation_Flugzeugtyp">
+         <xs:selector xpath="Flugzeugtyp/typidentifikation"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_flugzeugnummer_Flugzeug">
+         <xs:selector xpath="Flugzeug/flugzeugnummer"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_interregnummer_Flugzeug">
+         <xs:selector xpath="Flugzeug/interregnummer"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_orgCode_Fluggesellschaft">
+         <xs:selector xpath="Fluggesellschaft/orgCode"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_flughafennr_Flughafen">
+         <xs:selector xpath="Flughafen/flughafennr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Flugzeugtyp_typidentifikation_Sitzplatz">
+         <xs:selector xpath="Sitzplatz/Flugzeugtyp_typidentifikation"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_klasse_Sitzplatz">
+         <xs:selector xpath="Sitzplatz/klasse"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_ort_Sitzplatz">
+         <xs:selector xpath="Sitzplatz/ort"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Ticket_fnr_Flug">
+         <xs:selector xpath="Flug/Ticket_fnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Ticket_pnr_Flug">
+         <xs:selector xpath="Flug/Ticket_pnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Ticket_tnr_Flug">
+         <xs:selector xpath="Flug/Ticket_tnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Fluggesellschaft_orgCode_Flug">
+         <xs:selector xpath="Flug/Fluggesellschaft_orgCode"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Flughafen_flughafennr_Flug">
+         <xs:selector xpath="Flug/Flughafen_flughafennr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:keyref name="FK_Passagier_fnr_to_BoardKarte" refer="PK_fnr_BoardKarte">
+         <xs:selector xpath="Passagier/fnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_Ticket_fnr_to_Passagier" refer="PK_fnr_Passagier">
+         <xs:selector xpath="Ticket/fnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_Ticket_pnr_to_Passagier" refer="PK_pnr_Passagier">
+         <xs:selector xpath="Ticket/pnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_Sitzplatz_Flugzeugtyp_typidentifikation_to_Flugzeugtyp" refer="PK_typidentifikation_Flugzeugtyp">
+         <xs:selector xpath="Sitzplatz/Flugzeugtyp_typidentifikation"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_Flug_Ticket_fnr_to_Ticket" refer="PK_fnr_Ticket">
+         <xs:selector xpath="Flug/Ticket_fnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_Flug_Ticket_pnr_to_Ticket" refer="PK_pnr_Ticket">
+         <xs:selector xpath="Flug/Ticket_pnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_Flug_Ticket_tnr_to_Ticket" refer="PK_tnr_Ticket">
+         <xs:selector xpath="Flug/Ticket_tnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_Flug_Fluggesellschaft_orgCode_to_Fluggesellschaft" refer="PK_orgCode_Fluggesellschaft">
+         <xs:selector xpath="Flug/Fluggesellschaft_orgCode"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_Flug_Flughafen_flughafennr_to_Flughafen" refer="PK_flughafennr_Flughafen">
+         <xs:selector xpath="Flug/Flughafen_flughafennr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+   </xs:element>
+</xs:schema>

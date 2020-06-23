@@ -1,0 +1,108 @@
+graph Schulinformationssystem {
+	label=Schulinformationssystem
+	fontsize=20
+	node [peripheries=1 shape=box]
+	Person
+	node [label=nName shape=circle style=bold]
+	"Person.nName"
+	Person -- "Person.nName" [peripheries=1]
+	node [label=vName shape=circle style=bold]
+	"Person.vName"
+	Person -- "Person.vName" [peripheries=1]
+	node [label=gebDat shape=circle style=bold]
+	"Person.gebDat"
+	Person -- "Person.gebDat" [peripheries=1]
+	node [peripheries=1 shape=box]
+	Lehrer
+	node [label=lnr shape=circle]
+	"Lehrer.lnr"
+	Lehrer -- "Lehrer.lnr" [peripheries=1]
+	node [peripheries=1 shape=box]
+	Schueler
+	node [label=MatrNr shape=circle]
+	"Schueler.MatrNr"
+	Schueler -- "Schueler.MatrNr" [peripheries=1]
+	node [peripheries=1 shape=box]
+	Abteilung
+	node [label=name shape=circle style=bold]
+	"Abteilung.name"
+	Abteilung -- "Abteilung.name" [peripheries=1]
+	node [peripheries=1 shape=box]
+	Gegenstand
+	node [label=bezeichnung shape=circle style=bold]
+	"Gegenstand.bezeichnung"
+	Gegenstand -- "Gegenstand.bezeichnung" [peripheries=1]
+	node [peripheries=1 shape=box]
+	Lehrplan
+	node [label=pStunden shape=circle style=bold]
+	"Lehrplan.pStunden"
+	Lehrplan -- "Lehrplan.pStunden" [peripheries=1]
+	node [label=tStunden shape=circle style=bold]
+	"Lehrplan.tStunden"
+	Lehrplan -- "Lehrplan.tStunden" [peripheries=1]
+	node [peripheries=1 shape=box]
+	Klasse
+	node [label=jahrgang shape=circle style=bold]
+	"Klasse.jahrgang"
+	Klasse -- "Klasse.jahrgang" [peripheries=1]
+	node [label=klassensprecher shape=circle style=bold]
+	"Klasse.klassensprecher"
+	Klasse -- "Klasse.klassensprecher" [peripheries=1]
+	node [label=kassierer shape=circle style=bold]
+	"Klasse.kassierer"
+	Klasse -- "Klasse.kassierer" [peripheries=1]
+	node [peripheries=1 shape=box]
+	LVG
+	node [label=faktor shape=circle style=bold]
+	"LVG.faktor"
+	LVG -- "LVG.faktor" [peripheries=1]
+	node [color=black shape=triangle]
+	"ist ein" [style=filled]
+	"ist ein" -- Person [peripheries=1]
+	"ist ein" -- Lehrer [peripheries=1]
+	"ist ein" -- Schueler [peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"ist Geschwister von"
+	"ist Geschwister von" -- Schueler [label="(0, n)" peripheries=1]
+	"ist Geschwister von" -- Schueler [label="(0, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"ist Elternteil von"
+	"ist Elternteil von" -- Schueler [label="(1, 2)" peripheries=1]
+	"ist Elternteil von" -- Person [label="(0, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"unterrichtet in"
+	"unterrichtet in" -- Lehrer [label="(1, 1)" peripheries=1]
+	"unterrichtet in" -- Abteilung [label="(1, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"bestimmt Faktor fuer"
+	"bestimmt Faktor fuer" -- LVG [label="(0, n)" peripheries=1]
+	"bestimmt Faktor fuer" -- Gegenstand [label="(1, 1)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"wird geleitet"
+	"wird geleitet" -- Abteilung [label="(1, 1)" peripheries=1]
+	"wird geleitet" -- Lehrer [label="(0, 1)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"ist Klassenvorstand"
+	"ist Klassenvorstand" -- Lehrer [label="(1, 1)" peripheries=1]
+	"ist Klassenvorstand" -- Klasse [label="(1, 1)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"uebernimmt Rolle"
+	"uebernimmt Rolle" -- Schueler [label="(0, 1)" peripheries=1]
+	"uebernimmt Rolle" -- Klasse [label="(1, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"ist bestimmt fuer"
+	"ist bestimmt fuer" -- Lehrplan [label="(1, n)" peripheries=1]
+	"ist bestimmt fuer" -- Abteilung [label="(1, 1)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"ist teil von"
+	"ist teil von" -- Klasse [label="(1, 1)" peripheries=1]
+	"ist teil von" -- Abteilung [label="(1, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"besitzt Noten fuer"
+	"besitzt Noten fuer" -- Schueler [label="(0, n)" peripheries=1]
+	"besitzt Noten fuer" -- Gegenstand [label="(0, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	vermerkt
+	vermerkt -- Gegenstand [label="(0, n)" peripheries=1]
+	vermerkt -- Note [label="(0, n)" peripheries=1]
+}

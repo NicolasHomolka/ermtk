@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<erm version="0.2">
+
+    <!-- Front Matter -->
+
+    <title name="Schulinformationssystem"/>
+    <title name="Schoolinformationsystem" lang="en"/>
+
+    <!-- Entity-Types -->
+	
+	<ent name="Person">
+		<attr name="svnr" prime="true"/>
+		<attr name="nName"/>
+		<attr name="vName"/>
+		<attr name="gebDat"/>
+	</ent>
+
+    <ent name="Lehrer">
+        <attr name="lnr"/>
+    </ent>
+	
+	<ent name="Schueler">
+		<attr name="MatrNr"/>
+	</ent>
+	
+	<ent name="Abteilung">
+		<attr name="abkuerzung" prime="true"/>
+		<attr name="name"/>
+	</ent>
+
+    <ent name="Gegenstand">
+        <attr name="abkuerzung" prime="true"/>
+        <attr name="bezeichnung"/>
+    </ent>
+	
+	<ent name="Klasse">
+		<attr name="bezeichnung" prime="true"/>
+		<attr name="jahrgang"/>
+	</ent>
+
+    <ent name="Lehrverpflichtungsgruppe">
+        <attr name="lvgNr" prime="true"/>
+        <attr name="faktor"/>
+    </ent>
+
+    <ent name="Lehrplan">
+        <attr name="jahrgang" prime="true"/>
+		<attr name="pStunden"/>
+		<attr name="tStunden"/>
+    </ent>
+
+    <!-- Relationship-Types -->
+
+    <!-- Punkt 2-->
+    <rel to="gehört zu">
+        <part ref="Lehrer" min="1" max="1"/>
+        <part ref="Abteilung" min="1" max="n"/>
+    </rel>
+
+    <rel to="wird geleitet" from="leitet">
+        <part ref="Abteilung" min="1" max="1"/>
+        <part ref="Lehrer" min="0" max="1"/>
+    </rel>
+
+    <!-- Punkt 3-->
+    <rel to="verwendet">
+        <part ref="Abteilung" min="1" max="1"/>
+        <part ref="Lehrplan" min="0" max="n"/>
+    </rel>
+
+    <rel to="gelistet in">
+        <part ref="Gegenstand" min="1" max="1"/>
+        <part ref="Lehrplan" min="0" max="n"/>
+    </rel>
+
+    <!-- Punkt 4-->
+    <rel to="unterrichtet">
+        <part ref="Lehrer" min="1" max="n"/>
+        <part ref="Klasse" min="1" max="n"/>
+        <part ref="Gegenstand" min="1" max="n"/>
+    </rel>
+
+    <!-- Punkt 5-->
+    <rel to="Note">
+        <part ref="Schueler" min="1" max="n"/>
+        <part ref="Klasse" min="1" max="n"/>
+        <part ref="Gegenstand" min="1" max="n"/>
+        <attr name="schuljahr"/>
+        <attr name="semesternote"/>
+        <attr name="jahresnote"/>
+    </rel>
+
+    <!-- Punkt 6-->
+    <rel to="ist Klassenvorstand">
+        <part ref="Lehrer" min="1" max="1"/>
+        <part ref="Klasse" min="1" max="1"/>
+    </rel>
+
+    <rel to="agiert">
+        <part ref="Schueler" min="0" max="n"/>
+        <part ref="Klasse" min="1" max="n"/>
+        <attr name="rolle"/>
+    </rel>
+
+    <!-- Punkt 7-->
+    <rel to="zugeordnet">
+        <part ref="Lehrverpflichtungsgruppe" min="0" max="n"/>
+        <part ref="Gegenstand" min="1" max="1"/>
+    </rel>
+
+    <!-- Punkt 8 -->
+    <rel to="ist ein">
+        <super ref="Person" total="false" disjoint="true"/>
+        <sub ref="Lehrer"/>
+        <sub ref="Schueler"/>
+    </rel>
+
+    <rel to="ist Geschwister von">
+        <part ref="Schueler" min="0" max="n"/>
+        <part ref="Schueler" min="0" max="n"/>
+    </rel>
+
+    <rel to="ist Elternteil von">
+        <part ref="Schueler" min="1" max="2"/>
+        <part ref="Person" min="0" max="n"/>
+    </rel>
+
+</erm>

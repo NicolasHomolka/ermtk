@@ -1,0 +1,45 @@
+# vim: ts=2 sw=2 et
+
+default namespace = ""
+
+grammar {
+
+  MinCardType = xsd:integer { minInclusive = "0" }
+  MaxCardType = xsd:positiveInteger | "n"
+  
+  start = element desc {
+  					attribute version { xsd:decimal { fractionDigits="3" } },
+           			Title*,
+                    TypDescription*,
+                    RelDescription*
+                }
+                
+  Title = element title {
+            attribute name { xsd:string },
+            attribute lang { xsd:string }?
+          }
+
+ TypDescription = element typdsc{
+                     attribute entref { xsd:string },
+                     Attributetype*,
+                     Value*
+                   }
+
+  RelDescription = element reldsc{
+                     attribute relref { xsd:string },
+                     Attributetype*,
+                     Value*
+                   }
+
+  Attributetype = element attr {
+                    attribute name { xsd:string },
+                    attribute type { xsd:string },
+                    attribute min {xsd:int}?,
+                    attribute max {xsd:int}?
+                  }
+
+  Value = element val {
+            attribute attr {xsd:string},
+            text
+          }
+}

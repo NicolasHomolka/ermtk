@@ -1,0 +1,20 @@
+
+drop constraint fk_vermerkt_Gegenstand_on_Gegenstand_abkuerzung;
+drop constraint fk_besitzt_Noten_fuer_Gegenstand_on_Gegenstand_abkuerzung;
+drop constraint fk_besitzt_Noten_fuer_Schueler_on_Schueler_svnr;
+drop constraint fk_ist_Geschwister_von_Schueler_on_Schueler_svnr2;
+drop constraint fk_ist_Geschwister_von_Schueler_on_Schueler_svnr;
+drop constraint fk_Schueler_Person_on_svnr;
+drop constraint fk_Lehrer_Person_on_svnr;
+
+drop var vermerkt;
+drop var besitzt_Noten_fuer;
+drop var ist_Geschwister_von;
+drop var LVG;
+drop var Klasse;
+drop var Lehrplan;
+drop var Gegenstand;
+drop var Abteilung;
+drop var Schueler;
+drop var Lehrer;
+drop var Person;

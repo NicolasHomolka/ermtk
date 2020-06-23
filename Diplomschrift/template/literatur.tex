@@ -1,0 +1,288 @@
+\chapter[Umgang mit Literatur]{Umgang mit Literatur und anderen Quellen}
+\label{cha:Literatur}
+
+
+\paragraph{Anmerkung:}
+Der Titel dieses Kapitels ist für die Kopfzeile (absichtlich) zu
+lang geraten; in diesem Fall kann man in der {\tt
+chapter}-Anweisung von \latex als optionales Argument \verb![..]! einen verkürzten Text für die
+Kopfzeile angeben:
+\begin{verbatim}
+  \chapter[Umgang mit Literatur]
+          {Umgang mit Literatur und anderen Quellen}
+\end{verbatim}
+
+\section{Allgemeines}
+
+Für die Gestaltung der Literaturverweise im Text und der
+Quellenangaben sind weltweit eine Vielzahl verschiedener Richtlinien in
+Gebrauch. Die Wahl des richtigen Schemas ist Geschmacksache -- wichtig ist jedoch,
+eine durchdachte und vor allem \emph{konsistente} Verwendung.
+Das Literaturverzeichnis ist eine
+Zusammenstellung der verwendeten Quellen am \emph{Ende} des Dokuments.
+Wichtig ist, dass jeder Literaturverweis im Text einen entsprechenden
+Eintrag im Literaturverzeichnis hat und umgekehrt.
+
+\section{Finden von Literator}
+
+
+
+\section{Literaturverweise}
+
+\subsection{{\tt citetitle} und {\tt footcite}}
+
+Für Literaturverweise im laufenden Text verwendet man in \latex die Anweisung
+\begin{itemize}
+\item[] \verb!\citetitle{!\textit{Verweise}\verb!}! oder
+\item[] \verb!\citetitle[!\textit{Zusatztext}\verb!]{!\textit{Verweise}\verb!}!.
+\end{itemize}
+
+\noindent%
+Zu jedem Verweis muss außerdem noch als Fußnote der genau Verweis mit dem Autor angegeben werden als
+
+\begin{itemize}
+\item[] \verb!\footcite{!\textit{Verweise}\verb!}! oder
+\item[] \verb!\footcite[!\textit{Zusatztext}\verb!]{!\textit{Verweise}\verb!}! oder
+\item[] \verb!\footcite[!\textit{Vorwort}\verb!][!\textit{Zusatztext}\verb!]{!\textit{Verweise}\verb!}!.
+\end{itemize}
+
+\noindent%
+\textit{Verweise} ist eine durch Kommas getrennte Auflistung von Quellen-Schlüsseln
+zur Identifikation der entsprechenden Einträge im Literaturverzeichnis.
+Mit \textit{Zusatztext} können Ergänzungstexte zum aktuellen Literaturverweis angegeben
+werden, wie \zB Kapitel- oder Seitenangaben bei Büchern. Das \textit{Vorwort} gibt bei den Verweisen in den Fußnoten noch Zusatztexte vor dem Verweis an, wie \zB siehe, weiters,...
+
+Einige Beispiele dazu:
+\begin{itemize}
+\item[] \verb!Mehr dazu findet sich in \citetitle{Kopka98}\footcite[][]{Kopka98}.! \newline
+      $\rightarrow$ Mehr dazu findet sich in \citetitle{Kopka98}\footcite[][]{Kopka98}.
+\item[] \verb!Mehr über \emph{Styles} in \citetitle{Kopka98}\footcite[][Kap.\ 3]{Kopka98}.! \newline
+      $\rightarrow$ Mehr über \emph{Styles} in \citetitle{Kopka98}\footcite[][Kap.\ 3]{Kopka98}.
+\item[] \verb!Die Angaben in \citetitle{Ears99}\footcite[][S.\ 274--277]{Ears99} sind falsch.! \newline
+      $\rightarrow$ Die Angaben in \citetitle{Ears99}\footcite[][S.\ 274--277]{Ears99} sind aus meiner Sicht falsch.
+\item[] \verb!überholt sind auch \citetitle{Ears99,Microsoft01,Duden97}!\newline\verb!\footcite[][]{Ears99,Microsoft01,Duden97}.! \newline
+      $\rightarrow$ überholt sind auch \citetitle{Ears99,Microsoft01,Duden97}\footcite[][]{Ears99,Microsoft01,Duden97}.
+\end{itemize}
+
+
+
+\subsection{Häufige Fehler}
+
+\subsubsection{Verweise außerhalb des Satzes}
+Literaturverweise sollten innerhalb oder am Ende eines Satzes (vor
+dem Punkt) stehen, nicht \emph{außerhalb}, wie
+hier. \footcite[siehe][]{Oetiker01} $\leftarrow$~FALSCH!
+
+\subsubsection{Verweis nicht sichtbar}
+Wenn eine Quelle\repeatfootcite{Kopka98} mehrfach in einem Kapitel verwendet wird, müssen alle Stellen gekennzeichnet werden, an denen die Quelle\repeatfootcite{Kopka98} verwendet wird. Ein einfacher Verweis auf die Quelle\repeatfootcite{Kopka98} am Anfang des Kapitels ist nicht ausreichend.
+
+Um mehrfache gleiche Zeilen in den Fußnoten zu vermeiden können Zitate mit dem Befehl \verb|\repeatfootcite{Kopka98}| geschrieben werden, der gleiche Zitate zusammenfasst.
+
+\subsubsection{Zitate}
+Falls ein ganzer Absatz (oder mehr) aus einer Quelle zitiert wird,
+sollte man den Verweis im vorlaufenden Text platzieren und nicht
+\emph{innerhalb} des Zitats selbst. \ZB, die folgenden klaren Worte
+aus \citetitle[][]{Oetiker01}:
+\begin{quote}
+Typographical design is a craft. Unskilled authors often commit
+serious formatting errors by assuming that book design is mostly a
+question of aesthetics---``If a document looks good artistically,
+it is well designed.'' But as a document has to be read and not
+hung up in a picture gallery, the readability and
+understandability is of much greater importance than the beautiful
+look of it.
+\end{quote}
+Für das Zitat selbst sollte man übrigens das dafür vorgesehene
+%
+\begin{itemize}
+ \item[] \verb!\begin{quote} ... \end{quote}!
+\end{itemize}
+%
+Environment verwenden, das durch beidseitige Einrückungen das
+Zitat vom eigenen Text klar abgrenzt und damit die Gefahr von
+Unklarheiten (wo ist das Ende des Zitats?) mindert.
+Wenn man möchte, kann man das Innere des Zitats auch in Hochkommas verpacken oder kursiv setzen -- aber nicht beides!
+
+
+\section{Plagiarismus}
+
+Als "`Plagiat"' bezeichnet man die Darstellung eines fremden Werks als eigene Schöpfung, 
+in Teilen oder als Ganzes, egal ob bewusst oder unbewusst.
+Plagiarismus ist kein neues Problem im Schulwesen, hat sich aber durch die 
+breite Verfügbarkeit elektronischer Quellen in den letzten Jahren dramatisch 
+verstärkt und wird keineswegs als Kavaliersdelikt betrachtet.
+Viele Schulen bedienen sich als Gegenmaßnahme heute ebenfalls elektronischer Hilfsmittel 
+(die den Schülern zum Teil nicht zugänglich sind), und man sollte daher bei
+jeder abgegebenen Arbeit damit rechnen, dass sie routinemäßig auf Plagiatsstellen untersucht wird!
+Werden solche erst zu einem späteren Zeitpunkt entdeckt, kann das im schlimmsten Fall sogar 
+zur nachträglichen (und endgültigen) Aberkennung des Abschlusses führen.
+
+Um derartige Probleme zu vermeiden, sollte man eher übervorsichtig agieren und zumindest folgende Regeln beachten:
+%
+\begin{itemize}
+\item
+Die Übernahme kurzer Textpassagen ist nur unter korrekter Quellenangabe zulässig, wobei der Umfang (Beginn und Ende) des Textzitats in jedem einzelnen Fall klar erkenntlich gemacht werden muss. 
+\item
+Insbesondere ist es nicht zulässig, eine Quelle nur eingangs zu erwähnen und nachfolgend wiederholt nicht-ausgezeichnete Textpassagen als eigene Wortschöpfung zu übernehmen. 
+\item
+Auf gar keinen Fall tolerierbar ist die direkte oder paraphrierte übernahme längerer Textpassagen, ob mit oder ohne Quellenangabe. Auch indirekt übernommene oder aus einer anderen Sprache übersetzte Passagen müssen mit entsprechenden Quellenangaben gekennzeichnet sein! 
+\end{itemize}
+%
+Im Zweifelsfall findet man detailliertere Regeln in jedem guten Buch über wissenschaftliches Arbeiten oder man fragt sicherheitshalber den Betreuer der Arbeit.
+
+
+
+\section{Literaturverzeichnis}
+
+Für die Erstellung des Literaturverzeichnisses gibt es in \latex zwei
+Möglichkeiten:
+\begin{enumerate}
+\item Das Literaturverzeichnis manuell zu formatieren \footcite[siehe][S.\ 56--57]{Kopka98}.
+\item Die Verwendung von BibTeX und einer zugehörigen Literaturdatenbank
+\footcite[siehe][S.\ 245--255]{Kopka98}.
+\end{enumerate}
+Tatsächlich ist die erste Variante nur bei sehr wenigen Literaturangaben interessant.
+Die Arbeit mit BibTeX macht sich hingegen schnell bezahlt und ist zudem wesentlich
+flexibler.
+
+\subsection{Literaturdaten in BibLaTeX}
+\label{sec:bibtex}
+
+BibLaTeX\footnote{http://get-software.net/info/translations/biblatex/de/biblatex-de.pdf} ist ein eigenständiges Programm, das aus einer "`Literaturdatenbank"' (eine oder mehrere
+Textdateien von vorgegebener Struktur) ein für \latex geeignetes Literaturverzeichnis
+erzeugt. Dabei ist es möglich, aus einer Reihe von verschiedenen Stilvarianten
+(\emph{bibliography styles}) zu wählen.
+Literatur zur Verwendung von BibLaTeX findet man online, \zB in
+\citetitle{Taylor96,Patashnik88}\footcite{Taylor96,Patashnik88}.
+
+Man kann BibLaTeX-Dateien natürlich mit einem Texteditor manuell erstellen, für
+viele Literaturquellen sind auch bereits fertige BibLaTeX-Einträge im Web verfügbar.
+Darüber hinaus gibt es einige Software-Werkzeuge zur Wartung von
+BibLaTeX-Verzeichnissen, zu empfehlen ist beispielsweise
+JabRef.%
+\footnote{\url{http://jabref.sourceforge.net}}
+%und
+%\emph{BibEdit}%
+%\footnote{\url{www.iui.se/staff/jonasb/bibedit/}}	%% nicht mehr auffindbar!
+%von Jonas Björnerstedt.
+ 
+Im \latex-Quelltext wird das Literaturverzeichnis am Ende des
+Dokuments in dieser Form eingesetzt:
+%
+\begin{verbatim}
+    \printbibliography
+\end{verbatim}
+%
+Der Verweis auf die Literaturdatenbank in der Datei
+\url{literatur.bib}, der von BibLaTeX verarbeitet wird befindet sich vor dem Beginn des eigentlichen Dokuments.
+%
+\begin{verbatim}
+    \addbibresource{literatur.bib}
+\end{verbatim}
+%
+Es können jederzeit noch weitere Literaturdatenbanken angelegt bzw. vorhandene online Literaturdatenbanken hinzugefügt werden. 
+%
+\begin{verbatim}
+    \addbibresource[location=remote]{http://www.citeulike.org/bibtex/group/9517}
+    \addbibresource[location=remote,label=lan]{ftp://192.168.1.57/~user/file.bib}
+\end{verbatim}
+%
+In der \emph{TeXnicCenter}-Umgebung wird (bei richtiger Einstellung) die
+erforderliche BibLaTeX-Anweisungsfolge automatisch bei jedem \latex-Durchlauf
+ausgeführt.
+
+
+
+
+\subsection{Beispiele}
+Im Folgenden einige Beispiele für die wichtigsten Formen von Quellenangaben
+und die zugehörigen Einträge in der BibLaTeX-Datei.
+Weitere Beispiele finden sich im übrigen Text \bzw im
+Literaturverzeichnis.
+
+\begin{itemize}
+\item Buch (\texttt{@book})\footcite{BurgerBurge06}
+\item Mehrbändige Bücher (\texttt{@mvbook})
+\item Teil eines Buches (\texttt{@inbook})
+\item Buchähnliche Publikation (\texttt{@booklet}) 
+\item Buchbeitrag, Beitrag in einem Sammelband (\texttt{@incollection})\footcite{Ears99}
+\item Konferenzbeitrag, Beitrag in einem Tagungsband (\texttt{@inproceedings})\footcite{Burger87}
+\item Zeitschriftenbeitrag, Journal Paper (\texttt{@article})\footcite{Guttman01}
+\item Dissertation (\texttt{@phdthesis})\footcite{Eberl87}
+\item Diplomarbeit (Universität, \texttt{@mastersthesis})\footcite{Wintersberger00}
+\item Bachelorarbeit (\texttt{@masterthesis} modifiziert)\footcite{Bacher04}
+\item Bericht, Technical Report (\texttt{@techreport})\footcite{Beeler48}
+\item Handbuch, Manual, Online-Dokumentation (\texttt{@manual})\footcite{Microsoft01}
+\item Sonderfälle wie \zB Patente\footcite{PAT07}, Normen\footcite{DIN9241-11}\footcite{DIN9241-110}, Audio-CDs\footcite{Zappa95}, Filme\footcite{Nosferatu}, Persönliche Kommunikation\footcite{Kreisky75} (\texttt{@misc})
+\item Online Quellen (\texttt{@online})
+\end{itemize}
+
+%%------------------------------------------------------
+\subsubsection{Online-Quellen, Wiki-Einträge etc.}
+\label{sec:OnlineQuellen}
+
+
+Verweise auf Webseiten sollten generell nur in Ausnahmefällen
+verwendet werden und auch nur dann, wenn keine entsprechende
+andere Publikation verfügbar ist und sich an der angegeben Adresse
+(URL) auch tatsächlich ein Dokument befindet. Bei Online-Quellen 
+\emph{ohne explizit angegebenem Autor}, \zB Firmen-Homepages, 
+Link-Sammlungen und \va\ auch \emph{Wikipedia}-Seiten, sollte 
+man die entsprechende Webadresse \emph{nicht} in die
+Literaturliste aufnehmen sondern direkt im Text als \textbf{Fußnote} 
+angeben. Beispielsweise bezeichnet man als "`Reliquienschrein"' einen 
+Schrein, in dem die Reliquien eines oder mehrerer Heiliger aufbewahrt werden.%
+\footnote{\url{http://de.wikipedia.org/wiki/Reliquienschrein}}
+
+Wird der Diplomarbeit ein elektronischer Datenträger (CD-ROM, DVD
+etc.) beigelegt, empfiehlt sich die angeführten Webseiten in
+elektronischer Form (vorzugsweise als PDF-Da\-tei\-en) abzulegen
+und mit einem entsprechenden Verweis im Literaturverzeichnis
+("`Kopie auf CD-ROM"') zu versehen.
+
+\subsection{Tipps zur Erstellung von BibTeX-Dateien}
+\label{sec:TippsZuBibtex}
+
+\subsubsection{\texttt{month}-Attribut}
+
+Für die Angabe des \texttt{month}-Attributs sollte man grundsätzlich die zwölf in BibTeX bereits vordefinierten Abkürzungen
+\begin{quote}
+\texttt{JAN}, \texttt{FEB}, \texttt{MAR}, \texttt{APR}, 
+\texttt{MAY}, \texttt{JUN}, \texttt{JUL}, \texttt{AUG}, 
+\texttt{SEP}, \texttt{OCT}, \texttt{NOV}, \texttt{DEC}
+\end{quote}
+verwenden, und zwar \emph{ohne} die sonst erforderlichen Klammern (oder Hochkommas), also beispielsweise einfach mit
+% Siehe auch Q13 in http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/btxFAQ.pdf
+%
+\begin{quote}
+\verb!month=AUG!
+\end{quote}
+%
+Der richtige Monatsname wird abhängig von der Spracheinstellung für das Dokument automatisch eingesetzt.
+Ein Intervall über \emph{mehrere} Monate kann man in der (etwas eigenartigen) BibTeX-Syntax so angeben (verwendet \zB\ für "`Mai/Juni"' in \citetitle{Guttman01}\footcite{Guttman01}):
+\begin{quote}
+\verb!month=MAY # "/" # JUN!
+\end{quote}
+
+
+\subsubsection{\texttt{language}-Attribut}
+
+Das in dieser Vorlage verwendete \verb!babelbib!-Paket ermöglicht den korrekten Satz mehrsprachiger Literaturverzeichnisse. Dazu ist es ratsam, bei jedem Quelleneintrag auch die enstsprechende Sprache anzugeben, also beispielsweise
+\begin{quote}
+\verb!language={german}! \quad oder \quad \verb!language={english}!
+\end{quote}
+für ein deutsch- \bzw\ englischsprachiges Dokument.
+
+\subsubsection{\texttt{edition}-Attribut}
+
+Die Verwendung von \verb!babelbib! lässt auch die früheren Probleme mit der
+Angabe der Auflagennummer von Büchern. Nunmehr ist lediglich die Nummer selbst anzugeben, also etwa
+\begin{quote}
+\verb!edition={3}!
+\end{quote}
+bei einer dritten Auflage. Die richtige Punktuation in der Quellenangabe wird in Abhängigkeit von der Spracheinstellung durch \texttt{babelbib} automatisch hinzugefügt ("`3.\ Auflage"' \bzw\ "`3rd edition"').
+
+
+\subsubsection{Listing aller Quellen}
+
+Durch die Anweisung \verb!\nocite{*}! -- an beliebiger Stelle im Dokument platziert -- werden \emph{alle} bestehenden Einträge der BibTeX-Datei im Literaturverzeichnis aufgelistet, also auch jene, für die es keine explizite \verb!\footcite{}! Anweisung gibt. Das ist ganz nützlich, um während des Schreibens der Arbeit eine aktuelle Übersicht auszugeben. Normalerweise müssen aber alle angeführten Quellen auch im Text referenziert sein!

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<desc version="3.0">
+	<typdsc entref="Land">
+    	<attr name="Name" type="varchar"/>
+    	<attr name="Code" type="varchar"/>
+        <attr name="Hauptstadt" type="varchar"/>
+        <attr name="Provinz" type="varchar"/>
+        <attr name="Gebietsgröße" type="float" min="0"/>
+        <attr name="Bevölkerung" type="float" min="0"/>
+    </typdsc>
+
+    <typdsc entref="Stadt">
+    	<attr name="Name" type="varchar"/>
+    	<attr name="Land" type="varchar"/>
+        <attr name="Provinz" type="varchar"/>
+        <attr name="Bevölkerung" type="float"  min="0"/>
+        <attr name="Breitengrad" type="float"  min="-90" max="90"/>
+        <attr name="Längengrad" type="float"  min="-180" max="180"/>
+        <attr name="Höhe" type="float" />
+    </typdsc>
+
+   <typdsc entref="Provinz">
+   		<attr name="Name" type="varchar"/>
+   		<attr name="Land" type="varchar"/>
+    	<attr name="Bevölkerung" type="float"  min="0"/>
+    	<attr name="Gebietsgröße" type="float"  min="0"/>
+    	<attr name="Hauptstadt" type="varchar"/>
+    	<attr name="HauptProvinz" type="varchar"/>
+   </typdsc>
+
+    <typdsc entref="Wirtschaft">
+    	<attr name="Land" type="varchar"/>
+    	<attr name="BIP" type="float"  min="0"/>
+        <attr name="Landwirtschaft" type="float" />
+        <attr name="Dienstleistungen" type="float" />
+        <attr name="Industrie" type="float" />
+        <attr name="Inflation" type="float" />
+        <attr name="Arbeitslosigkeit" type="float" />
+    </typdsc>
+
+    <typdsc entref="Bevölkerung">
+    	<attr name="Land" type="varchar"/>
+    	<attr name="Bevölkerungswachstum" type="float" />
+        <attr name="Kindersterblichkeit" type="float" />
+    </typdsc>
+
+    <typdsc entref="Politik">
+    	<attr name="Land" type="varchar"/>
+    	<attr name="Unabhängigkeit" type="date"/>
+        <attr name="WarAbhängig" type="varchar"/>
+        <attr name="Abhängig" type="varchar"/>
+        <attr name="Regierung" type="varchar"/>
+    </typdsc>
+
+    <typdsc entref="Sprache">
+    	<attr name="Land" type="varchar"/>
+    	<attr name="Name" type="varchar"/>
+        <attr name="Prozentsatz" type="float"  min="0" max="100"/>
+    </typdsc>
+
+    <typdsc entref="Religion">
+    	<attr name="Land" type="varchar"/>
+    	<attr name="Name" type="varchar"/>
+        <attr name="Prozentsatz" type="float"  min="0" max="100"/>
+    </typdsc>
+
+    <typdsc entref="EtnischeGruppe">
+    	<attr name="Land" type="varchar"/>
+    	<attr name="Name" type="varchar"/>
+        <attr name="Prozentsatz" type="float"  min="0" max="100"/>
+    </typdsc>
+
+    <typdsc entref="LandesBevölkerung">
+		<attr name="Land" type="varchar"/>
+		<attr name="Jahr" type="float"  min="0"/>
+		<attr name="Bevölkerung" type="float"  min="0"/>
+	</typdsc>
+
+	<typdsc entref="andererLändername">
+		<attr name="Land" type="varchar"/>
+		<attr name="andererName" type="varchar"/>
+	</typdsc>
+
+	<typdsc entref="lokalerLändername">
+		<attr name="Land" type="varchar"/>
+		<attr name="lokalerName" type="varchar"/>
+	</typdsc>
+
+	<typdsc entref="ProvinzBevölkerung">
+		<attr name="Provinz" type="varchar"/>
+		<attr name="Land" type="varchar"/>
+		<attr name="Jahr" type="float"  min="0"/>
+		<attr name="Bevölkerung" type="float"  min="0"/>
+	</typdsc>
+
+	<typdsc entref="andererProvinzname">
+		<attr name="Provinz" type="varchar"/>
+		<attr name="Land" type="varchar"/>
+		<attr name="andererName" type="varchar"/>
+	</typdsc>
+
+	<typdsc entref="lokalerProvinzname">
+		<attr name="Provinz" type="varchar"/>
+		<attr name="Land" type="varchar"/>
+		<attr name="lokalerName" type="varchar"/>
+	</typdsc>
+
+	<typdsc entref="StadtBevölkerung">
+		<attr name="Stadt" type="varchar"/>
+		<attr name="Land" type="varchar"/>
+		<attr name="Provinz" type="varchar"/>
+		<attr name="Jahr" type="float"  min="0"/>
+		<attr name="Bevölkerung" type="float"  min="0"/>
+	</typdsc>
+
+	<typdsc entref="andererStadtName">
+		<attr name="Stadt" type="varchar"/>
+		<attr name="Land" type="varchar"/>
+		<attr name="Provinz" type="varchar"/>
+		<attr name="andererName" type="varchar"/>
+	</typdsc>
+
+	<typdsc entref="lokalerStadtName">
+		<attr name="Stadt" type="varchar"/>
+		<attr name="Land" type="varchar"/>
+		<attr name="Provinz" type="varchar"/>
+		<attr name="lokalerName" type="varchar"/>
+	</typdsc>
+
+	<typdsc entref="Kontinent">
+		<attr name="Name" type="varchar"/>
+		<attr name="Gebietsgröße" type="float" />
+	</typdsc>
+
+	<typdsc entref="Organisation">
+		<attr name="Abkürzung" type="varchar"/>
+		<attr name="Name" type="varchar"/>
+		<attr name="Stadt" type="varchar"/>
+		<attr name="Land" type="varchar"/>
+		<attr name="Provinz" type="varchar"/>
+		<attr name="Etabliert" type="date"/>
+	</typdsc>
+
+	<typdsc entref="Berg">
+		<attr name="Name" type="varchar"/>
+		<attr name="Berge" type="varchar"/>
+		<attr name="Höhe" type="float" />
+		<attr name="Typ" type="varchar"/>
+		<attr name="Koordinaten" type="float"/>
+	</typdsc>
+
+	<typdsc entref="Wüste">
+		<attr name="Name" type="varchar"/>
+		<attr name="Gebietsgröße" type="float" />
+		<attr name="Koordinaten" type="float"/>
+	</typdsc>
+
+	<typdsc entref="Insel">
+		<attr name="Name" type="varchar"/>
+		<attr name="Inseln" type="varchar"/>
+		<attr name="Gebietsgröße" type="float" />
+		<attr name="Höhe" type="float" />
+		<attr name="Typ" type="varchar"/>
+		<attr name="Koordinaten" type="float"/>
+	</typdsc>
+
+	<typdsc entref="See">
+		<attr name="Name" type="varchar"/>
+		<attr name="Fluss" type="varchar"/>
+		<attr name="Gebietsgröße" type="float" />
+		<attr name="Tiefe" type="float"  min="0"/>
+		<attr name="Höhe" type="float"  min="0"/>
+		<attr name="Typ" type="varchar"/>
+		<attr name="Koordinaten" type="float"/>
+	</typdsc>
+
+	<typdsc entref="Meer">
+		<attr name="Name" type="varchar"/>
+		<attr name="Gebietsgröße" type="float" />
+		<attr name="Tiefe" type="float"  min="0"/>
+	</typdsc>
+
+	<typdsc entref="Fluss">
+		<attr name="Name" type="varchar"/>
+		<attr name="Fluss" type="varchar"/>
+		<attr name="See" type="varchar"/>
+		<attr name="Meer" type="varchar"/>
+		<attr name="Länge" type="float"  min="0"/>
+		<attr name="Gebietsgröße" type="float" />
+		<attr name="Quelle" type="float"/>
+		<attr name="Berge" type="varchar"/>
+		<attr name="QuellenHöhe" type="float" />
+		<attr name="Mündung" type="float"/>
+		<attr name="MündungsHöhe" type="float" />
+	</typdsc>
+
+	<typdsc entref="InselIn">
+		<attr name="Insel" type="varchar"/>
+		<attr name="Meer" type="varchar"/>
+		<attr name="See" type="varchar"/>
+		<attr name="Fluss" type="varchar"/>
+	</typdsc>
+
+	<typdsc entref="Flughafen">
+		<attr name="IATACode" type="varchar"/>
+		<attr name="Name" type="varchar"/>
+		<attr name="Land" type="varchar"/>
+		<attr name="Stadt" type="varchar"/>
+		<attr name="Provinz" type="varchar"/>
+		<attr name="Insel" type="varchar"/>
+		<attr name="Breitengrad" type="float"  min="-90" max="90"/>
+		<attr name="Längengrad" type="float"  min="-180" max="180"/>
+		<attr name="Höhe" type="float" />
+		<attr name="gmtZeitabweichung" type="float" /> 
+	</typdsc>
+
+	<reldsc relref="umfasst">
+		<attr name="Prozentsatz" type="float"  min="0" max="100"/>
+	</reldsc>
+
+	<reldsc relref="istMitglied">
+		<attr name="Typ" type="varchar"/>
+	</reldsc>
+
+	<reldsc relref="Gränze">
+		<attr name="Länge" type="float"  min="0"/> 
+	</reldsc>
+</desc>

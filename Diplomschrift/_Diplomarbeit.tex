@@ -1,0 +1,121 @@
+\documentclass[deutsch,oneside,color]{htldipl}
+% die folgende Zeile einkommentieren für Arial-Ähnliche Schriftart
+%\renewcommand{\familydefault}{\sfdefault}
+
+\graphicspath{{images/}}    		% Bilderverzeichnis
+
+
+\include{Settings}
+
+
+
+\makeglossaries
+\loadglsentries{glossary}		   	% beinhaltet Daten für das Glossar
+\addbibresource{literatur.bib}     	% beinhaltet Daten für das Literarturverzeichnis
+
+%%%----------------------------------------------------------
+\begin{document}
+
+	
+\newcommand{\fib}{\marginpar{\scriptsize{\textit{$\rightarrow$Fischbacher}}}}
+\newcommand{\pra}{\marginpar{\scriptsize{\textit{$\rightarrow$Prinz}}}}
+\newcommand{\hon}{\marginpar{\scriptsize{\textit{$\rightarrow$Homolka}}}}
+\newcommand{\prc}{\marginpar{\scriptsize{\textit{$\rightarrow$Passet}}}}
+%%%----------------------------------------------------------
+\title{Entity Relationship Modelling Toolkit ERD}
+\abteilung{Informatik}
+\schwerpunkt{}
+\studienort{Wiener Neustadt}
+\schule{HTBLuVA Wiener Neustadt}
+\schullogo{htl.jpeg}
+\abgabejahr{2018/19}
+
+\betreuerA{Dipl.-Ing. Günther Burgstaller}
+\betreuerB{}
+\betreuerC{}
+\betreuerD{}
+\betreuerD{}
+
+\schuelerA{Berndt FISCHBACHER}
+\evidenzA{5BHIF}
+\subthemaA{}
+\schuelerB{Christian PASSET}
+\evidenzB{5BHIF}
+\subthemaB{}
+\schuelerC{Andreas PRINZ}
+\evidenzC{5BHIF}
+\subthemaC{}
+\schuelerD{Nicolas HOMOLKA}
+\evidenzD{5BHIF}
+\subthemaD{}
+\schuelerE{}
+\evidenzE{}
+\subthemaE{}
+\schuelerE{}
+\evidenzE{}
+\subthemaE{}
+
+%%%----------------------------------------------------------
+\frontmatter
+\maketitle
+\tableofcontents
+%%%----------------------------------------------------------
+
+\include{vorwort}				%ggfs. weglassen
+\include{dokumentation}
+\include{kurzfassung}		
+\include{abstract}			
+
+%%%----------------------------------------------------------
+\mainmatter           %Hauptteil (ab hier arab. Seitenzahlen)
+%%%----------------------------------------------------------
+
+\include{einleitung}
+\include{Methoden}
+\include{Ergebnis}
+%\include{diplomschrift}
+%\include{latex}
+%\include{faq}
+%\include{abbildungen}
+%\include{mathematik}
+%\include{literatur}
+%\include{drucken}
+%\include{word}
+\include{schluss}
+
+%%%----------------------------------------------------------
+%%%Anhang
+%\appendix
+\include{anhang_a}	% Technische Ergänzungen
+%\include{anhang_b}	% Inhalt der CD-ROM/DVD
+%\include{anhang_c}	% Chronologische Liste der Änderungen
+%\include{anhang_d}	% Quelltext dieses Dokuments
+
+%%%----------------------------------------------------------
+%Ausgabe der automatischen Zusatzdaten: Glossar, Index, Literaturverzeichnis
+\clearpage
+\printglossaries
+
+\clearpage
+\addcontentsline{toc}{chapter}{Index}
+\printindex[allgemein]
+
+\printindex
+
+\printindex[name]
+
+\printindex[title]
+
+%Literaturverzeichnis
+\clearpage
+\addcontentsline{toc}{chapter}{\bibname}
+
+\printbibliography
+
+
+%%%----------------------------------------------------------
+
+%%%Messbox zur Druckkontrolle
+%\include{messbox}
+
+\end{document}

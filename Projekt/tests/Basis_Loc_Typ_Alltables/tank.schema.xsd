@@ -1,0 +1,293 @@
+<?xml version="1.0" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="Fuel_Station">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="fuel_station">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="post_code" type="xs:integer"/>
+                     <xs:element name="area" type="xs:decimal"/>
+                     <xs:element name="adress" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="place">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="pname" type="xs:string"/>
+                     <xs:element name="inhabitants" type="xs:integer"/>
+                     <xs:element name="district" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="employee">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="enr" type="xs:integer"/>
+                     <xs:element name="ename" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="tank">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="enr" type="xs:integer"/>
+                     <xs:element name="capacity" type="xs:integer"/>
+                     <xs:element name="fuel" type="xs:decimal"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="fuel">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="descs" type="xs:string"/>
+                     <xs:element name="otkamount" type="xs:integer"/>
+                     <xs:element name="costs" type="xs:decimal"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="gas_pump">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="nr" type="xs:integer"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="wholesaler">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="fname" type="xs:string"/>
+                     <xs:element name="address" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="has_fuel_station">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="place_pname" type="xs:string"/>
+                     <xs:element name="fuel_station_post_code" type="xs:integer"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="has_employee">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="fuel_station_post_code" type="xs:integer"/>
+                     <xs:element name="employee_enr" type="xs:integer"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="tankfuel">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="tank_enr" type="xs:integer"/>
+                     <xs:element name="fuel_descs" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="has_tank">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="fuel_station_post_code" type="xs:integer"/>
+                     <xs:element name="tank_enr" type="xs:integer"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="has_pump">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="fuel_station_post_code" type="xs:integer"/>
+                     <xs:element name="gas_pump_nr" type="xs:integer"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="settle_contract">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="fuel_station_post_code" type="xs:integer"/>
+                     <xs:element name="wholesaler_fname" type="xs:string"/>
+                     <xs:element name="wholesaler_address" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="fuelprocess">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="fuel_station_post_code" type="xs:integer"/>
+                     <xs:element name="gas_pump_nr" type="xs:integer"/>
+                     <xs:element name="fuel_descs" type="xs:string"/>
+                     <xs:element name="amount" type="xs:integer"/>
+                     <xs:element name="price" type="xs:decimal"/>
+                     <xs:element name="dates" type="xs:date"/>
+                     <xs:element name="time" type="xs:time"/>
+                     <xs:element name="carname" type="xs:string"/>
+                     <xs:element name="carcolor" type="xs:string"/>
+                     <xs:element name="license_plate" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+         </xs:sequence>
+      </xs:complexType>
+      <xs:key name="PK_post_code_fuel_station">
+         <xs:selector xpath="fuel_station/post_code"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_pname_place">
+         <xs:selector xpath="place/pname"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_enr_employee">
+         <xs:selector xpath="employee/enr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_enr_tank">
+         <xs:selector xpath="tank/enr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_descs_fuel">
+         <xs:selector xpath="fuel/descs"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_nr_gas_pump">
+         <xs:selector xpath="gas_pump/nr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_fname_wholesaler">
+         <xs:selector xpath="wholesaler/fname"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_address_wholesaler">
+         <xs:selector xpath="wholesaler/address"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_place_pname_has_fuel_station">
+         <xs:selector xpath="has_fuel_station/place_pname"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_fuel_station_post_code_has_fuel_station">
+         <xs:selector xpath="has_fuel_station/fuel_station_post_code"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_fuel_station_post_code_has_employee">
+         <xs:selector xpath="has_employee/fuel_station_post_code"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_employee_enr_has_employee">
+         <xs:selector xpath="has_employee/employee_enr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_tank_enr_tankfuel">
+         <xs:selector xpath="tankfuel/tank_enr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_fuel_descs_tankfuel">
+         <xs:selector xpath="tankfuel/fuel_descs"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_fuel_station_post_code_has_tank">
+         <xs:selector xpath="has_tank/fuel_station_post_code"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_tank_enr_has_tank">
+         <xs:selector xpath="has_tank/tank_enr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_fuel_station_post_code_has_pump">
+         <xs:selector xpath="has_pump/fuel_station_post_code"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_gas_pump_nr_has_pump">
+         <xs:selector xpath="has_pump/gas_pump_nr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_fuel_station_post_code_settle_contract">
+         <xs:selector xpath="settle_contract/fuel_station_post_code"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_wholesaler_fname_settle_contract">
+         <xs:selector xpath="settle_contract/wholesaler_fname"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_wholesaler_address_settle_contract">
+         <xs:selector xpath="settle_contract/wholesaler_address"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_fuel_station_post_code_fuelprocess">
+         <xs:selector xpath="fuelprocess/fuel_station_post_code"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_gas_pump_nr_fuelprocess">
+         <xs:selector xpath="fuelprocess/gas_pump_nr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_fuel_descs_fuelprocess">
+         <xs:selector xpath="fuelprocess/fuel_descs"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:keyref name="FK_hat_tankstelle_place_pname_to_place" refer="PK_pname_place">
+         <xs:selector xpath="has_fuel_station/place_pname"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_hat_tankstelle_fuel_station_post_code_to_fuel_station" refer="PK_post_code_fuel_station">
+         <xs:selector xpath="has_fuel_station/fuel_station_post_code"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_hat_mitarbeiter_fuel_station_post_code_to_fuel_station" refer="PK_post_code_fuel_station">
+         <xs:selector xpath="has_employee/fuel_station_post_code"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_hat_mitarbeiter_employee_enr_to_employee" refer="PK_enr_employee">
+         <xs:selector xpath="has_employee/employee_enr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_tankkraft_tank_enr_to_tank" refer="PK_enr_tank">
+         <xs:selector xpath="tankfuel/tank_enr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_tankkraft_fuel_descs_to_fuel" refer="PK_descs_fuel">
+         <xs:selector xpath="tankfuel/fuel_descs"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_hat_tank_fuel_station_post_code_to_fuel_station" refer="PK_post_code_fuel_station">
+         <xs:selector xpath="has_tank/fuel_station_post_code"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_hat_tank_tank_enr_to_tank" refer="PK_enr_tank">
+         <xs:selector xpath="has_tank/tank_enr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_hat_zapf_fuel_station_post_code_to_fuel_station" refer="PK_post_code_fuel_station">
+         <xs:selector xpath="has_pump/fuel_station_post_code"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_hat_zapf_gas_pump_nr_to_gas_pump" refer="PK_nr_gas_pump">
+         <xs:selector xpath="has_pump/gas_pump_nr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_vertrag_vereinbaren_fuel_station_post_code_to_fuel_station" refer="PK_post_code_fuel_station">
+         <xs:selector xpath="settle_contract/fuel_station_post_code"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_vertrag_vereinbaren_wholesaler_fname_to_wholesaler" refer="PK_fname_wholesaler">
+         <xs:selector xpath="settle_contract/wholesaler_fname"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_vertrag_vereinbaren_wholesaler_address_to_wholesaler" refer="PK_address_wholesaler">
+         <xs:selector xpath="settle_contract/wholesaler_address"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_tankvorgang_fuel_station_post_code_to_fuel_station" refer="PK_post_code_fuel_station">
+         <xs:selector xpath="fuelprocess/fuel_station_post_code"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_tankvorgang_gas_pump_nr_to_gas_pump" refer="PK_nr_gas_pump">
+         <xs:selector xpath="fuelprocess/gas_pump_nr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_tankvorgang_fuel_descs_to_fuel" refer="PK_descs_fuel">
+         <xs:selector xpath="fuelprocess/fuel_descs"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+   </xs:element>
+</xs:schema>

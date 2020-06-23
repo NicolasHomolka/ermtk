@@ -1,0 +1,47 @@
+<erm version="0.2">
+<title name="Weingut"/>
+<ent name="wein">
+<attr name="name" prime="true"/>
+<attr name="farbe"/>
+<attr name="jahrgang"/>
+<attr name="restsüße"/>
+<attr name="erzeuger"/>
+</ent>
+<ent name="erzeuger">
+<attr name="name" prime="true"/>
+<attr name="adresse" prime="true"/>
+<attr name="lizenz"/>
+<attr name="menge"/>
+<attr name="anbaugebiet"/>
+</ent>
+<ent name="anbaugebiet">
+<attr name="name" prime="true"/>
+<attr name="region" prime="true"/>
+<attr name="land"/>
+</ent>
+<ent name="rebsorte">
+<attr name="name" prime="true"/>
+<attr name="farbe"/>
+</ent>
+<ent name="lizenz">
+<attr name="lizenznummer" prime="true"/>
+<attr name="menge"/>
+</ent>
+<rel to="erzeugt">
+<part ref="erzeuger" min="1" max="n"/>
+<part ref="wein" min="0" max="n"/>
+</rel>
+<rel to="beinhaltet">
+<part ref="wein" min="1" max="n"/>
+<part ref="rebsorte" min="0" max="n"/>
+<attr name="anteil"/>
+</rel>
+<rel to="besitzt">
+<part ref="erzeuger" min="1" max="1"/>
+<part ref="lizenz" min="1" max="n"/>
+</rel>
+<rel to="liegt in einem">
+<part ref="erzeuger" min="1" max="n"/>
+<part ref="anbaugebiet" min="0" max="n"/>
+</rel>
+</erm>

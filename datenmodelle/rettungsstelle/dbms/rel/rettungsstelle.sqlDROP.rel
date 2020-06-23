@@ -1,0 +1,12 @@
+
+drop constraint fk_joins_employee_on_employee_employeeNr;
+drop constraint fk_garage_car_on_licencePlate;
+
+drop var joins;
+drop var garage;
+drop var car;
+drop var patient;
+drop var employee;
+drop var person;
+drop var trip;
+drop var mission;

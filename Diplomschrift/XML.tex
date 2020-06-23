@@ -1,0 +1,289 @@
+\section{XML}
+
+\subsection{Allgemeines zu XML}
+\pra
+\subsubsection{Definition}
+\noindent
+Das Datenformat \textit{Extensible Markup Language (XML)} ist mittlerweile weit verbreitet und dient häufig als Basis für viele Technologien. XML wird im Buch ,,\citetitle[][]{taschenbuch}''\footfullcite{taschenbuch} wie folgt definiert:
+
+\begin{quote}
+	XML wurde mit der Zielsetzung des erleichterten Datenaustausches als Vereinfachung seines Vorgängerstandards \textit{SGML} eingeführt. Inzwischen ist es aber viel mehr als das: Es bildet beispielsweise die Grundlage vieler Technologien der serviceorientierten Architektur. XML wird dabei zur Definition von Sprachen verwendet und legt gleichzeitig die Basissyntax für diese Sprachen fest.  
+\end{quote}
+
+
+\subsubsection{Aufbau einer XML Datei}
+\pra
+Der Aufbau einer \textit{XML}-Datei ist mit \textit{XML-Elementen} versehen. Die einzelnen \textit{XML-Elemente} sind selbst wählbar. Die Daten werden innerhalb dieser \textit{Elemente} gespeichert. \footfullcite{ausarbeitung_xml}
+\\
+
+\noindent
+In einem \textit{XML-Document} befindet sich der Code der eigentlichen Daten, jedoch kann auch eine \textit{XML-Deklaratio} angegeben werden. Diese ist jedoch optional. In dieser \textit{Deklaration} befinden sich Informationen zu der Version des Datenformats sowie über die \textit{XML-Attribute} \textit{encoding} und \textit{standalone}. \footnotemark[9]
+
+\begin{verbatim} 
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+\end{verbatim}
+
+\noindent
+\begin{itemize}
+	\item{\textit{version}} gibt die aktuelle Version an, welche in dem Dokument verwendet wird. Standardmäßig beträgt dieser Wert \verb|1.0|.
+	\item{\textit{encoding}} gibt an, welche Kodierung der Zeichen benutzt werden soll. Standardmäßig gilt \textit{UTF-8} als verwendete Kodierung.
+	\item{\textit{standalone}} gibt an, ob auf eine externe \textit{Document-Type-Definition} zugegriffen werden muss, um korrekte Werte für bestimmte Teile zu ermitteln. Der Standardwert für dieses \textit{XML-Attribut} ist mit \textit{no} definiert.\footnotemark[9]
+\end{itemize}
+
+\noindent
+Sowohl \textit{encoding} als auch \textit{standalone} stellen optionale\textit{XML-Attribute} dar. Falls diese nicht explizit angegeben werden, gelten die zuvor erwähnten Standardausprägungen.\footnotemark[9]
+\\
+
+\noindent
+Im restlichen Dokument können dann beliebig viele \textit{XML-Elemente} erstellt werden. Jedoch gilt zu beachten, dass \textit{XML} eine gewisse Syntax verlangt. Unter anderem muss jeder Datensatz über einen Start-Tag und einen End-Tag verfügen.\footnotemark[9]
+
+\begin{verbatim}
+<Autor>
+    <name> Andreas Prinz </name>
+</Autor>
+\end{verbatim}
+
+\noindent
+Bei der Namensgebung der \textit{XML-Elemente} ist zu beachten, dass Start- und End-Tag gleich heißen. Groß- und Kleinbuchstaben sind in beliebigem Ausmaß erlaubt. Die Namen der \textit{XML-Elemente} und \textit{XML-Attribute} zwischen den Tags dürfen Unterstriche, Bindestriche, Punkte und alphanumerische Zeichen enthalten. \footnotemark[9]
+
+\begin{verbatim}
+<Autor>
+  <name> Andreas Prinz </name>
+  <geb_datum> 01.11.1999 </geb_datum>
+</Autor>
+\end{verbatim}
+
+\noindent
+Weiters können den \textit{XML-Elementen} \textit{XML-Attribute} hinzugefügt werden. Dabei ist zu beachten, dass eine Eigenschaft nur bei dem Start-Tag eingefügt werden kann. Der Wert wird dem \textit{XML-Attribut} mittels einem Gleichheitszeichen zugewiesen. Der Inhalt muss jedoch von einfachen oder doppelten Anführungszeichen eingeschlossen sein. Ein Beispiel für ein Element mit einer Eigenschaft sieht wie folgt aus:
+
+\begin{verbatim}
+<diplomarbeit schuljahr="2018/19">
+   <Autor> Andreas Prinz </autor>
+<diplomarbeit>
+\end{verbatim}
+
+\noindent
+In einem \textit{XML}-Dokument können Namensräume vergeben werden. Diese gestalten die Datei in einem übersichtlicheren Format. Es besteht jedoch keine Pflicht, Namensräume zu verwenden, da sie optional sind. Häufig tritt der Fall ein, dass verschachtelte Namensräume zum Einsatz kommen, um unterschiedliche Teile einer Anweisung besser differenzieren zu können. \footfullcite{ausarbeitung_xml}
+
+\subsubsection{Gültigkeit von XML-Dokumenten}
+\pra
+\noindent
+Gültige \textit{XML}-Dokumente entsprechen dem \textit{XML-Standard} und verfügen über eine \textit{DTD}. Unter einer \textit{Dokumenttyp-Definition (DTD)} wird eine Grammatik für eine \textit{XML}-Datei verstanden. In diesem Dokument befinden sich alle \textit{XML-Elemente}, \textit{XML-Attribute} und \textit{XML-Datentypen}, welche in dem XML-Code verwendet werden dürfen. Weiters beinhaltet eine \textit{DTD} den Kontext, in dem die \textit{XML-Elemente} auftauchen. Eine weitere Eigenschaft einer \textit{DTD} besteht darin, dass es die Möglichkeit gibt, die Anzahl eines \textit{XML-Elementes} an einer bestimmten Stelle festzulegen. \footnotemark[10]
+\\
+
+\noindent
+Dafür stehen 3 Operatoren zur Verfügung:
+\begin{itemize}
+	\item{'?'} Das \textit{XML-Element} darf maximal einmal vorkommen
+	\item{'+'} Das \textit{XML-Element} muss mindestens einmal vorkommen
+	\item{'*'} Das \textit{XML-Element} kann beliebig oft vorkommen
+\end{itemize}
+
+\noindent
+Neben einer \textit{DTD} verfügt \textit{XML} auch über ein \textit{Schema}, mit dem weitere Regeln definiert werden können. Weiters kann mit Hilfe dieses \textit{Schemas} ein \textit{XML}-Dokument auf seine Gültigkeit überprüft werden. Ein großer Unterschied zu einer \textit{DTD} liegt darin, dass das \textit{XML-Schema} ebenfalls eine Datei vom Typ \textit{XML} darstellt und über kein eigenes Datenformat verfügt. \textit{XML-Schema} bietet im Gegensatz zu \textit{DTD}, wo es nur einen Typ names \textit{PCDATA} gibt, eine große Auswahl an Datentypen an, wie zum Beispiel \textit{string, integer, float oder date}. Falls in den 44 bereits bekannten Typen nicht der richtige enthalten ist, besteht die Möglichkeit, aus einfachen Datentypen neue abzuleiten.\footnotemark[10]
+\\
+\pra
+
+\noindent
+Weiters kann eine Grammatik auf zwei verschiedene Arten beschrieben werden:
+\begin{itemize}
+	\item{RNC} 
+	\item{RelaxNG/RNG} 
+\end{itemize}
+Die zwei Grammatiken unterscheiden sich dadurch, dass \textit{RNC (RelaxNG compact)} die kompakte Syntax von \textit{RNG} aufweist und \textit{RelaxNG (Regular Language Description for XML New Generation)} die genauere Beschreibung des \textit{XML}-Dokuments ist.\footfullcite{ausarbeitung_xml}
+\\
+
+\noindent
+Der unten abgebildete Code beschreibt eine \textit{XML}-Datei mittels \textit{RNC}, wobei es die \textit{XML-Elemente} mit dem Namen \textit{RelType} und \textit{PartEnt} gibt. Diese haben jeweils \textit{XML-Attribute} mit einem Datentyp, wobei dieser in geschwungenen Klammern hinter dem Namen eines Teilelements steht.
+\\
+
+\begin{verbatim}
+RelType = element rel {
+    attribute to { xsd:string },
+    attribute from { xsd:string }?,
+    (PartEnt+)
+}
+
+PartEnt = element part {
+    attribute ref { xsd:string },
+    attribute min { MinCardType },
+    attribute max { MaxCardType },
+    attribute weak { xsd:boolean }?
+}
+\end{verbatim}
+
+\noindent
+Im Vergleich zu \textit{RNC} ist die \textit{RNG}-Grammatik schwerer zu lesen, da sie selbst auch ein \textit{XML}-Dokument ist. Der Aufbau eines \textit{RelaxNG}-Dokuments sieht wie folgt aus:
+\\
+\pra
+
+\begin{verbatim}
+<define name="RelType">
+    <element name="rel">
+        <attribute name="to">
+            <data type="string"/>
+        </attribute>
+    <optional>
+        <attribute name="from">
+            <data type="string"/>
+        </attribute>
+    </optional>
+    <optional>
+    <attribute name="qoute">
+        <data type="boolean"/>
+    </attribute>
+    </optional>
+    <oneOrMore>
+       <ref name="PartEnt"/>
+    </oneOrMore>     
+</define>
+
+<define name="PartEnt">
+    <element name="part">
+        <attribute name="ref">
+            <data type="string"/>
+        </attribute>
+        <attribute name="min">
+            <ref name="MinCardType"/>
+        </attribute>
+        <attribute name="max">
+            <ref name="MaxCardType"/>
+        </attribute>
+        <optional>
+            <attribute name="weak">
+                <data type="boolean"/>
+            </attribute>
+        </optional>
+    </element>
+</define>
+\end{verbatim}
+\pra
+\noindent
+Wie klar zu erkennen ist, kann die \textit{RNC}-Datei um einiges einfacher gelesen werden. Weiters verfügt der Code über weitaus weniger Zeilen als der in dem \textit{RelaxNG}-Dokument.
+\noindent
+In \textit{XML} stehen dem Benutzer einige Möglichkeiten zur Verfügung, wie die Daten gespeichert werden sollen. Zum Beispiel kann eine relationale oder eine objektorientierte Datenbank eingebunden werden.\footfullcite{ausarbeitung_xml} 
+
+\subsection{XERML}
+
+\subsubsection{Definition}
+
+\noindent
+Das Dateiformat \textit{XERML} ist eine Erweiterung der Sprache \textit{XML}, die von Dipl.-Ing. Günter Burgstaller erstellt wurde. Die Abkürzung steht für \textit{Extensible Entity Relationship Modelling Language}. Wie bereits im Namen erwähnt wird, ist diese Erweiterung von Vorteil, wenn \textit{Entity Relationship Diagramme} mittels \textit{XML} beschrieben werden sollen. 
+
+\subsubsection{Verwendung}
+\noindent
+Die Verwendung des Dateiformates \textit{XERML} erleichtert die Beschreibung eines \textit{ER-Diagrammes}, da das ganze Dokument besser strukturiert werden kann und somit die Informationen über das \textit{ERD} leicht auszulesen sind. Jedoch ist bei \textit{XERML} zu beachten, dass es nicht nur eine einzige Datei geben kann. Zusätzlich können für ein Dokument weitere Files erstellt werden, welche unter anderem den Inhalt der Datei mittels Datentypen beschreiben oder eine Übersetzung der Daten in eine andere Sprache beinhalten.
+\pra
+\subsubsection{Aufbau der Dateien}
+
+\noindent
+Der Aufbau einer \textit{XERML}-Datei gleicht in gewissen Ansichtspunkten  dem eines \textit{XML}-Dokuments. Die Syntax erlaubt ebenfalls, dass ein Kopf angegeben werden kann. Dieser muss jedoch nicht geschrieben werden, da er optional ist. Das \textit{root} Element in \textit{XERML} hat den Namen \textit{erm}. Alle Daten, die das \textit{Entity Relationship Diagramm} beschreiben, werden innerhalb dieses \textit{XERML-Elements} definiert. Als erster Wert innerhalb des \textit{erm}-Element muss sich der Name des Modells befinden. Dieser kann mittels den \textit{XERML-Element} \textit{title} angegeben werden, indem als \textit{Attribut} der Name mittels \textit{name=' '} gesetzt wird. Anschließend werden die \textit{Entites} beschrieben. Dies geschieht indem ein \textit{XERML-Element} mit dem Tag \textit{ent} geöffnet wird. Innerhalb dieser Sektion wird zuerst der Name des \textit{Entities} mittels \textit{name} angegeben und anschließend können \textit{Attribute} mit dem Element \textit{attr} definiert werden. Diesen \textit{Attributen} kann ebenfalls ein Name mittels \textit{name} gegeben werden. Sobald alle \textit{Entities} beschrieben wurden, werden die Beziehungen zwischen den \textit{Entity-Typen} definiert. Die Beziehungen sind ähnlich wie die \textit{Entities} aufgebaut, wobei die \textit{XERML-Elemente} mit dem Tag \textit{rel} beschrieben werden. Innerhalb einer Beziehung können die \textit{Attribute} \textit{from} und \textit{to} angegeben werden. Weiters beinhaltet eine Beziehung das \textit{Attribut} \textit{part}, wobei innerhalb dieses Tags die Werte \textit{ref, min, max} angegeben werden können.
+\\
+
+\pra
+\noindent
+Ein Beispiel für den Aufbau einer \textit{XERML-Datei} anhand des erzeugten Datenmodells \textit{Fußball} sieht wie folgt aus (nur Teile des Datenmodells abgebildet):
+
+\begin{verbatim}
+<?xml version="1.0" encoding="utf-8"?>
+
+<erm version="0.2">
+
+<!-- Front Matter -->
+
+<title name="Fussball"/>
+<title name="soccer" lang="en"/>
+
+<!-- Entity-Types -->
+	
+<ent name="mannschaft">
+    <attr name="name" prime="true"/>
+    <attr name="gründungsjahr"/>
+    <attr name="adresse"/>
+</ent>
+	
+<ent name="spiel">
+    <attr name="spielort" prime="true"/>
+    <attr name="datum"    prime="true"/>
+    <attr name="mannschaft_heim"/>
+    <attr name="mannschaft_ausw"/>
+    <attr name="schiedsrichter"/>
+    <attr name="ergebnis"/>
+</ent>
+
+<!-- Relationship-Types  -->
+
+<rel to="spielt mit bei">
+    <part ref="mannschaft" min="1" max="n"/>
+    <part ref="spiel" min="1" max="n"/>
+</rel>
+
+</erm>
+	
+\end{verbatim}
+\pra
+\noindent
+Das oben gezeigte \textit{XERML}-Dokument verfügt jedoch über keine Typdefinitionen. Dafür wird eine zusätzliche Datei erstellt, in welcher die Datentypen der einzelnen \textit{Attribute} der \textit{Entities} beschrieben werden. Das Dokument beginnt mit dem \textit{Wurzelelement} \textit{desc}, in dem die aktuelle Version angegeben wird. Innerhalb dieses \textit{XERML-Elements} werden die \textit{Entities} mit dem \textit{XERML-Element} \textit{typdsc} beschrieben. Mittels dem \textit{XERML-Element} \textit{entref} kann auf ein bereits definiertes \textit{Entity} referenziert werden. Die \textit{Attribute} dieses \textit{Entities} werden mittels dem \textit{XERML-Element} \textit{attr} beschrieben, wobei der Name mittels \verb|name| und der Typ eines \textit{Attributes} mittels \verb|type| festgelegt werden können. Ausserdem muss eine Klasse mittels \verb|class| gesetzt werden.
+\\
+
+\noindent
+Das dazugehörige Typen-Dokument für die \textit{XERML}-Datei sieht wie folgt aus:
+
+\begin{verbatim}
+<desc version="0.2">
+
+<typdsc entref="mannschaft">
+       <attr name="name"           type="char" class="name"/>
+       <attr name="gründungsjahr"  type="integer" class="year"/>
+       <attr name="addresse"       type="char" class="address"/>
+</typdsc>
+
+<typdsc entref="spiel">
+      <attr name="spielort"       type="char" class="address"/>
+      <attr name="datum"          type="date" class="date"/>
+      <attr name="mannschaft_heim" type="char" class="name"/>
+      <attr name="mannschaft_ausw" type="char" class="name"/>
+      <attr name="schiedsrichter" type="char" class="name"/>
+      <attr name="tore"           type="integer" class="number"/>
+      <attr name="ergebnis"       type="char" class="name"/>
+</typdsc>
+
+</desc>
+
+\end{verbatim}
+\pra
+\noindent
+Ausserdem kann für das \textit{XERML}-Dokument ebenfalls eine Übersetzungsdatei(Lokalisierung) existieren. Diese Datei enthält das  \textit{Wurzelelement} \textit{loc}, in welchem das \textit{Attribut} \textit{version} gesetzt werden kann. Innerhalb des \textit{XERML-Elements} \textit{loc} werden die Übersetzungen der \textit{Entities} und Beziehungen angegeben. Mittels dem \textit{XERML-Element} \textit{entlo} werden die \textit{Entities} beschrieben. In dem \textit{XERML-Element} müssen die \textit{XERML-Attribute} \textit{entref, name-lo, lang} angegeben werden. Der Wert von \textit{entref} ist das \textit{Entity}, für das diese Übersetzung gilt, \textit{name-lo} ist der Name des \textit{Entities} in der Sprache, welche in \textit{lang} angegeben wird. Innerhalb des \textit{XERML-Elements} \textit{entlo} können die \textit{Attribute} des \textit{Entities} mittles \textit{attr} angegeben und mit \textit{name-lo} übersetzt werden.
+Beziehungen werden mit dem \textit{XERML-Element} \textit{rello} beschrieben, wobei dieses \textit{XERML-Element} ebenfalls über die \textit{XERML-Attribute} \textit{relref, name-lo} und \textit{lang} verfügt.
+\\
+
+\noindent
+Diese Lokalisierungs-Datei ist für das bereits gezeigte \textit{XERML} mit folgendem Inhalt gefüllt:
+
+\begin{verbatim}
+<loc version="0.2">
+
+    <entlo entref="mannschaft"      name-lo="team" lang="eng">
+        <attr name="name"           name-lo="name"/>
+        <attr name="gründungsjahr"  name-lo="date_establishment"/>
+        <attr name="addresse"       name-lo="adress"/>
+    </entlo>
+
+    <entlo entref="spiel"           name-lo="match" lang="eng">
+        <attr name="svnr"           name-lo="ssn"/>
+        <attr name="datum"          name-lo="dates"/>
+        <attr name="mannschaft_heim" name-lo="home_team"/>
+        <attr name="mannschaft_ausw" name-lo="guest_team"/>
+        <attr name="schiedsrichter" name-lo="referee"/>
+        <attr name="tore"           name-lo="goals"/>
+        <attr name="ergebnis"       name-lo="result"/>
+    </entlo>
+
+<rello relref="spielt mit bei"      name-lo="participates in" lang="eng"/>
+
+</loc>
+\end{verbatim}
+\pra
+\subsubsection{Vergleich mit XML}
+\noindent
+Wie bereits erwähnt wurde, verfügt das erstellte \textit{XML-Vokabular XERML} hinsichtlich der Verwendung zur Beschreibung eines \textit{Entity Relationship Diagrammes} über ein paar Vorteile gegenüber \textit{XML}. Es wäre theoretisch in \textit{XML} ebenfalls möglich, ein \textit{ERD} zu beschreiben, jedoch ist diese Datei um einiges schwerer lesbarer und der Code ist ebenfalls nicht so strukturiert wie bei dem Vokabular \textit{XERML}.  

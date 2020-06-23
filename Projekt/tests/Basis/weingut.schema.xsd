@@ -1,0 +1,105 @@
+<?xml version="1.0" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="Weingut">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="wein">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="name" type="xs:string"/>
+                     <xs:element name="farbe" type="xs:string"/>
+                     <xs:element name="jahrgang" type="xs:string"/>
+                     <xs:element name="restsüße" type="xs:string"/>
+                     <xs:element name="erzeuger" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="erzeuger">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="name" type="xs:string"/>
+                     <xs:element name="adresse" type="xs:string"/>
+                     <xs:element name="lizenznummer" type="xs:string"/>
+                     <xs:element name="mengewein" type="xs:string"/>
+                     <xs:element name="anbaugebiet" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="anbaugebiet">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="name" type="xs:string"/>
+                     <xs:element name="region" type="xs:string"/>
+                     <xs:element name="land" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="rebsorte">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="name" type="xs:string"/>
+                     <xs:element name="farbe" type="xs:string"/>
+                     <xs:element name="anteil" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="lizenz">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="lizenznummer" type="xs:string"/>
+                     <xs:element name="menge" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="erzeugt">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="erzeuger_name" type="xs:string"/>
+                     <xs:element name="wein_name" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="beinhaltet">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="wein_name" type="xs:string"/>
+                     <xs:element name="anteil" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+         </xs:sequence>
+      </xs:complexType>
+      <xs:key name="PK_name_wein">
+         <xs:selector xpath="wein/name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_name_erzeuger">
+         <xs:selector xpath="erzeuger/name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_erzeuger_name_erzeugt">
+         <xs:selector xpath="erzeugt/erzeuger_name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_wein_name_erzeugt">
+         <xs:selector xpath="erzeugt/wein_name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_wein_name_beinhaltet">
+         <xs:selector xpath="beinhaltet/wein_name"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:keyref name="FK_erzeugt_erzeuger_name_to_erzeuger" refer="PK_name_erzeuger">
+         <xs:selector xpath="erzeugt/erzeuger_name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_erzeugt_wein_name_to_wein" refer="PK_name_wein">
+         <xs:selector xpath="erzeugt/wein_name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_beinhaltet_wein_name_to_wein" refer="PK_name_wein">
+         <xs:selector xpath="beinhaltet/wein_name"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+   </xs:element>
+</xs:schema>

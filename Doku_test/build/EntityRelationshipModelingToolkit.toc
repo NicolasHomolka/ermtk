@@ -1,0 +1,63 @@
+\babel@toc {english}{}
+\contentsline {chapter}{\numberline {1}Manual}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Requirements}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Installation}{2}{section.1.2}
+\contentsline {chapter}{\numberline {2}Commands and Sub-commands}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Named Arguments}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}sub-commands}{3}{section.2.2}
+\contentsline {section}{\numberline {2.3}Sub-commands:}{3}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}erdgenerate}{3}{subsection.2.3.1}
+\contentsline {subsubsection}{Named Arguments}{3}{subsubsection*.3}
+\contentsline {subsubsection}{Examples}{4}{subsubsection*.4}
+\contentsline {subsection}{\numberline {2.3.2}open}{4}{subsection.2.3.2}
+\contentsline {subsubsection}{Named Arguments}{4}{subsubsection*.5}
+\contentsline {subsubsection}{Examples}{4}{subsubsection*.6}
+\contentsline {subsection}{\numberline {2.3.3}close}{4}{subsection.2.3.3}
+\contentsline {subsubsection}{Named Arguments}{4}{subsubsection*.7}
+\contentsline {subsubsection}{Examples}{5}{subsubsection*.8}
+\contentsline {subsection}{\numberline {2.3.4}exit}{5}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {2.3.5}shell}{5}{subsection.2.3.5}
+\contentsline {subsection}{\numberline {2.3.6}bye}{5}{subsection.2.3.6}
+\contentsline {subsection}{\numberline {2.3.7}list}{5}{subsection.2.3.7}
+\contentsline {subsubsection}{Named Arguments}{5}{subsubsection*.9}
+\contentsline {subsubsection}{Examples}{5}{subsubsection*.10}
+\contentsline {subsection}{\numberline {2.3.8}erdfocus}{6}{subsection.2.3.8}
+\contentsline {subsubsection}{Named Arguments}{6}{subsubsection*.11}
+\contentsline {subsubsection}{Examples}{6}{subsubsection*.12}
+\contentsline {subsection}{\numberline {2.3.9}blockdiagram}{6}{subsection.2.3.9}
+\contentsline {subsubsection}{Named Arguments}{6}{subsubsection*.13}
+\contentsline {subsubsection}{Examples}{7}{subsubsection*.14}
+\contentsline {subsection}{\numberline {2.3.10}ddlgenerate}{7}{subsection.2.3.10}
+\contentsline {subsubsection}{Positional Arguments}{7}{subsubsection*.15}
+\contentsline {subsubsection}{Named Arguments}{7}{subsubsection*.16}
+\contentsline {subsubsection}{Examples}{7}{subsubsection*.17}
+\contentsline {subsection}{\numberline {2.3.11}dmlgenerate}{8}{subsection.2.3.11}
+\contentsline {subsubsection}{Positional Arguments}{8}{subsubsection*.18}
+\contentsline {subsubsection}{Named Arguments}{8}{subsubsection*.19}
+\contentsline {subsubsection}{Examples}{8}{subsubsection*.20}
+\contentsline {subsection}{\numberline {2.3.12}dmlform}{8}{subsection.2.3.12}
+\contentsline {subsubsection}{Positional Arguments}{8}{subsubsection*.21}
+\contentsline {subsubsection}{Named Arguments}{8}{subsubsection*.22}
+\contentsline {subsubsection}{Examples}{9}{subsubsection*.23}
+\contentsline {subsection}{\numberline {2.3.13}config}{9}{subsection.2.3.13}
+\contentsline {subsubsection}{Named Arguments}{9}{subsubsection*.24}
+\contentsline {subsubsection}{config-commands}{9}{subsubsection*.25}
+\contentsline {subsubsection}{Sub-commands:}{9}{subsubsection*.26}
+\contentsline {paragraph}{basex}{9}{paragraph*.27}
+\contentsline {subparagraph}{Named Arguments}{9}{subparagraph*.28}
+\contentsline {subsubsection}{Examples}{9}{subsubsection*.29}
+\contentsline {paragraph}{oracle}{10}{paragraph*.30}
+\contentsline {subparagraph}{Named Arguments}{10}{subparagraph*.31}
+\contentsline {subsubsection}{Examples}{10}{subsubsection*.32}
+\contentsline {paragraph}{postgresql}{10}{paragraph*.33}
+\contentsline {subparagraph}{Named Arguments}{10}{subparagraph*.34}
+\contentsline {subsubsection}{Examples}{10}{subsubsection*.35}
+\contentsline {paragraph}{sqlite}{10}{paragraph*.36}
+\contentsline {subparagraph}{Named Arguments}{11}{subparagraph*.37}
+\contentsline {subsubsection}{Examples}{11}{subsubsection*.38}
+\contentsline {paragraph}{sqlserver}{11}{paragraph*.39}
+\contentsline {subparagraph}{Named Arguments}{11}{subparagraph*.40}
+\contentsline {subsubsection}{Examples}{11}{subsubsection*.41}
+\contentsline {paragraph}{mysql}{11}{paragraph*.42}
+\contentsline {subparagraph}{Named Arguments}{11}{subparagraph*.43}
+\contentsline {paragraph}{rel}{12}{paragraph*.44}

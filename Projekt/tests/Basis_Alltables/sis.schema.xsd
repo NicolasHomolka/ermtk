@@ -1,0 +1,375 @@
+<?xml version="1.0" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="Schulinformationssystem">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="Person">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="svnr" type="xs:string"/>
+                     <xs:element name="nName" type="xs:string"/>
+                     <xs:element name="vName" type="xs:string"/>
+                     <xs:element name="gebDat" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Lehrer">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="lnr" type="xs:string"/>
+                     <xs:element name="svnr" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Schueler">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="MatrNr" type="xs:string"/>
+                     <xs:element name="svnr" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Abteilung">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="abkuerzung" type="xs:string"/>
+                     <xs:element name="name" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Gegenstand">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="abkuerzung" type="xs:string"/>
+                     <xs:element name="bezeichnung" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Lehrplan">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="jahrgang" type="xs:string"/>
+                     <xs:element name="pStunden" type="xs:string"/>
+                     <xs:element name="tStunden" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Klasse">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="bezeichnung" type="xs:string"/>
+                     <xs:element name="jahrgang" type="xs:string"/>
+                     <xs:element name="klassensprecher" type="xs:string"/>
+                     <xs:element name="kassierer" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="LVG">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="lvgNr" type="xs:string"/>
+                     <xs:element name="faktor" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="ist_Geschwister_von">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Schueler_svnr" type="xs:string"/>
+                     <xs:element name="Schueler_svnr2" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="ist_Elternteil_von">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Schueler_svnr" type="xs:string"/>
+                     <xs:element name="Person_svnr" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="unterrichtet_in">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Lehrer_svnr" type="xs:string"/>
+                     <xs:element name="Abteilung_abkuerzung" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="bestimmt_Faktor_fuer">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="LVG_lvgNr" type="xs:string"/>
+                     <xs:element name="Gegenstand_abkuerzung" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="wird_geleitet">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Abteilung_abkuerzung" type="xs:string"/>
+                     <xs:element name="Lehrer_svnr" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="ist_Klassenvorstand">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Lehrer_svnr" type="xs:string"/>
+                     <xs:element name="Klasse_bezeichnung" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="uebernimmt_Rolle">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Schueler_svnr" type="xs:string"/>
+                     <xs:element name="Klasse_bezeichnung" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="ist_bestimmt_fuer">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Lehrplan_jahrgang" type="xs:string"/>
+                     <xs:element name="Abteilung_abkuerzung" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="ist_teil_von">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Klasse_bezeichnung" type="xs:string"/>
+                     <xs:element name="Abteilung_abkuerzung" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="besitzt_Noten_fuer">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Schueler_svnr" type="xs:string"/>
+                     <xs:element name="Gegenstand_abkuerzung" type="xs:string"/>
+                     <xs:element name="semesternote" type="xs:string"/>
+                     <xs:element name="jahresnote" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="vermerkt">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Gegenstand_abkuerzung" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+         </xs:sequence>
+      </xs:complexType>
+      <xs:key name="PK_svnr_Person">
+         <xs:selector xpath="Person/svnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_svnr_Lehrer">
+         <xs:selector xpath="Lehrer/svnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_svnr_Schueler">
+         <xs:selector xpath="Schueler/svnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_abkuerzung_Abteilung">
+         <xs:selector xpath="Abteilung/abkuerzung"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_abkuerzung_Gegenstand">
+         <xs:selector xpath="Gegenstand/abkuerzung"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_jahrgang_Lehrplan">
+         <xs:selector xpath="Lehrplan/jahrgang"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_bezeichnung_Klasse">
+         <xs:selector xpath="Klasse/bezeichnung"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_lvgNr_LVG">
+         <xs:selector xpath="LVG/lvgNr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Schueler_svnr_ist_Geschwister_von">
+         <xs:selector xpath="ist_Geschwister_von/Schueler_svnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Schueler_svnr2_ist_Geschwister_von">
+         <xs:selector xpath="ist_Geschwister_von/Schueler_svnr2"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Schueler_svnr_ist_Elternteil_von">
+         <xs:selector xpath="ist_Elternteil_von/Schueler_svnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Person_svnr_ist_Elternteil_von">
+         <xs:selector xpath="ist_Elternteil_von/Person_svnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Lehrer_svnr_unterrichtet_in">
+         <xs:selector xpath="unterrichtet_in/Lehrer_svnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Abteilung_abkuerzung_unterrichtet_in">
+         <xs:selector xpath="unterrichtet_in/Abteilung_abkuerzung"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_LVG_lvgNr_bestimmt_Faktor_fuer">
+         <xs:selector xpath="bestimmt_Faktor_fuer/LVG_lvgNr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Gegenstand_abkuerzung_bestimmt_Faktor_fuer">
+         <xs:selector xpath="bestimmt_Faktor_fuer/Gegenstand_abkuerzung"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Abteilung_abkuerzung_wird_geleitet">
+         <xs:selector xpath="wird_geleitet/Abteilung_abkuerzung"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Lehrer_svnr_wird_geleitet">
+         <xs:selector xpath="wird_geleitet/Lehrer_svnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Lehrer_svnr_ist_Klassenvorstand">
+         <xs:selector xpath="ist_Klassenvorstand/Lehrer_svnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Klasse_bezeichnung_ist_Klassenvorstand">
+         <xs:selector xpath="ist_Klassenvorstand/Klasse_bezeichnung"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Schueler_svnr_uebernimmt_Rolle">
+         <xs:selector xpath="uebernimmt_Rolle/Schueler_svnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Klasse_bezeichnung_uebernimmt_Rolle">
+         <xs:selector xpath="uebernimmt_Rolle/Klasse_bezeichnung"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Lehrplan_jahrgang_ist_bestimmt_fuer">
+         <xs:selector xpath="ist_bestimmt_fuer/Lehrplan_jahrgang"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Abteilung_abkuerzung_ist_bestimmt_fuer">
+         <xs:selector xpath="ist_bestimmt_fuer/Abteilung_abkuerzung"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Klasse_bezeichnung_ist_teil_von">
+         <xs:selector xpath="ist_teil_von/Klasse_bezeichnung"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Abteilung_abkuerzung_ist_teil_von">
+         <xs:selector xpath="ist_teil_von/Abteilung_abkuerzung"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Schueler_svnr_besitzt_Noten_fuer">
+         <xs:selector xpath="besitzt_Noten_fuer/Schueler_svnr"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Gegenstand_abkuerzung_besitzt_Noten_fuer">
+         <xs:selector xpath="besitzt_Noten_fuer/Gegenstand_abkuerzung"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:key name="PK_Gegenstand_abkuerzung_vermerkt">
+         <xs:selector xpath="vermerkt/Gegenstand_abkuerzung"/>
+         <xs:field xpath="."/>
+      </xs:key>
+      <xs:keyref name="FK_Lehrer_svnr_to_Person" refer="PK_svnr_Person">
+         <xs:selector xpath="Lehrer/svnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_Schueler_svnr_to_Person" refer="PK_svnr_Person">
+         <xs:selector xpath="Schueler/svnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_ist_Geschwister_von_Schueler_svnr_to_Schueler" refer="PK_svnr_Schueler">
+         <xs:selector xpath="ist_Geschwister_von/Schueler_svnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_ist_Geschwister_von_Schueler_svnr2_to_Schueler" refer="PK_svnr_Schueler">
+         <xs:selector xpath="ist_Geschwister_von/Schueler_svnr2"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_ist_Elternteil_von_Schueler_svnr_to_Schueler" refer="PK_svnr_Schueler">
+         <xs:selector xpath="ist_Elternteil_von/Schueler_svnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_ist_Elternteil_von_Person_svnr_to_Person" refer="PK_svnr_Person">
+         <xs:selector xpath="ist_Elternteil_von/Person_svnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_unterrichtet_in_Lehrer_svnr_to_Lehrer" refer="PK_svnr_Lehrer">
+         <xs:selector xpath="unterrichtet_in/Lehrer_svnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_unterrichtet_in_Abteilung_abkuerzung_to_Abteilung" refer="PK_abkuerzung_Abteilung">
+         <xs:selector xpath="unterrichtet_in/Abteilung_abkuerzung"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_bestimmt_Faktor_fuer_LVG_lvgNr_to_LVG" refer="PK_lvgNr_LVG">
+         <xs:selector xpath="bestimmt_Faktor_fuer/LVG_lvgNr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_bestimmt_Faktor_fuer_Gegenstand_abkuerzung_to_Gegenstand" refer="PK_abkuerzung_Gegenstand">
+         <xs:selector xpath="bestimmt_Faktor_fuer/Gegenstand_abkuerzung"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_wird_geleitet_Abteilung_abkuerzung_to_Abteilung" refer="PK_abkuerzung_Abteilung">
+         <xs:selector xpath="wird_geleitet/Abteilung_abkuerzung"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_wird_geleitet_Lehrer_svnr_to_Lehrer" refer="PK_svnr_Lehrer">
+         <xs:selector xpath="wird_geleitet/Lehrer_svnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_ist_Klassenvorstand_Lehrer_svnr_to_Lehrer" refer="PK_svnr_Lehrer">
+         <xs:selector xpath="ist_Klassenvorstand/Lehrer_svnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_ist_Klassenvorstand_Klasse_bezeichnung_to_Klasse" refer="PK_bezeichnung_Klasse">
+         <xs:selector xpath="ist_Klassenvorstand/Klasse_bezeichnung"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_uebernimmt_Rolle_Schueler_svnr_to_Schueler" refer="PK_svnr_Schueler">
+         <xs:selector xpath="uebernimmt_Rolle/Schueler_svnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_uebernimmt_Rolle_Klasse_bezeichnung_to_Klasse" refer="PK_bezeichnung_Klasse">
+         <xs:selector xpath="uebernimmt_Rolle/Klasse_bezeichnung"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_ist_bestimmt_fuer_Lehrplan_jahrgang_to_Lehrplan" refer="PK_jahrgang_Lehrplan">
+         <xs:selector xpath="ist_bestimmt_fuer/Lehrplan_jahrgang"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_ist_bestimmt_fuer_Abteilung_abkuerzung_to_Abteilung" refer="PK_abkuerzung_Abteilung">
+         <xs:selector xpath="ist_bestimmt_fuer/Abteilung_abkuerzung"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_ist_teil_von_Klasse_bezeichnung_to_Klasse" refer="PK_bezeichnung_Klasse">
+         <xs:selector xpath="ist_teil_von/Klasse_bezeichnung"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_ist_teil_von_Abteilung_abkuerzung_to_Abteilung" refer="PK_abkuerzung_Abteilung">
+         <xs:selector xpath="ist_teil_von/Abteilung_abkuerzung"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_besitzt_Noten_fuer_Schueler_svnr_to_Schueler" refer="PK_svnr_Schueler">
+         <xs:selector xpath="besitzt_Noten_fuer/Schueler_svnr"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_besitzt_Noten_fuer_Gegenstand_abkuerzung_to_Gegenstand" refer="PK_abkuerzung_Gegenstand">
+         <xs:selector xpath="besitzt_Noten_fuer/Gegenstand_abkuerzung"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+      <xs:keyref name="FK_vermerkt_Gegenstand_abkuerzung_to_Gegenstand" refer="PK_abkuerzung_Gegenstand">
+         <xs:selector xpath="vermerkt/Gegenstand_abkuerzung"/>
+         <xs:field xpath="."/>
+      </xs:keyref>
+   </xs:element>
+</xs:schema>

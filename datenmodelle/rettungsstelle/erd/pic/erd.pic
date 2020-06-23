@@ -1,0 +1,48 @@
+.PS
+.defcolor medblue rgb #89D8D6
+boxwid=300; boxht=300;Has: box invis "hat" at (906, 1666);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=400;boxht= 200;Car: box shaded "medblue" at (1285, 2396) "auto";
+boxwid=400;boxht= 200;Garage: box shaded "medblue" at (622, 911) "garage";
+boxwid=300; boxht=300;Isbeingused: box invis "wird verwendet" at (1550, 3239);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=400;boxht= 200;Trip: box shaded "medblue" at (1857, 4271) "fahrt";
+boxwid=300; boxht=300;Isbeingrescued: box invis "wird gerettet" at (2449, 3907);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=400;boxht= 200;Patient: box shaded "medblue" at (3008, 3781) "patient";
+boxwid=300; boxht=300;Joins: box invis "nimmt teil" at (2357, 4891);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=400;boxht= 200;Employee: box shaded "medblue" at (2863, 5305) "angestellter";
+boxwid=300; boxht=300;Consistsof: box invis "besteht aus" at (1387, 5121);
+line from last box .n to last box .e then to last box .s then to last box .w then to last box .n
+boxwid=400;boxht= 200;Mission: box shaded "medblue" at (990, 5823) "einsatz";
+boxwid=400;boxht= 200;Person: box shaded "medblue" at (3945, 4815) "person";
+line from Consistsof .n to Mission .s;
+box invis at last line .center "(0,n)";
+line from Consistsof .s to Trip .n;
+box invis at last line .center "(1,1)";
+line from Joins .n to Employee .s;
+box invis at last line .center "(0,n)";
+line from Joins .s to Trip .n;
+box invis at last line .center "(1,n)";
+line from Isbeingrescued .s to Patient .n;
+box invis at last line .center "(1,1)";
+line from Isbeingrescued .n to Trip .s;
+box invis at last line .center "(1,n)";
+line from Isbeingused .s to Car .n;
+box invis at last line .center "(0,1)";
+line from Isbeingused .n to Trip .s;
+box invis at last line .center "(1,1)";
+line from Has .n to Car .s;
+box invis at last line .center "(1,1)";
+line from Has .s to Garage .n;
+box invis at last line .center "(1,n)";
+boxht=270; boxwid=250;Isa: box invis at (3349, 4655);
+line from last box .n to last box .se then to last box .sw then to last box .n
+line from Isa .n to Person .w;
+box invis at last line .center "(0, 1)";
+line from Isa .sw to Patient .n;
+box invis at last line .center "(1, 1)";
+line from Isa .sw to Employee .s;
+box invis at last line .center "(1, 1)";
+.PE

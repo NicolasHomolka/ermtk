@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<loc version="0.2">
+
+    <title name="Schulinformationssystem"/>
+    <title name="School Info-System" lang="en"/>
+
+    <entlo entref="Person" name-lo="person" lang="en">
+        <attr name="svnr"       name-lo="ssnr"/>
+        <attr name="nName"      name-lo="lastname"/>
+        <attr name="vName"      name-lo="firstname"/>
+        <attr name="gebDate"    name-lo="birthdate"/>
+    </entlo>
+
+    <entlo entref="Lehrer" name-lo="teacher" lang="en">
+        <attr name="lnr"        name-lo="tnr"/>
+    </entlo>
+
+    <entlo entref="Schueler" name-lo="student" lang="en">
+        <attr name="MatrNr" name-lo="MatrNr"/>
+    </entlo>
+
+    <entlo entref="Abteilung" name-lo="department" lang="en">
+        <attr name="abkuerzung"     name-lo="shortcut"/>
+        <attr name="name"           name-lo="name"/>
+    </entlo>
+
+    <entlo entref="Gegenstand" name-lo="subject" lang="en">
+        <attr name="abkuerzung"     name-lo="shortcut"/>
+        <attr name="bezeichnung"    name-lo="description"/>
+    </entlo>
+
+    <entlo entref="Klasse" name-lo="class" lang="en">
+        <attr name="bezeichnung"        name-lo="description"/>
+        <attr name="jahrgang"           name-lo="year"/>
+    </entlo>
+
+    <entlo entref="Lehrverpflichtungsgruppe" name-lo="EDG" lang="en">
+        <attr name="lvgNr"     name-lo="edgNr"/>
+        <attr name="faktor"    name-lo="factor"/>
+    </entlo>
+
+    <entlo entref="Lehrplan" name-lo="Curriculum" lang="en">
+        <attr name="jahrgang"   name-lo="year"/>
+        <attr name="pStunden"   name-lo="pLessons"/>
+        <attr name="tStunden"   name-lo="tLessons"/>
+    </entlo>
+
+    <rello relref="ist ein" name-lo="is-a" lang="en"/>
+
+    <rello relref="ist Geschwister von" name-lo="is sibling of" lang="en"/>
+
+    <rello relref="ist Elternteil von" name-lo="is parent of" lang="en"/>
+
+    <rello relref="gehört zu" name-lo="is part of" lang="en"/>
+
+    <rello relref="beansprucht" name-lo="demands" lang="en"/>
+
+    <rello relref="wird geleitet" name-lo="is managed" lang="en"/>
+
+    <rello relref="leitet" name-lo="manages" lang="en"/>
+
+    <rello relref="verwendet" name-lo="uses" lang="en"/>
+
+    <rello relref="gelistet in" name-lo="lists" lang="en"/>
+
+    <rello relref="unterrichtet" name-lo="teaches" lang="en"/>
+
+    <rello relref="Note" name-lo="Mark" lang="en">
+        <attr name="schuljahr"  name-lo="school_year"/>
+        <attr name="semesternote"   name-lo="term_mark"/>
+        <attr name="jahresnote" name-lo="year mark"/>
+    </rello>
+
+    <rello relref="ist Klassenvorstand" name-lo="is class teacher" lang="en"/>
+
+    <rello relref="agiert" name-lo="act" lang="en">
+        <attr name="rolle"  name-lo="role"/>
+    </rello>
+
+    <rello relref="zugeordnet" name-lo="is assigned" lang="en"/>
+
+</loc>

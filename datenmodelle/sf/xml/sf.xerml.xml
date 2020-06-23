@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<erm  version="0.2" >
+
+    <!-- Front Matter -->
+
+    <title name="Schulungsfirma"/>
+    <title name="School of Music Course Database" lang="en"/>
+
+    <!-- Entity-Types -->
+
+    <ent name="kurs">
+        <attr name="knr" prime="true"/>
+        <attr name="bezeichn"/>
+        <attr name="tage"/>
+        <attr name="preis"/>
+    </ent>
+
+    <ent name="kveranst">
+        <attr name="knrlfnd" prime="true"/>
+        <attr name="von"/>
+        <attr name="bis"/>
+        <attr name="ort"/>
+        <attr name="plaetze"/>
+    </ent>
+
+    <ent name="person">
+        <attr name="pnr" prime="true"/>
+        <attr name="fname"/>
+        <attr name="vname"/>
+        <attr name="ort"/>
+        <attr name="land"/>
+    </ent>
+
+    <ent name="referent">
+        <attr name="gebdat"/>
+        <attr name="seit"/>
+        <attr name="titel"/>
+    </ent>
+
+    <!-- Relationship-Types -->
+
+    <rel to="setzt voraus" from="ist Voraussetzung für">
+        <part ref="kurs" min="0" max="n"/>
+        <part ref="kurs" min="0" max="n"/>
+    </rel>
+
+    <rel to="abgehalten">
+        <part ref="kurs" min="0" max="n"/>
+        <part ref="kveranst" min="1" max="1" weak="true"/>
+    </rel>
+
+    <rel to="ist ein">
+        <super ref="person" total="false" disjoint="true"/>
+        <sub ref="referent"/>
+    </rel>
+
+    <rel to="besucht">
+        <part ref="kveranst" min="0" max="n"/>
+        <part ref="person" min="0" max="n"/>
+        <attr name="bezahlt"/>
+    </rel>
+
+    <rel to="hält">
+        <part ref="kveranst" min="0" max="1"/>
+        <part ref="referent" min="0" max="n"/>
+    </rel>
+
+    <rel to="geeignet">
+        <part ref="kurs" min="0" max="n"/>
+        <part ref="referent" min="1" max="n"/>
+    </rel>
+
+</erm>

@@ -1,0 +1,35 @@
+\section{Rettungsstelle}
+\fib{}
+
+\noindent
+Die Rettungsstelle soll den Aufbau einer echten Rettungsstelle darstellen und dabei veranschaulichen welche Vorgänge bzw. Ressourcen miteinander in Beziehung stehen.
+Das Datenmodell der Rettungsstelle besteht aus sieben Entity-Typen:
+
+\begin{itemize}
+    \item Einsatz oder auch mission
+    \item Fahrt oder auch trip
+    \item Person oder auch person
+    \item Angestellter oder auch employee
+    \item Patient oder auch patient
+    \item Auto oder auch car
+    \item Gragage oder auch garage
+\end{itemize}
+
+\noindent
+Zwischen diesen Entity-Typen existieren sechs Relationen und jede dieser Relationen kann man mit je zwei Sätzen beschreiben.
+\begin{itemize}
+    \item Ein Einsatz besteht aus keiner oder mehreren Fahrten.\newline
+          Eine Fahrt ist Bestandteil genau eines Einsatzes.
+    \item Ein Mitarbeiter nimmt an keiner oder mehreren Fahrten teil. \newline
+          Bei einer Fahrt ist mindestens ein Mitarbeiter oder mehrere Mitarbeiter beteiligt. 
+    \item Ein Patient wird bei genau einem Einsatz gerettet. \newline
+          Bei einer Fahrt wird mindestens ein Patient oder mehrere Patienten gerettet. 
+    \item Ein Auto wird bei mindestens einer Fahrt oder mehreren Fahrten verwendet. \newline
+          Bei einer Fahrt wird genau ein Auto verwendet.
+    \item Ein Auto hat mindestens eine Garage oder mehrere Garagen. \newline
+          In einer Garage steht genau ein Auto.
+    \item Patient ist eine Person mit einer SVN, KVA, Einsatzbeschreibung, Kennzeichen, Einsatznummer. \newline
+          Angestellter ist eine Person mit einer Mittarbeiternummer, Rang, Schulung, Kennzeichen, Einsatznummer.
+\end{itemize}
+
+\noindent

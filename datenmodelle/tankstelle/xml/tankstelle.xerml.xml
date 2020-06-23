@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<erm version="0.2" >
+
+    <!-- Front Matter -->
+
+    <title name="Tankstelle"/>
+    <title name="Fuel Station" lang="en"/>
+
+
+    <!-- Entity-Types -->
+
+    <ent name="tankstelle">
+	<attr name="plz" prime="true"/>
+        <attr name="flaeche"/>
+	<attr name="adresse"/>
+        
+    </ent>
+
+    <ent name="ort">
+    	<attr name="ortsname" prime="true"/>
+	<attr name="einwohner" />
+	<attr name="bezirk" />
+    </ent>
+
+    <ent name="mitarbeiter">
+	<attr name="pnr" prime="true"/>
+	<attr name="name"/>
+    </ent>
+
+    <ent name="tank">
+	<attr name="nr" prime ="true"/>
+	<attr name="fassung"/>
+	<attr name="fuel"/>
+    </ent>
+
+    <ent name="kraftstoff">
+	<attr name="bezeichn" prime="true"/>
+	<attr name="oktanz"/>
+	<attr name="kosten"/>
+    </ent>
+
+    <ent name="zapfsaeule">
+	<attr name="nr" prime="true"/>
+    </ent>
+
+    <ent name="großhaendler">
+   	<attr name="fname" prime="true"/>
+	<attr name="anschrift" prime="true"/>
+    </ent>
+
+    <!-- Relationship-Types -->
+
+    <rel to="hat tankstelle" >
+        <part ref="ort" min="1" max="1"/>
+        <part ref="tankstelle" min="0" max="n"/>
+    </rel>
+
+    <rel to="hat mitarbeiter">
+        <part ref="tankstelle" min="1" max="n"/>
+        <part ref="mitarbeiter" min="0" max="n"/>
+    </rel>
+
+    <rel to="tankkraft">
+	<part ref="tank" min="0" max="n"/>
+        <part ref="kraftstoff" min="0" max="n" weak="true"/>
+    </rel>
+
+    <rel to="hat tank">
+        <part ref="tankstelle" min="1" max="1"/>
+        <part ref="tank" min="0" max="n" weak="true"/>
+    </rel>
+
+    <rel to="hat zapf">
+        <part ref="tankstelle" min="1" max="1"/>
+        <part ref="zapfsaeule" min="0" max="n" weak="true"/>
+    </rel>
+
+    <rel to="vertrag vereinbaren">
+	<part ref="tankstelle" min="0" max="n"/>
+	<part ref="großhaendler" min="0" max="n"/>
+    </rel>
+
+    <rel to="tankvorgang">
+	<part ref="tankstelle" min="1" max="1"/>
+	<part ref="zapfsaeule" min="1" max="1"/>
+	<part ref="kraftstoff" min="1" max="2"/>
+	<attr name="menge"/>
+	<attr name="preis"/>
+	<attr name="datum"/>
+	<attr name="uhrzeit"/>
+	<attr name="autoname"/>
+	<attr name="autofarbe"/>
+	<attr name="kennzeichen"/>	
+    </rel>
+
+</erm>
+

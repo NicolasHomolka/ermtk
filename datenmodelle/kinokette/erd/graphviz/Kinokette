@@ -1,0 +1,101 @@
+graph Kinokette {
+	label=Kinokette
+	fontsize=20
+	node [peripheries=1 shape=box]
+	kino
+	node [label=name shape=circle style=bold]
+	"kino.name"
+	kino -- "kino.name" [peripheries=1]
+	node [peripheries=2 shape=box]
+	saal
+	node [peripheries=2 shape=box]
+	sitzplan
+	node [label=vergeben shape=circle style=bold]
+	"sitzplan.vergeben"
+	sitzplan -- "sitzplan.vergeben" [peripheries=1]
+	node [peripheries=2 shape=box]
+	ticket
+	node [label=begin shape=circle]
+	"ticket.begin"
+	ticket -- "ticket.begin" [peripheries=1]
+	node [label=reihe shape=circle]
+	"ticket.reihe"
+	ticket -- "ticket.reihe" [peripheries=1]
+	node [peripheries=2 shape=box]
+	zeitplan
+	node [peripheries=1 shape=box]
+	film
+	node [label=genre shape=circle style=bold]
+	"film.genre"
+	film -- "film.genre" [peripheries=1]
+	node [label=herstellungsjahr shape=circle style=bold]
+	"film.herstellungsjahr"
+	film -- "film.herstellungsjahr" [peripheries=1]
+	node [label=land shape=circle style=bold]
+	"film.land"
+	film -- "film.land" [peripheries=1]
+	node [label=sprache shape=circle style=bold]
+	"film.sprache"
+	film -- "film.sprache" [peripheries=1]
+	node [label=dauer shape=circle style=bold]
+	"film.dauer"
+	film -- "film.dauer" [peripheries=1]
+	node [label=verleih shape=circle style=bold]
+	"film.verleih"
+	film -- "film.verleih" [peripheries=1]
+	node [label=altersfreigabe shape=circle style=bold]
+	"film.altersfreigabe"
+	film -- "film.altersfreigabe" [peripheries=1]
+	node [peripheries=1 shape=box]
+	person
+	node [label=nachname shape=circle style=bold]
+	"person.nachname"
+	person -- "person.nachname" [peripheries=1]
+	node [label=vorname shape=circle style=bold]
+	"person.vorname"
+	person -- "person.vorname" [peripheries=1]
+	node [label=nationalitaet shape=circle style=bold]
+	"person.nationalitaet"
+	person -- "person.nationalitaet" [peripheries=1]
+	node [label=geburtsdatum shape=circle style=bold]
+	"person.geburtsdatum"
+	person -- "person.geburtsdatum" [peripheries=1]
+	node [label=todesdatum shape=circle style=bold]
+	"person.todesdatum"
+	person -- "person.todesdatum" [peripheries=1]
+	node [label=bemerkung shape=circle style=bold]
+	"person.bemerkung"
+	person -- "person.bemerkung" [peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"spielt mit"
+	"spielt mit" -- person [label="(0, n)" peripheries=1]
+	"spielt mit" -- film [label="(1, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	"wird gezeigt in"
+	"wird gezeigt in" -- film [label="(1, n)" peripheries=1]
+	"wird gezeigt in" -- kino [label="(0, n)" peripheries=1]
+	node [peripheries=2 shape=diamond]
+	"ist Teil von"
+	"ist Teil von" -- kino [label="(1, n)" peripheries=1]
+	"ist Teil von" -- saal [label="(1, 1)" peripheries=1]
+	node [peripheries=2 shape=diamond]
+	"ist Sitzplan für"
+	"ist Sitzplan für" -- saal [label="(1, n)" peripheries=1]
+	"ist Sitzplan für" -- sitzplan [label="(1, n)" peripheries=1]
+	node [peripheries=2 shape=diamond]
+	"ist Zeiplan für"
+	"ist Zeiplan für" -- saal [label="(1, 1)" peripheries=1]
+	"ist Zeiplan für" -- zeitplan [label="(1, n)" peripheries=1]
+	node [peripheries=2 shape=diamond]
+	"wird ... gespielt"
+	"wird ... gespielt" -- film [label="(1, 1)" peripheries=1]
+	"wird ... gespielt" -- zeitplan [label="(1, n)" peripheries=1]
+	node [peripheries=1 shape=diamond]
+	leitet
+	leitet -- film [label="(1, n)" peripheries=1]
+	leitet -- person [label="(1, 1)" peripheries=1]
+	node [peripheries=2 shape=diamond]
+	"gilt für"
+	"gilt für" -- sitzplan [label="(1, 1)" peripheries=1]
+	"gilt für" -- ticket [label="(1, n)" peripheries=1]
+}
